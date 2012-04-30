@@ -1,0 +1,29 @@
+<apex:page id="loginPage" showHeader="false" title="{!$Label.site.site_login}">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="body">  
+      <center>
+        <apex:panelGrid bgcolor="white" columns="1" style="align: center;"> 
+          <br/>
+          <br/>
+          <apex:panelGrid width="758" cellpadding="0" cellspacing="0" bgcolor="white" columns="1" style="text-align:left; border:1px solid #ccc;"> 
+            <br/>
+            <apex:outputPanel layout="block" style="background-color: white; border: 1px solid #ccc; padding: 0px; margin-top: 10px; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+              <apex:panelGrid width="758" cellpadding="0" cellspacing="0" bgcolor="white" columns="2"> 
+                <apex:image url="{!$Site.Prefix}{!$Label.site.img_path}/clock.png"/>
+                <apex:panelGroup >
+                  <br/>
+                  <apex:outputText style="font-size: larger; font-weight: bold;" value="{!$Label.site.login}"/>
+                  <br/>
+                  <c:SiteLogin id="siteLogin"/>
+                  <br/>
+                </apex:panelGroup>
+              </apex:panelGrid> 
+             </apex:outputPanel>
+            <c:SiteFooter />
+          </apex:panelGrid> 
+       </apex:panelGrid>
+      </center>
+      <br/>
+    </apex:define>
+  </apex:composition>
+</apex:page>

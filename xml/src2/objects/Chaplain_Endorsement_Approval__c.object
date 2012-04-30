@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Chaplain Endorsement/Approval object</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Application_Accepted_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Accepted Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Application_Denied_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Denied Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Application_For__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select appropriate endorsement/approval type.</inlineHelpText>
+        <label>Application For</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Civilian Endorsement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Military Chaplain Endorsement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Military Chaplain Candidate Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Civilian Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_Withdrawn_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Withdrawn Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Committee_Decision__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select UMEA committee&apos;s decision on candidate&apos;s application</inlineHelpText>
+        <label>Committee Decision</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Endorse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deny</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>ApplicationApprovals</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Endorsement_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter date contact was endorsed/approved for setting</inlineHelpText>
+        <label>Endorsement/Approval Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Endorsement_Approval_Withdrawn_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter date that Endorsement/Approval was withdrawn by UMEA</inlineHelpText>
+        <label>Endorsement/Approval Withdrawn Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Setting__c</fullName>
+        <externalId>false</externalId>
+        <label>Setting</label>
+        <picklist>
+            <controllingField>Application_For__c</controllingField>
+            <picklistValues>
+                <fullName>Air Force Active</fullName>
+                <controllingFieldValues>Military Chaplain Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Air Force National Guard</fullName>
+                <controllingFieldValues>Military Chaplain Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Air Force Reserve</fullName>
+                <controllingFieldValues>Military Chaplain Candidate Approval</controllingFieldValues>
+                <controllingFieldValues>Military Chaplain Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Army Active</fullName>
+                <controllingFieldValues>Military Chaplain Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Army National Guard</fullName>
+                <controllingFieldValues>Military Chaplain Candidate Approval</controllingFieldValues>
+                <controllingFieldValues>Military Chaplain Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Army Reserve</fullName>
+                <controllingFieldValues>Military Chaplain Candidate Approval</controllingFieldValues>
+                <controllingFieldValues>Military Chaplain Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children’s Home</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Civil Air Patrol</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clinical Pastoral Education</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disaster Services</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMS</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fire</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Hospital</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospice</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Law Enforcement</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Law Enforcement and Fire</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Life Coach</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marriage and Family Therapy</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mental Health</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navy Active</fullName>
+                <controllingFieldValues>Military Chaplain Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navy Reserve</fullName>
+                <controllingFieldValues>Military Chaplain Candidate Approval</controllingFieldValues>
+                <controllingFieldValues>Military Chaplain Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pastoral Counseling</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pastoral Counselor</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prison/Correctional Institution</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prison Correctional Institution</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retirement Community</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specialized</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spiritual Director</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Substance Abuse</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transitional Interim Ministry Specialist</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Veterans Health Administration</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Coast Guard</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer State Guard (Militia)</fullName>
+                <controllingFieldValues>Civilian Approval</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Workplace</fullName>
+                <controllingFieldValues>Civilian Endorsement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TIMS_Situation__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>These are only applicable to the Civilian Approval setting Transitional Interim Ministry Specialist</inlineHelpText>
+        <label>TIMS Situation</label>
+        <picklist>
+            <controllingField>Setting__c</controllingField>
+            <picklistValues>
+                <fullName>Non-Crisis</fullName>
+                <controllingFieldValues>Transitional Interim Ministry Specialist</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chronic</fullName>
+                <controllingFieldValues>Transitional Interim Ministry Specialist</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Acute</fullName>
+                <controllingFieldValues>Transitional Interim Ministry Specialist</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Withdrawn_Reason_Other_Specify__c</fullName>
+        <description>With Drawn Other Specify</description>
+        <externalId>false</externalId>
+        <label>Withdrawn Reason(Other/Specify)</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Withdrawn_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Withdrawn Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change of Appointment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change of Setting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change in Employment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Employment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other/Specify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Chaplain Endorsement/Approval</label>
+    <nameField>
+        <displayFormat>Chaplain-{00000000}</displayFormat>
+        <label>Chaplain Endorsement Approval Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Chaplain Endorsement/Approvals</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Application_For__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Application_Accepted_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Committee_Decision__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Endorsement_Approval_Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Application_For__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Application_Accepted_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Committee_Decision__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Endorsement_Approval_Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Application_For__c</searchFilterFields>
+        <searchFilterFields>Application_Accepted_Date__c</searchFilterFields>
+        <searchFilterFields>Committee_Decision__c</searchFilterFields>
+        <searchFilterFields>Endorsement_Approval_Date__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>WithDrawn_Reason_OtherSpecify</fullName>
+        <active>true</active>
+        <description>If the &apos;Wothdrawn Reason&apos; is &apos;Others/Specify&apos; .Then user should enter a value in the &apos;Withdrawn Reason (Other/specify)&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL(   Withdrawn_Reason__c    ,&quot;Other/Specify&quot;) , ISBLANK(    Withdrawn_Reason_Other_Specify__c    ) )</errorConditionFormula>
+        <errorDisplayField>Withdrawn_Reason_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Withdrawn Reason(Other/Specify)&apos; may contain a value if Withdrawn Reason is &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>WithdrawnReason_OtherSpecify_WD_OS</fullName>
+        <active>true</active>
+        <description>If Withdrawn Reason is not &apos;Other/Specify&apos; then Withdrawn Reason(Other/Specify) Should not contain a value</description>
+        <errorConditionFormula>AND(NOT( ISPICKVAL(   Withdrawn_Reason__c   ,&quot;Other/Specify&quot;)) ,NOT( ISBLANK(   Withdrawn_Reason_Other_Specify__c ) ))</errorConditionFormula>
+        <errorDisplayField>Withdrawn_Reason_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Withdrawn Reason(Other/Specify)&apos; may not contain a value if Withdrawn Reason is NOT &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+</CustomObject>

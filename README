@@ -1,0 +1,10 @@
+* properties/package.properties
+
+Contains a list of properties that are used to form the package.xml 
+(deploy manifest). Each line contains a property in the form: 
+property type.folder.metadata type.[*]. The property type is the used to tell
+the xml parser how to handle the xml structure for this property. The folder 
+is the name of the folder within the deployment package (the zip file) that 
+holds the metadata type. The asterisk denote whether or not that particular 
+metadata type supports the * notion.
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>600</frameHeight>
+    <hasSidebar>true</hasSidebar>
+    <label>ExactTarget</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom18: Form</motif>
+    <url>https://members.s4.exacttarget.com/Integration/SalesforceUI/EmailSend.aspx?sendtype=campaign_report&amp;sessid={!API.Session_ID}&amp;sessurl={!API.Partner_Server_URL_60}</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

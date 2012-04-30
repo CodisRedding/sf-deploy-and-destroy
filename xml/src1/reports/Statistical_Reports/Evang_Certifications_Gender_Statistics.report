@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Certification_in_Specialized_Ministry__c.Track__c</field>
+    </columns>
+    <columns>
+        <field>Certification_in_Specialized_Ministry__c.Area__c</field>
+    </columns>
+    <columns>
+        <field>Certification_in_Specialized_Ministry__c.GBHEM_Approved_Date__c</field>
+    </columns>
+    <description>A report of all Contacts who have Education Certifications and their gender in Evangelism</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Status__c</column>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Certification_in_Specialized_Ministry__c.Area__c</column>
+            <operator>equals</operator>
+            <value>Evangelism</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Gender__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.R_PreferredName_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Evang. Certifications Gender Statistics</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactCustomEntity$Certification_in_Specialized_Ministry__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>LAST_ACTIVITY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

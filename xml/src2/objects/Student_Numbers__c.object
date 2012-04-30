@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Organization number of students for each year</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Number_Of_Students__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter number of students enrolled at institution during specified enrollment year</inlineHelpText>
+        <label>Number Of Students</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>School_Organization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Number of students in a particular year in an Organization School</description>
+        <externalId>false</externalId>
+        <label>School(Organization)</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Student Numbers</relationshipLabel>
+        <relationshipName>SchoolsYearStudents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <description>Year Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Year Number</inlineHelpText>
+        <label>Fall Enrollment Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Student Numbers</label>
+    <nameField>
+        <displayFormat>SN - {0000}</displayFormat>
+        <label>Student Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Student Numbers</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>School_Organization__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Number_Of_Students__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Year__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>School_Organization__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Number_Of_Students__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Year__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>School_Organization__c</searchFilterFields>
+        <searchFilterFields>Number_Of_Students__c</searchFilterFields>
+        <searchFilterFields>Year__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>YearEstablished_Year</fullName>
+        <active>true</active>
+        <description>Year should be Equal or greater than Year Established</description>
+        <errorConditionFormula>IF (NOT (ISNULL( VALUE( Year__c))),   VALUE(School_Organization__r.Year_Established__c)    &gt;    VALUE(Year__c)   ,FALSE)</errorConditionFormula>
+        <errorDisplayField>Year__c</errorDisplayField>
+        <errorMessage>Year Should be Greater Than or Equal to School Year Established</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Year_NotLess_4</fullName>
+        <active>true</active>
+        <description>Year should not be less than 4 Numbers</description>
+        <errorConditionFormula>AND((Year__c &lt;&gt; null),LEN(Year__c ) &lt; 4)</errorConditionFormula>
+        <errorDisplayField>Year__c</errorDisplayField>
+        <errorMessage>&apos;Year&apos; should not contain a value less than 4 Numbers</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Year_Number</fullName>
+        <active>true</active>
+        <description>Year should be only Number</description>
+        <errorConditionFormula>AND(( Year__c  &lt;&gt; null),  
+NOT(ISNUMBER( Year__c )))</errorConditionFormula>
+        <errorDisplayField>Year__c</errorDisplayField>
+        <errorMessage>Only Year(Number) should be entered</errorMessage>
+    </validationRules>
+</CustomObject>

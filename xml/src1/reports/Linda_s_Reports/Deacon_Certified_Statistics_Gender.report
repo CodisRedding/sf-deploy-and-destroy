@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Count</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <masterLabel>Count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>RowCount/9</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Percent</description>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Contact.Gender__c</downGroupingContext>
+        <isActive>true</isActive>
+        <masterLabel>Percent</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>Contact.R_PreferredName_Name__c</field>
+    </columns>
+    <description>Deacon certified statistics on Gender</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Ministry_Category__c</column>
+            <operator>equals</operator>
+            <value>Deacon</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Certification_in_Specialized_Ministry__c.GBHEM_Approved_Date__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Gender__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Deacon Certified Statistics Gender</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactCustomEntity$Certification_in_Specialized_Ministry__c</reportType>
+    <scope>my</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>LAST_ACTIVITY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

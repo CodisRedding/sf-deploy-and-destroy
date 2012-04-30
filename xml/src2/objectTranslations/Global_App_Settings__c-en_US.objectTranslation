@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Global App Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Global App Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- The default users email address used to query the user name in this org. --></help>
+        <label><!-- Developers Chatter Group Default Member --></label>
+        <name>Developers_Chatter_Group_Default_Member__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the chatter group that developers are added to so that they receive system errors as they occur. --></help>
+        <label><!-- Developers Chatter Group Name --></label>
+        <name>Developers_Chatter_Group_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stops record errors from being posted to the record owners via chatter. --></help>
+        <label><!-- Suppress Record Errors to Chatter --></label>
+        <name>Suppress_Record_Errors_to_Chatter__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stops system errors from being posted to the developers chatter group. --></help>
+        <label><!-- Suppress System Errors to Chatter --></label>
+        <name>Suppress_System_Errors_to_Chatter__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Getting Annual Conferences depending on Episcopal Area</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Annual_Conference__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Organization Annual Conference</description>
+        <externalId>false</externalId>
+        <label>Annual Conference</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Annual Conferences (Annual Conference)</relationshipLabel>
+        <relationshipName>Annual</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EpiscopalArea_Name__c</fullName>
+        <description>Testing</description>
+        <externalId>false</externalId>
+        <label>Episcopal Area Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Annual Conferences (Episcopal Area )</relationshipLabel>
+        <relationshipName>Annual_Conference_EA</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Annual Conference</label>
+    <nameField>
+        <displayFormat>AC-{00000000}</displayFormat>
+        <label>AC Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Annual Conferences</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Annual_Conference__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EpiscopalArea_Name__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Annual_Conference__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EpiscopalArea_Name__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Annual_Conference__c</searchFilterFields>
+        <searchFilterFields>EpiscopalArea_Name__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

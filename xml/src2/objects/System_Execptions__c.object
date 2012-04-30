@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>System exceptions caught and logged via Util_Logging.logSystemErrors method.</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Exception description given by Util_Logging.logSystemErrors method</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Exception description given by Util_Logging.logSystemErrors method</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Exception__c</fullName>
+        <description>The actual exception thrown by the platform and caught by Util_Logging.logSystemErrors method.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The actual exception thrown by the platform and caught by Util_Logging.logSystemErrors method.</inlineHelpText>
+        <label>Exception</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason_Resolution__c</fullName>
+        <description>Used to help debug common issues.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to help debug common issues.</inlineHelpText>
+        <label>Reason / Resolution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Record_Id__c</fullName>
+        <description>The record id that caused the exception.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The record id that caused the exception.</inlineHelpText>
+        <label>Record Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resolved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If the exception was resolved this box should be checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the exception was resolved this box should be checked.</inlineHelpText>
+        <label>Resolved</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Timestamp__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <description>The timestamp the record was created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The timestamp the record was created.</inlineHelpText>
+        <label>Timestamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <label>System Execptions</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Record_Id__c</columns>
+        <columns>Description__c</columns>
+        <columns>Exception__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Resolved__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Exception-{00000000}</displayFormat>
+        <label>System Exception ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>System Execptions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Record_Id__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Exception__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Resolved__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

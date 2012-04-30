@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.R_PreferredName_Name__c</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_ADDR2_LINE1</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_ADDR2_LINE2</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_ADDR2_CITY</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_ADDR2_STATE</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_ADDR2_ZIP</field>
+    </columns>
+    <description>All active contacts with the position title of Chair of Division of Deacons who do not have an end date attached to their position.</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Contact.Status__c</column>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Position__c.Position_Title__c</column>
+            <operator>equals</operator>
+            <value>Chair of Division of Deacons</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Position__c.End_Date__c</column>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Chair of Division of Deacons</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Position__c@Position__c.Contact__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Position__c.Date_Approved_Endorsed__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

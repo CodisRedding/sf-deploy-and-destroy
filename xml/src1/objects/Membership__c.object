@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Association_Other_Specify__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Association name if not found on drop down list</inlineHelpText>
+        <label>Association Other Specify</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Association__c</fullName>
+        <description>Association</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Association</inlineHelpText>
+        <label>Association</label>
+        <picklist>
+            <picklistValues>
+                <fullName>American Association of Marriage and Family Therapists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Association of Pastoral Counselors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Association on Intellectual and Developmental Disabilities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Correctional Chaplains Association</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Mental Health Counselors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Association for Clinical Pastoral Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Association of Pastoral Chaplains</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Association of Professional Chaplains</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>College of Pastoral Supervision and Psychotherapy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intentional Growth Center (IGC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International Coach Federation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International Conference of Police Chaplains</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Association of Veterans Affairs Chaplains</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Institute of Business and Industrial Chaplaincy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pan Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Licensure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Texas Annual Conference (TAC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other/Specify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <description>The UMEA Memberships and Associations for a contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The UMEA Memberships and Associations for a contact</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Memberships and Associations</relationshipLabel>
+        <relationshipName>Memberships_and_Associations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>The date a membership ends.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date a membership ends.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Member_Type__c</fullName>
+        <description>Membership Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select membership type</inlineHelpText>
+        <label>Member Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board Certified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clinical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diplomat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fellow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supervisory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>The date a membership begins.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date a membership begins.</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_State_Licensure__c</fullName>
+        <description>Type of State Licensure</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If State Licensure is selected from Association, enter full name of State Licensure type here.</inlineHelpText>
+        <label>Type of State Licensure</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Memberships and Associations</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Member-{00000000}</displayFormat>
+        <label>Membership ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Memberships and Associations</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Member_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Association__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Member_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Association__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Member_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Association__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Start_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>End_Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Member_Type__c</searchFilterFields>
+        <searchFilterFields>Association__c</searchFilterFields>
+        <searchFilterFields>Start_Date__c</searchFilterFields>
+        <searchFilterFields>End_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Member_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Association__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Association_Other</fullName>
+        <active>true</active>
+        <description>If the &apos;Association&apos; is &apos;Other/Specify&apos; .Then user should enter a value in the &apos;Association Other specify&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL( Association__c ,&quot;Other/Specify&quot;) , ISBLANK(  Association_Other_Specify__c  ) )</errorConditionFormula>
+        <errorDisplayField>Association_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Association Other Specify&apos; may contain a value, If Association is &apos;Other/specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Assocition_Disable_AssociationOther</fullName>
+        <active>true</active>
+        <description>If the &apos;Association&apos; is not &apos;Other/Specify&apos; .Then user should not enter a value in the &apos;Association Other specify&apos;</description>
+        <errorConditionFormula>AND(NOT( ISPICKVAL( Association__c ,&quot;Other/Specify&quot;)) ,NOT( ISBLANK(  Association_Other_Specify__c  ) ))</errorConditionFormula>
+        <errorDisplayField>Association_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Association Other Specify&apos; may not contain a value, If Association is not &apos;Other/specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Assocition_Disable_StateLicensure</fullName>
+        <active>true</active>
+        <description>If the &apos;Association&apos; is not &apos;StateLicensure&apos; .Then user should not enter a value in the &apos;Type of State Licensure&apos;</description>
+        <errorConditionFormula>AND(NOT( ISPICKVAL(  Association__c ,&quot;State Licensure&quot;)) ,NOT( ISBLANK(  Type_of_State_Licensure__c  ) ))</errorConditionFormula>
+        <errorDisplayField>Type_of_State_Licensure__c</errorDisplayField>
+        <errorMessage>&apos;Type of State Licensure&apos; may not contain a value, If Association is not  &apos;State Licensure&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Assocition_StateLicensure</fullName>
+        <active>true</active>
+        <description>If the &apos;Association&apos; is &apos;StateLicensure&apos; .Then user should enter a value in the &apos;Type of State Licensure&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL(  Association__c  ,&quot;State Licensure&quot;) , ISBLANK(  Type_of_State_Licensure__c  ) )</errorConditionFormula>
+        <errorDisplayField>Type_of_State_Licensure__c</errorDisplayField>
+        <errorMessage>&apos;Type of State Licensure&apos; may contain a value, If Association is &apos;State Licensure&apos;</errorMessage>
+    </validationRules>
+</CustomObject>

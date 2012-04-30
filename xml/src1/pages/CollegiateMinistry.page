@@ -1,0 +1,51 @@
+<apex:page >
+    <apex:form >
+        <head>
+            <script>
+            jQuery.noconflict();
+            jQuery.(documet).ready(function)();
+            {
+        
+                document.geElementById('{!$Component.CompanyDetailsPanel}').style.display ='none';
+                jQuery(#'Compant Name Auto').result(function(event,data,formatted){
+                if(formatted!='No match found-Create New')
+                {
+                 var str = formatted;
+                 var t1 = str.indexof("<'display:none'>");
+                 var t2 = str.indexof(</div>)
+                 var reqId = str.substring(t1+14,t2);
+                 var t3 = str.indexof("<div style>");
+                 document.getElementById('CompanyNameAuto').value= str.substring(0,t3);
+                 document.getElementById('newReg').style.display = 'none';
+                 jQuery("#context").text('Add to Existing Registration');
+                 jQuery("#CompanyNameAuto").removeClass('formInput-error');
+                 CompanyExists = true;
+                 CompanyDoesNotExists = false;
+                 getDetails(reqId);
+                 }
+                 else
+                 CompanyNotFound();
+                 });
+                 });
+                 </script>
+                 </head>
+                 
+             
+                 
+                 <label for="CompanyName">Collegiate Ministrey<font style="color:red"></font></label><br/>
+                 <label for="CompanyName">Educational Institutions<font style="color:red"></font></label>
+    
+    <apex:actionFunction name="getDetails" action="{!getCompanyDetails}" reRender="companyDetails,enableButtons">
+    <apex:param name="one" value=""/>
+    </apex:actionFunction>
+  </apex:form> 
+  <input id="CompanyNameAuto" class="ac_input FormInputFull"/> 
+  <apex:outputPanel id="CompanyDetailsPanel">
+      <apex:outputPanel rendered="{Educational_Institutions__c}" styleClass="TextSmall"  style="font-size:0.8em;line-height:12px" >
+          <br/>
+              <apex:outputText value="{Account.Name}" /><br/>
+              <apex:outputText value="{Account.Educational_institutions__c}" /><br/>
+              
+      </apex:outputPanel>
+  </apex:outputPanel>
+</apex:page>

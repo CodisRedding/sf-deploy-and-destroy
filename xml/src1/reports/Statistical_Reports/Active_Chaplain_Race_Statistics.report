@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$R_PreferredName_Name__c</field>
+    </columns>
+    <columns>
+        <field>Contact.ApplicationApprovals__r$Application_For__c</field>
+    </columns>
+    <columns>
+        <field>Contact.ApplicationApprovals__r$Committee_Decision__c</field>
+    </columns>
+    <columns>
+        <field>Contact.ApplicationApprovals__r$Endorsement_Approval_Date__c</field>
+    </columns>
+    <description>All active Chaplains who have an Application for Endorsement or Approval and do not have a withdrawn date summarized by their race</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.ApplicationApprovals__r$Application_For__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Status__c</column>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.ApplicationApprovals__r$Application_Withdrawn_Date__c</column>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$Race__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$Preferred_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Active Chaplain Race Statistics</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contact_with_Chaplain_Endorsed_Approval__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

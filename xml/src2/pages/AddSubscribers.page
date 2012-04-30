@@ -1,0 +1,115 @@
+<apex:page id="subPage" standardController="Subscription__c" extensions="addSubscribersExtension" >
+
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, '/js/jquery-1.3.2.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, '/js/jquery-ui-1.8.16.custom.min.js')}"  />
+    <apex:stylesheet value="{!URLFOR($Resource.jQuery, '/css/ui-lightness/jquery-ui-1.8.16.custom.css')}"  />
+    
+    <script>
+        
+        var j$ = jQuery.noConflict();
+
+        $(document).ready(function() {
+            j$('#ProcessingReport').hide();
+        });
+        
+        function noenter(ev)  {
+            if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+                searchText();
+                return false;
+            } else {
+                return true;
+            }
+        }
+            
+        function closeDialog() {
+            if(j$('#ProcessingReport').is(':data(dialog)')) {
+                j$('#ProcessingReport').dialog('close').parent().appendTo(j$('#subPage\\:subForm'));
+                j$('#ProcessingReport').hide();
+                j$('#ProcessingReport').css({visibility: "hidden"});
+            }
+        }
+        
+        function openDialog() {
+            j$('#ProcessingReport').show();
+            j$('#ProcessingReport').css({visibility: "visible"});
+            j$('#ProcessingReport').dialog({modal: true, autoOpen: true, title: 'Generating Report'}).parent().appendTo(j$('#subPage\\:subForm'));
+        }
+    </script>
+    
+    <apex:form id="subForm">
+        <apex:actionFunction name="searchText" action="{!searchSubscribers}" rerender="messagePanel,subscriberPanel" status="status"/>
+        <apex:sectionHeader title="Subscriber Mailing Reports"/>
+        
+        <apex:outputpanel id="messagePanel">
+            <apex:pageMessages />
+        </apex:outputpanel>
+        
+        <apex:pageBlock title="Mailing Reports">
+            <apex:pageBlockTable value="{!reports}" var="report">
+                <apex:column headerValue="Include" style="width:50px">
+                    <apex:inputCheckbox value="{!report.selected}" id="reportSelected" onchange="openDialog();">
+                        <apex:actionSupport event="onclick" action="{!reportSelected}" rerender="messagePanel,subscriberPanel" status="status"/>
+                    </apex:inputCheckbox>
+                </apex:column>
+                <apex:column headerValue="Report" value="{!report.report.Name}"/>
+            </apex:pageBlockTable> 
+            <apex:actionStatus id="status" startText="" stopText="" onstop="closeDialog();"/>
+        </apex:pageBlock>
+        
+        <apex:outputPanel id="subscriberPanel" layout="block"> 
+            <apex:pageBlock title="Subscribers">
+                <apex:panelGrid columns="3">
+                    <apex:commandButton action="{!URLFOR($Action.Subscriber__c.new)}" value="Add Subscriber"/>
+                    <apex:inputText id="search" value="{!searchFilter}" onkeypress="return noenter(event);"/>
+                    <apex:commandButton id="searchBtn" value="Search" action="{!searchSubscribers}" rerender="messagePanel,subscriberPanel" status="status"/>
+                </apex:panelGrid>
+                
+                <apex:pageBlockTable value="{!subscribers}" var="subscriber">
+                    <apex:column headerValue="" style="width:25px">
+                        <apex:outputLink value="/{!subscriber.subscriber.id}" target="_blank" title="Edit the subscriber record.">Edit</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="" style="width:90px">
+                        <apex:selectList value="{!subscriber.subscriber.Status__c}" size="1">
+                            <apex:selectOptions value="{!subscription.subscriberStatuses}"/>
+                            <apex:actionSupport event="onchange" action="{!subscriberSelected}" rerender="messagePanel,subscriberPanel" status="status">
+                                <apex:param name="sid" value="{!subscriber.subscriber.id}"/>
+                            </apex:actionSupport>
+                        </apex:selectList>
+                    </apex:column>
+                    <apex:column headerValue="Quantity" style="width:60px">
+                        <apex:selectList value="{!subscriber.subscriber.Quantity__c}" size="1">
+                            <apex:selectOptions value="{!subscription.subscriberQuantities}"/>
+                            <apex:actionSupport event="onchange" action="{!subscriberSelected}" rerender="messagePanel,subscriberPanel" status="status">
+                                <apex:param name="sid" value="{!subscriber.subscriber.id}"/>
+                            </apex:actionSupport>
+                        </apex:selectList>
+                    </apex:column>
+                    <apex:column headerValue="Sticky" style="width:60px">
+                        <apex:inputCheckbox value="{!subscriber.subscriber.Sticky__c}" title="If a record is marked sticky then it will stay in a subscription even if it's not in any of the selected reports.">
+                            <apex:actionSupport event="onchange" action="{!subscriberSelected}" rerender="messagePanel,subscriberPanel" status="status">
+                                <apex:param name="sid" value="{!subscriber.subscriber.id}"/>
+                                <apex:param name="stickyclicked" value="1"/>
+                            </apex:actionSupport>
+                        </apex:inputCheckbox>
+                    </apex:column>
+                    <apex:column headerValue="Subscriber">
+                        <apex:outputLink value="/{!subscriber.linkRecordId}" target="_blank" title="View the subscriber">{!subscriber.linkRecordText}</apex:outputLink> - ({!subscriber.objectType})
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+                <apex:panelGrid columns="5">
+                    <apex:commandLink action="{!subscription.first}" styleClass="pagination" rerender="subscriberPanel">first</apex:commandlink>
+                    <apex:commandLink action="{!subscription.previous}" styleClass="pagination" rerender="subscriberPanel" rendered="{!subscription.hasPrevious}">previous</apex:commandlink>
+                    <apex:commandLink action="{!subscription.next}" styleClass="pagination" rerender="subscriberPanel" rendered="{!subscription.hasNext}">next</apex:commandlink>
+                    <apex:commandLink action="{!subscription.last}" styleClass="pagination" rerender="subscriberPanel">last</apex:commandlink>
+                </apex:panelGrid>
+            </apex:pageBlock>
+        </apex:outputPanel>
+        <div id="ProcessingReport" style="visibility:hidden;">
+            <apex:image url="{!$Resource.loading}" width="100%" height="20px" />
+            <br />
+            Depending on the number of subscribers in the selected reports this could take several minutes.
+        </div>
+    </apex:form> 
+
+</apex:page>

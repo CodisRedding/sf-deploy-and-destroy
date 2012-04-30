@@ -1,0 +1,36 @@
+<apex:page standardController="Pastoral_Acts__c" extensions="overrideSave"  >
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockButtons >
+              <apex:commandButton value="Submit" action="{!save}" />
+              <apex:commandButton value="Cancel" action="{!cancel}"/>
+          </apex:pageBlockButtons>
+          <apex:pageBlockSection Title="Pastrol Acts Details"  columns="1">
+              
+                  <apex:inputField value="{!newRec.Clergy_FirstName__c}" required="true" />
+                  <apex:inputField value="{!newRec.Clergy_LastName__c}" required="true" />
+                  <apex:inputField value="{!newRec.Clergy_Email__c}"/>
+                  <apex:inputField value="{!newRec.Clergy_Phone_Number__c}" />
+                  <apex:inputField value="{!newrec.Date_Act_Performed__c}"  required="true" />
+                  <apex:inputField value="{!newrec.Location_of_Act__c}"  />
+                  <apex:inputField value="{!newrec.Act_Performed__c}" required="true" />
+                  <apex:inputField value="{!newrec.Baptism_Age__c}"  />
+                  <apex:inputField value="{!newrec.InfantYouth_Parents_Name__c}"  />
+                  <apex:inputField value="{!newrec.Date_of_Birth__c}"  />
+                  <apex:inputField value="{!newrec.Act_Performed_for__c}" required="true"  />
+                  <apex:inputField value="{!newrec.Address_Line_1__c}"  />
+                  <apex:inputField value="{!newrec.Address_Line_2__c}"  />
+                  <apex:inputField value="{!newrec.City__c}"  />
+                  <apex:inputField value="{!newrec.Country__c}"  />
+                  <apex:inputField value="{!newrec.State__c}"  />
+                  <apex:inputField value="{!newrec.State_Other__c}"  />
+                  <apex:inputField value="{!newrec.Zip_Postal_Code__c}"  />
+                  <apex:inputField value="{!newrec.Witness1_Name__c}"  />
+                  <apex:inputField value="{!newrec.Witness2_Name__c}"  />   
+                  <apex:inputField value="{!newrec.Remarks__c}"  /> 
+                                                                                                                                           
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  
+  </apex:form>
+</apex:page>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Position__c.Contact__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Position_Title__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Mailing_AddressLine1__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Mailing_Address_Line2__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Mailing_City__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Mailing_State__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Mailing_Zip_Postal_Code__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Mailing_Country__c</field>
+    </columns>
+    <description>Position Mailing</description>
+    <filter>
+        <criteriaItems>
+            <column>Position__c.Position_Title__c</column>
+            <operator>equals</operator>
+            <value>Campus Minister</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Position Mailing</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Position__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

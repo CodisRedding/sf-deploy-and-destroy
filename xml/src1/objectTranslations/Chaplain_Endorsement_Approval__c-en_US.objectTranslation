@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Chaplain Endorsement/Approval</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Chaplain Endorsement/Approvals</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Accepted Date --></label>
+        <name>Application_Accepted_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Denied Date --></label>
+        <name>Application_Denied_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select appropriate endorsement/approval type. --></help>
+        <label><!-- Application For --></label>
+        <name>Application_For__c</name>
+        <picklistValues>
+            <masterLabel>Civilian Approval</masterLabel>
+            <translation><!-- Civilian Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Civilian Endorsement</masterLabel>
+            <translation><!-- Civilian Endorsement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military Chaplain Candidate Approval</masterLabel>
+            <translation><!-- Military Chaplain Candidate Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military Chaplain Endorsement</masterLabel>
+            <translation><!-- Military Chaplain Endorsement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application Withdrawn Date --></label>
+        <name>Application_Withdrawn_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select UMEA committee&apos;s decision on candidate&apos;s application --></help>
+        <label><!-- Committee Decision --></label>
+        <name>Committee_Decision__c</name>
+        <picklistValues>
+            <masterLabel>Approve</masterLabel>
+            <translation><!-- Approve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delay</masterLabel>
+            <translation><!-- Delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deny</masterLabel>
+            <translation><!-- Deny --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endorse</masterLabel>
+            <translation><!-- Endorse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing</masterLabel>
+            <translation><!-- Missing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Chaplain Endorsement/Approvals --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter date contact was endorsed/approved for setting --></help>
+        <label><!-- Endorsement/Approval Date --></label>
+        <name>Endorsement_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter date that Endorsement/Approval was withdrawn by UMEA --></help>
+        <label><!-- Endorsement/Approval Withdrawn Date --></label>
+        <name>Endorsement_Approval_Withdrawn_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Setting --></label>
+        <name>Setting__c</name>
+        <picklistValues>
+            <masterLabel>Air Force Active</masterLabel>
+            <translation><!-- Air Force Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Force National Guard</masterLabel>
+            <translation><!-- Air Force National Guard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Force Reserve</masterLabel>
+            <translation><!-- Air Force Reserve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Army Active</masterLabel>
+            <translation><!-- Army Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Army National Guard</masterLabel>
+            <translation><!-- Army National Guard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Army Reserve</masterLabel>
+            <translation><!-- Army Reserve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children’s Home</masterLabel>
+            <translation><!-- Children’s Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Civil Air Patrol</masterLabel>
+            <translation><!-- Civil Air Patrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical Pastoral Education</masterLabel>
+            <translation><!-- Clinical Pastoral Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disaster Services</masterLabel>
+            <translation><!-- Disaster Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMS</masterLabel>
+            <translation><!-- EMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fire</masterLabel>
+            <translation><!-- Fire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Hospital</masterLabel>
+            <translation><!-- General Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospice</masterLabel>
+            <translation><!-- Hospice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Law Enforcement</masterLabel>
+            <translation><!-- Law Enforcement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Law Enforcement and Fire</masterLabel>
+            <translation><!-- Law Enforcement and Fire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Coach</masterLabel>
+            <translation><!-- Life Coach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marriage and Family Therapy</masterLabel>
+            <translation><!-- Marriage and Family Therapy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mental Health</masterLabel>
+            <translation><!-- Mental Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navy Active</masterLabel>
+            <translation><!-- Navy Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Navy Reserve</masterLabel>
+            <translation><!-- Navy Reserve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pastoral Counseling</masterLabel>
+            <translation><!-- Pastoral Counseling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pastoral Counselor</masterLabel>
+            <translation><!-- Pastoral Counselor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prison Correctional Institution</masterLabel>
+            <translation><!-- Prison Correctional Institution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prison/Correctional Institution</masterLabel>
+            <translation><!-- Prison/Correctional Institution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retirement Community</masterLabel>
+            <translation><!-- Retirement Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialized</masterLabel>
+            <translation><!-- Specialized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spiritual Director</masterLabel>
+            <translation><!-- Spiritual Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Substance Abuse</masterLabel>
+            <translation><!-- Substance Abuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transitional Interim Ministry Specialist</masterLabel>
+            <translation><!-- Transitional Interim Ministry Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Veterans Health Administration</masterLabel>
+            <translation><!-- Veterans Health Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Coast Guard</masterLabel>
+            <translation><!-- Volunteer Coast Guard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer State Guard (Militia)</masterLabel>
+            <translation><!-- Volunteer State Guard (Militia) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workplace</masterLabel>
+            <translation><!-- Workplace --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- These are only applicable to the Civilian Approval setting Transitional Interim Ministry Specialist --></help>
+        <label><!-- TIMS Situation --></label>
+        <name>TIMS_Situation__c</name>
+        <picklistValues>
+            <masterLabel>Acute</masterLabel>
+            <translation><!-- Acute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chronic</masterLabel>
+            <translation><!-- Chronic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Crisis</masterLabel>
+            <translation><!-- Non-Crisis --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Withdrawn Reason(Other/Specify) --></label>
+        <name>Withdrawn_Reason_Other_Specify__c</name>
+    </fields>
+    <fields>
+        <label><!-- Withdrawn Reason --></label>
+        <name>Withdrawn_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Change in Employment</masterLabel>
+            <translation><!-- Change in Employment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change of Appointment</masterLabel>
+            <translation><!-- Change of Appointment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change of Setting</masterLabel>
+            <translation><!-- Change of Setting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing</masterLabel>
+            <translation><!-- Missing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Employment</masterLabel>
+            <translation><!-- No Employment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other/Specify</masterLabel>
+            <translation><!-- Other/Specify --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>ApplicationApproval Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- &apos;Withdrawn Reason(Other/Specify)&apos; may contain a value if Withdrawn Reason is &apos;Other/Specify&apos; --></errorMessage>
+        <name>WithDrawn_Reason_OtherSpecify</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &apos;Withdrawn Reason(Other/Specify)&apos; may not contain a value if Withdrawn Reason is NOT &apos;Other/Specify&apos; --></errorMessage>
+        <name>WithdrawnReason_OtherSpecify_WD_OS</name>
+    </validationRules>
+</CustomObjectTranslation>

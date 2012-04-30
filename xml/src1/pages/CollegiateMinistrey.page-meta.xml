@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>24.0</apiVersion>
+    <description>As a non-salesforce user I want to be able to search for a particular minister, a particular school, a particular campus ministry, or to find a ministry near me</description>
+    <label>CollegiateMinistrey</label>
+</ApexPage>

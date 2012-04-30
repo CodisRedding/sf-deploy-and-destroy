@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To track the Meetings Contact attended</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Attendance__c</fullName>
+        <description>Attendance</description>
+        <externalId>false</externalId>
+        <label>Attendance</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Did Not Attend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attended portion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Comments</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <description>Contact</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Meetings</relationshipLabel>
+        <relationshipName>Meetings</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Interview_Session__c</fullName>
+        <description>Interview Session</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For UMEA only</inlineHelpText>
+        <label>Interview Session</label>
+        <picklist>
+            <controllingField>Meeting_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <controllingFieldValues>Chaplain Endorsement Interview</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Session 1</fullName>
+                <controllingFieldValues>Chaplain Endorsement Interview</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Session 2</fullName>
+                <controllingFieldValues>Chaplain Endorsement Interview</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Session 3</fullName>
+                <controllingFieldValues>Chaplain Endorsement Interview</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <controllingFieldValues>Chaplain Endorsement Interview</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Invited_Date__c</fullName>
+        <description>Invited Date</description>
+        <externalId>false</externalId>
+        <label>Invited Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Location__c</fullName>
+        <description>Meeting Location</description>
+        <externalId>false</externalId>
+        <label>Meeting Location</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meeting_Name__c</fullName>
+        <description>Meeting Name</description>
+        <externalId>false</externalId>
+        <label>Meeting Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meeting_Type_Other_Specify__c</fullName>
+        <description>Meeting Type Other Specify</description>
+        <externalId>false</externalId>
+        <label>Meeting Type(Other/Specify)</label>
+        <length>150</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meeting_Type__c</fullName>
+        <description>Meeting Type</description>
+        <externalId>false</externalId>
+        <label>Meeting Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Chaplain Convocation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chaplain Endorsement Interview</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chaplain Continuing Education Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>One-to-One</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GBHEM Board Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deacon Formation Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deacon Provisional Retreat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other/Specify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Year__c</fullName>
+        <description>Meeting Year</description>
+        <externalId>false</externalId>
+        <label>Meeting Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1990</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1991</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1992</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1993</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1994</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1995</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1996</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1997</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1998</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1999</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2001</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2002</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2003</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2004</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2005</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2006</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2007</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2008</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2009</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2021</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2022</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2023</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2024</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2025</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <description>Reason</description>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reply__c</fullName>
+        <externalId>false</externalId>
+        <label>Reply</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Will attend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Will Not Attend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Meetings</label>
+    <nameField>
+        <displayFormat>Meet-{00000000}</displayFormat>
+        <label>Meeting ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Meetings</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Meeting_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Meeting_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Invited_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Reply__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Attendance__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Meeting_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Meeting_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Invited_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Reply__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Attendance__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Meeting_Type__c</searchFilterFields>
+        <searchFilterFields>Meeting_Name__c</searchFilterFields>
+        <searchFilterFields>Invited_Date__c</searchFilterFields>
+        <searchFilterFields>Reply__c</searchFilterFields>
+        <searchFilterFields>Attendance__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>MeetingType_NOT_MeetingTypeOtherSpecify</fullName>
+        <active>true</active>
+        <description>If Meeting Type is not &apos;Other/Specify&apos; then Metting Type(Other/Specify) Should not contain a value</description>
+        <errorConditionFormula>AND(NOT( ISPICKVAL(   Meeting_Type__c   ,&quot;Other/Specify&quot;)) ,NOT( ISBLANK(  Meeting_Type_Other_Specify__c ) ))</errorConditionFormula>
+        <errorDisplayField>Meeting_Type_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Meeting Type(Other/Specify)&apos; may not contain a value if Meeting Type is NOT &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MeetingType_OtherSpecify</fullName>
+        <active>true</active>
+        <description>If the &apos;Meeting Type&apos; is &apos;Others/Specify&apos; .Then user should enter a value in the &apos;Meeting Type Other specify&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL(   Meeting_Type__c   ,&quot;Other/Specify&quot;) , ISBLANK(   Meeting_Type_Other_Specify__c   ) )</errorConditionFormula>
+        <errorDisplayField>Meeting_Type_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Meeting Type(Other/Specify)&apos; may contain a value if Meeting Type is &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Meeting_Reply_NOT_WillnotAttend</fullName>
+        <active>true</active>
+        <description>If Meeting Reply is Not Will Not Attend,Then Reason should not have value</description>
+        <errorConditionFormula>AND(NOT( ISPICKVAL(  Reply__c  ,&quot;Will Not Attend&quot;)) ,NOT( ISBLANK(  Reason__c  ) ))</errorConditionFormula>
+        <errorDisplayField>Reason__c</errorDisplayField>
+        <errorMessage>Reason may only contain a value when the reply is &quot;Will Not Attend</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Meeting_Reply_WillnotAttend</fullName>
+        <active>true</active>
+        <description>if Reply equals Will Not Attend,then Reason should be entered</description>
+        <errorConditionFormula>AND( ISPICKVAL( Reply__c  ,&quot;Will Not Attend&quot;) , ISBLANK(  Reason__c  ) )</errorConditionFormula>
+        <errorDisplayField>Reason__c</errorDisplayField>
+        <errorMessage>Reason may only contain a value when the reply is &quot;Will Not Attend</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,3663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>Adv_Course_of_Study_Credit_Hours__c</fullName>
+        <description>Total Credit Hours for Adv Course of Study for each of the contacts</description>
+        <externalId>false</externalId>
+        <label>Adv.Course of Study Credit Hours</label>
+        <summarizedField>Course_Record__c.Credit_Hours__c</summarizedField>
+        <summaryFilterItems>
+            <field>Course_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Advanced Course of Study</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Course_Record__c.Contact__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Advance_Course_Of_Study__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Advance course of study Transcripts</description>
+        <externalId>false</externalId>
+        <label>Advance Course Of Study</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Age_Category__c</fullName>
+        <description>Age Category</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Data is accurate for GBHEM Board of Directors. 
+Youth 12-16
+Young Adults 17-28
+Adults 29-65
+Older Adults 65+</inlineHelpText>
+        <label>Age Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Youth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Young Adult</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adult</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Older Adult</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Age__c</fullName>
+        <description>Age trigger pop up field</description>
+        <externalId>false</externalId>
+        <label>Age</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Conference__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A geographical area and organization. Defines a region that includes all UM churches and ministries in that area.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter contact&apos;s home annual conference (where membership held)</inlineHelpText>
+        <label>Annual Conference</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Appointment_Conference__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Most clergy will serve in the annual conference where their membership is held.  However, those in Extension Ministry/ABLC could serve in a different annual conference than where their membership is.Only clergy members should have an assigned Appointment Conference.  The Annual Conference where Contact is appointed to serve.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If different from Annual Conference, enter annual conference where contact is appointed (working conference)</inlineHelpText>
+        <label>Appointment Conference</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Contacts (Working Conference)</relationshipLabel>
+        <relationshipName>Working_Conference</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Appointment__c</fullName>
+        <description>Appointments for the contact</description>
+        <externalId>false</externalId>
+        <label>Appointment</label>
+        <picklist>
+            <controllingField>Ministry_Category__c</controllingField>
+            <picklistValues>
+                <fullName>Local Church</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beyond the Local Church</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extension Ministry</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attend School</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retirement</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leave</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Location</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspension</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conference Membership Terminated</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leave of Absence</fullName>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship Terminated by AC</fullName>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transferred to Licensed or Ordained Ministry</fullName>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Missing</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Comments any on Contacts</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact_Address_Line1__c</fullName>
+        <description>Contact address Line 1 From Address</description>
+        <externalId>false</externalId>
+        <label>Address Line 1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Address_Line2__c</fullName>
+        <description>Contact address Line 2 from address</description>
+        <externalId>false</externalId>
+        <label>Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_City__c</fullName>
+        <description>Contact city from Address city</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Milestone__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Relationship for the formula fields</description>
+        <externalId>false</externalId>
+        <label>Contact_Milestone</label>
+        <referenceTo>Milestones__c</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts_Milestone</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_State__c</fullName>
+        <description>Contact State from Address State or State other</description>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Zip_Postal_Code__c</fullName>
+        <description>Contact Zip postal code from Address Zip Postal Code through Apex</description>
+        <externalId>false</externalId>
+        <label>Zip/Postal Code</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course_of_Study_Credit_Hours__c</fullName>
+        <description>Roll up of all the Course of study Credit Hours for each of the contacts</description>
+        <externalId>false</externalId>
+        <label>Course of Study Credit Hours</label>
+        <summarizedField>Course_Record__c.Credit_Hours__c</summarizedField>
+        <summaryFilterItems>
+            <field>Course_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Course of Study</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Course_Record__c.Contact__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Course_of_Study__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Course of study Transcripts</description>
+        <externalId>false</externalId>
+        <label>Course of Study</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DOB_Month__c</fullName>
+        <description>DOB Month from Milestone</description>
+        <externalId>false</externalId>
+        <label>DOB Month</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_of_Birth__c</fullName>
+        <description>Date of Birth</description>
+        <externalId>false</externalId>
+        <label>Date of Birth</label>
+        <length>5</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Death_Date__c</fullName>
+        <description>Death date: Pop up&apos;s through trigger from Milestone object</description>
+        <externalId>false</externalId>
+        <label>Death Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Denomination_Other__c</fullName>
+        <description>Other than Denominations in The Picklist Denominations</description>
+        <externalId>false</externalId>
+        <label>Denomination (Other/Specify)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Denomination__c</fullName>
+        <description>Denominations of Contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the contact&apos;s denominational group (family)</inlineHelpText>
+        <label>Denomination</label>
+        <picklist>
+            <picklistValues>
+                <fullName>United Methodist Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>African Methodist Episcopal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>African Methodist Episcopal Zion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Black Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christian Methodist Episcopal Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congregational Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Free Methodist Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Methodist, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missionary Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primitive Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reformed Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wesleyan Methodist Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Evangelical” Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Traditional” Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advent Christian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adventist, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adventist (Seventh Day)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alliance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Baptist Association</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Baptist Churches in USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Lutheran Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anabaptist, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anabaptist (Brethren, Mennonite)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anglican/Episcopal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anglican/Episcopal, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anglican Church (Church of England)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anglican Orthodox Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apostolic Christian Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apostolic Holiness Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apostolic Lutheran Church in America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apostolic Pentecostal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assemblies of God</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assembly of Christian Churches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Associate Reformed Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Association of Bridge Churches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baptist, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baptist Bible Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baptist Bible Fellowship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baptist General Conference; Swedish Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baptist General Convention of Texas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baptist Missionary Association</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bible Presbyterian Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brethren (if not born again)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brethren Evangelical (if not born again)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brethren in Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Calvary Chapel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christian and Missionary Alliance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christian Baptist Church of God</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christian Churches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christian Churches and Churches of Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christian Reformed Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God (Anderson, Indiana)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God Cleveland Tennessee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God General Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God in Abrahamic Faith</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God in Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God in Christ Holiness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God not further specified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God of Findlay, Ohio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God of Kentucky</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God of Michigan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God of Prophecy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God of the 7th Day</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God of the Apostolic Faith</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God of the Midwest</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of God Winebrenner Fellowship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of Ireland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of the Brethren</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of the Lutheran Confession</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Church of the Nazarene</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community Presbyterian Church in America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congregationalist, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congregationalist (UCC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congregational Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congregational Union of Scotland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conservative Baptist Assoc. of America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conservative Congregational Christian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conservative Presbyterian Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooperative Baptist Fellowship; Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cumberland Presbyterian Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disciples of Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elim Fellowship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Episcopal Church in the USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Association of Reformed and Congregational Churches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Congregational</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Covenant Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Free Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Free Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Free Mission Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Lutheran Church in America (ELCA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical Reformed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evangelical United Brethren</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Federated or union church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Four Square Gospel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Free Holiness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Free Hungarian Reformed Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Free Lutheran</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Free Will Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friends/Quaker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friends (Quaker)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Gospel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Gospel Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fundamentalist Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Association of Regular Baptists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holiness, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holiness (Nazarene, Wesleyan)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holiness Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Congregational Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Holiness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interdenominational</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International Pentecostal Church of Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latvian Evangelical Lutheran Church in America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lutheran, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lutheran (ELCA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lutheran Brethren</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lutheran Church, Missouri Synod</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lutheran Church, Wisconsin Synod</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lutheran Congregations in Mission for Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mennonite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mennonite Brethren</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Methodist (AME, CM)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missionary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missionary Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missionary Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moravian Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National/Progressive Baptist Convention</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Association of Congregational</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Baptist Convention</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Testament Church of God</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Denominational</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nondenominational, Independent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nondenominational, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nondenominational charismatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nondenominational Christian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nondenominational evangelical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nondenominational fundamentalist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nondenominational Protestant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North American Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open Bible Standard Churches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orthodox Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other/Specify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pentecostal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pentecostal, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pentecostal (Church of God)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pentecostal Church of God</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pentecostal Holiness Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Philadelphia Church of God</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pietist, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pietist (Evangelical Free)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pilgrim Holiness Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presbyterian, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presbyterian (PCUSA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presbyterian Church in America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presbyterian Church of Canada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presbyterian Church USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primitive Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Progressive Baptist Convention</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reformed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reformed, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reformed Baptist (Calvinist)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reformed Church in America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reformed Episcopal Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reformed Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restorationist, Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restorationist (Disciples)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sacred Name Churches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salvation Army</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scotch Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seventh-Day Adventist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seventh-Day Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slavic Evangelical Baptist Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Society of Friends</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Southern Baptist Convention</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sovereign Grace</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Baptist Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Brethren in Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Church of Christ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United House of Prayer for All People</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Pentecostal Church International</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Reformed Churches of North America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vineyard Fellowship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wesleyan Church</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>World Gospel Mission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>World Gospel Mission, Holiness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>World Presbyterian Board</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Worldwide Church of God</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Black” Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&quot;Conservative&quot; Anglican</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Emergent church”</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Evangelical” Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Evangelical” Pentecostal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Liberal/Progressive” Baptist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Liberal” Nondenominational</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“Liberal” Presbyterian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>District__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>When a District is selected,Annual Conference and Jurisdiction should select automatically.
+The UMC District that the Contact belongs to or where they are serving. The districts in an annual conference varies depends on the size of the Annual conference.Typically 60–80 churches are in a district. Each district is supervised by a district superintendent and Each church or other ministry setting in an annual conference is part of a district.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select district where appointed</inlineHelpText>
+        <label>District</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Contacts (District (Organization))</relationshipLabel>
+        <relationshipName>District_Members_Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <description>Relating to GBHEM Board of Directors</description>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DHE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DOM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Dual_Appointment__c</fullName>
+        <description>Second appointment for the Ministry Category Contacts</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If dual appointed, enter second appointment here.</inlineHelpText>
+        <label>Dual Appointment</label>
+        <picklist>
+            <controllingField>Ministry_Category__c</controllingField>
+            <picklistValues>
+                <fullName>Local Church</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beyond the Local Church</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extension Ministry</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attend School</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retirement</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leave</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Location</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspension</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conference Membership Terminated</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leave of Absence</fullName>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship Terminated by AC</fullName>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transferred to Licensed or Ordained Ministry</fullName>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <controllingFieldValues>Affiliate Member with a Vote</controllingFieldValues>
+                <controllingFieldValues>Associate Member</controllingFieldValues>
+                <controllingFieldValues>Candidate Deacon</controllingFieldValues>
+                <controllingFieldValues>Candidate Elder</controllingFieldValues>
+                <controllingFieldValues>Candidate Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Candidate Undecided</controllingFieldValues>
+                <controllingFieldValues>Certified Lay Minister</controllingFieldValues>
+                <controllingFieldValues>DS Assignment</controllingFieldValues>
+                <controllingFieldValues>Deacon</controllingFieldValues>
+                <controllingFieldValues>Diaconal Minister</controllingFieldValues>
+                <controllingFieldValues>Elder</controllingFieldValues>
+                <controllingFieldValues>Full-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Minister Other Denomination</controllingFieldValues>
+                <controllingFieldValues>Missing</controllingFieldValues>
+                <controllingFieldValues>Part-Time Local Pastor</controllingFieldValues>
+                <controllingFieldValues>Provisional Deacon</controllingFieldValues>
+                <controllingFieldValues>Provisional Elder</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact_Name__c</fullName>
+        <description>Emergency Contact Name for Contacts</description>
+        <externalId>false</externalId>
+        <label>Emergency Contact Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact_Number__c</fullName>
+        <description>Emergency Contact Number for Contacts</description>
+        <externalId>false</externalId>
+        <label>Emergency Contact Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>GBHEM_DataCenter_Create_Date__c</fullName>
+        <description>Create Date of the Person Record in the Data Center.Historic Data Field</description>
+        <externalId>false</externalId>
+        <label>GBHEM DataCenter Create Date</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GBHEM_DataCenter_Modify_Date__c</fullName>
+        <description>GBHEM Data center last Modified date.Read only Field.Historic Data</description>
+        <externalId>false</externalId>
+        <label>GBHEM DataCenter Modify Date</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GBHEM_DataCenter_Person_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>GBHEM Data Center Person ID.Historical Data .Read Only</description>
+        <externalId>true</externalId>
+        <label>GBHEM DataCenter Person ID</label>
+        <length>12</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>GBHEM_DataCenter_Spouse_Person_ID_c__c</fullName>
+        <externalId>false</externalId>
+        <label>GBHEM_DataCenter_Spouse_Person_ID__c</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GBHEM_Datacenter_Modify_User__c</fullName>
+        <description>GBHEM  Data center Last Modified User.Historic Data.Read only</description>
+        <externalId>false</externalId>
+        <label>GBHEM Datacenter Modify_User</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GCFA_Label_ID__c</fullName>
+        <description>External application.we have refrence the person id in GCFA to GBHEM.It is provided by GCFA.In future should integrate this.</description>
+        <externalId>false</externalId>
+        <label>GCFA Label ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gender__c</fullName>
+        <description>Gender of the Contact</description>
+        <externalId>false</externalId>
+        <label>Gender</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Female</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Generational__c</fullName>
+        <description>Suffix after a name to indicate relationship to family - Sr, Jr, III, II, etc.
+Like Relation Field in Data Center</description>
+        <externalId>false</externalId>
+        <label>Generational</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Jr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>II</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>III</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>V</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Home_Airport__c</fullName>
+        <description>GBHEM Board of Directors</description>
+        <externalId>false</externalId>
+        <label>Home Airport</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ID__c</fullName>
+        <description>A unique searchable contact id.</description>
+        <displayFormat>C-{0000000}</displayFormat>
+        <externalId>true</externalId>
+        <inlineHelpText>A unique searchable contact id.</inlineHelpText>
+        <label>ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Jurisdiction__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Jurisdictions in U.S. (North Central, Northeast, South Central, Southeast, and Western).A group of annual conferences within a geographical region in the United States.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto-populated from annual conference</inlineHelpText>
+        <label>Jurisdiction</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Jurisdiction</relationshipLabel>
+        <relationshipName>Jurisdiction_People</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Letter_Name__c</fullName>
+        <description>Salutation Missing</description>
+        <externalId>false</externalId>
+        <formula>IF((ISPICKVAL(Salutation , &apos;Missing&apos;) || ISBLANK(TEXT(Salutation) )) ,
+(FirstName + &apos;  &apos; +  LastName), 
+IF(ISPICKVAL(Salutation , &apos;The Hon.&apos;), 
+(&apos;Hon.&apos; + &apos;  &apos;+ LastName), 
+IF(ISPICKVAL(Salutation , &apos;The Rev.&apos;), 
+(&apos;Rev.&apos; + &apos;  &apos;+ LastName), 
+ IF(ISPICKVAL(Salutation , &apos;The Rev. Dr.&apos;),
+(&apos;Rev. Dr.&apos; + &apos;  &apos;+ LastName),
+ IF(ISPICKVAL(Salutation , &apos;The Rev. Prof.&apos;), 
+(&apos;Rev. Prof.&apos; +  &apos;  &apos;+ LastName),
+(TEXT(Salutation) + &apos;  &apos;+ LastName )) ) ) ) )</formula>
+        <label>Letter Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marital_Status__c</fullName>
+        <description>Contact&apos;s Marital status</description>
+        <externalId>false</externalId>
+        <label>Marital Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Single</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Married</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Divorced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Domestic Partnership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Widowed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Separated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Middle_Name__c</fullName>
+        <description>Middle Name of the Contact</description>
+        <externalId>false</externalId>
+        <label>Middle Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Migration_Key__c</fullName>
+        <externalId>false</externalId>
+        <label>Migration Key</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Milestone__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup relationship for Formulas</description>
+        <externalId>false</externalId>
+        <label>Milestone</label>
+        <referenceTo>Milestones__c</referenceTo>
+        <relationshipLabel>Contacts (Milestone)</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Military_Rank_Other_Specify__c</fullName>
+        <description>Military Rank(Other/Specify)</description>
+        <externalId>false</externalId>
+        <label>Military Rank(Other/Specify)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Military_Rank__c</fullName>
+        <description>Military Rank</description>
+        <externalId>false</externalId>
+        <label>Military Rank</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Second Lieutenant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Lieutenant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Captain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lieutenant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lieutenant Commander</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major General</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lieutenant Colonel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Colonel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brigadier General</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rear Admiral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Admiral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other/Specify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Ministry_Category__c</fullName>
+        <description>Ministry Category of the Contacts</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only select lay person if no other Ministry Category applies</inlineHelpText>
+        <label>Ministry Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliate Member with a Vote</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Associate Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bishop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Candidate Deacon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Candidate Elder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Candidate Local Pastor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Candidate Undecided</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Candidate Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certified Lay Minister</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deacon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diaconal Minister</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DS Assignment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full-Time Local Pastor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lay Person</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minister Other Denomination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part-Time Local Pastor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provisional Deacon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provisional Elder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Phone_Extension__c</fullName>
+        <description>Phone Extension</description>
+        <externalId>false</externalId>
+        <label>Phone Extension</label>
+        <length>7</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Preferred_Name__c</fullName>
+        <description>The Preferred Name is the name that a person prefer&apos;s for communication purposes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter nickname or other name appropriate for greeting</inlineHelpText>
+        <label>Preferred Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Language__c</fullName>
+        <description>Primary Language of the Contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select primary language spoken by contact</inlineHelpText>
+        <label>Primary Language</label>
+        <picklist>
+            <picklistValues>
+                <fullName>English</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>French</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Acholi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Afrikaans</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Akan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Albanian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Sign Language</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amharic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arabic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arakanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Armenian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ashante</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assyrian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Azerbaijani</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Azeri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bahasa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bajuni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bambara</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Basque</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Behdini</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belorussian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bengali</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Berber</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bosnian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bulgarian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burmese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cantonese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Catalan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chaldean</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chaochow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chavacano</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cherokee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chuukese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cree</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Croatian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Czech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dakota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinka</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diula</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dutch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Estonian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ewe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Farsi (Persian)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fijian Hindi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finnish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flemish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>French Canadian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fukienese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fula</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulani</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fuzhou</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ga</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaddang</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gaelic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Georgian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>German</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greek</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gujarati</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Haitian Creole</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hakka</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hakka – China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hassaniyya</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hebrew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hindi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hmong</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hokkien</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hunanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hungarian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ibanag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ibo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Icelandic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Igbo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ilocano</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indonesian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Italian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jakartanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Japanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Javanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kanjobal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Karen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kashmiri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kazakh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Khmer (Cambodian)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kikuyu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kirghiz</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kirundi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Korean</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kosovan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Krio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kurdish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kurmanji</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lakota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Language</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Laotian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latvian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lingala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lithuanian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Luganda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Luo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Luxembourgeois</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Macedonian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malagasy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malayalam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maltese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mandarin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mandingo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mandinka</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maninka</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marathi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marshallese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mexican Sign</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mien</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mirpuri</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mixteco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moldavan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mongolian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Montenegrin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moroccan Arabic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Navajo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neapolitan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nepali</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nigerian Pidgin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norwegian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nuer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oromo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pahari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pampangan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pangasinan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pashto</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Patois</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pidgin English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Polish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portuguese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portuguese Creole</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pothwari</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Punjabi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Romani, Vlach</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Romanian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Russian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Samoan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Serbian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shanghainese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sichuan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sicilian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sindhi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sinhalese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slovak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Somali</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soninke</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sorani</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sudanese Arabic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sundanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Swahili</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Swedish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sylhetti</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tagalog</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Taiwanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tajik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tamil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telugu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tibetan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tigrinya</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Toishanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tongan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tshiluba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turkish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ukrainian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Urdu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uyghur</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uzbek</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vietnamese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visayan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Welsh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wenzhou</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wolof</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yiddish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yoruba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yupik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>R_Licensing_School__c</fullName>
+        <description>For Reports</description>
+        <externalId>false</externalId>
+        <label>R Licensing School</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R_PreferredName_Name__c</fullName>
+        <description>If preferred name has a value It gets displayed or the Name field is Displayed</description>
+        <externalId>false</externalId>
+        <formula>IF( (Preferred_Name__c !=null), (TEXT(Salutation) + &apos; &apos;+Preferred_Name__c + &apos; &apos;+ LastName ), (TEXT(Salutation) + &apos; &apos;+ FirstName + &apos; &apos;+  Middle_Name__c + &apos; &apos;+ LastName ))</formula>
+        <label>PreferredName/Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Race__c</fullName>
+        <description>Asian : People of Asia, Southeast Asia, or the Indian Subcontinent (includes Bangladesh, Pakistan, and Myanmar) 
+African American/Black : People of Black African racial groups of Africa, the Caribbean, or North, Central, or South America who identify themselves as African American or Black.
+Hispanic/Latino : People of Central American, Cuban, Mexican, Puerto Rican, South American, or Spanish culture or heritage, regardless of race.
+Native American : People who are Alaskan Native,  American Indian, Eskimo, and/or indigenous people of North America, and/or who maintain tribal affiliation or community recognition.
+pacific Islander : People with origins and/or heritage in the Pacific Islands, including Fiji, Guam, Hawaii, Samoa, and Tonga.
+White : People with origins and/or heritage in any of the peoples of Europe, the Middle East, North Africa, or the former USSR.
+Multi-Racial : Members with origins and/or heritage in two or more of the other six categories</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the racial categories that best describes contact.  If multi-racial and specific racial categories are unknown, use Multi-racial</inlineHelpText>
+        <label>Race</label>
+        <picklist>
+            <picklistValues>
+                <fullName>African American/Black</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caucasian/White</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hispanic/Latino</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Native American</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pacific Islander</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multi Racial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Race_other__c</fullName>
+        <description>Other Races</description>
+        <externalId>false</externalId>
+        <label>Race Other</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Report_UMEA__c</fullName>
+        <externalId>false</externalId>
+        <label>Report_UMEA</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Representation_Other_specify__c</fullName>
+        <description>Representation other specify</description>
+        <externalId>false</externalId>
+        <label>Representation(Other/Specify)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Representation__c</fullName>
+        <description>GBHEM Board of Directors Representation</description>
+        <externalId>false</externalId>
+        <label>Representation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Additional Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Africa Central Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Central and Southern Europe Central Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congo Central Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elected (Jurisdiction)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Episcopal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Germany Central Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liaison</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North Central Jurisdiction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Northeastern Jurisdiction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Northern Europe Central Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pan Methodist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Philippines Central Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South Central Jurisdiction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Southeastern Jurisdiction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Africa Central Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Western Jurisdiction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other/Specify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SSN__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Social Security Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Contact&apos;s Social Security Number.  May be entered with or without dashes.</inlineHelpText>
+        <label>SSN</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Salutation_Other__c</fullName>
+        <description>Other Salutation for the contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter salutation if not found in Picklist</inlineHelpText>
+        <label>Salutation Other</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Special_Needs_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide any additional information about the need</inlineHelpText>
+        <label>Special Needs Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Special_Needs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Assistance requested for these special needs</inlineHelpText>
+        <label>Special Needs</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Allergies - Food</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Allergies - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hearing impairment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobility impairment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vegetarian Meals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visual impairment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wheelchair accessibility needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Contact Status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select &apos;Inactive&apos; when entire contact record is no longer valid for communication</inlineHelpText>
+        <label>Contact Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UM_Study__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>UM Study Transcripts</description>
+        <externalId>false</externalId>
+        <label>UM Study</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <description>Url of the Contacts organization or his own .</description>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <listViews>
+        <fullName>AllContacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>Contact_Address_Line1__c</columns>
+        <columns>Contact_Address_Line2__c</columns>
+        <columns>Contact_City__c</columns>
+        <columns>Contact_State__c</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>Annual_Conference__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Contacts</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Contacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>Contact_Address_Line1__c</columns>
+        <columns>Contact_Address_Line2__c</columns>
+        <columns>Contact_City__c</columns>
+        <columns>Contact_State__c</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>Annual_Conference__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <label>All Active Contacts</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Inactive_Contacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>Contact_Address_Line1__c</columns>
+        <columns>Contact_Address_Line2__c</columns>
+        <columns>Contact_City__c</columns>
+        <columns>Contact_State__c</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>Annual_Conference__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Inactive</value>
+        </filters>
+        <label>All Inactive Contacts</label>
+    </listViews>
+    <listViews>
+        <fullName>BirthdaysThisMonth</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>Preferred_Name__c</columns>
+        <columns>Date_of_Birth__c</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>Contact_Address_Line1__c</columns>
+        <columns>Contact_Address_Line2__c</columns>
+        <columns>Contact_City__c</columns>
+        <columns>Contact_State__c</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>Annual_Conference__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DOB_Month__c</field>
+            <operation>equals</operation>
+            <value>10</value>
+        </filters>
+        <label>Birthdays This Month</label>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+    </listViews>
+    <validationRules>
+        <fullName>Appointment_DualAppointment</fullName>
+        <active>true</active>
+        <description>The Dual Appointment should be filled only if Appoitment is filled</description>
+        <errorConditionFormula>OR(AND(NOT( ISPICKVAL( Dual_Appointment__c, &apos;&apos; ) ),  ISPICKVAL( Appointment__c ,&apos;&apos;) ),
+IF( 
+AND(NOT( ISPICKVAL( Dual_Appointment__c, &apos;&apos; )) ,NOT(ISPICKVAL( Appointment__c ,&apos;&apos;)),NOT( ISPICKVAL( Dual_Appointment__c, &apos;Missing&apos;)),NOT(ISPICKVAL( Appointment__c ,&apos;Missing&apos;))), 
+TEXT( Dual_Appointment__c) = TEXT( Appointment__c), null))</errorConditionFormula>
+        <errorMessage>If &apos;Appointment&apos; does not have a value, &apos;Dual Appointment&apos; may not have a value. &apos;Appointment&apos; and &apos;Dual Appointment&apos; may not have same values</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Denomination_Other</fullName>
+        <active>true</active>
+        <description>If the &apos;Denomination&apos; is &apos;Others/Specify&apos; .Then user should enter a value in the &apos;Denomination_Other__c&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL( Denomination__c ,&quot;Other/Specify&quot;) , ISBLANK( Denomination_Other__c ) )</errorConditionFormula>
+        <errorDisplayField>Denomination_Other__c</errorDisplayField>
+        <errorMessage>&apos;Denomination Other&apos; should contain a value if Denomination &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EmergencyContactNumeber_Validation</fullName>
+        <active>true</active>
+        <description>Phone only Number</description>
+        <errorConditionFormula>AND (NOT (
+OR ( LEN ( Emergency_Contact_Number__c  ) = 0,
+REGEX(Emergency_Contact_Number__c   ,&quot;[0-9]{10}&quot;),
+REGEX(Emergency_Contact_Number__c  , &quot;\\D*?(\\d\\D*?){10}&quot;)
+)
+)
+)</errorConditionFormula>
+        <errorDisplayField>Emergency_Contact_Number__c</errorDisplayField>
+        <errorMessage>&apos;Emergency Contact Number&apos; Field should be in this format (999)999-9999 and should be only Numbers</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MilitaryRank_Other</fullName>
+        <active>true</active>
+        <description>If the &apos;Military Rank&apos; is &apos;Others/Specify&apos; .Then user should enter a value in the &apos;Military Rank(other/Specify)&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL(  Military_Rank__c  ,&quot;Other/Specify&quot;) , ISBLANK(  Military_Rank_Other_Specify__c ) )</errorConditionFormula>
+        <errorDisplayField>Military_Rank_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Military Rank Other/Specify&apos; may contain a value, if Military Rank &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MilitaryRank_disable_MilitaryRankOther</fullName>
+        <active>true</active>
+        <description>If the Military Rank value is not &apos;Other/Specify&apos; .then Military Rank(Other/Specify) have to be disabled.</description>
+        <errorConditionFormula>AND(NOT( ISPICKVAL(  Military_Rank__c  ,&quot;Other/Specify&quot;)) ,NOT( ISBLANK(  Military_Rank_Other_Specify__c  ) ))</errorConditionFormula>
+        <errorDisplayField>Military_Rank_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Military Rank (Other/Specify)&apos; may not contain a value if Military Rank is NOT &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Race_Declined</fullName>
+        <active>true</active>
+        <description>If the value of the Field is &apos;Declined&apos; .No other value should be selected</description>
+        <errorConditionFormula>IF(INCLUDES(Race__c,&apos;Declined&apos;), 
+(IF ((IF(INCLUDES( Race__c , &apos;African American/Black&apos;) ,1, 0) 
++ IF( INCLUDES( Race__c , &apos;Multi Racial&apos;) ,1, 0) 
++ IF( INCLUDES( Race__c , &apos;Other&apos;) ,1, 0) 
++ IF( INCLUDES( Race__c , &apos;Asian&apos;) ,1, 0) 
++ IF(INCLUDES( Race__c , &apos;Caucasian/White&apos;) ,1, 0) 
++ IF(INCLUDES( Race__c , &apos;Hispanic/Latino&apos;) ,1, 0) 
++ IF(INCLUDES( Race__c , &apos;Native American&apos;) ,1, 0) 
++ IF(INCLUDES( Race__c , &apos;Pacific Islander&apos;) ,1, 0)) &gt; 0,TRUE,FALSE)),FALSE)</errorConditionFormula>
+        <errorDisplayField>Race__c</errorDisplayField>
+        <errorMessage>If the value of the Field &apos;Race&apos; is &apos;Declined&apos; .No other value should be selected.Please update the Field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Race_MultiRacial</fullName>
+        <active>true</active>
+        <description>If the value of the Field &apos;Race&apos; is &apos;Multi Racial&apos; .No other value should be selected</description>
+        <errorConditionFormula>IF(INCLUDES(Race__c,&apos;Multi Racial&apos;), 
+(IF ((IF(INCLUDES( Race__c , &apos;African American/Black&apos;) ,1, 0) 
++ IF( INCLUDES( Race__c , &apos;Declined&apos;) ,1, 0) 
++ IF( INCLUDES( Race__c , &apos;Other&apos;) ,1, 0) 
++ IF( INCLUDES( Race__c , &apos;Asian&apos;) ,1, 0) 
++ IF(INCLUDES( Race__c , &apos;Caucasian/White&apos;) ,1, 0) 
++ IF(INCLUDES( Race__c , &apos;Hispanic/Latino&apos;) ,1, 0) 
++ IF(INCLUDES( Race__c , &apos;Native American&apos;) ,1, 0) 
++ IF(INCLUDES( Race__c , &apos;Pacific Islander&apos;) ,1, 0)) &gt; 0,TRUE,FALSE)),FALSE)</errorConditionFormula>
+        <errorDisplayField>Race__c</errorDisplayField>
+        <errorMessage>No other value may be selected if &apos;Multi-racial&apos; is selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Race_Other</fullName>
+        <active>true</active>
+        <description>If the &apos;Race&apos; is &apos;Other&apos; .Then user should enter a value in the &apos;Race_Other__c&apos;</description>
+        <errorConditionFormula>AND( INCLUDES(  Race__c  ,&quot;Other&quot;) , ISBLANK(  Race_other__c  ) )</errorConditionFormula>
+        <errorDisplayField>Race_other__c</errorDisplayField>
+        <errorMessage>No other value must be selected if &apos;Other/Specify&apos; is selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Representation_OtherSpecify</fullName>
+        <active>true</active>
+        <description>Representation(Other/specify) may have a value only when Representation is &apos;Other/Specify&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL( Representation__c ,&quot;Other/Specify&quot;) , ISBLANK(     Representation_Other_specify__c ) )</errorConditionFormula>
+        <errorDisplayField>Representation_Other_specify__c</errorDisplayField>
+        <errorMessage>&apos;Representation (Other/specify)&apos; may contain a value if Representation is &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Representation_Rep_OtherSpecify</fullName>
+        <active>true</active>
+        <description>Representation(Other/specify) may have a value only when Representation is &apos;Other/Specify&apos;</description>
+        <errorConditionFormula>AND(NOT( ISPICKVAL( Representation__c  ,&quot;Other/Specify&quot;)) ,NOT( ISBLANK(    Representation_Other_specify__c ) ))</errorConditionFormula>
+        <errorDisplayField>Representation_Other_specify__c</errorDisplayField>
+        <errorMessage>Representation(Other/specify) may not contain a value when Representation is not  &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Social_Security_Format</fullName>
+        <active>true</active>
+        <description>Validates that the Social Security Number is in the correct format.</description>
+        <errorConditionFormula>(LEN(SSN__c) &gt; 0 &amp;&amp; 
+CONTAINS(SSN__c, &quot;-&quot;)) &amp;&amp; 
+(NOT(REGEX( SSN__c ,&quot;[0-9]{3}-[0-9]{2}-[0-9]{4}&quot;))) || 
+
+(LEN(SSN__c) &gt; 0 &amp;&amp; 
+NOT(CONTAINS(SSN__c, &quot;-&quot;))) 
+&amp;&amp; (NOT(REGEX( SSN__c ,&quot;[0-9]{9}&quot;)))</errorConditionFormula>
+        <errorDisplayField>SSN__c</errorDisplayField>
+        <errorMessage>The Social Security number you entered is not in the correct format. The correct format is 999-99-9999 or 999999999.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SpecialNeeds_NA</fullName>
+        <active>true</active>
+        <description>If value of Special Needs  is N/A ,No other value may be selected</description>
+        <errorConditionFormula>IF(INCLUDES(Special_Needs__c,&apos;N/A&apos;), 
+(IF ((IF(INCLUDES( Special_Needs__c, &apos;Allergies - Food&apos;) ,1, 0) 
++ IF( INCLUDES( Special_Needs__c, &apos;Allergies - Other&apos;) ,1, 0) 
++ IF( INCLUDES( Special_Needs__c, &apos;Hearing impairment&apos;) ,1, 0) 
++ IF( INCLUDES( Special_Needs__c, &apos;Mobility impairment&apos;) ,1, 0) 
++ IF(INCLUDES( Special_Needs__c, &apos;Other&apos;) ,1, 0) 
++ IF(INCLUDES( Special_Needs__c, &apos;Vegetarian Meals&apos;) ,1, 0) 
++ IF(INCLUDES( Special_Needs__c, &apos;Visual impairment&apos;) ,1, 0) 
++ IF(INCLUDES( Special_Needs__c, &apos;Wheelchair accessibility needed&apos;) ,1, 0)) &gt; 0,TRUE,FALSE)),FALSE)</errorConditionFormula>
+        <errorDisplayField>Special_Needs__c</errorDisplayField>
+        <errorMessage>If Value of &apos;Special Needs&apos; is N/A , no Other value may be selected</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Airport_Codes</fullName>
+        <availability>online</availability>
+        <description>http://www.gofox.com/travel-tools/airport-codes</description>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Airport Codes</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>http://www.gofox.com/travel-tools/airport-codes</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Contact_MailingStreet}+{!Contact_MailingCity}+{!Contact_MailingState}&amp;om=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Contact_FirstName} {!Contact_LastName}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Re_subscribe_in_ExactTarget</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Re-subscribe in ExactTarget</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://members.s4.exacttarget.com/Integration/SalesforceUI/SFResubscribe.aspx?subtype=Contact&amp;sfid={!Contact.Id}&amp;sessid={!API.Session_ID}&amp;sessurl={!API.Partner_Server_URL_60}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendExactTargetEmail</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send ExactTarget Email</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://members.s4.exacttarget.com/Integration/SalesforceUI/EmailSend.aspx?sendtype=Contact&amp;sfid={!Contact.Id}&amp;sessid={!API.Session_ID}&amp;sessurl={!API.Partner_Server_URL_60}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendGmail</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Send Gmail</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Contact_Email}&lt;{!Contact_LastName}, {!Contact_FirstName}&gt;&amp;tf=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo! Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Contact_MailingCountry}&amp;csz={!Contact_MailingCity}+{!Contact_MailingState}+{!Contact_MailingPostalCode}+&amp;addr={!Contact_MailingAddress}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooWeather</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo! Weather</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://weather.yahoo.com/search/weather2?p={!Contact_MailingPostalCode}</url>
+    </webLinks>
+</CustomObject>

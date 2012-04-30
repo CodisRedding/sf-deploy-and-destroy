@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Mailing_Reports__c</fullName>
+        <description>The associated mailing reports that generate the subscribers for this subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The associated mailing reports that generate the subscribers for this subscription.</inlineHelpText>
+        <label>Mailing Reports</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Total_Opt_Out__c</fullName>
+        <description>The total number of subscribers that opt out.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total number of subscribers that opt out.</inlineHelpText>
+        <label>Total Opt Out</label>
+        <summaryFilterItems>
+            <field>Subscriber__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Opt Out</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscriber__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Sticky__c</fullName>
+        <description>Total number of subscribers marked as sticky.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of subscribers marked as sticky.</inlineHelpText>
+        <label>Total Sticky</label>
+        <summaryFilterItems>
+            <field>Subscriber__c.Sticky__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscriber__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Subscribers__c</fullName>
+        <description>The total number of subscribers to receive this subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total number of subscribers to receive this subscription.</inlineHelpText>
+        <label>Total Subscribers</label>
+        <summaryFilterItems>
+            <field>Subscriber__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Opt Out</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscriber__c.Subscription__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <label>Subscription</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Subscription Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Subscriptions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Total_Subscribers__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Sticky__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Opt_Out__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Configure_Subscribers</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Configure Subscribers</masterLabel>
+        <openType>sidebar</openType>
+        <page>AddSubscribers</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

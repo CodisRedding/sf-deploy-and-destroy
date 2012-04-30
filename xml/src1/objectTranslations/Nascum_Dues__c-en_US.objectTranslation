@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NASCUMC/IAMSCU Dues</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NASCUMC/IAMSCU Dues</value>
+    </caseValues>
+    <fields>
+        <label><!-- Educational Instution --></label>
+        <name>Educational_Instution__c</name>
+        <relationshipLabel><!-- NASCUMC/IAMSCU Dues (Educational Instution) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- IAMSCU Dues --></label>
+        <name>IAMSCU_Dues__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unpaid</masterLabel>
+            <translation><!-- Unpaid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NASCUMC Dues --></label>
+        <name>NASCUMC_Dues__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unpaid</masterLabel>
+            <translation><!-- Unpaid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Nascum Organization --></label>
+        <name>Nascum_Organization__c</name>
+        <relationshipLabel><!-- NASCUMC/IAMSCU Dues --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <layouts>
+        <layout>Nascum Dues Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

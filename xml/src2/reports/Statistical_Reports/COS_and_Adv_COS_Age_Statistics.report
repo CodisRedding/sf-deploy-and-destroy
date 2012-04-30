@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact.Course_Record__r$Course_Name__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Course_Record__r$Course_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Course_Record__r$Course__c</field>
+    </columns>
+    <description>All active Contacts who have Course Records summarized by age</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Course_Record__r$RecordType</column>
+            <operator>equals</operator>
+            <value>Course_Record__c.CourseRecord_AdvCOS,Course_Record__c.CourseRecord_COS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Status__c</column>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$Age__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$R_PreferredName_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>COS and Adv. COS Age Statistics</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_Course_Records_Education_Info__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

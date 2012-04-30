@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The type and level of education an individual has received in a particular area.</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Conferral_Date__c</fullName>
+        <description>The date the contact received the degree.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the contact received the degree.</inlineHelpText>
+        <label>Conferral/Discontinued Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Degree_Other_Specify__c</fullName>
+        <description>The position and title awarded for a particular Education Type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter degree if not listed in drop down</inlineHelpText>
+        <label>Degree (Other/Specify)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Degree__c</fullName>
+        <description>The position and title awarded for a particular Education Type.</description>
+        <externalId>false</externalId>
+        <label>Degree</label>
+        <picklist>
+            <controllingField>Education_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A.A.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A.A.S.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A.S.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.A.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.B.A.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.F.A.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.I.S.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.M.E.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.P.A.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.S.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.S.C.E.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.S.E.E.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.S.N.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B.S.W.</fullName>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D.Min.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ed.D.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ed. D.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>J.D.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.A.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.A. in CE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.A. in RE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.A.R.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.A.R.S.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.A.T.S.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.B.A.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.C.E.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.D.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.Div.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.Ed.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M. Ed.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.M.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.M.E.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.P.A.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.R.E.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.S.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.S.M.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.S.N.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.S.W.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.T.S.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M.Th.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ph.D.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ph. D.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Psy.D.</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Psy. D.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Th.D.</fullName>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other/Specify</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <controllingFieldValues>Graduate/Post Graduate</controllingFieldValues>
+                <controllingFieldValues>Seminary/Theological</controllingFieldValues>
+                <controllingFieldValues>Undergrad</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Education_Detail__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Education Detail</relationshipLabel>
+        <relationshipName>Education_Detail</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Education_Type_Other_Specify__c</fullName>
+        <externalId>false</externalId>
+        <label>Education Type (Other/Specify)</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Education_Type__c</fullName>
+        <description>A particular group or class of education.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Education Type that most accurately describes the degree/education experience</inlineHelpText>
+        <label>Education Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Highest Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Undergrad</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Graduate/Post Graduate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminary/Theological</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Pastor Licensing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High School</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other/Specify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Enrollment_Date__c</fullName>
+        <description>The date the contact enrolled in the education type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the contact enrolled in the education type.</inlineHelpText>
+        <label>Enrollment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Field_of_Study__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter major field or concentration</inlineHelpText>
+        <label>Field of Study</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GBHEM_DataCenter_Degree__c</fullName>
+        <externalId>false</externalId>
+        <label>GBHEM DataCenter Degree</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Highest_Education__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select highest education level contact has attained</inlineHelpText>
+        <label>Highest Education</label>
+        <picklist>
+            <controllingField>Education_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <controllingFieldValues>Highest Education</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High School</fullName>
+                <controllingFieldValues>Highest Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Some College</fullName>
+                <controllingFieldValues>Highest Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>College Graduate</fullName>
+                <controllingFieldValues>Highest Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Some Graduate</fullName>
+                <controllingFieldValues>Highest Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Graduate/Post Degree</fullName>
+                <controllingFieldValues>Highest Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <controllingFieldValues>Highest Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Migration_Key__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>RDS Staff reference only</inlineHelpText>
+        <label>Migration Key</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Report_Course_Record__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For Reports to get Licensing school</description>
+        <externalId>false</externalId>
+        <label>Report_Course Record</label>
+        <referenceTo>Course_Record__c</referenceTo>
+        <relationshipLabel>Report_Education Information</relationshipLabel>
+        <relationshipName>Report_Education_Information</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>School__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>School</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>School</relationshipLabel>
+        <relationshipName>Education_Information_Organization</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>The status of the education type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select status of the education type</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Discontinued</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_Until__c</fullName>
+        <description>The date the certification is valid until.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter date after which certification will no longer be valid</inlineHelpText>
+        <label>Valid Until</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Years_Completed__c</fullName>
+        <description>The number of years completed may only be entered for Discontinued Educations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of years completed may only be entered for Discontinued Educations.</inlineHelpText>
+        <label>Years Completed</label>
+        <picklist>
+            <controllingField>Status__c</controllingField>
+            <picklistValues>
+                <fullName>&lt; 1</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missing</fullName>
+                <controllingFieldValues>Discontinued</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <label>Education Information</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Edu-{00000000}</displayFormat>
+        <label>Education ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Education Information</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Education_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Degree__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>School__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Conferral_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Education_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Degree__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>School__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Conferral_Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Education_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Degree__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>School__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Conferral_Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Education_Type__c</searchFilterFields>
+        <searchFilterFields>Degree__c</searchFilterFields>
+        <searchFilterFields>School__c</searchFilterFields>
+        <searchFilterFields>Conferral_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Education_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Degree__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>School__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Conferral_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Degree_Other_Rule</fullName>
+        <active>true</active>
+        <description>Degree Other/Specify textbox should not contain a value if the Degree picklist is not set to Other/Specify.</description>
+        <errorConditionFormula>NOT(ISPICKVAL(  Degree__c  , &quot;Other/Specify&quot;)) &amp;&amp; 
+NOT(ISBLANK( Degree_Other_Specify__c ))</errorConditionFormula>
+        <errorDisplayField>Degree_Other_Specify__c</errorDisplayField>
+        <errorMessage>Degree Other/Specify textbox should not contain a value if the Degree picklist is not set to Other/Specify.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Degree_Specify_Rule</fullName>
+        <active>true</active>
+        <description>Degree is required when Other/Specify is selected</description>
+        <errorConditionFormula>ISPICKVAL( Degree__c , &quot;Other/Specify&quot;) &amp;&amp;  ISBLANK( Degree_Other_Specify__c )</errorConditionFormula>
+        <errorDisplayField>Degree_Other_Specify__c</errorDisplayField>
+        <errorMessage>Degree is required when Other/Specify is selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Education_Type_Highest_Education</fullName>
+        <active>true</active>
+        <description>If Education Type is Highest Education then a selection from the Highest Education picklist is required.</description>
+        <errorConditionFormula>ISPICKVAL( Education_Type__c , &apos;Highest Education&apos;) &amp;&amp;  ISPICKVAL( Highest_Education__c , &apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Highest_Education__c</errorDisplayField>
+        <errorMessage>Highest Education is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Education_Type_Invalid_For_School_Rule1</fullName>
+        <active>true</active>
+        <description>School must offer &apos;Licensing Program&apos; in Programs Offered.</description>
+        <errorConditionFormula>((ISPICKVAL( Education_Type__c , &apos;Licensing&apos;) )  &amp;&amp;  (NOT CONTAINS(School__r.Programs_Offered_Lookup__c , &apos;Licensing Program&apos;) ))</errorConditionFormula>
+        <errorDisplayField>School__c</errorDisplayField>
+        <errorMessage>School must offer &apos;Licensing Program&apos; in Programs Offered.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Education_Type_Other_Rule</fullName>
+        <active>true</active>
+        <description>Education Type Other/Specify textbox should not contain a value if the Education Type picklist is not set to Other/Specify.</description>
+        <errorConditionFormula>NOT(ISPICKVAL( Education_Type__c , &quot;Other/Specify&quot;)) &amp;&amp; 
+NOT(ISBLANK(  Education_Type_Other_Specify__c  ))</errorConditionFormula>
+        <errorDisplayField>Education_Type_Other_Specify__c</errorDisplayField>
+        <errorMessage>Education Type (Other/Specify) may not contain a value if the &apos;Education Type&apos; is not &apos;Other/Specify&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Education_Type_Other_Specify</fullName>
+        <active>true</active>
+        <description>If Education Type is Other/Specify then require Education Type Other/Specify to be filled out.</description>
+        <errorConditionFormula>ISPICKVAL(  Education_Type__c  , &quot;Other/Specify&quot;) &amp;&amp;  ISBLANK(  Education_Type_Other_Specify__c  )</errorConditionFormula>
+        <errorDisplayField>Education_Type_Other_Specify__c</errorDisplayField>
+        <errorMessage>&apos;Education Type (Other/Specify)&apos; must contain a value when Education Type is &apos;Other/Specify&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Education_Type_ValidUntil_Rule2</fullName>
+        <active>true</active>
+        <description>If Undergrad, Graduate / Post Graduate, or Seminary/Theological.</description>
+        <errorConditionFormula>(ISPICKVAL(  Education_Type__c  , &quot;Undergrad&quot;) || ISPICKVAL(  Education_Type__c  , &quot;Graduate / Post Graduate&quot;) || 
+ISPICKVAL(  Education_Type__c  , &quot;Seminary/Theological&quot;)) &amp;&amp;  (NOT(ISNULL( Valid_Until__c ) ))</errorConditionFormula>
+        <errorMessage>If Undergrad, Graduate / Post Graduate, or Seminary/Theological is selected then Valid Until Date must not be filled in.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Status_Rule</fullName>
+        <active>true</active>
+        <description>If Discontinued is selected for Status then Years Completed is required.</description>
+        <errorConditionFormula>ISPICKVAL( Status__c , &quot;Discontinued&quot;) &amp;&amp; ISPICKVAL( Years_Completed__c , &quot;&quot; )</errorConditionFormula>
+        <errorDisplayField>Years_Completed__c</errorDisplayField>
+        <errorMessage>If Discontinued is selected for Status then Years Completed is required.</errorMessage>
+    </validationRules>
+</CustomObject>

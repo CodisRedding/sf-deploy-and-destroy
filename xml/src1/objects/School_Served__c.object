@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Organization Schools in Organization Collegiate Ministry</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>City where School is</description>
+        <externalId>false</externalId>
+        <formula>School_Organization__r.SearchLayout_City__c</formula>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Collegiate_Ministry__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Collegiate Ministry Organization</description>
+        <externalId>false</externalId>
+        <label>Collegiate Ministry</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Schools Served (Collegiate Ministry)</relationshipLabel>
+        <relationshipName>Organization_Collegiate_Ministry_Schools</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Institution_Type__c</fullName>
+        <description>Display Picklist values</description>
+        <externalId>false</externalId>
+        <formula>TEXT( School_Organization__r.Institution_Type__c )</formula>
+        <label>Institution Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>School_Organization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>School Organizations</description>
+        <externalId>false</externalId>
+        <label>School Organization</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Schools Served (School Organization)</relationshipLabel>
+        <relationshipName>Collegiate_Ministry_School_Detail</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <description>State Where School is in</description>
+        <externalId>false</externalId>
+        <formula>School_Organization__r.SearchLayout_State__c</formula>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Schools Served</label>
+    <nameField>
+        <displayFormat>Served-{00000000}</displayFormat>
+        <label>School Served ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Schools Served</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Collegiate_Ministry__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>School_Organization__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Institution_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>State__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Collegiate_Ministry__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>School_Organization__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Institution_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>City__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>State__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Collegiate_Ministry__c</searchFilterFields>
+        <searchFilterFields>School_Organization__c</searchFilterFields>
+        <searchFilterFields>Institution_Type__c</searchFilterFields>
+        <searchFilterFields>City__c</searchFilterFields>
+        <searchFilterFields>State__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>
