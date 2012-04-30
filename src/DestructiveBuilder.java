@@ -66,9 +66,16 @@ public class DestructiveBuilder {
 
 			// get search term
 			final String searchTerm = PropertyReader.getProperty(property,
-					PropertyReader.PropertyTypes.SeachTerm);
+					PropertyReader.PropertyTypes.SearchTerm);
 			if (searchTerm == null) {
 				continue;
+			}
+			
+			// get package name
+			final String xmlName = PropertyReader.getProperty(property,
+					PropertyReader.PropertyTypes.XmlName);
+			if (xmlName == null) {
+				//continue;
 			}
 
 			// determine if supports *
@@ -82,17 +89,17 @@ public class DestructiveBuilder {
 
 				// check if dirDeployToSrc has files that we need to destroy
 				walkAndDestroy(deployToPath, deployToPath, srcDirDeployingFrom
-						.getPath(), metadataType, dirName);
+						.getPath(), metadataType, dirName, metadataType);
 			} else {
 				seekAndDestroy(deployToPath, deployToPath, srcDirDeployingFrom
-						.getPath(), metadataType, dirName, searchTerm);
+						.getPath(), xmlName, dirName, searchTerm, metadataType);
 			}
 		}
 	}
 
 	// XML level destroys
 	private void seekAndDestroy(final String origPath, String toPath,
-			String fromPath, String metaType, String dirName, String searchTerm) {
+			String fromPath, String metaType, String dirName, String searchTerm, String packageName) {
 
 		File root = new File(toPath);
 		File[] list = root.listFiles();
@@ -100,7 +107,7 @@ public class DestructiveBuilder {
 		for (File f : list) {
 			if (f.isDirectory()) {
 				seekAndDestroy(origPath, f.getPath(), fromPath, metaType,
-						dirName, searchTerm);
+						dirName, searchTerm, packageName);
 			} else {
 				// Compare xml
 				File fromFile = new File(f.getPath().replace(
@@ -110,7 +117,12 @@ public class DestructiveBuilder {
 				if (fromFile.exists() && !fromFile.getName().endsWith(".xml")) {
 					ArrayList<String> rets = XmlReader.compareXml(f.getPath(),
 							fromFile.getPath(), metaType, searchTerm);
-					int count = rets.size();
+
+					String name = f.getName();
+					name = name.substring(0, name.indexOf('.'));
+					for(String component : rets) {
+						addDestructiveComponents(packageName, component, name);
+					}
 				}
 			}
 		}
@@ -118,7 +130,7 @@ public class DestructiveBuilder {
 
 	// File level destroys
 	private void walkAndDestroy(final String origPath, String toPath,
-			String fromPath, String metaType, String dirName) {
+			String fromPath, String metaType, String dirName, String packageName) {
 
 		File root = new File(toPath);
 		File[] list = root.listFiles();
@@ -126,22 +138,36 @@ public class DestructiveBuilder {
 		for (File f : list) {
 			if (f.isDirectory()) {
 				walkAndDestroy(origPath, f.getPath(), fromPath, metaType,
-						dirName);
+						dirName, packageName);
 			} else {
 				// check to see if file exists in fromPath
 				File fromFile = new File(f.getPath().replace(
 						srcDirDeployingTo.getPath(),
 						srcDirDeployingFrom.getPath()));
+				
 				if (!fromFile.exists() && !fromFile.getName().endsWith(".xml")) {
-					if (!destructStrings.containsKey(metaType)) {
-						destructStrings.put(metaType, new ArrayList<String>());
-					}
-
-					ArrayList<String> destroys = destructStrings.get(metaType);
-					destroys.add(f.getPath().replace(origPath + "\\", ""));
+					String component = f.getPath().replace(origPath + "\\", "");
+					addDestructiveComponents(metaType, component, "");
 				}
 			}
 		}
+	}
+	
+	private void addDestructiveComponents(String metaType, String component, String objectName) {
+		
+		if(component.indexOf('.') > -1) {
+			component = component.substring(0, component.indexOf('.'));
+		}
+		
+		component = component.replace('\\', '/');
+		component = ((objectName.length() > 0) ? objectName + "." : "") + component;
+		
+		if (!destructStrings.containsKey(metaType)) {
+			destructStrings.put(metaType, new ArrayList<String>());
+		}
+
+		ArrayList<String> destroys = destructStrings.get(metaType);
+		destroys.add(component);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -150,8 +176,7 @@ public class DestructiveBuilder {
 		Enumeration keys = destructStrings.keys();
 		while (keys.hasMoreElements()) {
 			Object key = keys.nextElement();
-			System.out.println(" Name :" + key + " Member: "
-					+ destructStrings.get(key));
+			System.out.println(key + "  " + destructStrings.get(key));
 		}
 	}
 }

@@ -12,7 +12,8 @@ public class PropertyReader {
 	public static enum PropertyTypes {
 		Directory,
 		MetadataType,
-		SeachTerm,
+		XmlName,
+		SearchTerm,
 		SupportsAsterisk
 	}
 	
@@ -29,12 +30,15 @@ public class PropertyReader {
 				case MetadataType:
 					response = properties[1];
 					break;
-				case SeachTerm:
+				case XmlName:
 					response = properties[2];
+					break;
+				case SearchTerm:
+					response = properties[3];
 					break;
 				case SupportsAsterisk:
 					try {
-						response = properties[3];
+						response = properties[4];
 					} catch(Exception e) {
 						// ignore
 					}

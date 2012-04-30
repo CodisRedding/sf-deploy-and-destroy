@@ -42,28 +42,14 @@ public class SaxyHandler extends DefaultHandler {
 
 		if (bfoundSearchTerm && bfoundMetaType) {
 			
-			System.out.println("fullName : " +
-					metaType + ":::" + new String(ch, start, length));
+			String data = new String(ch, start, length);
 			
-			bfoundSearchTerm = false;
-		}
-		
-		
-		/*
-		if(Character.isLetterOrDigit(ch[0]) || ch[0] == '_') {
-			if (bfoundMetaType) {
-				
-				if (bfoundSearchTerm) {
-					//System.out.println("First Name : "
-					//		+ new String(ch, start, length));
-					
-					String data = new String(ch, start, length);
-					existing.add(data);
-					bfoundSearchTerm = false;
-					bfoundMetaType = false;
-				}
+			if(!data.contains("\n")) {
+				//System.out.println("fullName : " + data);
+				existing.add(data);
+				bfoundSearchTerm = false;
+				bfoundMetaType = false;
 			}
 		}
-		*/
 	}
 }
