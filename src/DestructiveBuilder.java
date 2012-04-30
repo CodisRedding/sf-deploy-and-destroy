@@ -5,8 +5,12 @@ import java.util.Hashtable;
 
 public class DestructiveBuilder {
 
+<<<<<<< HEAD
 	//private Hashtable<String, ArrayList<String>> destructStrings = new Hashtable<String, ArrayList<String>>();
 	private PackageBuilder packager = new PackageBuilder();
+=======
+	private Hashtable<String, ArrayList<String>> destructStrings = new Hashtable<String, ArrayList<String>>();
+>>>>>>> 83234ffa27066021e0be5004bba801e44071a994
 	private File srcDirDeployingTo = null;
 	private File srcDirDeployingFrom = null;
 
@@ -36,7 +40,10 @@ public class DestructiveBuilder {
 			}
 
 			buildXmlFile(destXmlFile.getPath());
+<<<<<<< HEAD
 			createDestructiveChangesXmlFile(destXmlFile.getPath());
+=======
+>>>>>>> 83234ffa27066021e0be5004bba801e44071a994
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -147,11 +154,15 @@ public class DestructiveBuilder {
 						srcDirDeployingTo.getPath(),
 						srcDirDeployingFrom.getPath()));
 				
+<<<<<<< HEAD
 				/*
+=======
+>>>>>>> 83234ffa27066021e0be5004bba801e44071a994
 				if (!fromFile.exists() && !fromFile.getName().endsWith(".xml")) {
 					String component = f.getPath().replace(origPath + "\\", "");
 					addDestructiveComponents(metaType, component, "");
 				}
+<<<<<<< HEAD
 				*/
 				
 				if (!fromFile.exists()) {
@@ -163,6 +174,8 @@ public class DestructiveBuilder {
 					
 					packager.addFileContent(metaType, f.getPath());
 				}
+=======
+>>>>>>> 83234ffa27066021e0be5004bba801e44071a994
 			}
 		}
 	}
@@ -176,19 +189,27 @@ public class DestructiveBuilder {
 		component = component.replace('\\', '/');
 		component = ((objectName.length() > 0) ? objectName + "." : "") + component;
 		
+<<<<<<< HEAD
 		/*
+=======
+>>>>>>> 83234ffa27066021e0be5004bba801e44071a994
 		if (!destructStrings.containsKey(metaType)) {
 			destructStrings.put(metaType, new ArrayList<String>());
 		}
 
 		ArrayList<String> destroys = destructStrings.get(metaType);
 		destroys.add(component);
+<<<<<<< HEAD
 		*/
 		
 		packager.addNameContent(metaType, component);
 	}
 
 	/*
+=======
+	}
+
+>>>>>>> 83234ffa27066021e0be5004bba801e44071a994
 	@SuppressWarnings("unchecked")
 	public void printDestructiveChanges() {
 
@@ -198,6 +219,7 @@ public class DestructiveBuilder {
 			System.out.println(key + "  " + destructStrings.get(key));
 		}
 	}
+<<<<<<< HEAD
 	*/
 	
 	public void printDestructiveChanges() {
@@ -207,4 +229,6 @@ public class DestructiveBuilder {
 	public void createDestructiveChangesXmlFile(String dir) {
 		packager.createFile(dir);
 	}
+=======
+>>>>>>> 83234ffa27066021e0be5004bba801e44071a994
 }

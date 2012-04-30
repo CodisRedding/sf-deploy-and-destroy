@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -101,4 +102,9 @@ public class PackageBuilder {
 			System.out.println(key + "  " + destructFiles.get(key));
 		}
 	}
+=======
+
+public class PackageBuilder {
+
+>>>>>>> 83234ffa27066021e0be5004bba801e44071a994
 }
