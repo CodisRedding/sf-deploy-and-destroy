@@ -1,8 +1,0 @@
-<apex:component id="footerComponent"> 
-  <apex:panelGrid cellpadding="0" cellspacing="0" width="100%" border="0" style="text-align: right;" columns="1" id="theFooter">
-    <apex:panelGroup id="poweredBy">
-      <apex:outputText style="font-size: smaller" value="{!$Label.site.powered_by}"/>
-      <apex:image url="{!$Site.Prefix}{!$Label.site.img_path}/poweredby.png" style="vertical-align: middle; margin:12px 8px 8px 0"/>
-    </apex:panelGroup>  
-   </apex:panelGrid>
-</apex:component>
