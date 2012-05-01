@@ -7,11 +7,23 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
+/**
+ * @author rocky
+ * 
+ *         Builds the actual destructiveChanges.xml file.
+ * 
+ */
 public class PackageBuilder {
 
 	private Hashtable<String, ArrayList<String>> fileContents = new Hashtable<String, ArrayList<String>>();
 	private Hashtable<String, ArrayList<String>> nameContents = new Hashtable<String, ArrayList<String>>();
 
+	/**
+	 * NOT USED
+	 * 
+	 * @param packageDirName
+	 * @param pathAndFile
+	 */
 	public void addFileContent(String packageDirName, String pathAndFile) {
 
 		if (!fileContents.containsKey(packageDirName)) {
@@ -22,6 +34,16 @@ public class PackageBuilder {
 		destroys.add(pathAndFile);
 	}
 
+	/**
+	 * Adds supplied params to the buffer of metadata to destroy.
+	 * 
+	 * @param metadataName
+	 * 
+	 *            The metadata name of the component being destroyed.
+	 * @param metadataPath
+	 * 
+	 *            The path and component name to be destroyed.
+	 */
 	public void addNameContent(String metadataName, String metadataPath) {
 
 		if (!nameContents.containsKey(metadataName)) {
@@ -32,6 +54,14 @@ public class PackageBuilder {
 		destroys.add(metadataPath);
 	}
 
+	/**
+	 * Generates the destructiveChanges.xml
+	 * 
+	 * @param dir
+	 * 
+	 *            The dir path where the generated destructiveChanges.xml should
+	 *            be created.
+	 */
 	public void createFile(String dir) {
 
 		// TODO: create template later
@@ -63,6 +93,7 @@ public class PackageBuilder {
 		content.append("</Package>" + LINE_SEP);
 
 		// eek! help
+		// TODO: refactor this
 		Writer out = null;
 
 		try {
@@ -86,14 +117,29 @@ public class PackageBuilder {
 		}
 	}
 
+	/**
+	 * NOT USED
+	 * 
+	 * @return
+	 */
 	public Hashtable<String, ArrayList<String>> getFileContents() {
 		return fileContents;
 	}
 
+	/**
+	 * Gets the buffer of package components to be destroyed.
+	 * 
+	 * @return
+	 * 
+	 *         The package components to be destroyed.
+	 */
 	public Hashtable<String, ArrayList<String>> getNameContents() {
 		return nameContents;
 	}
 
+	/**
+	 * Prints out the package components to be destroyed.
+	 */
 	public void printFile() {
 		Hashtable<String, ArrayList<String>> destructNames = getNameContents();
 		Enumeration<String> keys1 = destructNames.keys();
