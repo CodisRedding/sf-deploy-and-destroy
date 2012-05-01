@@ -8,14 +8,39 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Properties;
 
+/**
+ * @author rocky
+ * 
+ *         Reads properties from both config.properties and package.properties
+ *         files.
+ */
 public class PropertyReader {
 
+	/**
+	 * @author rocky
+	 * 
+	 *         The different property types found on each line of the
+	 *         package.properties file.
+	 */
 	public static enum PropertyTypes {
 		Directory, MetadataType, XmlName, SearchTerm, SupportsAsterisk
 	}
 
+	/**
+	 * Some components are compared by file name instead of by xml name, this
+	 * property can be used to when reading each property and determining hotw
+	 * to parse.
+	 */
 	public static final String FILESEACH = "fileName";
 
+	/**
+	 * Reads from the package.properties file.
+	 * 
+	 * @return
+	 * 
+	 *         Returns an array of all properties to be further parsed and used
+	 *         when comparing component types.
+	 */
 	public static ArrayList<String> getProperties() {
 
 		ArrayList<String> properties = new ArrayList<String>();
@@ -43,6 +68,22 @@ public class PropertyReader {
 		return properties;
 	}
 
+	/**
+	 * Parses the supplied property (a line in the package.properties file) for
+	 * the supplied type.
+	 * 
+	 * @param property
+	 * 
+	 *            A property line of delimited properties found in the
+	 *            paclage.properties file.
+	 * @param type
+	 * 
+	 *            The type of property to needed from the property supplied.
+	 * @return
+	 * 
+	 *         Returns a specific property type determined by the supplied
+	 *         PropertyTypes enum.
+	 */
 	public static String getProperty(String property, PropertyTypes type) {
 
 		String[] properties = property.split("\\.");
@@ -82,6 +123,17 @@ public class PropertyReader {
 		return response;
 	}
 
+	/**
+	 * Reads properties from the config.properties file.
+	 * 
+	 * @param key
+	 * 
+	 *            The key of the key/value.
+	 * @return
+	 * 
+	 *         Returns the values for the key supplied. Returns null if not
+	 *         found.
+	 */
 	public static String getSystemProperty(String key) {
 
 		String response = null;
