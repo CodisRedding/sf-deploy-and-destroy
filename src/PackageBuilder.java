@@ -37,8 +37,9 @@ public class PackageBuilder {
 		// TODO: create template later
 		StringBuilder content = new StringBuilder();
 
-		content.append(String.format(
-				"<?xml version=\"%s\" encoding=\"" + PropertyReader.getSystemProperty("sf.destruct.file.encoding") + "\"?>\n",
+		content.append(String.format("<?xml version=\"%s\" encoding=\""
+				+ PropertyReader.getSystemProperty("sf.destruct.file.encoding")
+				+ "\"?>\n",
 				PropertyReader.getSystemProperty("sf.package.xml.version")));
 		content.append(String.format("<Package xmlns=\"%s\">\n",
 				PropertyReader.getSystemProperty("sf.package.namespace")));
