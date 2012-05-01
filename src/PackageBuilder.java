@@ -99,12 +99,5 @@ public class PackageBuilder {
 			Object key = keys1.nextElement();
 			System.out.println(key + "  " + destructNames.get(key));
 		}
-
-		Hashtable<String, ArrayList<String>> destructFiles = getFileContents();
-		Enumeration<String> keys2 = destructFiles.keys();
-		while (keys2.hasMoreElements()) {
-			Object key = keys2.nextElement();
-			System.out.println(key + "  " + destructFiles.get(key));
-		}
 	}
 }
