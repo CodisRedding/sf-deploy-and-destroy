@@ -1,3 +1,7 @@
+# WARNING #
+
+## HAS NOT BEEN TESTED AGAINST ANY SF ORGS YET. ##
+
 # Deploy & Destroy #
 	
 This project is a module created to allow automatic destructive changes between your SFDC orgs. This module can be used within your deployment process to auto generate a destructiveChanges.xml file to include in your deployment package. If you use a source control system that allows branching you'll be able to branch without having to manually destroy components in the web UI that are not yet in a branch.  
