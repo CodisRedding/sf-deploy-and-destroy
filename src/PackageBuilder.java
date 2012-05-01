@@ -38,7 +38,7 @@ public class PackageBuilder {
 		StringBuilder content = new StringBuilder();
 
 		content.append(String.format(
-				"<?xml version=\"%s\" encoding=\"UTF-8\"?>\n",
+				"<?xml version=\"%s\" encoding=\"" + PropertyReader.getSystemProperty("sf.destruct.file.encoding") + "\"?>\n",
 				PropertyReader.getSystemProperty("sf.package.xml.version")));
 		content.append(String.format("<Package xmlns=\"%s\">\n",
 				PropertyReader.getSystemProperty("sf.package.namespace")));
