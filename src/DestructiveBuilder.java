@@ -1,6 +1,12 @@
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * @author rocky
+ * 
+ *         Manages the generation of a destructive changes file to be included
+ *         within a Salesforce deployment package.
+ */
 public class DestructiveBuilder {
 
 	private PackageBuilder packager = new PackageBuilder();
@@ -12,20 +18,53 @@ public class DestructiveBuilder {
 		srcDirDeployingFrom = new File(dirDeployingFrom);
 	}
 
+	/**
+	 * Provides the packager with formatted destructive changes.
+	 * 
+	 * @param metaType
+	 * 
+	 *            The metadata type (2nd property in each line in
+	 *            package.properties)
+	 * @param component
+	 * 
+	 *            The metadata component type (3rd property in each line in
+	 *            package.properties)
+	 * @param objectName
+	 * 
+	 *            The name of the metadata object that the component is a child
+	 *            of. Not all components are children.
+	 */
 	private void addDestructiveComponents(String metaType, String component,
 			String objectName) {
 
-		if (component.indexOf('.') > -1) {
-			component = component.substring(0, component.indexOf('.'));
-		}
+		if (component != null) {
+			if (component.indexOf('.') > -1) {
+				component = component.substring(0, component.indexOf('.'));
+			}
 
-		component = component.replace('\\', '/');
-		component = ((objectName.length() > 0) ? objectName + "." : "")
-				+ component;
+			component = component.replace('\\', '/');
+			component = ((objectName.length() > 0) ? objectName + "." : "")
+					+ component;
+		}
 
 		packager.addNameContent(metaType, component);
 	}
 
+	/**
+	 * Makes sure that all needed dirs exist before allowing to start processing
+	 * changes file.
+	 * 
+	 * @param dirToPlaceXmlFile
+	 * 
+	 *            The path to where the destructiveChanges.xml (default name,
+	 *            configurable in config.properties) file will be created.
+	 * @return
+	 * 
+	 *         Returns false if the objects src to dir, or src from dir, or
+	 *         passed in param path is missing. Returns false if generation of
+	 *         file fails anywhere in the process. Returns true is all paths,
+	 *         file generation completes successfully.
+	 */
 	public boolean buildDestructiveChanges(String dirToPlaceXmlFile) {
 		boolean successful = false;
 
@@ -56,6 +95,16 @@ public class DestructiveBuilder {
 		return successful;
 	}
 
+	/**
+	 * Kicks off the entire search and create file process based on the
+	 * package.properties file.
+	 * 
+	 * @param dirToPlaceXmlFile
+	 * 
+	 *            Responsible for reading reading all properties in
+	 *            package.properties and parsing each delimited property before
+	 *            passing off for further parsing.
+	 */
 	private void buildXmlFile(String dirToPlaceXmlFile) {
 
 		ArrayList<String> properties = PropertyReader.getProperties();
@@ -108,15 +157,59 @@ public class DestructiveBuilder {
 		}
 	}
 
+	/**
+	 * @param dir
+	 * 
+	 *            Calls the packager, passing the dir path to where the packager
+	 *            should create the destructiveChanges.xml file.
+	 */
 	public void createDestructiveChangesXmlFile(String dir) {
 		packager.createFile(dir);
 	}
 
+	/**
+	 * This debugging method prints out the contents of the destructive changes
+	 * buffered at the time.
+	 */
 	public void printDestructiveChanges() {
 		packager.printFile();
 	}
 
 	// XML level destroys
+	/**
+	 * Parses all xml in a given src dir for xml to compare with the deploy from
+	 * src xml looking for destructive changes to create.
+	 * 
+	 * @param origPath
+	 * 
+	 *            The original path where the metadata type being parsed lives
+	 *            in the src dir.
+	 * @param toPath
+	 * 
+	 *            The dir path to the src dir of the Salesforce org to be
+	 *            deployed to.
+	 * @param fromPath
+	 * 
+	 *            The dir path to the src dir of the Salesforce org being
+	 *            deployed from.
+	 * @param metaType
+	 * 
+	 *            The metadata type (2nd property in each line in
+	 *            package.properties) to be parsed for destruction.
+	 * @param dirName
+	 * 
+	 *            The directory name where the metadata type (1st property in
+	 *            each line in package.properties) lives in the src dir.
+	 * @param searchTerm
+	 * 
+	 *            This term (4th property in each line in package.properties)
+	 *            determines the xml data node name to search for. This is
+	 *            usually fullName, but not always.
+	 * @param packageName
+	 * 
+	 *            The metadata type (2nd property in each line in
+	 *            package.properties) to be parsed for destruction.
+	 */
 	private void seekAndDestroy(final String origPath, String toPath,
 			String fromPath, String metaType, String dirName,
 			String searchTerm, String packageName) {
@@ -149,6 +242,35 @@ public class DestructiveBuilder {
 	}
 
 	// File level destroys
+	/**
+	 * Parses all xml in a given src dir for xml to compare with the deploy from
+	 * src xml looking for destructive changes to create.
+	 * 
+	 * @param origPath
+	 * 
+	 *            The original path where the metadata type being parsed lives
+	 *            in the src dir.
+	 * @param toPath
+	 * 
+	 *            The dir path to the src dir of the Salesforce org to be
+	 *            deployed to.
+	 * @param fromPath
+	 * 
+	 *            The dir path to the src dir of the Salesforce org being
+	 *            deployed from.
+	 * @param metaType
+	 * 
+	 *            The metadata type (2nd property in each line in
+	 *            package.properties) to be parsed for destruction.
+	 * @param dirName
+	 * 
+	 *            The directory name where the metadata type (1st property in
+	 *            each line in package.properties) lives in the src dir.
+	 * @param packageName
+	 * 
+	 *            The metadata type (2nd property in each line in
+	 *            package.properties) to be parsed for destruction.
+	 */
 	private void walkAndDestroy(final String origPath, String toPath,
 			String fromPath, String metaType, String dirName, String packageName) {
 
