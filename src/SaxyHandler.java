@@ -11,6 +11,7 @@ public class SaxyHandler extends DefaultHandler {
 	boolean bfoundSearchTerm = false;
 	String metaType = null;
 	String searchTerm = null;
+	String LINE_SEP = System.getProperty("line.separator");
 
 	@Override
 	public void characters(char ch[], int start, int length)
@@ -20,7 +21,7 @@ public class SaxyHandler extends DefaultHandler {
 
 			String data = new String(ch, start, length);
 
-			if (!data.contains("\n")) {
+			if (!data.contains(LINE_SEP)) {
 				existing.add(data);
 				bfoundSearchTerm = false;
 				bfoundMetaType = false;
