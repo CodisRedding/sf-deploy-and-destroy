@@ -289,6 +289,7 @@ public class DestructiveBuilder {
 
 				if (!fromFile.exists()) {
 
+					// check if file is a components metadata file
 					if (!fromFile.getName().endsWith(".xml")) {
 						String component = f.getPath().replace(
 								origPath + File.separator, "");
