@@ -271,8 +271,7 @@ public class DestructiveBuilder {
 	 *            package.properties) to be parsed for destruction.
 	 */
 	private void walkAndDestroy(final String origPath, String toPath,
-			String fromPath, String metaType, String dirName,
-			String packageName) {
+			String fromPath, String metaType, String dirName, String packageName) {
 
 		File root = new File(toPath);
 		File[] list = root.listFiles();

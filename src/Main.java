@@ -1,19 +1,22 @@
 /**
  * @author rocky
- *
+ * 
  */
 public class Main {
 
 	/**
-	 * @param args[0]
+	 * @param args
+	 *            [0]
 	 * 
 	 *            The src dir of the salesforce org you're deploying to.
 	 * 
-	 * @param args[1]
+	 * @param args
+	 *            [1]
 	 * 
 	 *            The src dir of the salesforce org you're deploying from.
 	 * 
-	 * @param args[2]
+	 * @param args
+	 *            [2]
 	 * 
 	 *            The dir where you want the destructiveChanges.xml file to be
 	 *            created.

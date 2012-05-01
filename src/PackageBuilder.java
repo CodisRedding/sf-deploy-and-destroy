@@ -123,8 +123,8 @@ public class PackageBuilder {
 		while (keys1.hasMoreElements()) {
 			Object key = keys1.nextElement();
 			System.out.println(key);
-			
-			for(String name : destructNames.get(key)) {
+
+			for (String name : destructNames.get(key)) {
 				System.out.println("\t" + name);
 			}
 			System.out.println("");
