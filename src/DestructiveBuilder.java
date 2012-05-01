@@ -12,6 +12,20 @@ public class DestructiveBuilder {
 		srcDirDeployingFrom = new File(dirDeployingFrom);
 	}
 
+	private void addDestructiveComponents(String metaType, String component,
+			String objectName) {
+
+		if (component.indexOf('.') > -1) {
+			component = component.substring(0, component.indexOf('.'));
+		}
+
+		component = component.replace('\\', '/');
+		component = ((objectName.length() > 0) ? objectName + "." : "")
+				+ component;
+
+		packager.addNameContent(metaType, component);
+	}
+
 	public boolean buildDestructiveChanges(String dirToPlaceXmlFile) {
 		boolean successful = false;
 
@@ -69,36 +83,43 @@ public class DestructiveBuilder {
 			if (searchTerm == null) {
 				continue;
 			}
-			
+
 			// get package name
 			final String xmlName = PropertyReader.getProperty(property,
 					PropertyReader.PropertyTypes.XmlName);
 			if (xmlName == null) {
-				//continue;
+				// continue;
 			}
 
-			// determine if supports *
-			String asterisk = PropertyReader.getProperty(property,
-					PropertyReader.PropertyTypes.SupportsAsterisk);
-			boolean supportsAsterisk = (asterisk != null);
-
 			// get some work done
-			String deployToPath = srcDirDeployingTo.getPath() + File.separator + dirName;
+			String deployToPath = srcDirDeployingTo.getPath() + File.separator
+					+ dirName;
 			if (searchTerm.equals(PropertyReader.FILESEACH)) {
 
 				// check if dirDeployToSrc has files that we need to destroy
-				walkAndDestroy(deployToPath, deployToPath, srcDirDeployingFrom
-						.getPath(), metadataType, dirName, metadataType);
+				walkAndDestroy(deployToPath, deployToPath,
+						srcDirDeployingFrom.getPath(), metadataType, dirName,
+						metadataType);
 			} else {
-				seekAndDestroy(deployToPath, deployToPath, srcDirDeployingFrom
-						.getPath(), xmlName, dirName, searchTerm, metadataType);
+				seekAndDestroy(deployToPath, deployToPath,
+						srcDirDeployingFrom.getPath(), xmlName, dirName,
+						searchTerm, metadataType);
 			}
 		}
 	}
 
+	public void createDestructiveChangesXmlFile(String dir) {
+		packager.createFile(dir);
+	}
+
+	public void printDestructiveChanges() {
+		packager.printFile();
+	}
+
 	// XML level destroys
 	private void seekAndDestroy(final String origPath, String toPath,
-			String fromPath, String metaType, String dirName, String searchTerm, String packageName) {
+			String fromPath, String metaType, String dirName,
+			String searchTerm, String packageName) {
 
 		File root = new File(toPath);
 		File[] list = root.listFiles();
@@ -119,7 +140,7 @@ public class DestructiveBuilder {
 
 					String name = f.getName();
 					name = name.substring(0, name.indexOf('.'));
-					for(String component : rets) {
+					for (String component : rets) {
 						addDestructiveComponents(packageName, component, name);
 					}
 				}
@@ -143,37 +164,18 @@ public class DestructiveBuilder {
 				File fromFile = new File(f.getPath().replace(
 						srcDirDeployingTo.getPath(),
 						srcDirDeployingFrom.getPath()));
-	
+
 				if (!fromFile.exists()) {
-					
-					if(!fromFile.getName().endsWith(".xml")) {
-						String component = f.getPath().replace(origPath + File.separator, "");
+
+					if (!fromFile.getName().endsWith(".xml")) {
+						String component = f.getPath().replace(
+								origPath + File.separator, "");
 						addDestructiveComponents(metaType, component, "");
 					}
-					
+
 					packager.addFileContent(metaType, f.getPath());
 				}
 			}
 		}
-	}
-	
-	private void addDestructiveComponents(String metaType, String component, String objectName) {
-		
-		if(component.indexOf('.') > -1) {
-			component = component.substring(0, component.indexOf('.'));
-		}
-		
-		component = component.replace('\\', '/');
-		component = ((objectName.length() > 0) ? objectName + "." : "") + component;
-		
-		packager.addNameContent(metaType, component);
-	}
-	
-	public void printDestructiveChanges() {
-		packager.printFile();
-	}
-	
-	public void createDestructiveChangesXmlFile(String dir) {
-		packager.createFile(dir);
 	}
 }

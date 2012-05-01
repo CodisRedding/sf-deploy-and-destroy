@@ -13,43 +13,31 @@ public class SaxyHandler extends DefaultHandler {
 	String searchTerm = null;
 
 	@Override
-	public void startElement(String uri, String localName,
-			String qName, Attributes attributes)
+	public void characters(char ch[], int start, int length)
 			throws SAXException {
 
-		
-		
+		if (bfoundSearchTerm && bfoundMetaType) {
+
+			String data = new String(ch, start, length);
+
+			if (!data.contains("\n")) {
+				existing.add(data);
+				bfoundSearchTerm = false;
+				bfoundMetaType = false;
+			}
+		}
+	}
+
+	@Override
+	public void startElement(String uri, String localName, String qName,
+			Attributes attributes) throws SAXException {
+
 		if (qName.equalsIgnoreCase(metaType)) {
 			bfoundMetaType = true;
 		}
 
 		if (qName.equalsIgnoreCase(searchTerm)) {
-			//System.out.println("Start Element :" + qName);
 			bfoundSearchTerm = true;
-		}
-	}
-
-	@Override
-	public void endElement(String uri, String localName,
-			String qName) throws SAXException {
-
-		//System.out.println("End Element :" + qName);
-	}
-
-	@Override
-	public void characters(char ch[], int start, int length)
-			throws SAXException {
-
-		if (bfoundSearchTerm && bfoundMetaType) {
-			
-			String data = new String(ch, start, length);
-			
-			if(!data.contains("\n")) {
-				//System.out.println("fullName : " + data);
-				existing.add(data);
-				bfoundSearchTerm = false;
-				bfoundMetaType = false;
-			}
 		}
 	}
 }
