@@ -138,9 +138,6 @@ public class DestructiveBuilder {
 			// get package name
 			final String xmlName = PropertyReader.getProperty(property,
 					PropertyReader.PropertyTypes.XmlName);
-			if (xmlName == null) {
-				// continue;
-			}
 
 			// get some work done
 			String deployToPath = srcDirDeployingTo.getPath() + File.separator
@@ -274,31 +271,29 @@ public class DestructiveBuilder {
 	 *            package.properties) to be parsed for destruction.
 	 */
 	private void walkAndDestroy(final String origPath, String toPath,
-			String fromPath, String metaType, String dirName, String packageName) {
+			String fromPath, String metaType, String dirName,
+			String packageName) {
 
 		File root = new File(toPath);
 		File[] list = root.listFiles();
 
 		for (File f : list) {
+
 			if (f.isDirectory()) {
 				walkAndDestroy(origPath, f.getPath(), fromPath, metaType,
 						dirName, packageName);
 			} else {
+
 				// check to see if file exists in fromPath
 				File fromFile = new File(f.getPath().replace(
 						srcDirDeployingTo.getPath(),
 						srcDirDeployingFrom.getPath()));
 
-				if (!fromFile.exists()) {
+				if (!fromFile.exists() && !fromFile.getName().endsWith(".xml")) {
 
-					// check if file is a components metadata file
-					if (!fromFile.getName().endsWith(".xml")) {
-						String component = f.getPath().replace(
-								origPath + File.separator, "");
-						addDestructiveComponents(metaType, component, "");
-					}
-
-					packager.addFileContent(metaType, f.getPath());
+					String component = f.getPath().replace(
+							origPath + File.separator, "");
+					addDestructiveComponents(metaType, component, "");
 				}
 			}
 		}

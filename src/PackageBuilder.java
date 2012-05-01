@@ -15,24 +15,7 @@ import java.util.Hashtable;
  */
 public class PackageBuilder {
 
-	private Hashtable<String, ArrayList<String>> fileContents = new Hashtable<String, ArrayList<String>>();
 	private Hashtable<String, ArrayList<String>> nameContents = new Hashtable<String, ArrayList<String>>();
-
-	/**
-	 * NOT USED
-	 * 
-	 * @param packageDirName
-	 * @param pathAndFile
-	 */
-	public void addFileContent(String packageDirName, String pathAndFile) {
-
-		if (!fileContents.containsKey(packageDirName)) {
-			fileContents.put(packageDirName, new ArrayList<String>());
-		}
-
-		ArrayList<String> destroys = fileContents.get(packageDirName);
-		destroys.add(pathAndFile);
-	}
 
 	/**
 	 * Adds supplied params to the buffer of metadata to destroy.
@@ -95,7 +78,7 @@ public class PackageBuilder {
 		content.append("</Package>" + LINE_SEP);
 
 		// eek! help
-		// TODO: refactor this
+		// TODO: clean this up
 		Writer out = null;
 
 		try {
@@ -118,15 +101,6 @@ public class PackageBuilder {
 				e.printStackTrace();
 			}
 		}
-	}
-
-	/**
-	 * NOT USED
-	 * 
-	 * @return
-	 */
-	public Hashtable<String, ArrayList<String>> getFileContents() {
-		return fileContents;
 	}
 
 	/**

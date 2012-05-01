@@ -23,7 +23,7 @@ public class PropertyReader {
 	 *         package.properties file.
 	 */
 	public static enum PropertyTypes {
-		Directory, MetadataType, XmlName, SearchTerm, SupportsAsterisk
+		Directory, MetadataType, XmlName, SearchTerm, SupportsAsterisk, FileExt
 	}
 
 	/**
