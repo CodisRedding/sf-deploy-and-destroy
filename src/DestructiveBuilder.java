@@ -42,6 +42,8 @@ public class DestructiveBuilder {
 				component = component.substring(0, component.indexOf('.'));
 			}
 
+			// don't change the file separator. This is the expected forward
+			// slash for the destructiveChanges.xml file.
 			component = component.replace('\\', '/');
 			component = ((objectName.length() > 0) ? objectName + "." : "")
 					+ component;

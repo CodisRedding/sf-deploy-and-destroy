@@ -55,7 +55,9 @@ public class PackageBuilder {
 	}
 
 	/**
-	 * Generates the destructiveChanges.xml
+	 * Generates the destructiveChanges.xml. If no destructive changes are
+	 * found, a file is still created and is still safe to deploy within your
+	 * deployment package.
 	 * 
 	 * @param dir
 	 * 
@@ -112,6 +114,7 @@ public class PackageBuilder {
 			try {
 				out.close();
 			} catch (IOException e) {
+				// TODO catch block
 				e.printStackTrace();
 			}
 		}
@@ -145,7 +148,12 @@ public class PackageBuilder {
 		Enumeration<String> keys1 = destructNames.keys();
 		while (keys1.hasMoreElements()) {
 			Object key = keys1.nextElement();
-			System.out.println(key + "  " + destructNames.get(key));
+			System.out.println(key);
+			
+			for(String name : destructNames.get(key)) {
+				System.out.println("\t" + name);
+			}
+			System.out.println("");
 		}
 	}
 }
