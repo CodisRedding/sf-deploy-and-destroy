@@ -23,8 +23,8 @@
     <name>CustomField</name>
   </types>
   <types>
-    <members>Address/NON_US_Address</members>
     <members>Address/Organization_Addresses</members>
+    <members>Address/NON_US_Address</members>
     <members>Address/US_Addresses</members>
     <members>Education_Certification/Active_Education_Certifications</members>
     <members>Education_Certification/InActive_Education_Certifications</members>

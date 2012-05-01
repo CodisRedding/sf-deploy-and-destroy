@@ -1,14 +1,10 @@
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.zip.ZipOutputStream;
 
 
 public class PackageBuilder {

@@ -3,10 +3,6 @@ import java.util.ArrayList;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
 public class XmlReader {
 	
 	public static ArrayList<String> compareXml(String fileTo, String fileFrom, String metaType, String searchTerm) {

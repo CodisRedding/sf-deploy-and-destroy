@@ -1,12 +1,9 @@
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Hashtable;
 
 public class DestructiveBuilder {
 
 	private PackageBuilder packager = new PackageBuilder();
-	private Hashtable<String, ArrayList<String>> destructStrings = new Hashtable<String, ArrayList<String>>();
 	private File srcDirDeployingTo = null;
 	private File srcDirDeployingFrom = null;
 
@@ -86,7 +83,7 @@ public class DestructiveBuilder {
 			boolean supportsAsterisk = (asterisk != null);
 
 			// get some work done
-			String deployToPath = srcDirDeployingTo.getPath() + "\\" + dirName;
+			String deployToPath = srcDirDeployingTo.getPath() + File.separator + dirName;
 			if (searchTerm.equals(PropertyReader.FILESEACH)) {
 
 				// check if dirDeployToSrc has files that we need to destroy
@@ -150,7 +147,7 @@ public class DestructiveBuilder {
 				if (!fromFile.exists()) {
 					
 					if(!fromFile.getName().endsWith(".xml")) {
-						String component = f.getPath().replace(origPath + "\\", "");
+						String component = f.getPath().replace(origPath + File.separator, "");
 						addDestructiveComponents(metaType, component, "");
 					}
 					
