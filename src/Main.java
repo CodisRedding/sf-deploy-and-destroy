@@ -1,5 +1,5 @@
-
-
+import retrieve.RetrieveBuilder;
+import destory.DestructiveBuilder;
 
 /**
  * @author rocky
@@ -26,11 +26,15 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
+		RetrieveBuilder retrieve = new RetrieveBuilder("qa");
+		retrieve.retreive();
+
+		/*
 		if (args.length != 3) {
 
 			System.out.println("Missing args");
 			System.out
-					.println("Useage: destroy /deploy/to/src/path /deploy/from/src/path /save/destructive/file/to/path");
+					.println("Useage: destroy [from env name] [to env name] [/save/destructive/file/to/path]");
 			System.exit(1);
 		}
 
@@ -42,5 +46,6 @@ public class Main {
 		builder.buildDestructiveChanges(saveTo);
 		builder.printDestructiveChanges();
 		System.exit(0);
+		*/
 	}
 }

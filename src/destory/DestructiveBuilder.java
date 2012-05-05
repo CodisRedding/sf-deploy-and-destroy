@@ -1,8 +1,10 @@
-
-
+package destory;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import system.PackageBuilder;
+import system.PropertyReader;
 
 /**
  * @author rocky
@@ -41,9 +43,6 @@ public class DestructiveBuilder {
 			String objectName) {
 
 		if (component != null) {
-			if (component.indexOf('.') > -1) {
-				component = component.substring(0, component.indexOf('.'));
-			}
 
 			// don't change the file separator. This is the expected forward
 			// slash for the destructiveChanges.xml file.
@@ -112,35 +111,38 @@ public class DestructiveBuilder {
 	 */
 	private void buildXmlFile(String dirToPlaceXmlFile) {
 
-		ArrayList<String> properties = PropertyReader.getProperties();
+		ArrayList<String> properties = PropertyReader
+				.getDestructiveProperties();
 
 		for (String property : properties) {
 
 			// get directory name
-			String dirName = PropertyReader.getProperty(property,
-					PropertyReader.PropertyTypes.Directory);
+			String dirName = PropertyReader.getDestructiveProperty(property,
+					PropertyReader.DestructivePropertyTypes.Directory);
 			File dirMetadata = new File(srcDirDeployingTo + "/" + dirName);
 			if (!dirMetadata.exists()) {
 				continue;
 			}
 
 			// get metadata type
-			String metadataType = PropertyReader.getProperty(property,
-					PropertyReader.PropertyTypes.MetadataType);
+			String metadataType = PropertyReader.getDestructiveProperty(
+					property,
+					PropertyReader.DestructivePropertyTypes.MetadataType);
 			if (metadataType == null) {
 				continue;
 			}
 
 			// get search term
-			final String searchTerm = PropertyReader.getProperty(property,
-					PropertyReader.PropertyTypes.SearchTerm);
+			final String searchTerm = PropertyReader.getDestructiveProperty(
+					property,
+					PropertyReader.DestructivePropertyTypes.SearchTerm);
 			if (searchTerm == null) {
 				continue;
 			}
 
 			// get package name
-			final String xmlName = PropertyReader.getProperty(property,
-					PropertyReader.PropertyTypes.XmlName);
+			final String xmlName = PropertyReader.getDestructiveProperty(
+					property, PropertyReader.DestructivePropertyTypes.XmlName);
 
 			// get some work done
 			String deployToPath = srcDirDeployingTo.getPath() + File.separator
@@ -166,7 +168,8 @@ public class DestructiveBuilder {
 	 *            should create the destructiveChanges.xml file.
 	 */
 	public void createDestructiveChangesXmlFile(String dir) {
-		packager.createFile(dir);
+		packager.createFile(dir,
+				PropertyReader.getSystemProperty("sf.destruct.file.name"));
 	}
 
 	/**
@@ -236,6 +239,10 @@ public class DestructiveBuilder {
 					String name = f.getName();
 					name = name.substring(0, name.indexOf('.'));
 					for (String component : rets) {
+						if (component.indexOf('|') > -1) {
+							component = component.replace("|", ".");
+						}
+
 						addDestructiveComponents(packageName, component, name);
 					}
 				}
@@ -295,6 +302,12 @@ public class DestructiveBuilder {
 
 					String component = f.getPath().replace(
 							origPath + File.separator, "");
+
+					if (component.indexOf('.') > -1) {
+						component = component.substring(0,
+								component.indexOf('.'));
+					}
+
 					addDestructiveComponents(metaType, component, "");
 				}
 			}

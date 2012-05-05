@@ -1,4 +1,4 @@
-
+package system;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,14 +20,14 @@ public class PackageBuilder {
 	private Hashtable<String, ArrayList<String>> nameContents = new Hashtable<String, ArrayList<String>>();
 
 	/**
-	 * Adds supplied params to the buffer of metadata to destroy.
+	 * Adds supplied params to the buffer of metadata to build.
 	 * 
 	 * @param metadataName
 	 * 
-	 *            The metadata name of the component being destroyed.
+	 *            The metadata name of the component being built.
 	 * @param metadataPath
 	 * 
-	 *            The path and component name to be destroyed.
+	 *            The path and component name to be built.
 	 */
 	public void addNameContent(String metadataName, String metadataPath) {
 
@@ -35,28 +35,26 @@ public class PackageBuilder {
 			nameContents.put(metadataName, new ArrayList<String>());
 		}
 
-		ArrayList<String> destroys = nameContents.get(metadataName);
-		destroys.add(metadataPath);
+		ArrayList<String> builds = nameContents.get(metadataName);
+		builds.add(metadataPath);
 	}
 
 	/**
-	 * Generates the destructiveChanges.xml. If no destructive changes are
-	 * found, a file is still created and is still safe to deploy within your
-	 * deployment package.
+	 * Generates the *.xml. If no changes are found, a file is still created and
+	 * is still safe to deploy within your deployment package.
 	 * 
 	 * @param dir
 	 * 
-	 *            The dir path where the generated destructiveChanges.xml should
-	 *            be created.
+	 *            The dir path where the generated *.xml should be created.
 	 */
-	public void createFile(String dir) {
+	public void createFile(String dir, String fileName) {
 
 		// TODO: create template later
 		StringBuilder content = new StringBuilder();
 		String LINE_SEP = System.getProperty("line.separator");
 
 		content.append(String.format("<?xml version=\"%s\" encoding=\""
-				+ PropertyReader.getSystemProperty("sf.destruct.file.encoding")
+				+ PropertyReader.getSystemProperty("sf.package.file.encoding")
 				+ "\"?>" + LINE_SEP,
 				PropertyReader.getSystemProperty("sf.package.xml.version")));
 		content.append(String.format("<Package xmlns=\"%s\">" + LINE_SEP,
@@ -83,14 +81,15 @@ public class PackageBuilder {
 		// TODO: clean this up
 		Writer out = null;
 
+		// make the dir if it doesn't exist
+		File dirPath = new File(dir);
+		dirPath.mkdir();
+
 		try {
-			out = new OutputStreamWriter(
-					new FileOutputStream(dir
-							+ File.separator
-							+ PropertyReader
-									.getSystemProperty("sf.destruct.file.name")),
+			out = new OutputStreamWriter(new FileOutputStream(dir
+					+ File.separator + fileName),
 					PropertyReader
-							.getSystemProperty("sf.destruct.file.encoding"));
+							.getSystemProperty("sf.package.file.encoding"));
 			out.write(content.toString());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -106,27 +105,27 @@ public class PackageBuilder {
 	}
 
 	/**
-	 * Gets the buffer of package components to be destroyed.
+	 * Gets the buffer of package components to be built.
 	 * 
 	 * @return
 	 * 
-	 *         The package components to be destroyed.
+	 *         The package components to be built.
 	 */
 	public Hashtable<String, ArrayList<String>> getNameContents() {
 		return nameContents;
 	}
 
 	/**
-	 * Prints out the package components to be destroyed.
+	 * Prints out the package components to be built.
 	 */
 	public void printFile() {
-		Hashtable<String, ArrayList<String>> destructNames = getNameContents();
-		Enumeration<String> keys1 = destructNames.keys();
+		Hashtable<String, ArrayList<String>> names = getNameContents();
+		Enumeration<String> keys1 = names.keys();
 		while (keys1.hasMoreElements()) {
 			Object key = keys1.nextElement();
 			System.out.println(key);
 
-			for (String name : destructNames.get(key)) {
+			for (String name : names.get(key)) {
 				System.out.println("\t" + name);
 			}
 			System.out.println("");

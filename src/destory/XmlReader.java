@@ -1,4 +1,4 @@
-
+package destory;
 
 import java.util.ArrayList;
 
@@ -92,7 +92,8 @@ public class XmlReader {
 
 			SaxyHandler handler = new SaxyHandler();
 			handler.metaType = metaType;
-			handler.searchTerm = searchTerm;
+			handler.searchTerm = searchTerm.replace("|", "");
+			handler.lookForParentName = searchTerm.contains("|");
 
 			saxParser.parse(filePath, handler);
 			existing = handler.existing;

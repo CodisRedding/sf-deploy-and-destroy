@@ -1,4 +1,4 @@
-
+package destory;
 
 import java.util.ArrayList;
 
@@ -22,6 +22,9 @@ public class SaxyHandler extends DefaultHandler {
 	String metaType = null;
 	String searchTerm = null;
 	String LINE_SEP = System.getProperty("line.separator");
+	String lastParentNameFound = "";
+	boolean lookForParentName = false;
+	boolean foundParent = false;
 
 	/*
 	 * (non-Javadoc)
@@ -36,11 +39,28 @@ public class SaxyHandler extends DefaultHandler {
 	public void characters(char ch[], int start, int length)
 			throws SAXException {
 
+		if (bfoundSearchTerm && !bfoundMetaType && lookForParentName) {
+
+			if (foundParent) {
+
+				String data = new String(ch, start, length);
+
+				if (!data.contains(LINE_SEP)) {
+					lastParentNameFound = data;
+				}
+				foundParent = false;
+			}
+		}
+
 		if (bfoundSearchTerm && bfoundMetaType) {
 
 			String data = new String(ch, start, length);
 
 			if (!data.contains(LINE_SEP)) {
+				if (lookForParentName) {
+					data = lastParentNameFound + "|" + data;
+				}
+
 				existing.add(data);
 				bfoundSearchTerm = false;
 				bfoundMetaType = false;
@@ -69,6 +89,7 @@ public class SaxyHandler extends DefaultHandler {
 
 		if (qName.equalsIgnoreCase(searchTerm)) {
 			bfoundSearchTerm = true;
+			foundParent = true;
 		}
 	}
 }
