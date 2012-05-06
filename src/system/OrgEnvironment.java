@@ -12,8 +12,13 @@ public class OrgEnvironment {
 	private boolean includePackages = false;
 	private String authEndpoint = null;
 	private String serviceEndpoint = null;
+	private String server = null;
 
 	public OrgEnvironment(String name) {
+
+		// This soon needs to be changed to api version per org, not system wide
+		Double apiVersion = Double.valueOf(PropertyReader
+				.getSystemProperty("sf.api.version"));
 
 		this.name = name;
 		this.login = PropertyReader.getEnviromentProperty(name, "sf.login");
@@ -23,10 +28,13 @@ public class OrgEnvironment {
 				"sf.security.token");
 		this.environment = PropertyReader.getEnviromentProperty(name,
 				"sf.environment");
+		this.server = PropertyReader.getEnviromentProperty(name,
+				"sf.environment.server");
 		this.authEndpoint = PropertyReader.getEnvironmentEndpoint(
-				this.environment, "auth");
+				this.environment, "auth", this.server, apiVersion);
 		this.serviceEndpoint = PropertyReader.getEnvironmentEndpoint(
-				this.environment, "service");
+				this.environment, "service", this.server, apiVersion);
+
 	}
 
 	public String getEnvironment() {
@@ -59,6 +67,10 @@ public class OrgEnvironment {
 
 	public boolean isIncludePackages() {
 		return includePackages;
+	}
+
+	public String getServer() {
+		return server;
 	}
 
 	public File getLocationFolder() {

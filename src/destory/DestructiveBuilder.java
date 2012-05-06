@@ -1,11 +1,13 @@
 package destory;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import system.OrgEnvironment;
 import system.PackageBuilder;
 import system.PropertyReader;
+import system.ZipUtils;
 
 /**
  * @author rocky
@@ -70,7 +72,7 @@ public class DestructiveBuilder {
 	 *         file fails anywhere in the process. Returns true is all paths,
 	 *         file generation completes successfully.
 	 */
-	public boolean buildDestructiveChanges(String dirToPlaceXmlFile) {
+	public boolean buildDestructiveChanges() {
 		boolean successful = false;
 
 		try {
@@ -84,7 +86,7 @@ public class DestructiveBuilder {
 						"Source directory that your deploying from does not exist.");
 			}
 
-			File destXmlFile = new File(dirToPlaceXmlFile);
+			File destXmlFile = new File(orgTo.getSourceFolder().getPath());
 			if (!destXmlFile.exists()) {
 				throw new Exception(
 						"Directory to place destructiveChanges.xml in does not exist.");
@@ -92,6 +94,12 @@ public class DestructiveBuilder {
 
 			buildXmlFile(destXmlFile.getPath());
 			createDestructiveChangesXmlFile(destXmlFile.getPath());
+			ZipUtils zipUtils = new ZipUtils();
+			zipUtils.zip(orgTo.getSourceFolder().getPath(), orgTo
+					.getLocationFolder().getPath());
+
+			doDelete(orgFrom.getLocationFolder());
+			doDelete(orgTo.getSourceFolder());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -313,6 +321,17 @@ public class DestructiveBuilder {
 					addDestructiveComponents(metaType, component, "");
 				}
 			}
+		}
+	}
+
+	private void doDelete(File path) throws IOException {
+		if (path.isDirectory()) {
+			for (File child : path.listFiles()) {
+				doDelete(child);
+			}
+		}
+		if (!path.delete()) {
+			throw new IOException("Could not delete " + path);
 		}
 	}
 }

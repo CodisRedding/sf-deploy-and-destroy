@@ -39,7 +39,11 @@ public class RetrieveBuilder {
 
 		ArrayList<String> properties = PropertyReader.getRetrieveProperties();
 
-		conMan.Login();
+		if(!conMan.Login()) {
+			System.out.println("Unable to connect.");
+			System.exit(1);
+		}
+		
 		for (String property : properties) {
 
 			// get metadata type
@@ -66,19 +70,29 @@ public class RetrieveBuilder {
 			}
 		}
 
-		packager.createFile(
-				PropertyReader.getSystemProperty("sf.environments.loc")
-						+ File.separator + this.environment.getName(),
-				PropertyReader.getSystemProperty("sf.package.file.name"));
+		// no longer a need to create the package.xml file.
+		// packager.createFile(
+		// PropertyReader.getSystemProperty("sf.environments.loc")
+		// + File.separator + this.environment.getName(),
+		// PropertyReader.getSystemProperty("sf.package.file.name"));
+
+		String dir = PropertyReader.getSystemProperty("sf.environments.loc")
+				+ File.separator + this.environment.getName();
+		
+		File dirPath = new File(dir);
+		dirPath.mkdir();
 
 		Zipper zipper = new Zipper(this.environment, packager, conMan);
 
 		try {
 			zipper.retrieveZip();
-			
+
 			// unzipping long enough to compare then delete
 			ZipUtils utils = new ZipUtils();
-			utils.unzipArchive(this.environment.getRetrieveZip(), this.environment.getLocationFolder());
+			utils.unzip(this.environment.getRetrieveZip(),
+					this.environment.getLocationFolder());
+			
+			this.environment.getRetrieveZip().delete();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

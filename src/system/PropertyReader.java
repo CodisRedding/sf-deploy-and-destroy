@@ -190,7 +190,7 @@ public class PropertyReader {
 	 *         Returns the endpoint service URI.
 	 */
 	public static String getEnvironmentEndpoint(String envType,
-			String endpointType) {
+			String endpointType, String sfServer, Double apiVersion) {
 
 		String response = null;
 
@@ -204,13 +204,17 @@ public class PropertyReader {
 			}
 
 			// assumes sandbox if production is not specified
-			if (envType.equals(PRODUCTION_ENV)) {
-				response = prop.getProperty("sf.prod." + endpointType
-						+ ".endpoint");
-			} else {
-				response = prop.getProperty("sf.sandbox." + endpointType
-						+ ".endpoint");
-			}
+			response = prop.getProperty("sf." + endpointType + ".endpoint");
+
+			if(endpointType.equals("auth"))
+			{
+				response = String.format(response, (envType.equals(PRODUCTION_ENV)) ? "login" : "test", String.valueOf(apiVersion));
+			} 
+			
+			if(endpointType.equals("service"))
+			{
+				response = String.format(response, sfServer, String.valueOf(apiVersion));
+			} 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

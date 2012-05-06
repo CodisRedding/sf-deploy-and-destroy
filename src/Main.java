@@ -48,7 +48,7 @@ public class Main {
 		retrieveFrom.retreive();
 
 		DestructiveBuilder builder = new DestructiveBuilder(orgFrom, orgTo);
-		builder.buildDestructiveChanges(orgTo.getSourceFolder().getPath());
+		builder.buildDestructiveChanges();
 		builder.printDestructiveChanges();
 	}
 }
