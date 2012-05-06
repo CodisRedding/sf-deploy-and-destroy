@@ -6,6 +6,6 @@ see issues/milestones for dev tasks
 
 # Example #
 
-This [destructiveChanges.xml](https://gist.github.com/2572054) file is an example generated using deployAndDestroy. (Notice the picklistValues, they also include recordtype picklist values ;) )
+This [destructiveChanges.xml](https://gist.github.com/2572054) file is an example generated using deployAndDestroy.
 
 *Note** this is just an example, so if you're wondering why there are standard objects, fields, etc. it's because I ran deployAndDestroy against an empty org.
