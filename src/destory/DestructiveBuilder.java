@@ -3,6 +3,7 @@ package destory;
 import java.io.File;
 import java.util.ArrayList;
 
+import system.OrgEnvironment;
 import system.PackageBuilder;
 import system.PropertyReader;
 
@@ -15,12 +16,12 @@ import system.PropertyReader;
 public class DestructiveBuilder {
 
 	private PackageBuilder packager = new PackageBuilder();
-	private File srcDirDeployingTo = null;
-	private File srcDirDeployingFrom = null;
+	private OrgEnvironment orgTo = null;
+	private OrgEnvironment orgFrom = null;
 
-	public DestructiveBuilder(String dirDeployingTo, String dirDeployingFrom) {
-		srcDirDeployingTo = new File(dirDeployingTo);
-		srcDirDeployingFrom = new File(dirDeployingFrom);
+	public DestructiveBuilder(OrgEnvironment orgTo, OrgEnvironment orgFrom) {
+		this.orgTo = orgTo;
+		this.orgFrom = orgFrom;
 	}
 
 	/**
@@ -73,12 +74,12 @@ public class DestructiveBuilder {
 		boolean successful = false;
 
 		try {
-			if (!srcDirDeployingTo.exists()) {
+			if (!orgTo.getSourceFolder().exists()) {
 				throw new Exception(
 						"Source directory that your deploying to does not exist.");
 			}
 
-			if (!srcDirDeployingFrom.exists()) {
+			if (!orgFrom.getSourceFolder().exists()) {
 				throw new Exception(
 						"Source directory that your deploying from does not exist.");
 			}
@@ -119,7 +120,8 @@ public class DestructiveBuilder {
 			// get directory name
 			String dirName = PropertyReader.getDestructiveProperty(property,
 					PropertyReader.DestructivePropertyTypes.Directory);
-			File dirMetadata = new File(srcDirDeployingTo + "/" + dirName);
+			File dirMetadata = new File(orgTo.getSourceFolder().getPath()
+					+ File.separator + dirName);
 			if (!dirMetadata.exists()) {
 				continue;
 			}
@@ -145,17 +147,17 @@ public class DestructiveBuilder {
 					property, PropertyReader.DestructivePropertyTypes.XmlName);
 
 			// get some work done
-			String deployToPath = srcDirDeployingTo.getPath() + File.separator
-					+ dirName;
+			String deployToPath = orgTo.getSourceFolder().getPath()
+					+ File.separator + dirName;
 			if (searchTerm.equals(PropertyReader.FILESEACH)) {
 
 				// check if dirDeployToSrc has files that we need to destroy
-				walkAndDestroy(deployToPath, deployToPath,
-						srcDirDeployingFrom.getPath(), metadataType, dirName,
+				walkAndDestroy(deployToPath, deployToPath, orgFrom
+						.getSourceFolder().getPath(), metadataType, dirName,
 						metadataType);
 			} else {
-				seekAndDestroy(deployToPath, deployToPath,
-						srcDirDeployingFrom.getPath(), xmlName, dirName,
+				seekAndDestroy(deployToPath, deployToPath, orgFrom
+						.getSourceFolder().getPath(), xmlName, dirName,
 						searchTerm, metadataType);
 			}
 		}
@@ -229,8 +231,8 @@ public class DestructiveBuilder {
 			} else {
 				// Compare xml
 				File fromFile = new File(f.getPath().replace(
-						srcDirDeployingTo.getPath(),
-						srcDirDeployingFrom.getPath()));
+						orgTo.getSourceFolder().getPath(),
+						orgFrom.getSourceFolder().getPath()));
 
 				if (fromFile.exists() && !fromFile.getName().endsWith(".xml")) {
 					ArrayList<String> rets = XmlReader.compareXml(f.getPath(),
@@ -295,8 +297,8 @@ public class DestructiveBuilder {
 
 				// check to see if file exists in fromPath
 				File fromFile = new File(f.getPath().replace(
-						srcDirDeployingTo.getPath(),
-						srcDirDeployingFrom.getPath()));
+						orgTo.getSourceFolder().getPath(),
+						orgFrom.getSourceFolder().getPath()));
 
 				if (!fromFile.exists() && !fromFile.getName().endsWith(".xml")) {
 

@@ -4,8 +4,10 @@ import java.io.File;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
+import system.OrgEnvironment;
 import system.PackageBuilder;
 import system.PropertyReader;
+import system.ZipUtils;
 import api.ConnectionManager;
 
 import com.sforce.soap.metadata.FileProperties;
@@ -16,25 +18,18 @@ public class RetrieveBuilder {
 
 	private ConnectionManager conMan = null;
 	private PackageBuilder packager = new PackageBuilder();
-	private String environment = null;
+	private OrgEnvironment environment = null;
 	private Double API_VERSION = Double.valueOf(PropertyReader
 			.getSystemProperty("sf.api.version"));
 
-	public RetrieveBuilder(String environment) {
+	public RetrieveBuilder(OrgEnvironment environment) {
 		this.environment = environment;
 
-		String username = PropertyReader.getEnviromentProperty(
-				this.environment, "sf.login");
-		String password = PropertyReader.getEnviromentProperty(
-				this.environment, "sf.password");
-		String token = PropertyReader.getEnviromentProperty(this.environment,
-				"sf.security.token");
-		String env = PropertyReader.getEnviromentProperty(this.environment,
-				"sf.environment");
-		String authEndpoint = PropertyReader
-				.getEnvironmentEndpoint(env, "auth");
-		String serviceEndpoint = PropertyReader.getEnvironmentEndpoint(env,
-				"service");
+		String username = this.environment.getLogin();
+		String password = this.environment.getPassword();
+		String token = this.environment.getToken();
+		String authEndpoint = this.environment.getAuthEndpoint();
+		String serviceEndpoint = this.environment.getServiceEndpoint();
 
 		conMan = new ConnectionManager(username, password, token, authEndpoint,
 				serviceEndpoint);
@@ -73,13 +68,17 @@ public class RetrieveBuilder {
 
 		packager.createFile(
 				PropertyReader.getSystemProperty("sf.environments.loc")
-						+ File.separator + this.environment,
+						+ File.separator + this.environment.getName(),
 				PropertyReader.getSystemProperty("sf.package.file.name"));
-		retrieveFromApi();
-		
+
 		Zipper zipper = new Zipper(this.environment, packager, conMan);
+
 		try {
 			zipper.retrieveZip();
+			
+			// unzipping long enough to compare then delete
+			ZipUtils utils = new ZipUtils();
+			utils.unzipArchive(this.environment.getRetrieveZip(), this.environment.getLocationFolder());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -130,9 +129,5 @@ public class RetrieveBuilder {
 	 */
 	public void printRetreiveChanges() {
 		packager.printFile();
-	}
-
-	private void retrieveFromApi() {
-
 	}
 }

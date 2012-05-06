@@ -1,4 +1,5 @@
 import retrieve.RetrieveBuilder;
+import system.OrgEnvironment;
 import destory.DestructiveBuilder;
 
 /**
@@ -26,26 +27,28 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		RetrieveBuilder retrieve = new RetrieveBuilder("qa");
-		retrieve.retreive();
-
-		/*
-		if (args.length != 3) {
+		if (args.length != 2) {
 
 			System.out.println("Missing args");
 			System.out
-					.println("Useage: destroy [from env name] [to env name] [/save/destructive/file/to/path]");
+					.println("Useage: deployAndDestroy [from env name] [to env name]");
 			System.exit(1);
 		}
 
-		String pathTo = args[0];
-		String pathFrom = args[1];
-		String saveTo = args[2];
+		String envNameTo = args[0].toLowerCase();
+		String envNameFrom = args[1].toLowerCase();
+		
+		OrgEnvironment orgTo = new OrgEnvironment(envNameTo);
+		OrgEnvironment orgFrom = new OrgEnvironment(envNameFrom);
+		
+		RetrieveBuilder retrieveTo = new RetrieveBuilder(orgTo);
+		retrieveTo.retreive();
+		
+		RetrieveBuilder retrieveFrom = new RetrieveBuilder(orgFrom);
+		retrieveFrom.retreive();
 
-		DestructiveBuilder builder = new DestructiveBuilder(pathFrom, pathTo);
-		builder.buildDestructiveChanges(saveTo);
+		DestructiveBuilder builder = new DestructiveBuilder(orgFrom, orgTo);
+		builder.buildDestructiveChanges(orgTo.getSourceFolder().getPath());
 		builder.printDestructiveChanges();
-		System.exit(0);
-		*/
 	}
 }

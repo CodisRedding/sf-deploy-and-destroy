@@ -17,6 +17,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
+import system.OrgEnvironment;
 import system.PackageBuilder;
 import system.PropertyReader;
 import api.ConnectionManager;
@@ -34,7 +35,7 @@ public class Zipper {
 	private static final int MAX_NUM_POLL_REQUESTS = Integer
 			.valueOf(PropertyReader
 					.getSystemProperty("sf.retrieve.max.num.poll.requests"));
-	private String environment = null;
+	private OrgEnvironment environment = null;
 	private static ConnectionManager conMan = null;
 	private PackageBuilder packager = null;
 	private static final Double API_VERSION = Double.valueOf(PropertyReader
@@ -42,29 +43,22 @@ public class Zipper {
 	static BufferedReader rdr = new BufferedReader(new InputStreamReader(
 			System.in));
 
-	public Zipper(String environment, PackageBuilder packager,
+	public Zipper(OrgEnvironment environment, PackageBuilder packager,
 			ConnectionManager connectionManager) {
 		this.environment = environment;
 		this.packager = packager;
 		conMan = connectionManager;
 	}
 
-	public Zipper(String environment, PackageBuilder packager) {
+	public Zipper(OrgEnvironment environment, PackageBuilder packager) {
 		this.environment = environment;
 		this.packager = packager;
 
-		String username = PropertyReader.getEnviromentProperty(
-				this.environment, "sf.login");
-		String password = PropertyReader.getEnviromentProperty(
-				this.environment, "sf.password");
-		String token = PropertyReader.getEnviromentProperty(this.environment,
-				"sf.security.token");
-		String env = PropertyReader.getEnviromentProperty(this.environment,
-				"sf.environment");
-		String authEndpoint = PropertyReader
-				.getEnvironmentEndpoint(env, "auth");
-		String serviceEndpoint = PropertyReader.getEnvironmentEndpoint(env,
-				"service");
+		String username = this.environment.getLogin();
+		String password = this.environment.getPassword();
+		String token = this.environment.getToken();
+		String authEndpoint = this.environment.getAuthEndpoint();
+		String serviceEndpoint = this.environment.getServiceEndpoint();
 
 		conMan = new ConnectionManager(username, password, token, authEndpoint,
 				serviceEndpoint);
@@ -78,13 +72,14 @@ public class Zipper {
 		com.sforce.soap.metadata.Package pack = parsePackage();
 		retrieveRequest.setUnpackaged(pack);
 
-		if(conMan.getMetadataConnection() == null) {
-		
+		if (conMan.getMetadataConnection() == null) {
+
 			System.out.println("Connection is closed");
 			System.exit(1);
 		}
-		
-		AsyncResult asyncResult = conMan.getMetadataConnection().retrieve(retrieveRequest);
+
+		AsyncResult asyncResult = conMan.getMetadataConnection().retrieve(
+				retrieveRequest);
 
 		// Wait for the retrieve to complete
 		int poll = 0;
@@ -129,7 +124,7 @@ public class Zipper {
 		ByteArrayInputStream bais = new ByteArrayInputStream(
 				result.getZipFile());
 		String zipLoc = PropertyReader.getSystemProperty("sf.environments.loc")
-				+ File.separator + this.environment + File.separator
+				+ File.separator + this.environment.getName() + File.separator
 				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
 
 		File resultsFile = new File(zipLoc);
