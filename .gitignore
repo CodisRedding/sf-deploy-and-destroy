@@ -6,5 +6,5 @@ tmp/
 *.env
 !/environments/example1.env
 !/environments/example2.env
-!/environments/global.ignore
+!/environments/environment.ignore
 /environments/*
