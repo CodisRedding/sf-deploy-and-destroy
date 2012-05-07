@@ -1,5 +1,6 @@
 import retrieve.RetrieveBuilder;
 import system.OrgEnvironment;
+import deploy.DeployBuilder;
 import destory.DestructiveBuilder;
 
 /**
@@ -47,8 +48,11 @@ public class Main {
 		RetrieveBuilder retrieveFrom = new RetrieveBuilder(orgFrom);
 		retrieveFrom.retreive();
 
-		DestructiveBuilder builder = new DestructiveBuilder(orgFrom, orgTo);
-		builder.buildDestructiveChanges();
-		builder.printDestructiveChanges();
+		DestructiveBuilder destroybuilder = new DestructiveBuilder(orgFrom, orgTo);
+		destroybuilder.buildDestructiveChanges();
+		destroybuilder.printDestructiveChanges();
+		
+		DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
+		deployBuilder.deploy();
 	}
 }

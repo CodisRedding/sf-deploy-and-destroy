@@ -101,4 +101,13 @@ public class OrgEnvironment {
 
 		return zipFile;
 	}
+	
+	public File getDestroyZip() {
+		String zip = PropertyReader.getSystemProperty("sf.environments.loc")
+				+ this.name + File.separator
+				+ PropertyReader.getSystemProperty("sf.destruct.zip.file.name");
+		File zipFile = new File(zip);
+
+		return zipFile;
+	}
 }

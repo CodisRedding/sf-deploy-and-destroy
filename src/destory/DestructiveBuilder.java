@@ -21,7 +21,7 @@ public class DestructiveBuilder {
 	private OrgEnvironment orgTo = null;
 	private OrgEnvironment orgFrom = null;
 
-	public DestructiveBuilder(OrgEnvironment orgTo, OrgEnvironment orgFrom) {
+	public DestructiveBuilder(OrgEnvironment orgFrom, OrgEnvironment orgTo) {
 		this.orgTo = orgTo;
 		this.orgFrom = orgFrom;
 	}
@@ -86,7 +86,7 @@ public class DestructiveBuilder {
 						"Source directory that your deploying from does not exist.");
 			}
 
-			File destXmlFile = new File(orgTo.getSourceFolder().getPath());
+			File destXmlFile = new File(orgFrom.getSourceFolder().getPath());
 			if (!destXmlFile.exists()) {
 				throw new Exception(
 						"Directory to place destructiveChanges.xml in does not exist.");
@@ -95,11 +95,11 @@ public class DestructiveBuilder {
 			buildXmlFile(destXmlFile.getPath());
 			createDestructiveChangesXmlFile(destXmlFile.getPath());
 			ZipUtils zipUtils = new ZipUtils();
-			zipUtils.zip(orgTo.getSourceFolder().getPath(), orgTo
+			zipUtils.zip(orgFrom.getSourceFolder().getPath(), orgFrom
 					.getLocationFolder().getPath());
 
-			doDelete(orgFrom.getLocationFolder());
-			doDelete(orgTo.getSourceFolder());
+			doDelete(orgTo.getLocationFolder());
+			doDelete(orgFrom.getSourceFolder());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

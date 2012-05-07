@@ -16,7 +16,7 @@ import java.util.zip.ZipOutputStream;
 import org.apache.commons.io.IOUtils;
 
 public class ZipUtils {
-	
+
 	List<String> fs = new ArrayList<String>();
 
 	public void unzip(File archive, File outputDir) {
@@ -38,12 +38,17 @@ public class ZipUtils {
 
 		try {
 
-			FileOutputStream fos = new FileOutputStream(folderToZipTo + File.separator + "destroy.zip");
+			FileOutputStream fos = new FileOutputStream(
+					folderToZipTo
+							+ File.separator
+							+ PropertyReader
+									.getSystemProperty("sf.destruct.zip.file.name"));
 			ZipOutputStream zos = new ZipOutputStream(fos);
 
 			System.out.println("Output to Zip : " + folderToZipTo);
 
-			for (String file : generateFileList(new File(sourceFolder), new File(sourceFolder).getAbsolutePath())) {
+			for (String file : generateFileList(new File(sourceFolder),
+					new File(sourceFolder).getAbsolutePath())) {
 
 				ZipEntry ze = new ZipEntry(file);
 				zos.putNextEntry(ze);
@@ -72,7 +77,8 @@ public class ZipUtils {
 
 		// add file only
 		if (node.isFile()) {
-			fs.add(generateZipEntry(node.getAbsoluteFile().toString(), sourceFolder));
+			fs.add(generateZipEntry(node.getAbsoluteFile().toString(),
+					sourceFolder));
 		}
 
 		if (node.isDirectory()) {
@@ -81,7 +87,7 @@ public class ZipUtils {
 				generateFileList(new File(node, filename), sourceFolder);
 			}
 		}
-		
+
 		return fs;
 	}
 
