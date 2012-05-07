@@ -36,8 +36,8 @@ public class Main {
 			System.exit(1);
 		}
 
-		String envNameTo = args[0].toLowerCase();
-		String envNameFrom = args[1].toLowerCase();
+		String envNameTo = args[1].toLowerCase();
+		String envNameFrom = args[0].toLowerCase();
 		
 		OrgEnvironment orgTo = new OrgEnvironment(envNameTo);
 		OrgEnvironment orgFrom = new OrgEnvironment(envNameFrom);

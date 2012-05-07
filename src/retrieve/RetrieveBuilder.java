@@ -66,7 +66,11 @@ public class RetrieveBuilder {
 			if (supportsAsterisk) {
 				packager.addNameContent(metadataType, PropertyReader.ASTERISK);
 			} else {
-				createFromApiFolder(metadataType, folderName);
+				if(folderName.equals(PropertyReader.ROOT_FOLDER)) {
+					createFromApi(metadataType, null);
+				} else {
+					createFromApiFolder(metadataType, folderName);
+				}
 			}
 		}
 

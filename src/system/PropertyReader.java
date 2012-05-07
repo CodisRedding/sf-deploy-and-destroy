@@ -17,6 +17,8 @@ import java.util.Properties;
  *         files.
  */
 public class PropertyReader {
+	
+	private static ArrayList<String> ignoreProperties = null;
 
 	/**
 	 * The different property types found on each line of the destroy.properties
@@ -48,6 +50,7 @@ public class PropertyReader {
 	public static final String FILESEACH = "fileName";
 
 	public static final String ASTERISK = "*";
+	public static final String ROOT_FOLDER = "root";
 
 	/**
 	 * Reads from the package.properties file.
@@ -320,5 +323,47 @@ public class PropertyReader {
 		}
 
 		return response;
+	}
+	
+	public static boolean shouldIgnoreMetadata(String metadata, String metadataPath) {
+
+		if(metadataPath.equals(PropertyReader.ASTERISK)) {
+			return false;
+		}
+		
+		if(ignoreProperties == null) {
+			ignoreProperties = new ArrayList<String>();
+		
+			try {
+				FileInputStream fstream = new FileInputStream(
+						getSystemProperty("sf.environment.ignore.properties.loc"));
+	
+				DataInputStream in = new DataInputStream(fstream);
+				BufferedReader br = new BufferedReader(new InputStreamReader(in));
+	
+				String line;
+				while ((line = br.readLine()) != null) {
+					ignoreProperties.add(line);
+				}
+				in.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		for(String prop : ignoreProperties) {
+			String meta = prop.substring(0, prop.indexOf(":"));
+			String path = prop.substring(prop.indexOf(":") + 1);
+			
+			if(meta.toLowerCase().equals(metadata.toLowerCase()) && path.toLowerCase().equals(metadataPath.toLowerCase())) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

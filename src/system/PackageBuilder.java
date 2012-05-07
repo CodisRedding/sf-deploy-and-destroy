@@ -31,6 +31,10 @@ public class PackageBuilder {
 	 */
 	public void addNameContent(String metadataName, String metadataPath) {
 
+		if(PropertyReader.shouldIgnoreMetadata(metadataName, metadataPath)) {
+			return;
+		}
+		
 		if (!nameContents.containsKey(metadataName)) {
 			nameContents.put(metadataName, new ArrayList<String>());
 		}
