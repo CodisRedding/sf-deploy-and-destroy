@@ -3,6 +3,7 @@ package destory;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 import system.OrgEnvironment;
 import system.PackageBuilder;

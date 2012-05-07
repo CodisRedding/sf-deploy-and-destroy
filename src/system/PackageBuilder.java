@@ -31,10 +31,10 @@ public class PackageBuilder {
 	 */
 	public void addNameContent(String metadataName, String metadataPath) {
 
-		if(PropertyReader.shouldIgnoreMetadata(metadataName, metadataPath)) {
+		if (PropertyReader.shouldIgnoreMetadata(metadataName, metadataPath)) {
 			return;
 		}
-		
+
 		if (!nameContents.containsKey(metadataName)) {
 			nameContents.put(metadataName, new ArrayList<String>());
 		}
@@ -52,6 +52,8 @@ public class PackageBuilder {
 	 *            The dir path where the generated *.xml should be created.
 	 */
 	public void createFile(String dir, String fileName) {
+
+		inspectAndClean();
 
 		// TODO: create template later
 		StringBuilder content = new StringBuilder();
@@ -133,6 +135,44 @@ public class PackageBuilder {
 				System.out.println("\t" + name);
 			}
 			System.out.println("");
+		}
+	}
+
+	// First bit of hardcoded-ness that i've encountered so far.
+	// TODO: cleanup & refactor
+	private void inspectAndClean() {
+
+		ArrayList<String> picklistValues = new ArrayList<String>();
+		
+		// check to make sure picklist values are not set to be destroyed if the
+		// whole field is set to be destroyed
+		for (String picklistValue : getNameContents().get("PicklistValue")) {
+			String field = picklistValue.substring(0,
+					picklistValue.lastIndexOf("."));
+
+			// check if a custom field with same name exists
+			if(getNameContents().get("CustomField") != null) {
+				for (String customField : getNameContents().get("CustomField")) {
+					if (field.equals(customField)) {
+						picklistValues.add(picklistValue);
+						continue;
+					}
+				}
+			}
+
+			// check if a record type with the same name exists
+			if(getNameContents().get("RecordType") != null) {
+				for (String recordType : getNameContents().get("RecordType")) {
+					if (field.equals(recordType)) {
+						picklistValues.add(picklistValue);
+						continue;
+					}
+				}
+			}
+		}
+
+		if (picklistValues.size() > 0) {
+			getNameContents().get("PicklistValue").removeAll(picklistValues);
 		}
 	}
 }
