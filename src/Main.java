@@ -1,7 +1,7 @@
 import retrieve.RetrieveBuilder;
 import system.OrgEnvironment;
 import deploy.DeployBuilder;
-import destory.DestructiveBuilder;
+import destroy.DestructiveBuilder;
 
 /**
  * @author rocky
