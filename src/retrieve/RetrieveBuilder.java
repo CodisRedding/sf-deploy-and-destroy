@@ -43,6 +43,8 @@ public class RetrieveBuilder {
 			System.out.println("Unable to connect.");
 			System.exit(1);
 		}
+
+		System.out.println("### Retrieving " + environment.getName() + " ###");
 		
 		for (String property : properties) {
 

@@ -143,36 +143,48 @@ public class PackageBuilder {
 	private void inspectAndClean() {
 
 		ArrayList<String> picklistValues = new ArrayList<String>();
-		
-		// check to make sure picklist values are not set to be destroyed if the
-		// whole field is set to be destroyed
-		for (String picklistValue : getNameContents().get("PicklistValue")) {
-			String field = picklistValue.substring(0,
-					picklistValue.lastIndexOf("."));
 
-			// check if a custom field with same name exists
-			if(getNameContents().get("CustomField") != null) {
-				for (String customField : getNameContents().get("CustomField")) {
-					if (field.equals(customField)) {
-						picklistValues.add(picklistValue);
-						continue;
+		try {
+			// check to make sure picklist values are not set to be destroyed if
+			// the
+			// whole field is set to be destroyed
+			if (getNameContents() != null) {
+				for (String picklistValue : getNameContents().get(
+						"PicklistValue")) {
+					String field = picklistValue.substring(0,
+							picklistValue.lastIndexOf("."));
+
+					// check if a custom field with same name exists
+					if (getNameContents().get("CustomField") != null) {
+						for (String customField : getNameContents().get(
+								"CustomField")) {
+							if (field.equals(customField)) {
+								picklistValues.add(picklistValue);
+								continue;
+							}
+						}
+					}
+
+					// check if a record type with the same name exists
+					if (getNameContents().get("RecordType") != null) {
+						for (String recordType : getNameContents().get(
+								"RecordType")) {
+							if (field.equals(recordType)) {
+								picklistValues.add(picklistValue);
+								continue;
+							}
+						}
 					}
 				}
-			}
 
-			// check if a record type with the same name exists
-			if(getNameContents().get("RecordType") != null) {
-				for (String recordType : getNameContents().get("RecordType")) {
-					if (field.equals(recordType)) {
-						picklistValues.add(picklistValue);
-						continue;
-					}
+				if (picklistValues.size() > 0) {
+					getNameContents().get("PicklistValue").removeAll(
+							picklistValues);
 				}
 			}
-		}
-
-		if (picklistValues.size() > 0) {
-			getNameContents().get("PicklistValue").removeAll(picklistValues);
+		} catch (Exception e) {
+			// nothing...
+			// this was rushed .. redo when you're not 
 		}
 	}
 }

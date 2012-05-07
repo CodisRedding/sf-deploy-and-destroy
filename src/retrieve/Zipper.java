@@ -120,7 +120,7 @@ public class Zipper {
 		}
 
 		// Write the zip to the file system
-		System.out.println("Writing results to zip file");
+		//System.out.println("Writing results to zip file");
 		ByteArrayInputStream bais = new ByteArrayInputStream(
 				result.getZipFile());
 		String zipLoc = PropertyReader.getSystemProperty("sf.environments.loc")
@@ -134,8 +134,6 @@ public class Zipper {
 			FileChannel dest = os.getChannel();
 			copy(src, dest);
 
-			System.out.println("Results written to "
-					+ resultsFile.getAbsolutePath());
 		} finally {
 			os.close();
 		}

@@ -45,8 +45,6 @@ public class ZipUtils {
 									.getSystemProperty("sf.destruct.zip.file.name"));
 			ZipOutputStream zos = new ZipOutputStream(fos);
 
-			System.out.println("Output to Zip : " + folderToZipTo);
-
 			for (String file : generateFileList(new File(sourceFolder),
 					new File(sourceFolder).getAbsolutePath())) {
 
