@@ -149,29 +149,31 @@ public class PackageBuilder {
 			// the
 			// whole field is set to be destroyed
 			if (getNameContents() != null) {
-				for (String picklistValue : getNameContents().get(
-						"PicklistValue")) {
-					String field = picklistValue.substring(0,
-							picklistValue.lastIndexOf("."));
-
-					// check if a custom field with same name exists
-					if (getNameContents().get("CustomField") != null) {
-						for (String customField : getNameContents().get(
-								"CustomField")) {
-							if (field.equals(customField)) {
-								picklistValues.add(picklistValue);
-								continue;
+				
+				if(getNameContents().get("PicklistValue") != null) {
+					for (String picklistValue : getNameContents().get(
+							"PicklistValue")) {
+						Integer idx1 = picklistValue.indexOf(".");
+						String field = picklistValue.substring(0,
+								picklistValue.indexOf(".", idx1 + 1));
+	
+						// check if a custom field with same name exists
+						if (getNameContents().get("CustomField") != null) {
+							for (String customField : getNameContents().get(
+									"CustomField")) {
+								if (field.equals(customField)) {
+									picklistValues.add(picklistValue);
+								}
 							}
 						}
-					}
-
-					// check if a record type with the same name exists
-					if (getNameContents().get("RecordType") != null) {
-						for (String recordType : getNameContents().get(
-								"RecordType")) {
-							if (field.equals(recordType)) {
-								picklistValues.add(picklistValue);
-								continue;
+						
+						// check if a record type with the same name exists
+						if (getNameContents().get("RecordType") != null) {
+							for (String recordType : getNameContents().get(
+									"RecordType")) {
+								if (field.equals(recordType)) {
+									picklistValues.add(picklistValue);
+								}
 							}
 						}
 					}
@@ -184,7 +186,8 @@ public class PackageBuilder {
 			}
 		} catch (Exception e) {
 			// nothing...
-			// this was rushed .. redo when you're not 
+			// this was rushed .. redo when you're not
+			System.out.println(e.getMessage());
 		}
 	}
 }

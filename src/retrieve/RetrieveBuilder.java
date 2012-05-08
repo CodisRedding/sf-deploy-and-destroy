@@ -135,7 +135,9 @@ public class RetrieveBuilder {
 					new ListMetadataQuery[] { query }, API_VERSION);
 			if (lmr != null) {
 				for (FileProperties n : lmr) {
-					packager.addNameContent(metadataType, n.getFullName());
+					if(folder != null && !metadataType.endsWith("__c")) {
+						packager.addNameContent(metadataType, n.getFullName());
+					}
 				}
 			}
 		} catch (ConnectionException ce) {

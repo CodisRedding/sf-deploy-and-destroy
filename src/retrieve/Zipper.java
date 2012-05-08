@@ -78,6 +78,7 @@ public class Zipper {
 			System.exit(1);
 		}
 
+		//retrieveRequest.setPackageNames(new String[] { "Conga Composer", "Report Engine", "ExactTarget for AppExchange - Fall 2007 (11/5/2007)", "Relationships", "Find Nearby", "Mass Update And Edit", "Mass Update Contacts 2.0" });
 		AsyncResult asyncResult = conMan.getMetadataConnection().retrieve(
 				retrieveRequest);
 
