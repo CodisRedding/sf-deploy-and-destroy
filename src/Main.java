@@ -36,23 +36,23 @@ public class Main {
 			System.exit(1);
 		}
 
-		String envNameTo = args[1].toLowerCase();
 		String envNameFrom = args[0].toLowerCase();
+		String envNameTo = args[1].toLowerCase();
 		
-		OrgEnvironment orgTo = new OrgEnvironment(envNameTo);
 		OrgEnvironment orgFrom = new OrgEnvironment(envNameFrom);
-		
-		RetrieveBuilder retrieveTo = new RetrieveBuilder(orgTo);
-		retrieveTo.retreive();
+		OrgEnvironment orgTo = new OrgEnvironment(envNameTo);
 		
 		RetrieveBuilder retrieveFrom = new RetrieveBuilder(orgFrom);
 		retrieveFrom.retreive();
+		
+		RetrieveBuilder retrieveTo = new RetrieveBuilder(orgTo);
+		retrieveTo.retreive();
 
 		DestructiveBuilder destroybuilder = new DestructiveBuilder(orgFrom, orgTo);
 		destroybuilder.buildDestructiveChanges();
 		destroybuilder.printDestructiveChanges();
 		
-		DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
-		deployBuilder.deploy();
+		//DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
+		//deployBuilder.deploy();
 	}
 }

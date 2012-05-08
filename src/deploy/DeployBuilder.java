@@ -51,10 +51,13 @@ public class DeployBuilder {
 
 		try {
 			byte zipBytes[] = readZipFile();
+			
 			DeployOptions deployOptions = new DeployOptions();
 			deployOptions.setPerformRetrieve(false);
 			deployOptions.setRollbackOnError(true);
 			deployOptions.setSinglePackage(true);
+			deployOptions.setPurgeOnDelete(true);
+			
 			AsyncResult asyncResult = conMan.getMetadataConnection().deploy(
 					zipBytes, deployOptions);
 			// Wait for the deploy to complete

@@ -99,8 +99,8 @@ public class DestructiveBuilder {
 			zipUtils.zip(orgFrom.getSourceFolder().getPath(), orgFrom
 					.getLocationFolder().getPath());
 
-			doDelete(orgTo.getLocationFolder());
-			doDelete(orgFrom.getSourceFolder());
+			//doDelete(orgTo.getLocationFolder());
+			//doDelete(orgFrom.getSourceFolder());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

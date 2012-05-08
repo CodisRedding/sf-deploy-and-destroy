@@ -135,7 +135,8 @@ public class RetrieveBuilder {
 					new ListMetadataQuery[] { query }, API_VERSION);
 			if (lmr != null) {
 				for (FileProperties n : lmr) {
-					if(folder != null && !metadataType.endsWith("__c")) {
+					// commented out because this is not a good solution.
+					if(metadataType.equals("CustomObject") && !n.getFullName().endsWith("__c")) {
 						packager.addNameContent(metadataType, n.getFullName());
 					}
 				}

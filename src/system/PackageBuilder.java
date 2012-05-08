@@ -143,12 +143,14 @@ public class PackageBuilder {
 	private void inspectAndClean() {
 
 		ArrayList<String> picklistValues = new ArrayList<String>();
+		ArrayList<String> customObjects = new ArrayList<String>();
 
 		try {
 			// check to make sure picklist values are not set to be destroyed if
 			// the
 			// whole field is set to be destroyed
 			if (getNameContents() != null) {
+				
 				
 				if(getNameContents().get("PicklistValue") != null) {
 					for (String picklistValue : getNameContents().get(
