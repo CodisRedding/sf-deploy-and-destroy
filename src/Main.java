@@ -13,18 +13,16 @@ public class Main {
 	 * @param args
 	 *            [0]
 	 * 
-	 *            The src dir of the salesforce org you're deploying to.
+	 *            The name of the environemnt file for the org that you want to
+	 *            deploy from. if the files name is example1.env then use
+	 *            example1 without the .env
 	 * 
 	 * @param args
 	 *            [1]
 	 * 
-	 *            The src dir of the salesforce org you're deploying from.
-	 * 
-	 * @param args
-	 *            [2]
-	 * 
-	 *            The dir where you want the destructiveChanges.xml file to be
-	 *            created.
+	 *            The name of the environemnt file for the org that you want to
+	 *            deploy to. if the files name is example1.env then use example1
+	 *            without the .env
 	 */
 	public static void main(String[] args) {
 
@@ -38,21 +36,22 @@ public class Main {
 
 		String envNameFrom = args[0].toLowerCase();
 		String envNameTo = args[1].toLowerCase();
-		
+
 		OrgEnvironment orgFrom = new OrgEnvironment(envNameFrom);
 		OrgEnvironment orgTo = new OrgEnvironment(envNameTo);
-		
+
 		RetrieveBuilder retrieveFrom = new RetrieveBuilder(orgFrom);
 		retrieveFrom.retreive();
-		
+
 		RetrieveBuilder retrieveTo = new RetrieveBuilder(orgTo);
 		retrieveTo.retreive();
 
-		DestructiveBuilder destroybuilder = new DestructiveBuilder(orgFrom, orgTo);
+		DestructiveBuilder destroybuilder = new DestructiveBuilder(orgFrom,
+				orgTo);
 		destroybuilder.buildDestructiveChanges();
 		destroybuilder.printDestructiveChanges();
-		
-		//DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
-		//deployBuilder.deploy();
+
+		// DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
+		// deployBuilder.deploy();
 	}
 }
