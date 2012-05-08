@@ -51,6 +51,7 @@ public class Main {
 		destroybuilder.buildDestructiveChanges();
 		destroybuilder.printDestructiveChanges();
 
+		// Commented out until I resolve all destructable components and their structure. 
 		// DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
 		// deployBuilder.deploy();
 	}
