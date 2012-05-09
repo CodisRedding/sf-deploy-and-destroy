@@ -26,16 +26,18 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		if (args.length != 2) {
+		if (args.length < 2 || args.length > 3) {
 
 			System.out.println("Missing args");
 			System.out
-					.println("Useage: deployAndDestroy [from env name] [to env name]");
+					.println("Useage: java -jar deployAndDestroy.jar [from env name 'example1'] [to env name 'example2'] [print only 'po']");
 			System.exit(1);
 		}
 
 		String envNameFrom = args[0].toLowerCase();
 		String envNameTo = args[1].toLowerCase();
+		boolean printOnly = (args.length == 3)
+				&& (args[2].toLowerCase().equals("po"));
 
 		OrgEnvironment orgFrom = new OrgEnvironment(envNameFrom);
 		OrgEnvironment orgTo = new OrgEnvironment(envNameTo);
@@ -49,10 +51,12 @@ public class Main {
 		DestructiveBuilder destroybuilder = new DestructiveBuilder(orgFrom,
 				orgTo);
 		destroybuilder.buildDestructiveChanges();
-		destroybuilder.printDestructiveChanges();
 
-		// Commented out until I resolve all destructable components and their structure. 
-		// DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
-		// deployBuilder.deploy();
+		if (printOnly) {
+			destroybuilder.printDestructiveChanges();
+		} else {
+			DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
+			deployBuilder.deploy();
+		}
 	}
 }

@@ -3,7 +3,6 @@ package destroy;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 import system.OrgEnvironment;
 import system.PackageBuilder;
@@ -99,8 +98,8 @@ public class DestructiveBuilder {
 			zipUtils.zip(orgFrom.getSourceFolder().getPath(), orgFrom
 					.getLocationFolder().getPath());
 
-			//doDelete(orgTo.getLocationFolder());
-			//doDelete(orgFrom.getSourceFolder());
+			doDelete(orgTo.getLocationFolder());
+			doDelete(orgFrom.getSourceFolder());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
