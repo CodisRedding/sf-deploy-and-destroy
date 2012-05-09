@@ -23,12 +23,17 @@ public class Main {
 	 *            The name of the environemnt file for the org that you want to
 	 *            deploy to. if the files name is example1.env then use example1
 	 *            without the .env
+	 * 
+	 * @param args
+	 *            [2]
+	 * 
+	 *            The arg 'po' will ensure that the destructive changes are not
+	 *            deployed, but instead only printed.
 	 */
 	public static void main(String[] args) {
 
 		if (args.length < 2 || args.length > 3) {
 
-			System.out.println("Missing args");
 			System.out
 					.println("Useage: java -jar deployAndDestroy.jar [from env name 'example1'] [to env name 'example2'] [print only 'po']");
 			System.exit(1);
