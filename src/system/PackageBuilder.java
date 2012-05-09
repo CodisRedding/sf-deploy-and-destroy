@@ -143,7 +143,6 @@ public class PackageBuilder {
 	private void inspectAndClean() {
 
 		ArrayList<String> picklistValues = new ArrayList<String>();
-		ArrayList<String> customObjects = new ArrayList<String>();
 
 		try {
 			// check to make sure picklist values are not set to be destroyed if

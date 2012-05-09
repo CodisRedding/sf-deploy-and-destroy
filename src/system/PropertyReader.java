@@ -17,7 +17,7 @@ import java.util.Properties;
  *         files.
  */
 public class PropertyReader {
-	
+
 	private static ArrayList<String> ignoreProperties = null;
 
 	/**
@@ -209,15 +209,16 @@ public class PropertyReader {
 			// assumes sandbox if production is not specified
 			response = prop.getProperty("sf." + endpointType + ".endpoint");
 
-			if(endpointType.equals("auth"))
-			{
-				response = String.format(response, (envType.equals(PRODUCTION_ENV)) ? "login" : "test", String.valueOf(apiVersion));
-			} 
-			
-			if(endpointType.equals("service"))
-			{
-				response = String.format(response, sfServer, String.valueOf(apiVersion));
-			} 
+			if (endpointType.equals("auth")) {
+				response = String.format(response,
+						(envType.equals(PRODUCTION_ENV)) ? "login" : "test",
+						String.valueOf(apiVersion));
+			}
+
+			if (endpointType.equals("service")) {
+				response = String.format(response, sfServer,
+						String.valueOf(apiVersion));
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -324,23 +325,30 @@ public class PropertyReader {
 
 		return response;
 	}
-	
-	public static boolean shouldIgnoreMetadata(String metadata, String metadataPath) {
 
-		if(metadataPath.equals(PropertyReader.ASTERISK)) {
+	public static boolean shouldIgnoreMetadata(String metadata,
+			String metadataPath) {
+
+		if (metadataPath.equals(PropertyReader.ASTERISK)) {
 			return false;
 		}
 		
-		if(ignoreProperties == null) {
+		// ignore custom fields
+		if(metadata.toLowerCase().equals("customfield") && !metadataPath.toLowerCase().endsWith("__c")) {
+			return true;
+		}
+
+		if (ignoreProperties == null) {
 			ignoreProperties = new ArrayList<String>();
-		
+
 			try {
 				FileInputStream fstream = new FileInputStream(
 						getSystemProperty("sf.environment.ignore.properties.loc"));
-	
+
 				DataInputStream in = new DataInputStream(fstream);
-				BufferedReader br = new BufferedReader(new InputStreamReader(in));
-	
+				BufferedReader br = new BufferedReader(
+						new InputStreamReader(in));
+
 				String line;
 				while ((line = br.readLine()) != null) {
 					ignoreProperties.add(line);
@@ -354,12 +362,13 @@ public class PropertyReader {
 				e.printStackTrace();
 			}
 		}
-		
-		for(String prop : ignoreProperties) {
+
+		for (String prop : ignoreProperties) {
 			String meta = prop.substring(0, prop.indexOf(":"));
 			String path = prop.substring(prop.indexOf(":") + 1);
-			
-			if(meta.toLowerCase().equals(metadata.toLowerCase()) && path.toLowerCase().equals(metadataPath.toLowerCase())) {
+
+			if (meta.toLowerCase().equals(metadata.toLowerCase())
+					&& path.toLowerCase().equals(metadataPath.toLowerCase())) {
 				return true;
 			}
 		}

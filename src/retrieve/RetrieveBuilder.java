@@ -136,9 +136,9 @@ public class RetrieveBuilder {
 			if (lmr != null) {
 				for (FileProperties n : lmr) {
 					// commented out because this is not a good solution.
-					if(metadataType.equals("CustomObject") && !n.getFullName().endsWith("__c")) {
+					//if(metadataType.equals("CustomObject") && !n.getFullName().endsWith("__c")) {
 						packager.addNameContent(metadataType, n.getFullName());
-					}
+					//}
 				}
 			}
 		} catch (ConnectionException ce) {

@@ -11,3 +11,12 @@ Profile:Chatter Free User
 Profile:Chatter Moderator User
 Profile:Guest License User
 Profile:Authenticated Website
+Profile:HighVolumePortal
+Profile:StandardAul
+CustomObject:SfoMatchHistoryItem
+CustomObject:UserLicense
+NamespacePrefix:OPROARTS010
+NamespacePrefix:APXTConga4
+NamespacePrefix:npe4
+NamespacePrefix:mucpro
+NamespacePrefix:FN
