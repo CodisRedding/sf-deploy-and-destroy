@@ -92,8 +92,17 @@ public class XmlReader {
 
 			SaxyHandler handler = new SaxyHandler();
 			handler.metaType = metaType;
-			handler.searchTerm = searchTerm.replace("|", "");
-			handler.lookForParentName = searchTerm.contains("|");
+			
+			if(searchTerm.contains("|")) {
+				String[] parts1 = searchTerm.split(":");
+
+				handler.parentMetaType = parts1[0].substring(parts1[0].indexOf("|") + 1);
+				handler.parentSearchTerm = parts1[1];
+				handler.searchTerm = searchTerm.substring(0, searchTerm.indexOf("|"));
+				handler.lookForParentName = true;
+			} else {
+				handler.searchTerm = searchTerm;
+			}
 
 			saxParser.parse(filePath, handler);
 			existing = handler.existing;

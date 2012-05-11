@@ -129,7 +129,10 @@ public class PackageBuilder {
 		Enumeration<String> keys1 = names.keys();
 		while (keys1.hasMoreElements()) {
 			Object key = keys1.nextElement();
-			System.out.println(key);
+			
+			if(names.get(key).size() > 0) {
+				System.out.println(key);
+			}
 
 			for (String name : names.get(key)) {
 				System.out.println("\t" + name);
@@ -157,6 +160,10 @@ public class PackageBuilder {
 						Integer idx1 = picklistValue.indexOf(".");
 						String field = picklistValue.substring(0,
 								picklistValue.indexOf(".", idx1 + 1));
+						
+						if(!field.endsWith("__c")) {
+							picklistValues.add(picklistValue);
+						}
 	
 						// check if a custom field with same name exists
 						if (getNameContents().get("CustomField") != null) {

@@ -25,6 +25,10 @@ public class SaxyHandler extends DefaultHandler {
 	String lastParentNameFound = "";
 	boolean lookForParentName = false;
 	boolean foundParent = false;
+	String parentMetaType = null;
+	boolean bfoundParentMetaType = false;
+	boolean bfoundParentSearchTerm = false;
+	String parentSearchTerm = null;
 
 	/*
 	 * (non-Javadoc)
@@ -39,16 +43,15 @@ public class SaxyHandler extends DefaultHandler {
 	public void characters(char ch[], int start, int length)
 			throws SAXException {
 
-		if (bfoundSearchTerm && !bfoundMetaType && lookForParentName) {
+		if (lookForParentName && bfoundParentMetaType && bfoundParentSearchTerm) {
 
-			if (foundParent) {
+			String data = new String(ch, start, length);
 
-				String data = new String(ch, start, length);
-
-				if (!data.contains(LINE_SEP)) {
-					lastParentNameFound = data;
-				}
-				foundParent = false;
+			if (!data.contains(LINE_SEP)) {
+				lastParentNameFound = data;
+				
+				bfoundParentMetaType = false;
+				bfoundParentSearchTerm = false;
 			}
 		}
 
@@ -89,7 +92,23 @@ public class SaxyHandler extends DefaultHandler {
 
 		if (qName.equalsIgnoreCase(searchTerm)) {
 			bfoundSearchTerm = true;
-			foundParent = true;
 		}
+		
+		if (qName.equalsIgnoreCase(parentMetaType)) {
+			bfoundParentMetaType = true;
+		}
+		
+		if (qName.equalsIgnoreCase(parentSearchTerm)) {
+			bfoundParentSearchTerm = true;
+		}
+	}
+	
+	@Override
+	public void endElement(String uri, String localName, String qName)
+			throws SAXException {
+
+		//if (lookForParentName && (qName.equalsIgnoreCase(parentMetaType) && bfoundParentMetaType)) {
+		//	bfoundParentMetaType = false;
+		//}
 	}
 }
