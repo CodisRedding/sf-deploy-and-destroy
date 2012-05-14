@@ -8,8 +8,6 @@ see issues/milestones for dev tasks
 
 This [destructiveChanges.xml](https://gist.github.com/2572054) file is an example generated using deployAndDestroy. (Notice the picklistValues, they also include recordtype picklist values ;) )
 
-*Note** this is just an example, so if you're wondering why there are standard objects, fields, etc. it's because I ran deployAndDestroy against an empty org.
-
 # Try it Out #
 
 As changes are made I'll update the steps needed to test out the current version.
@@ -24,6 +22,6 @@ setup
 
 4. run the program by passing the name of the org you want to deploy from (the name of the .env file minus '.env') as the first arg, and the name of the org to be deployed to as the second arg.
 
-5. At the moment the the environment metadata ignores list isn't being taken into consideration so it may fail on final deploy. But if you just want to run the program to see what it is deploying between orgs, and inspect the destructive changes, then this just let it fail for now. You can view the .zip file that is used to deploy in the environments dir in a folder named the same as the org your deploying from. Change out the destructiveChanges.xml to see what will be removed on the deploy to org.
+5. In a command prompt run 'java -jar deploy/project/deployAndDestroy.jar envFile1 envFile2' the first parameter is the org you're deploying from, and the second is the org you're deploying to. remeber for the parameter names,  just use the name of the file you created in the environemnts dir with the .env extension.
 
-woo
+Cheers,
