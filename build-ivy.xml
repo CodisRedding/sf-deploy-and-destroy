@@ -1,0 +1,6 @@
+<ivy-module version="2.0">
+    <info organisation="deployAndDestroy" module="main"/>
+    <dependencies>
+        <dependency org="ant-contrib" name="ant-contrib" rev="1.0b2"/>
+    </dependencies>
+</ivy-module>

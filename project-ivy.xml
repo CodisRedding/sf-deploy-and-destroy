@@ -1,0 +1,8 @@
+<ivy-module version="2.0">
+    <info organisation="deployAndDestroy" module="main"/>
+    <dependencies>
+		<dependency org="commons-cli"   name="commons-cli" rev="1.2"/>
+		<dependency org="commons-io"    name="commons-io"  rev="2.3"/>
+		<dependency org="com.force.api" name="force-wsc"   rev="24.0.0"/>
+    </dependencies>
+</ivy-module>

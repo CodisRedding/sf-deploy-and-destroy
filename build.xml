@@ -1,0 +1,193 @@
+<project name="destroyAndDeploy" basedir="." default="package" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:ac = "http://ant-contrib.sourceforge.net">
+
+    <!--  ================================================================================================ -->
+
+    <!-- 
+        Ivy definition...
+    -->
+	<property name="PROJECT_LIB_DIR" value="lib"/>
+
+    <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" description="Needed to use ivy." >
+        <classpath>
+			<fileset dir="${PROJECT_LIB_DIR}" includes="*.jar"/>
+        </classpath>
+    </taskdef>
+
+    <!--  ================================================================================================ -->
+
+    <!--
+        Project based requirements...
+    -->
+
+    <property name="PROJECT_BASED_DIR" value=".project"/>
+    <property name="PROJECT_BASED_LIB_DIR" value="${PROJECT_BASED_DIR}/lib"/>
+
+    <mkdir dir="${PROJECT_BASED_LIB_DIR}"/>
+
+    <ivy:resolve  type="jar" file="build-ivy.xml"/>
+    <ivy:retrieve type="jar" file="build-ivy.xml" pattern="${PROJECT_BASED_LIB_DIR}/[artifact].[ext]"/>
+
+    <!--
+        Ant Contrib definition...
+    -->
+    <taskdef resource="net/sf/antcontrib/antlib.xml"  uri="http://ant-contrib.sourceforge.net" description="Needed to use ant-contrib." >
+        <classpath>
+            <fileset dir="${PROJECT_BASED_LIB_DIR}" includes="*.jar"/>
+        </classpath>
+    </taskdef>
+
+    <!--  ================================================================================================ -->
+
+	<!--
+		Source vars...
+	-->
+    <property name="SRC_DIR"         value="src"/>
+	<property name="JAVA_SRC_DIR"    value="${SRC_DIR}/java"/>
+	<property name="WSDL_SRC_DIR"    value="${SRC_DIR}/wsdl"/>
+
+	<property name="ENTERPRISE_WSDL" value="${WSDL_SRC_DIR}/enterprise.wsdl"/>
+	<property name="METADATA_WSDL"   value="${WSDL_SRC_DIR}/metadata.wsdl"/>
+
+    <!--  ================================================================================================ -->
+
+	<!--
+		Deploy vars...
+	-->
+    <property name="DEPLOY_DIR"         value="deploy"/>
+	<property name="DEPLOY_CLASS_DIR"   value="${DEPLOY_DIR}/classes"/>
+	<property name="DEPLOY_LIB_DIR"     value="${DEPLOY_DIR}/lib"/>
+	<property name="DEPLOY_PROJECT_DIR" value="${DEPLOY_DIR}/project"/>
+	<property name="DEPLOY_UNZIP_DIR"   value="${DEPLOY_DIR}/unzip"/>
+
+	<property name="DEPLOY_PROJECT_JAR" value="${DEPLOY_PROJECT_DIR}/deployAndDestroy.jar"/>
+
+	<property name="FORCE_WSC_JAR"      value="${DEPLOY_LIB_DIR}/force-wsc.jar"/>
+	<property name="ENTERPRISE_JAR"     value="${DEPLOY_LIB_DIR}/enterprise.jar"/>
+	<property name="METADATA_JAR"       value="${DEPLOY_LIB_DIR}/metadata.jar"/>
+
+	<available property="ENTERPRISE_JAR_EXISTS"     file="${ENTERPRISE_JAR}"/>
+	<available property="METADATA_JAR_EXISTS"       file="${METADATA_JAR}"/>
+	<available property="DEPLOY_PROJECT_JAR_EXISTS" file="${DEPLOY_PROJECT_JAR}"/>
+
+    <!--  ================================================================================================ -->
+
+    <!--
+        Using SFDC's web service connector, generate a Jar for a WSDL
+    -->
+    <macrodef name="generateWsdlJar" description="Generate a Jar from a WSDL">
+        <attribute name="wsdlFile"/>
+        <attribute name="wsdlJar"/>
+
+        <sequential>
+            <ac:var name="generateWsdlJar.DIR" unset="true"/>
+            <dirname file="@{wsdlJar}" property = "generateWsdlJar.DIR"/>
+            <mkdir dir="${generateWsdlJar.DIR}"/>
+
+            <java fork="true" classname="com.sforce.ws.tools.wsdlc" failonerror="true">
+                <classpath>
+                    <fileset dir="${DEPLOY_LIB_DIR}" includes="*.jar"/>
+                </classpath>
+
+                <arg line="@{wsdlFile} @{wsdlJar}"/>
+            </java>
+        </sequential>
+    </macrodef>
+
+    <!--  ================================================================================================ -->
+
+	<!--
+		Clean the build...
+	-->
+	<target name="clean">
+		<delete dir="${DEPLOY_DIR}"/>
+
+        <!--
+            Need to unset these vars.  Mostly because the deploy dir may exist with the
+            various jars in them.  By calling clean, the dir will be deleted after the
+            property is set (meaning it exists).
+        -->
+        <ac:var name="ENTERPRISE_JAR_EXISTS" unset="true"/>
+        <ac:var name="METADATA_JAR_EXISTS" unset="true"/>
+        <ac:var name="DEPLOY_PROJECT_JAR_EXISTS" unset="true"/>
+	</target>
+
+	<!--
+		Grab our dependencies...
+	-->
+	<target name="dependencies">
+		<mkdir dir="${DEPLOY_LIB_DIR}"/>
+
+		<ivy:resolve  type="jar" file="project-ivy.xml"/>
+		<ivy:retrieve type="jar" file="project-ivy.xml" pattern="${DEPLOY_LIB_DIR}/[artifact].[ext]"/>
+	</target>
+
+    <!--  ================================================================================================ -->
+
+	<!--
+		Generate enterprise jar if not present.
+	-->
+	<target name="generate.enterprise.jar" depends="dependencies" unless="ENTERPRISE_JAR_EXISTS">
+        <generateWsdlJar wsdlFile="${ENTERPRISE_WSDL}" wsdlJar="${ENTERPRISE_JAR}"/>
+	</target>
+
+	<!--
+		Generate metadata jar if not present.
+	-->
+	<target name="generate.metadata.jar" depends="dependencies" unless="METADATA_JAR_EXISTS">
+        <generateWsdlJar wsdlFile="${METADATA_WSDL}" wsdlJar="${METADATA_JAR}"/>
+	</target>
+
+	<!--
+		Generate source...
+	-->
+	<target name="generate" depends="dependencies, generate.enterprise.jar, generate.metadata.jar"/>
+
+    <!--  ================================================================================================ -->
+
+	<!--
+		Compile the code...
+	-->
+	<target name="compile" depends="generate">
+		<mkdir dir="${DEPLOY_CLASS_DIR}"/>
+
+		<javac srcdir="${JAVA_SRC_DIR}" destdir="${DEPLOY_CLASS_DIR}" includeantruntime="false">
+			<classpath>
+				<fileset dir="${DEPLOY_LIB_DIR}" includes="*.jar"/>
+			</classpath>
+		</javac>
+	</target>
+
+    <!--  ================================================================================================ -->
+
+	<!--
+		Package up the deploy...
+	-->
+	<target name="package" unless="DEPLOY_PROJECT_JAR_EXISTS" depends="compile">
+        <!--
+            Unzip all dependent jars
+        -->
+        <mkdir dir="${DEPLOY_UNZIP_DIR}"/>
+
+        <ac:for param="package.JAR">
+            <fileset dir="${DEPLOY_LIB_DIR}" includes="*jar"/>
+
+            <sequential>
+                <unzip src="@{package.JAR}" dest="${DEPLOY_UNZIP_DIR}" overwrite="true"/>
+            </sequential>
+        </ac:for>
+
+		<mkdir dir="${DEPLOY_PROJECT_DIR}"/>
+
+		<jar destfile="${DEPLOY_PROJECT_JAR}">
+			<fileset dir="${DEPLOY_CLASS_DIR}"/>
+            <fileset dir="${DEPLOY_UNZIP_DIR}" includes="**/*class"/>
+
+			<manifest>
+				<attribute name="Main-Class" value="Main"/>
+                <!--<attribute name="Class-Path" value="${classpath}"/>-->
+			</manifest>
+		</jar>
+	</target>
+
+    <!--  ================================================================================================ -->
+</project>

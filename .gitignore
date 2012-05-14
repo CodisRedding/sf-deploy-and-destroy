@@ -8,3 +8,5 @@ tmp/
 !/environments/example2.env
 !/environments/environment.ignore
 /environments/*
+deploy
+.project
