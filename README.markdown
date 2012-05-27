@@ -14,6 +14,8 @@ As changes are made I'll update the steps needed to test out the current version
 
 setup
 
+1. YOu will need java 1.6 installed and you will need ant installed on your machine so run 'sudo yum install ant' then cd into the project root dir and run 'ant'.
+
 1. Create a .env file in the environments dir. The name should be the name of your org and letters and numbers only. (Example: devorg1.env)
 
 2. Configure your orgs properties. The easiest why is to copy one of the example .env files and will in your info instead.
@@ -22,7 +24,7 @@ setup
 
 4. run the program by passing the name of the org you want to deploy from (the name of the .env file minus '.env') as the first arg, and the name of the org to be deployed to as the second arg.
 
-5. In a command prompt run 'java -jar deploy/project/deployAndDestroy.jar envFile1 envFile2' the first parameter is the org you're deploying from, and the second is the org you're deploying to. remeber for the parameter names,  just use the name of the file you created in the environemnts dir with the .env extension.
+5. In a command prompt run 'java -jar deploy/project/deployAndDestroy.jar envFile1 envFile2 print-only' the first parameter is the org you're deploying from, and the second is the org you're deploying to. remeber for the parameter names,  just use the name of the file you created in the environemnts dir with the .env extension.
 
 Cheers,
 
