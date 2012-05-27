@@ -31,18 +31,29 @@ public class Main {
 	 *            deployed, but instead only printed.
 	 */
 	public static void main(String[] args) {
-
+		
+		boolean printOnly = false;
+		boolean destroyOnly = false;
+		
 		if (args.length < 2 || args.length > 3) {
 
 			System.out
-					.println("Useage: java -jar deployAndDestroy.jar [from env name 'example1'] [to env name 'example2'] [print only 'po']");
+					.println("Useage: java -jar deployAndDestroy.jar [from env name 'example1'] [to env name 'example2'] [print only 'print-only'] [destroy only 'destroy-only']");
 			System.exit(1);
 		}
 
 		String envNameFrom = args[0].toLowerCase();
 		String envNameTo = args[1].toLowerCase();
-		boolean printOnly = (args.length == 3)
-				&& (args[2].toLowerCase().equals("po"));
+		
+		for(Integer i = 0; i < args.length; i++) {
+			if(i > 1) {
+				if(args[i].toLowerCase().equals("print-only")) {
+					printOnly = true;
+				} else if(args[i].toLowerCase().equals("destroy-only")) {
+					destroyOnly = true;
+				}
+			}
+		}
 
 		OrgEnvironment orgFrom = new OrgEnvironment(envNameFrom);
 		OrgEnvironment orgTo = new OrgEnvironment(envNameTo);
@@ -55,12 +66,13 @@ public class Main {
 
 		DestructiveBuilder destroybuilder = new DestructiveBuilder(orgFrom,
 				orgTo);
-		destroybuilder.buildDestructiveChanges();
+		destroybuilder.buildDestructiveChanges(destroyOnly);
 
 		if (printOnly) {
 			destroybuilder.printDestructiveChanges();
 		} else {
 			DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
+			destroybuilder.printDestructiveChanges();
 			deployBuilder.deploy();
 		}
 	}

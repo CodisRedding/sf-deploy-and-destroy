@@ -51,7 +51,7 @@ public class PackageBuilder {
 	 * 
 	 *            The dir path where the generated *.xml should be created.
 	 */
-	public void createFile(String dir, String fileName) {
+	public void createFile(String dir, String fileName, Boolean includeContent) {
 
 		inspectAndClean();
 
@@ -68,15 +68,18 @@ public class PackageBuilder {
 
 		Hashtable<String, ArrayList<String>> destructNames = getNameContents();
 		Enumeration<String> keys1 = destructNames.keys();
-		while (keys1.hasMoreElements()) {
-			Object key = keys1.nextElement();
-
-			content.append("  <types>" + LINE_SEP);
-			for (String val : destructNames.get(key)) {
-				content.append("    <members>" + val + "</members>" + LINE_SEP);
+		
+		if(includeContent) {
+			while (keys1.hasMoreElements()) {
+				Object key = keys1.nextElement();
+	
+				content.append("  <types>" + LINE_SEP);
+				for (String val : destructNames.get(key)) {
+					content.append("    <members>" + val + "</members>" + LINE_SEP);
+				}
+				content.append("    <name>" + key + "</name>" + LINE_SEP);
+				content.append("  </types>" + LINE_SEP);
 			}
-			content.append("    <name>" + key + "</name>" + LINE_SEP);
-			content.append("  </types>" + LINE_SEP);
 		}
 
 		content.append(String.format("  <version>%s</version>" + LINE_SEP,

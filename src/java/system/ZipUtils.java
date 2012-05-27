@@ -32,7 +32,7 @@ public class ZipUtils {
 		}
 	}
 
-	public void zip(String sourceFolder, String folderToZipTo) {
+	public void zip(String sourceFolder, String folderToZipTo, Boolean destroyOnly) {
 
 		byte[] buffer = new byte[1024];
 
@@ -46,7 +46,7 @@ public class ZipUtils {
 			ZipOutputStream zos = new ZipOutputStream(fos);
 
 			for (String file : generateFileList(new File(sourceFolder),
-					new File(sourceFolder).getAbsolutePath())) {
+					new File(sourceFolder).getAbsolutePath(), destroyOnly)) {
 
 				ZipEntry ze = new ZipEntry(file);
 				zos.putNextEntry(ze);
@@ -71,18 +71,31 @@ public class ZipUtils {
 		}
 	}
 
-	public List<String> generateFileList(File node, String sourceFolder) {
+	public List<String> generateFileList(File node, String sourceFolder, Boolean destroyOnly) {
 
 		// add file only
 		if (node.isFile()) {
-			fs.add(generateZipEntry(node.getAbsoluteFile().toString(),
-					sourceFolder));
+			if(destroyOnly) {
+				if(node.getName().equals(PropertyReader.getSystemProperty("sf.destruct.file.name")) ||
+						node.getName().equals(PropertyReader.getSystemProperty("sf.package.file.name"))) {
+					
+					if(node.getName().equals(PropertyReader.getSystemProperty("sf.package.file.name"))) {
+						PackageBuilder builder = new PackageBuilder();
+						builder.createFile(sourceFolder, node.getName(), false);
+					}
+					fs.add(generateZipEntry(node.getAbsoluteFile().toString(),
+							sourceFolder));
+				}
+			} else {
+				fs.add(generateZipEntry(node.getAbsoluteFile().toString(),
+						sourceFolder));
+			}
 		}
 
 		if (node.isDirectory()) {
 			String[] subNote = node.list();
 			for (String filename : subNote) {
-				generateFileList(new File(node, filename), sourceFolder);
+				generateFileList(new File(node, filename), sourceFolder, destroyOnly);
 			}
 		}
 

@@ -20,6 +20,7 @@ public class DestructiveBuilder {
 	private PackageBuilder packager = new PackageBuilder();
 	private OrgEnvironment orgTo = null;
 	private OrgEnvironment orgFrom = null;
+	private Boolean destroyOnly = false;
 
 	public DestructiveBuilder(OrgEnvironment orgFrom, OrgEnvironment orgTo) {
 		this.orgTo = orgTo;
@@ -72,7 +73,8 @@ public class DestructiveBuilder {
 	 *         file fails anywhere in the process. Returns true is all paths,
 	 *         file generation completes successfully.
 	 */
-	public boolean buildDestructiveChanges() {
+	public boolean buildDestructiveChanges(Boolean destroyOnly) {
+		this.destroyOnly = destroyOnly;
 		boolean successful = false;
 
 		try {
@@ -96,7 +98,7 @@ public class DestructiveBuilder {
 			createDestructiveChangesXmlFile(destXmlFile.getPath());
 			ZipUtils zipUtils = new ZipUtils();
 			zipUtils.zip(orgFrom.getSourceFolder().getPath(), orgFrom
-					.getLocationFolder().getPath());
+					.getLocationFolder().getPath(), destroyOnly);
 
 			doDelete(orgTo.getLocationFolder());
 			doDelete(orgFrom.getSourceFolder());
@@ -114,7 +116,7 @@ public class DestructiveBuilder {
 	 * 
 	 * @param dirToPlaceXmlFile
 	 * 
-	 *            Responsible for reading reading all properties in
+	 *            Responsible for reading all properties in
 	 *            package.properties and parsing each delimited property before
 	 *            passing off for further parsing.
 	 */
@@ -179,7 +181,7 @@ public class DestructiveBuilder {
 	 */
 	public void createDestructiveChangesXmlFile(String dir) {
 		packager.createFile(dir,
-				PropertyReader.getSystemProperty("sf.destruct.file.name"));
+				PropertyReader.getSystemProperty("sf.destruct.file.name"), true);
 	}
 
 	/**
