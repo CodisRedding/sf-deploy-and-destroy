@@ -14,7 +14,7 @@ As changes are made I'll update the steps needed to test out the current version
 
 setup
 
-1. YOu will need java 1.6 installed and you will need ant installed on your machine so run 'sudo yum install ant' then cd into the project root dir and run 'ant'.
+1. You will need java 1.6 installed and you will need ant installed on your machine so run 'sudo yum install ant' then cd into the project root dir and run 'ant'.
 
 1. Create a .env file in the environments dir. The name should be the name of your org and letters and numbers only. (Example: devorg1.env)
 
