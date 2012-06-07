@@ -25,7 +25,3 @@ setup
 4. run the program by passing the name of the org you want to deploy from (the name of the .env file minus '.env') as the first arg, and the name of the org to be deployed to as the second arg.
 
 5. In a command prompt run 'java -jar deploy/project/deployAndDestroy.jar envFile1 envFile2 print-only' the first parameter is the org you're deploying from, and the second is the org you're deploying to. remeber for the parameter names,  just use the name of the file you created in the environemnts dir with the .env extension.
-
-Cheers,
-
-I'll be adding the .jar to the download section for those we don't want to build and just want to run it.
