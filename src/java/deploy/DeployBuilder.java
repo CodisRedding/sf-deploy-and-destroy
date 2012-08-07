@@ -16,7 +16,7 @@ import com.sforce.soap.metadata.DeployOptions;
 import com.sforce.soap.metadata.DeployResult;
 import com.sforce.soap.metadata.RunTestFailure;
 import com.sforce.soap.metadata.RunTestsResult;
-
+	
 public class DeployBuilder {
 
 	private static final long ONE_SECOND = 1000;
@@ -56,7 +56,7 @@ public class DeployBuilder {
 			deployOptions.setPerformRetrieve(false);
 			deployOptions.setRollbackOnError(true);
 			deployOptions.setSinglePackage(true);
-			deployOptions.setPurgeOnDelete(true);
+			deployOptions.setPurgeOnDelete(orgTo.getEnvironment().toLowerCase().equals(PropertyReader.PRODUCTION_ENV) ? false : true);
 			
 			AsyncResult asyncResult = conMan.getMetadataConnection().deploy(
 					zipBytes, deployOptions);

@@ -18,8 +18,6 @@ import java.util.Properties;
  */
 public class PropertyReader {
 
-	private static ArrayList<String> ignoreProperties = null;
-
 	/**
 	 * The different property types found on each line of the destroy.properties
 	 * file.
@@ -35,6 +33,8 @@ public class PropertyReader {
 	public static enum RetrievePropertyTypes {
 		MetadataType, SupportsAsterisk, Folder
 	}
+
+	private static ArrayList<String> ignoreProperties = null;
 
 	/**
 	 * Used to determine if the sf.environment property in
@@ -72,7 +72,7 @@ public class PropertyReader {
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
 			String line;
-			while ((line = br.readLine()) != null) {
+			while (((line = br.readLine()) != null) && (!line.startsWith("#"))) {
 				properties.add(line);
 			}
 			in.close();
@@ -332,9 +332,10 @@ public class PropertyReader {
 		if (metadataPath.equals(PropertyReader.ASTERISK)) {
 			return false;
 		}
-		
+
 		// ignore custom fields
-		if(metadata.toLowerCase().equals("customfield") && !metadataPath.toLowerCase().endsWith("__c")) {
+		if (metadata.toLowerCase().equals("customfield")
+				&& !metadataPath.toLowerCase().endsWith("__c")) {
 			return true;
 		}
 
