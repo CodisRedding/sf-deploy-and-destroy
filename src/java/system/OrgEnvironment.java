@@ -11,8 +11,6 @@ import api.ConnectionManager;
 
 public class OrgEnvironment implements MetadataEnvironment {
 
-	public Double apiVersion = Double.valueOf(PropertyReader
-			.getSystemProperty("sf.api.version"));
 	private ConnectionManager conMan = null;
 	private PackageBuilder packager = new PackageBuilder();
 	private String name = null;
@@ -38,9 +36,9 @@ public class OrgEnvironment implements MetadataEnvironment {
 		this.server = PropertyReader.getEnviromentProperty(name,
 				"sf.environment.server");
 		this.authEndpoint = PropertyReader.getEnvironmentEndpoint(
-				this.environment, "auth", this.server, apiVersion);
+				this.environment, "auth", this.server, this.apiVersion);
 		this.serviceEndpoint = PropertyReader.getEnvironmentEndpoint(
-				this.environment, "service", this.server, apiVersion);
+				this.environment, "service", this.server, this.apiVersion);
 		
 		conMan = new ConnectionManager(this.login, password, token,
 				authEndpoint, serviceEndpoint);
@@ -139,7 +137,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 			System.exit(1);
 		}
 
-		System.out.println("### Retrieving " + this.name + " ###");
+		System.out.println("### Retrieving " + this.name + " (saleforce) ###");
 
 		for (String property : properties) {
 

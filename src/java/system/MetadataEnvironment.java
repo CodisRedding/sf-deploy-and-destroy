@@ -3,6 +3,9 @@ package system;
 import java.io.File;
 
 public interface MetadataEnvironment {
+	
+	public Double apiVersion = Double.valueOf(PropertyReader
+			.getSystemProperty("sf.api.version"));
 
 	public abstract String getEnvironment();
 
