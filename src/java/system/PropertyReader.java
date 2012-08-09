@@ -325,6 +325,37 @@ public class PropertyReader {
 
 		return response;
 	}
+	
+	/**
+	 * Reads properties from the source.properties file.
+	 * 
+	 * @param key
+	 * 
+	 *            The key of the key/value.
+	 * @return
+	 * 
+	 *         Returns the values for the key supplied. Returns null if not
+	 *         found.
+	 */
+	public static String getSourceProperty(String key) {
+
+		String response = null;
+
+		try {
+			Properties prop = new Properties();
+			prop.load(new FileInputStream("properties" + File.separator
+					+ "source.properties"));
+			response = prop.getProperty(key);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return response;
+	}
 
 	public static boolean shouldIgnoreMetadata(String metadata,
 			String metadataPath) {

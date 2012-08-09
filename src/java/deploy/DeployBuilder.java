@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
+import system.MetadataEnvironment;
 import system.OrgEnvironment;
 import system.PropertyReader;
 import api.ConnectionManager;
@@ -24,10 +25,10 @@ public class DeployBuilder {
 			.valueOf(PropertyReader
 					.getSystemProperty("sf.retrieve.max.num.poll.requests"));
 	private ConnectionManager conMan = null;
-	private OrgEnvironment orgFrom = null;
+	private MetadataEnvironment orgFrom = null;
 	private OrgEnvironment orgTo = null;
 
-	public DeployBuilder(OrgEnvironment orgFrom, OrgEnvironment orgTo) {
+	public DeployBuilder(MetadataEnvironment orgFrom, OrgEnvironment orgTo) {
 		this.orgFrom = orgFrom;
 		this.orgTo = orgTo;
 

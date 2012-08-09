@@ -1,4 +1,6 @@
-import retrieve.RetrieveBuilder;
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
+import system.EnvironmentManager;
 import system.OrgEnvironment;
 import deploy.DeployBuilder;
 import destroy.DestructiveBuilder;
@@ -31,10 +33,10 @@ public class Main {
 	 *            deployed, but instead only printed.
 	 */
 	public static void main(String[] args) {
-		
+
 		boolean printOnly = false;
 		boolean destroyOnly = false;
-		
+
 		if (args.length < 2 || args.length > 3) {
 
 			System.out
@@ -44,34 +46,34 @@ public class Main {
 
 		String envNameFrom = args[0].toLowerCase();
 		String envNameTo = args[1].toLowerCase();
-		
-		for(Integer i = 0; i < args.length; i++) {
-			if(i > 1) {
-				if(args[i].toLowerCase().equals("print-only")) {
+
+		for (Integer i = 0; i < args.length; i++) {
+			if (i > 1) {
+				if (args[i].toLowerCase().equals("print-only")) {
 					printOnly = true;
-				} else if(args[i].toLowerCase().equals("destroy-only")) {
+				} else if (args[i].toLowerCase().equals("destroy-only")) {
 					destroyOnly = true;
 				}
 			}
 		}
 
-		OrgEnvironment orgFrom = new OrgEnvironment(envNameFrom);
-		OrgEnvironment orgTo = new OrgEnvironment(envNameTo);
+		EnvironmentManager manager = new EnvironmentManager(
+				EnvironmentManager.createEnvironment(envNameFrom),
+				EnvironmentManager.createEnvironment(envNameTo));
 
-		RetrieveBuilder retrieveFrom = new RetrieveBuilder(orgFrom);
-		retrieveFrom.retreive();
+		manager.getFromEnvironment().retreive();
+		manager.getToEnvironment().retreive();
 
-		RetrieveBuilder retrieveTo = new RetrieveBuilder(orgTo);
-		retrieveTo.retreive();
-
-		DestructiveBuilder destroybuilder = new DestructiveBuilder(orgFrom,
-				orgTo);
+		DestructiveBuilder destroybuilder = new DestructiveBuilder(
+				manager.getFromEnvironment(), manager.getToEnvironment());
 		destroybuilder.buildDestructiveChanges(destroyOnly);
 
 		if (printOnly) {
 			destroybuilder.printDestructiveChanges();
 		} else {
-			DeployBuilder deployBuilder = new DeployBuilder(orgFrom, orgTo);
+			DeployBuilder deployBuilder = new DeployBuilder(
+					manager.getFromEnvironment(),
+					(OrgEnvironment) manager.getToEnvironment());
 			destroybuilder.printDestructiveChanges();
 			deployBuilder.deploy();
 		}

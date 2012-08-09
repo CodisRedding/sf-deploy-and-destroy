@@ -32,7 +32,8 @@ public class ZipUtils {
 		}
 	}
 
-	public void zip(String sourceFolder, String folderToZipTo, Boolean destroyOnly) {
+	public void zip(String sourceFolder, String folderToZipTo,
+			Boolean destroyOnly) {
 
 		byte[] buffer = new byte[1024];
 
@@ -71,15 +72,22 @@ public class ZipUtils {
 		}
 	}
 
-	public List<String> generateFileList(File node, String sourceFolder, Boolean destroyOnly) {
+	public List<String> generateFileList(File node, String sourceFolder,
+			Boolean destroyOnly) {
 
 		// add file only
 		if (node.isFile()) {
-			if(destroyOnly) {
-				if(node.getName().equals(PropertyReader.getSystemProperty("sf.destruct.file.name")) ||
-						node.getName().equals(PropertyReader.getSystemProperty("sf.package.file.name"))) {
-					
-					if(node.getName().equals(PropertyReader.getSystemProperty("sf.package.file.name"))) {
+			if (destroyOnly) {
+				if (node.getName().equals(
+						PropertyReader
+								.getSystemProperty("sf.destruct.file.name"))
+						|| node.getName()
+								.equals(PropertyReader
+										.getSystemProperty("sf.package.file.name"))) {
+
+					if (node.getName().equals(
+							PropertyReader
+									.getSystemProperty("sf.package.file.name"))) {
 						PackageBuilder builder = new PackageBuilder();
 						builder.createFile(sourceFolder, node.getName(), false);
 					}
@@ -95,7 +103,8 @@ public class ZipUtils {
 		if (node.isDirectory()) {
 			String[] subNote = node.list();
 			for (String filename : subNote) {
-				generateFileList(new File(node, filename), sourceFolder, destroyOnly);
+				generateFileList(new File(node, filename), sourceFolder,
+						destroyOnly);
 			}
 		}
 

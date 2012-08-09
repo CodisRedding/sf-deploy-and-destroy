@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import system.OrgEnvironment;
+import system.MetadataEnvironment;
 import system.PackageBuilder;
 import system.PropertyReader;
 import system.ZipUtils;
@@ -18,11 +18,11 @@ import system.ZipUtils;
 public class DestructiveBuilder {
 
 	private PackageBuilder packager = new PackageBuilder();
-	private OrgEnvironment orgTo = null;
-	private OrgEnvironment orgFrom = null;
+	private MetadataEnvironment orgTo = null;
+	private MetadataEnvironment orgFrom = null;
 	private Boolean destroyOnly = false;
 
-	public DestructiveBuilder(OrgEnvironment orgFrom, OrgEnvironment orgTo) {
+	public DestructiveBuilder(MetadataEnvironment orgFrom, MetadataEnvironment orgTo) {
 		this.orgTo = orgTo;
 		this.orgFrom = orgFrom;
 	}
