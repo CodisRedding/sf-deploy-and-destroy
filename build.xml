@@ -41,6 +41,7 @@
 	<!--
 		Source vars...
 	-->
+    <property name="PROPERTIES_DIR"  value="properties"/>
     <property name="SRC_DIR"         value="src"/>
 	<property name="JAVA_SRC_DIR"    value="${SRC_DIR}/java"/>
 	<property name="WSDL_SRC_DIR"    value="${SRC_DIR}/wsdl"/>
@@ -179,6 +180,7 @@
 		<mkdir dir="${DEPLOY_PROJECT_DIR}"/>
 
 		<jar destfile="${DEPLOY_PROJECT_JAR}">
+			<fileset dir="${PROPERTIES_DIR}"/>
 			<fileset dir="${DEPLOY_CLASS_DIR}"/>
             <fileset dir="${DEPLOY_UNZIP_DIR}" includes="**/*class"/>
 
