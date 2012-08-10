@@ -3,6 +3,7 @@ package system;
 import java.io.File;
 import java.io.IOException;
 
+import org.eclipse.egit.github.core.Repository;
 //import org.eclipse.egit.github.core.Repository;
 import org.eclipse.egit.github.core.service.RepositoryService;
 import org.eclipse.egit.github.core.client.GitHubClient;
@@ -81,7 +82,6 @@ public class GithubEnvironment implements MetadataEnvironment {
 		client.setCredentials(this.login, this.password);
 		
 		RepositoryService service = new RepositoryService(client);
-		/*
 		
 		try {
 			for (Repository repo : service.getRepositories(this.login)) {
@@ -90,7 +90,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
 		
 		/*
 		if (!conMan.Login()) {
