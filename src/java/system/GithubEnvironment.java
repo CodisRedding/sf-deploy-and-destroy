@@ -3,13 +3,13 @@ package system;
 import java.io.File;
 import java.io.IOException;
 
-import org.eclipse.egit.github.core.Repository;
-import org.eclipse.egit.github.core.client.GitHubClient;
+//import org.eclipse.egit.github.core.Repository;
 import org.eclipse.egit.github.core.service.RepositoryService;
+import org.eclipse.egit.github.core.client.GitHubClient;
+
 
 public class GithubEnvironment implements MetadataEnvironment {
-
-	private RepositoryService service = new RepositoryService();
+	
 	private PackageBuilder packager = new PackageBuilder();
 	private String name = null;
 	private String environment = null;
@@ -80,6 +80,9 @@ public class GithubEnvironment implements MetadataEnvironment {
 		GitHubClient client = new GitHubClient();
 		client.setCredentials(this.login, this.password);
 		
+		RepositoryService service = new RepositoryService(client);
+		/*
+		
 		try {
 			for (Repository repo : service.getRepositories(this.login)) {
 				  System.out.println(repo.getName() + " Watchers: " + repo.getWatchers());
@@ -87,7 +90,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		/*
 		if (!conMan.Login()) {
