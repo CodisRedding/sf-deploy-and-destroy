@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -325,7 +326,7 @@ public class PropertyReader {
 
 		return response;
 	}
-	
+
 	/**
 	 * Reads properties from the source.properties file.
 	 * 
@@ -342,9 +343,11 @@ public class PropertyReader {
 		String response = null;
 
 		try {
+			InputStream fileStream = Thread.currentThread()
+					.getContextClassLoader()
+					.getResourceAsStream("/source.properties");
 			Properties prop = new Properties();
-			prop.load(new FileInputStream("properties" + File.separator
-					+ "source.properties"));
+			prop.load(fileStream);
 			response = prop.getProperty(key);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

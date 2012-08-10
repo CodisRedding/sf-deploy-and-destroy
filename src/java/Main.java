@@ -1,3 +1,12 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import system.EnvironmentManager;
 import system.OrgEnvironment;
 import deploy.DeployBuilder;
@@ -42,6 +51,8 @@ public class Main {
 			System.exit(1);
 		}
 
+		install();
+
 		String envNameFrom = args[0].toLowerCase();
 		String envNameTo = args[1].toLowerCase();
 
@@ -75,5 +86,72 @@ public class Main {
 			destroybuilder.printDestructiveChanges();
 			deployBuilder.deploy();
 		}
+	}
+
+	private static void install() {
+
+		/*
+		Boolean reset = false;
+
+		String LINE_SEP = System.getProperty("file.separator");
+
+		// create install dir if it does not exist
+		String installPath = System.getProperty("user.home") + LINE_SEP
+				+ ".sf-deploy-and-destroy";
+
+		File installDir = new File(installPath);
+		if (!installDir.exists()) {
+			installDir.mkdir();
+		}
+		
+		InputStream config = Thread.currentThread().getContextClassLoader().getResourceAsStream("/config.properties");
+		InputStream destroy = Thread.currentThread().getContextClassLoader().getResourceAsStream("/destroy.properties");
+		InputStream pack = Thread.currentThread().getContextClassLoader().getResourceAsStream("/pack.properties");
+		InputStream environment = Thread.currentThread().getContextClassLoader().getResourceAsStream("/environment.properties");
+
+		File configFile = new File(installPath + LINE_SEP + "/config.properties");
+		if(!configFile.exists()) {
+			input = Thread.currentThread().getContextClassLoader()
+					.getResourceAsStream("/" + file.getName());
+
+			OutputStream out = new FileOutputStream(f);
+			byte buf[] = new byte[1024];
+			int len;
+			while ((len = input.read(buf)) > 0) {
+				out.write(buf, 0, len);
+			}
+			out.close();
+			input.close();
+		}
+		
+		for (File file : installDir.listFiles()) {
+			InputStream input = null;
+			String checkPath = installDir.getPath() + file.getName();
+			File checkFile = new File(checkPath);
+			File f = new File(installPath + checkFile.getName());
+
+			try {
+				if ((!file.getName().equals("source.properties") && !checkFile
+						.exists()) || reset) {
+					input = Thread.currentThread().getContextClassLoader()
+							.getResourceAsStream("/" + file.getName());
+
+					OutputStream out = new FileOutputStream(f);
+					byte buf[] = new byte[1024];
+					int len;
+					while ((len = input.read(buf)) > 0) {
+						out.write(buf, 0, len);
+					}
+					out.close();
+					input.close();
+				}
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} */
 	}
 }

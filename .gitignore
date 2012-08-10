@@ -9,4 +9,4 @@ tmp/
 !/environments/environment.ignore
 /environments/*
 deploy
-.project
+.ivy
