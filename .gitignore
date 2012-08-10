@@ -4,8 +4,6 @@
 *.class
 tmp/
 *.env
-!/environments/example1.env
-!/environments/example2.env
 !/environments/environment.ignore
 /environments/*
 deploy
