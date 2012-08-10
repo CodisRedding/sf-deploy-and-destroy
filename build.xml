@@ -19,7 +19,7 @@
         Project based requirements...
     -->
 
-    <property name="PROJECT_BASED_DIR" value=".program"/>
+    <property name="PROJECT_BASED_DIR" value=".project"/>
     <property name="PROJECT_BASED_LIB_DIR" value="${PROJECT_BASED_DIR}/lib"/>
 
     <mkdir dir="${PROJECT_BASED_LIB_DIR}"/>
