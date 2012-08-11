@@ -345,7 +345,7 @@ public class PropertyReader {
 		try {
 			InputStream fileStream = Thread.currentThread()
 					.getContextClassLoader()
-					.getResourceAsStream("/source.properties");
+					.getResourceAsStream("source.properties");
 			Properties prop = new Properties();
 			prop.load(fileStream);
 			response = prop.getProperty(key);

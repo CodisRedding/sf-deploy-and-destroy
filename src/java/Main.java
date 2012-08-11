@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.List;
 
 import system.EnvironmentManager;
 import system.OrgEnvironment;
@@ -90,7 +91,6 @@ public class Main {
 
 	private static void install() {
 
-		/*
 		Boolean reset = false;
 
 		String LINE_SEP = System.getProperty("file.separator");
@@ -103,55 +103,41 @@ public class Main {
 		if (!installDir.exists()) {
 			installDir.mkdir();
 		}
-		
-		InputStream config = Thread.currentThread().getContextClassLoader().getResourceAsStream("/config.properties");
-		InputStream destroy = Thread.currentThread().getContextClassLoader().getResourceAsStream("/destroy.properties");
-		InputStream pack = Thread.currentThread().getContextClassLoader().getResourceAsStream("/pack.properties");
-		InputStream environment = Thread.currentThread().getContextClassLoader().getResourceAsStream("/environment.properties");
 
-		File configFile = new File(installPath + LINE_SEP + "/config.properties");
-		if(!configFile.exists()) {
-			input = Thread.currentThread().getContextClassLoader()
-					.getResourceAsStream("/" + file.getName());
+		String[] propFileNames = { "config.properties", "destroy.properties",
+				"package.properties", "environment.ignore" };
 
-			OutputStream out = new FileOutputStream(f);
-			byte buf[] = new byte[1024];
-			int len;
-			while ((len = input.read(buf)) > 0) {
-				out.write(buf, 0, len);
-			}
-			out.close();
-			input.close();
-		}
-		
-		for (File file : installDir.listFiles()) {
-			InputStream input = null;
-			String checkPath = installDir.getPath() + file.getName();
-			File checkFile = new File(checkPath);
-			File f = new File(installPath + checkFile.getName());
+		for (String propFileName : propFileNames) {
 
-			try {
-				if ((!file.getName().equals("source.properties") && !checkFile
-						.exists()) || reset) {
-					input = Thread.currentThread().getContextClassLoader()
-							.getResourceAsStream("/" + file.getName());
+			String filePathAndName = installPath + LINE_SEP + propFileName;
+			File propFile = new File(filePathAndName);
 
-					OutputStream out = new FileOutputStream(f);
+			if (!propFile.exists() || reset) {
+				InputStream jarPropFile = Thread.currentThread()
+						.getContextClassLoader()
+						.getResourceAsStream(propFileName);
+
+				OutputStream out = null;
+				try {
+					out = new FileOutputStream(propFile);
 					byte buf[] = new byte[1024];
 					int len;
-					while ((len = input.read(buf)) > 0) {
+					while ((len = jarPropFile.read(buf)) > 0) {
 						out.write(buf, 0, len);
 					}
+
+					// these functions also throw IOExceptions... didn't want to nest try/catches
+					// come up with better approach. Didn't want this function to throw error either
 					out.close();
-					input.close();
+					jarPropFile.close();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-		} */
+		}
 	}
 }
