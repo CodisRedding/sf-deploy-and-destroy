@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
+import java.util.Properties;
 
 import system.EnvironmentManager;
 import system.OrgEnvironment;
@@ -52,7 +53,7 @@ public class Main {
 			System.exit(1);
 		}
 
-		install();
+		install(true);
 
 		String envNameFrom = args[0].toLowerCase();
 		String envNameTo = args[1].toLowerCase();
@@ -89,7 +90,7 @@ public class Main {
 		}
 	}
 
-	private static void install() {
+	private static void install(Boolean verbose) {
 
 		Boolean reset = false;
 
@@ -99,23 +100,53 @@ public class Main {
 		String installPath = System.getProperty("user.home") + LINE_SEP
 				+ ".sf-deploy-and-destroy";
 
+		String envPath = installPath + LINE_SEP + "environments";
+
+		try {
+			InputStream fileStream = Thread.currentThread()
+					.getContextClassLoader()
+					.getResourceAsStream("config.properties");
+			Properties prop = new Properties();
+			prop.load(fileStream);
+			prop.setProperty("sf.environments.loc", envPath);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		File installDir = new File(installPath);
 		if (!installDir.exists()) {
 			installDir.mkdir();
 		}
+		
+		File installEnvDir = new File(envPath);
+		if (!installEnvDir.exists()) {
+			installEnvDir.mkdir();
+		}
 
-		String[] propFileNames = { "config.properties", "destroy.properties",
-				"package.properties", "environment.ignore" };
+		String[] configFileNames = { "destroy.properties",
+				"package.properties", "environment.ignore", "github.env",
+				"salesforce.env" };
 
-		for (String propFileName : propFileNames) {
+		for (String configFileName : configFileNames) {
 
-			String filePathAndName = installPath + LINE_SEP + propFileName;
+			String filePathAndName = null;
+
+			if (configFileName.endsWith(".env")) {
+				filePathAndName = envPath + LINE_SEP + configFileName;
+			} else {
+				filePathAndName = installPath + LINE_SEP + configFileName;
+			}
+
 			File propFile = new File(filePathAndName);
 
 			if (!propFile.exists() || reset) {
 				InputStream jarPropFile = Thread.currentThread()
 						.getContextClassLoader()
-						.getResourceAsStream(propFileName);
+						.getResourceAsStream(configFileName);
 
 				OutputStream out = null;
 				try {
@@ -126,8 +157,17 @@ public class Main {
 						out.write(buf, 0, len);
 					}
 
-					// these functions also throw IOExceptions... didn't want to nest try/catches
-					// come up with better approach. Didn't want this function to throw error either
+					if (verbose) {
+						System.out.println("Created configuration file: "
+								+ filePathAndName);
+
+						printOutSummary(configFileName);
+					}
+
+					// these functions also throw IOExceptions... didn't want to
+					// nest try/catches
+					// come up with better approach. Didn't want this function
+					// to throw error either
 					out.close();
 					jarPropFile.close();
 				} catch (FileNotFoundException e) {
@@ -138,6 +178,24 @@ public class Main {
 					e.printStackTrace();
 				}
 			}
+		}
+	}
+
+	private static void printOutSummary(String propFile) {
+
+		if (propFile.equals("destroy.properties")) {
+			System.out.println("TODO: ADD FILE SUMMARY");
+			System.out.println("----------------------");
+		} else if (propFile.equals("package.properties")) {
+			System.out.println("TODO: ADD FILE SUMMARY");
+			System.out.println("----------------------");
+		} else if (propFile.equals("environment.ignore")) {
+			System.out.println("TODO: ADD FILE SUMMARY");
+			System.out.println("----------------------");
+		} else if (propFile.equals("github.env")) {
+			System.out.println("TODO: ADD FILE SUMMARY");
+		} else if (propFile.equals("salesforce.env")) {
+			System.out.println("TODO: ADD FILE SUMMARY");
 		}
 	}
 }

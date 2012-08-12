@@ -66,10 +66,11 @@ public class PropertyReader {
 		ArrayList<String> properties = new ArrayList<String>();
 
 		try {
-			FileInputStream fstream = new FileInputStream(
-					getSystemProperty("sf.destruct.properties.loc"));
+			InputStream fileStream = Thread.currentThread()
+					.getContextClassLoader()
+					.getResourceAsStream(getSystemProperty("sf.destruct.properties.loc"));
 
-			DataInputStream in = new DataInputStream(fstream);
+			DataInputStream in = new DataInputStream(fileStream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
 			String line;
@@ -199,9 +200,11 @@ public class PropertyReader {
 		String response = null;
 
 		try {
+			InputStream fileStream = Thread.currentThread()
+					.getContextClassLoader()
+					.getResourceAsStream("config.properties");
 			Properties prop = new Properties();
-			prop.load(new FileInputStream("properties" + File.separator
-					+ "config.properties"));
+			prop.load(fileStream);
 
 			if (envType.equals(null) || envType.equals("")) {
 				envType = "sandbox";
@@ -312,9 +315,11 @@ public class PropertyReader {
 		String response = null;
 
 		try {
+			InputStream fileStream = Thread.currentThread()
+					.getContextClassLoader()
+					.getResourceAsStream("config.properties");
 			Properties prop = new Properties();
-			prop.load(new FileInputStream("properties" + File.separator
-					+ "config.properties"));
+			prop.load(fileStream);
 			response = prop.getProperty(key);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

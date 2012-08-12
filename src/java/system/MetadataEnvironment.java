@@ -23,8 +23,8 @@ public interface MetadataEnvironment {
 
 	public abstract File getDestroyZip();
 	
-	public PackageBuilder retreive();
+	public abstract PackageBuilder retreive();
 	
-	public void printRetreiveChanges();
+	public abstract void printRetreiveChanges();
 
 }

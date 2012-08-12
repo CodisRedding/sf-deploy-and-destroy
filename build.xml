@@ -42,6 +42,7 @@
 		Source vars...
 	-->
     <property name="PROPERTIES_DIR"  value="properties"/>
+	<property name="ENVIRONMENT_DIR" value="environments"/>
     <property name="SRC_DIR"         value="src"/>
 	<property name="JAVA_SRC_DIR"    value="${SRC_DIR}/java"/>
 	<property name="WSDL_SRC_DIR"    value="${SRC_DIR}/wsdl"/>
@@ -181,6 +182,7 @@
 
 		<jar destfile="${DEPLOY_PROJECT_JAR}">
 			<fileset dir="${PROPERTIES_DIR}"/>
+			<fileset dir="${ENVIRONMENT_DIR}"/>
 			<fileset dir="${DEPLOY_CLASS_DIR}"/>
             <fileset dir="${DEPLOY_UNZIP_DIR}" includes="**/*class"/>
 
