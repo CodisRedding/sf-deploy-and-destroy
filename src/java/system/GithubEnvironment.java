@@ -2,11 +2,15 @@ package system;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
+import org.eclipse.egit.github.core.Download;
 import org.eclipse.egit.github.core.Repository;
+import org.eclipse.egit.github.core.service.DownloadService;
 //import org.eclipse.egit.github.core.Repository;
 import org.eclipse.egit.github.core.service.RepositoryService;
 import org.eclipse.egit.github.core.client.GitHubClient;
+import org.eclipse.egit.github.core.event.DownloadPayload;
 
 
 public class GithubEnvironment implements MetadataEnvironment {
@@ -18,6 +22,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 	private String password = null;
 	private String server = null;
 	private String repo = null;
+	private String organization = null;
 	
 	public GithubEnvironment(String name) {
 		
@@ -25,6 +30,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 		this.login = PropertyReader.getEnviromentProperty(name, "github.login");
 		this.password = PropertyReader.getEnviromentProperty(name, "github.password");
 		this.repo = PropertyReader.getEnviromentProperty(name, "github.repo");
+		this.organization = PropertyReader.getEnviromentProperty(name, "github.organization");
 	}
 	
 	@Override
@@ -82,14 +88,18 @@ public class GithubEnvironment implements MetadataEnvironment {
 		client.setCredentials(this.login, this.password);
 		
 		RepositoryService service = new RepositoryService(client);
-		
 		try {
-			for (Repository repo : service.getRepositories(this.login)) {
-				  System.out.println(repo.getName() + " Watchers: " + repo.getWatchers());
-			}
-		} catch (IOException e) {
+			Repository rep = service.getRepository(this.organization, this.repo);
+			GitHubClient gc = service.getClient();
+			DownloadService dls = new DownloadService(gc);
+			List<Download> downloads = dls.getDownloads(rep);
+			
+			
+			Repository src = rep.getSource();
+			String s = "";
+		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 		
 		/*
