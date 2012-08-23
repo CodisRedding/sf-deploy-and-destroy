@@ -6,9 +6,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.commons.io.IOUtils;
+
+import sun.net.www.protocol.jar.JarURLConnection;
+import sun.tools.jar.resources.jar;
 import system.EnvironmentManager;
 import system.OrgEnvironment;
 import deploy.DeployBuilder;
@@ -24,14 +31,14 @@ public class Main {
 	 * @param args
 	 *            [0]
 	 * 
-	 *            The name of the environemnt file for the org that you want to
+	 *            The name of the environment file for the org that you want to
 	 *            deploy from. if the files name is example1.env then use
 	 *            example1 without the .env
 	 * 
 	 * @param args
 	 *            [1]
 	 * 
-	 *            The name of the environemnt file for the org that you want to
+	 *            The name of the environment file for the org that you want to
 	 *            deploy to. if the files name is example1.env then use example1
 	 *            without the .env
 	 * 
@@ -92,7 +99,7 @@ public class Main {
 
 	private static void install(Boolean verbose) {
 
-		Boolean reset = false;
+		Boolean reset = true;
 
 		String LINE_SEP = System.getProperty("file.separator");
 
@@ -102,34 +109,19 @@ public class Main {
 
 		String envPath = installPath + LINE_SEP + "environments";
 
-		try {
-			InputStream fileStream = Thread.currentThread()
-					.getContextClassLoader()
-					.getResourceAsStream("config.properties");
-			Properties prop = new Properties();
-			prop.load(fileStream);
-			prop.setProperty("sf.environments.loc", envPath);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 		File installDir = new File(installPath);
 		if (!installDir.exists()) {
 			installDir.mkdir();
 		}
-		
+
 		File installEnvDir = new File(envPath);
 		if (!installEnvDir.exists()) {
 			installEnvDir.mkdir();
 		}
 
-		String[] configFileNames = { "destroy.properties",
-				"package.properties", "environment.ignore", "github.env",
-				"salesforce.env" };
+		String[] configFileNames = { "destroy.properties", "config.properties",
+				"package.properties", "environment.ignore",
+				"github-example.env", "salesforce-example.env" };
 
 		for (String configFileName : configFileNames) {
 
@@ -144,6 +136,7 @@ public class Main {
 			File propFile = new File(filePathAndName);
 
 			if (!propFile.exists() || reset) {
+
 				InputStream jarPropFile = Thread.currentThread()
 						.getContextClassLoader()
 						.getResourceAsStream(configFileName);

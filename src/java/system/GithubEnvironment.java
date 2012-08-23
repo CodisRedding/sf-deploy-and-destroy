@@ -1,20 +1,19 @@
 package system;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
 
-import org.eclipse.egit.github.core.Download;
-import org.eclipse.egit.github.core.Repository;
-import org.eclipse.egit.github.core.service.DownloadService;
-//import org.eclipse.egit.github.core.Repository;
-import org.eclipse.egit.github.core.service.RepositoryService;
-import org.eclipse.egit.github.core.client.GitHubClient;
-import org.eclipse.egit.github.core.event.DownloadPayload;
-
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 
 public class GithubEnvironment implements MetadataEnvironment {
-	
+
 	private PackageBuilder packager = new PackageBuilder();
 	private String name = null;
 	private String environment = null;
@@ -23,16 +22,18 @@ public class GithubEnvironment implements MetadataEnvironment {
 	private String server = null;
 	private String repo = null;
 	private String organization = null;
-	
+
 	public GithubEnvironment(String name) {
-		
+
 		this.name = name;
 		this.login = PropertyReader.getEnviromentProperty(name, "github.login");
-		this.password = PropertyReader.getEnviromentProperty(name, "github.password");
+		this.password = PropertyReader.getEnviromentProperty(name,
+				"github.password");
 		this.repo = PropertyReader.getEnviromentProperty(name, "github.repo");
-		this.organization = PropertyReader.getEnviromentProperty(name, "github.organization");
+		this.organization = PropertyReader.getEnviromentProperty(name,
+				"github.organization");
 	}
-	
+
 	@Override
 	public String getEnvironment() {
 		// TODO Auto-generated method stub
@@ -83,40 +84,74 @@ public class GithubEnvironment implements MetadataEnvironment {
 
 	@Override
 	public PackageBuilder retreive() {
+
+		String LINE_SEP = System.getProperty("file.separator");
+
+		String installPath = System.getProperty("user.home") + LINE_SEP
+				+ ".sf-deploy-and-destroy";
 		
-		GitHubClient client = new GitHubClient();
-		client.setCredentials(this.login, this.password);
-		
-		RepositoryService service = new RepositoryService(client);
-		try {
-			Repository rep = service.getRepository(this.organization, this.repo);
-			GitHubClient gc = service.getClient();
-			DownloadService dls = new DownloadService(gc);
-			List<Download> downloads = dls.getDownloads(rep);
-			
-			
-			Repository src = rep.getSource();
-			String s = "";
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		/*
-		if (!conMan.Login()) {
-			System.out.println("Unable to connect.");
-			System.exit(1);
-		}*/
+		String zipLoc = installPath
+				+ File.separator + this.name + File.separator
+				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
+
+		String url = String.format(
+				PropertyReader.getSystemProperty("github.api.zipball"),
+				this.login, this.password, this.organization, this.repo);
+		url = url.replace("repos//", "repos/");
 
 		System.out.println("### Retrieving " + this.name + " (github) ###");
-		
+
+		DefaultHttpClient httpclient = new DefaultHttpClient();
+		File f = new File(zipLoc);
+		FileOutputStream os = null;
+
+		try {
+
+			os = new FileOutputStream(f);
+			HttpGet httpget = new HttpGet(url);
+			HttpResponse response = httpclient.execute(httpget);
+			HttpEntity entity = response.getEntity();
+			os.write(EntityUtils.toByteArray(entity));
+			System.out.println(response.getStatusLine());
+			if (entity != null) {
+				System.out.println("Response content length: "
+						+ entity.getContentLength());
+			}
+
+			EntityUtils.consume(entity);
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if (os != null) {
+					os.flush();
+					os.close();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			// When HttpClient instance is no longer needed,
+			// shut down the connection manager to ensure
+			// immediate deallocation of all system resources
+			httpclient.getConnectionManager().shutdown();
+		}
+
 		return null;
 	}
 
 	@Override
 	public void printRetreiveChanges() {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 }

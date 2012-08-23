@@ -65,10 +65,13 @@ public class PropertyReader {
 
 		ArrayList<String> properties = new ArrayList<String>();
 
+		String LINE_SEP = System.getProperty("file.separator");
+
+		String installPath = System.getProperty("user.home") + LINE_SEP
+				+ ".sf-deploy-and-destroy" + LINE_SEP + "destroy.properties";
+		
 		try {
-			InputStream fileStream = Thread.currentThread()
-					.getContextClassLoader()
-					.getResourceAsStream(getSystemProperty("sf.destruct.properties.loc"));
+			FileInputStream fileStream = new FileInputStream(installPath);
 
 			DataInputStream in = new DataInputStream(fileStream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -237,10 +240,14 @@ public class PropertyReader {
 	public static ArrayList<String> getRetrieveProperties() {
 
 		ArrayList<String> properties = new ArrayList<String>();
+		
+		String LINE_SEP = System.getProperty("file.separator");
+
+		String installPath = System.getProperty("user.home") + LINE_SEP
+				+ ".sf-deploy-and-destroy" + LINE_SEP + "package.properties";
 
 		try {
-			FileInputStream fstream = new FileInputStream(
-					getSystemProperty("sf.package.properties.loc"));
+			FileInputStream fstream = new FileInputStream(installPath);
 
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -313,11 +320,16 @@ public class PropertyReader {
 	public static String getSystemProperty(String key) {
 
 		String response = null;
+		
+		String LINE_SEP = System.getProperty("file.separator");
+		
+		String installPath = System.getProperty("user.home") + LINE_SEP
+				+ ".sf-deploy-and-destroy" + LINE_SEP + "config.properties";
 
 		try {
 			InputStream fileStream = Thread.currentThread()
 					.getContextClassLoader()
-					.getResourceAsStream("config.properties");
+					.getResourceAsStream(installPath);
 			Properties prop = new Properties();
 			prop.load(fileStream);
 			response = prop.getProperty(key);
@@ -380,10 +392,14 @@ public class PropertyReader {
 
 		if (ignoreProperties == null) {
 			ignoreProperties = new ArrayList<String>();
+			
+			String LINE_SEP = System.getProperty("file.separator");
+
+			String installPath = System.getProperty("user.home") + LINE_SEP
+					+ ".sf-deploy-and-destroy" + LINE_SEP + "environment.ignore";
 
 			try {
-				FileInputStream fstream = new FileInputStream(
-						getSystemProperty("sf.environment.ignore.properties.loc"));
+				FileInputStream fstream = new FileInputStream(installPath);
 
 				DataInputStream in = new DataInputStream(fstream);
 				BufferedReader br = new BufferedReader(
