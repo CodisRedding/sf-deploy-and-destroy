@@ -101,6 +101,7 @@ public class DestructiveBuilder {
 					.getLocationFolder().getPath(), destroyOnly);
 
 			System.gc();
+			doDelete(orgTo.getSourceFolder());
 			doDelete(orgTo.getLocationFolder());
 			doDelete(orgFrom.getSourceFolder());
 		} catch (Exception e) {
@@ -333,6 +334,8 @@ public class DestructiveBuilder {
 				doDelete(child);
 			}
 		}
+		
+		System.gc();
 		if (!path.delete()) {
 			throw new IOException("Could not delete " + path);
 		}

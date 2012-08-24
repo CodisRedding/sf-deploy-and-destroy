@@ -76,15 +76,17 @@ public class Main {
 				manager.getFromEnvironment(), manager.getToEnvironment());
 		destroybuilder.buildDestructiveChanges(destroyOnly);
 
-		if (printOnly) {
-			destroybuilder.printDestructiveChanges();
-		} else {
-			DeployBuilder deployBuilder = new DeployBuilder(
-					manager.getFromEnvironment(),
-					(OrgEnvironment) manager.getToEnvironment());
-			destroybuilder.printDestructiveChanges();
+		DeployBuilder deployBuilder = new DeployBuilder(
+				manager.getFromEnvironment(),
+				(OrgEnvironment) manager.getToEnvironment());
+		
+		destroybuilder.printDestructiveChanges();
+		
+		if (!printOnly) {
 			deployBuilder.deploy();
-		}
+		} 
+		
+		deployBuilder.cleanUp();
 	}
 
 	private static void install(Boolean verbose) {
@@ -105,7 +107,7 @@ public class Main {
 
 		String[] configFileNames = { "destroy.properties", "config.properties",
 				"package.properties", "environment.ignore",
-				"github-example.env", "salesforce-example.env" };
+				"github-example-dev.env", "salesforce-example-dev.env" };
 
 		for (String configFileName : configFileNames) {
 

@@ -3,6 +3,7 @@ package deploy;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
 import system.MetadataEnvironment;
 import system.OrgEnvironment;
@@ -17,6 +18,8 @@ import com.sforce.soap.metadata.DeployOptions;
 import com.sforce.soap.metadata.DeployResult;
 import com.sforce.soap.metadata.RunTestFailure;
 import com.sforce.soap.metadata.RunTestsResult;
+
+import destroy.DestructiveBuilder;
 	
 public class DeployBuilder {
 
@@ -136,6 +139,16 @@ public class DeployBuilder {
 			}
 		}
 		System.out.println(buf.toString());
+	}
+	
+	public void cleanUp() {
+		try {
+			System.gc();
+			DestructiveBuilder.doDelete(orgFrom.getLocationFolder());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private byte[] readZipFile() throws Exception {
