@@ -137,8 +137,6 @@ public class Main {
 					if (verbose) {
 						System.out.println("Created configuration file: "
 								+ filePathAndName);
-
-						printOutSummary(configFileName);
 					}
 
 					// these functions also throw IOExceptions... didn't want to
@@ -155,24 +153,6 @@ public class Main {
 					e.printStackTrace();
 				}
 			}
-		}
-	}
-
-	private static void printOutSummary(String propFile) {
-
-		if (propFile.equals("destroy.properties")) {
-			System.out.println("TODO: ADD FILE SUMMARY");
-			System.out.println("----------------------");
-		} else if (propFile.equals("package.properties")) {
-			System.out.println("TODO: ADD FILE SUMMARY");
-			System.out.println("----------------------");
-		} else if (propFile.equals("environment.ignore")) {
-			System.out.println("TODO: ADD FILE SUMMARY");
-			System.out.println("----------------------");
-		} else if (propFile.equals("github.env")) {
-			System.out.println("TODO: ADD FILE SUMMARY");
-		} else if (propFile.equals("salesforce.env")) {
-			System.out.println("TODO: ADD FILE SUMMARY");
 		}
 	}
 }
