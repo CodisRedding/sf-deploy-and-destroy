@@ -6,7 +6,7 @@
 !/lib/ivy-2.3.0-rc1.jar
 tmp/
 *.env
-!/environments/environment.ignore
-/environments/*
+!/environments/github-example.env
+!/environments/salesforce-example.env
 deploy
 .ivy
