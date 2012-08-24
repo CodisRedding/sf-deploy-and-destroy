@@ -130,6 +130,11 @@ public class PackageBuilder {
 	public void printFile() {
 		Hashtable<String, ArrayList<String>> names = getNameContents();
 		Enumeration<String> keys1 = names.keys();
+		
+		if(names.size() == 0) {
+			System.out.println("No differences between metadata");
+		}
+		
 		while (keys1.hasMoreElements()) {
 			Object key = keys1.nextElement();
 			
