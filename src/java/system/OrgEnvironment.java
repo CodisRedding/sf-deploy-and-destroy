@@ -39,7 +39,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 				this.environment, "auth", this.server, this.apiVersion);
 		this.serviceEndpoint = PropertyReader.getEnvironmentEndpoint(
 				this.environment, "service", this.server, this.apiVersion);
-		
+
 		conMan = new ConnectionManager(this.login, password, token,
 				authEndpoint, serviceEndpoint);
 
@@ -88,8 +88,8 @@ public class OrgEnvironment implements MetadataEnvironment {
 
 	@Override
 	public File getLocationFolder() {
-		String folderName = PropertyReader
-				.getSystemProperty("sf.environments.loc") + this.name;
+		String folderName = PropertyReader.USER_PATH + File.separator
+				+ this.name;
 		File folder = new File(folderName);
 
 		return folder;
@@ -97,8 +97,8 @@ public class OrgEnvironment implements MetadataEnvironment {
 
 	@Override
 	public File getSourceFolder() {
-		String folderName = PropertyReader
-				.getSystemProperty("sf.environments.loc")
+		String folderName = PropertyReader.USER_PATH
+				+ File.separator
 				+ this.name
 				+ File.separator
 				+ PropertyReader
@@ -109,8 +109,8 @@ public class OrgEnvironment implements MetadataEnvironment {
 	}
 
 	public File getRetrieveZip() {
-		String zip = PropertyReader.getSystemProperty("sf.environments.loc")
-				+ this.name + File.separator
+		String zip = PropertyReader.USER_PATH + File.separator + this.name
+				+ File.separator
 				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
 		File zipFile = new File(zip);
 
@@ -119,8 +119,8 @@ public class OrgEnvironment implements MetadataEnvironment {
 
 	@Override
 	public File getDestroyZip() {
-		String zip = PropertyReader.getSystemProperty("sf.environments.loc")
-				+ this.name + File.separator
+		String zip = PropertyReader.USER_PATH + File.separator + this.name
+				+ File.separator
 				+ PropertyReader.getSystemProperty("sf.destruct.zip.file.name");
 		File zipFile = new File(zip);
 
@@ -175,8 +175,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 		// + File.separator + this.environment.getName(),
 		// PropertyReader.getSystemProperty("sf.package.file.name"));
 
-		String dir = PropertyReader.getSystemProperty("sf.environments.loc")
-				+ File.separator + this.name;
+		String dir = PropertyReader.USER_PATH + File.separator + this.name;
 
 		File dirPath = new File(dir);
 		dirPath.mkdir();

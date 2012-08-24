@@ -11,6 +11,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import javax.jws.soap.SOAPBinding.Use;
+
 /**
  * @author rocky
  * 
@@ -18,6 +20,9 @@ import java.util.Properties;
  *         files.
  */
 public class PropertyReader {
+
+	public final static String USER_PATH = System.getProperty("user.home")
+			+ File.separator + ".sf-deploy-and-destroy";
 
 	/**
 	 * The different property types found on each line of the destroy.properties
@@ -65,11 +70,9 @@ public class PropertyReader {
 
 		ArrayList<String> properties = new ArrayList<String>();
 
-		String LINE_SEP = System.getProperty("file.separator");
+		String installPath = PropertyReader.USER_PATH + File.separator
+				+ "destroy.properties";
 
-		String installPath = System.getProperty("user.home") + LINE_SEP
-				+ ".sf-deploy-and-destroy" + LINE_SEP + "destroy.properties";
-		
 		try {
 			FileInputStream fileStream = new FileInputStream(installPath);
 
@@ -168,7 +171,7 @@ public class PropertyReader {
 		try {
 			Properties prop = new Properties();
 			prop.load(new FileInputStream(
-					getSystemProperty("sf.environments.loc") + env + ".env"));
+					USER_PATH + File.separator + "environments" + File.separator + env + ".env"));
 			response = prop.getProperty(key);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -240,11 +243,9 @@ public class PropertyReader {
 	public static ArrayList<String> getRetrieveProperties() {
 
 		ArrayList<String> properties = new ArrayList<String>();
-		
-		String LINE_SEP = System.getProperty("file.separator");
 
-		String installPath = System.getProperty("user.home") + LINE_SEP
-				+ ".sf-deploy-and-destroy" + LINE_SEP + "package.properties";
+		String installPath = PropertyReader.USER_PATH + File.separator
+				+ "package.properties";
 
 		try {
 			FileInputStream fstream = new FileInputStream(installPath);
@@ -320,16 +321,12 @@ public class PropertyReader {
 	public static String getSystemProperty(String key) {
 
 		String response = null;
-		
-		String LINE_SEP = System.getProperty("file.separator");
-		
-		String installPath = System.getProperty("user.home") + LINE_SEP
-				+ ".sf-deploy-and-destroy" + LINE_SEP + "config.properties";
+
+		String installPath = PropertyReader.USER_PATH + File.separator
+				+ "config.properties";
 
 		try {
-			InputStream fileStream = Thread.currentThread()
-					.getContextClassLoader()
-					.getResourceAsStream(installPath);
+			InputStream fileStream = new FileInputStream(installPath);
 			Properties prop = new Properties();
 			prop.load(fileStream);
 			response = prop.getProperty(key);
@@ -392,11 +389,9 @@ public class PropertyReader {
 
 		if (ignoreProperties == null) {
 			ignoreProperties = new ArrayList<String>();
-			
-			String LINE_SEP = System.getProperty("file.separator");
 
-			String installPath = System.getProperty("user.home") + LINE_SEP
-					+ ".sf-deploy-and-destroy" + LINE_SEP + "environment.ignore";
+			String installPath = PropertyReader.USER_PATH + File.separator
+					+ "environment.ignore";
 
 			try {
 				FileInputStream fstream = new FileInputStream(installPath);

@@ -129,12 +129,8 @@ public class Zipper {
 		ByteArrayInputStream bais = new ByteArrayInputStream(
 				result.getZipFile());
 
-		String LINE_SEP = System.getProperty("file.separator");
 
-		String installPath = System.getProperty("user.home") + LINE_SEP
-				+ ".sf-deploy-and-destroy";
-
-		String zipLoc = installPath + File.separator
+		String zipLoc = PropertyReader.USER_PATH + File.separator
 				+ this.environment.getName() + File.separator
 				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
 

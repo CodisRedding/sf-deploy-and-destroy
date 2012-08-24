@@ -66,31 +66,48 @@ public class GithubEnvironment implements MetadataEnvironment {
 
 	@Override
 	public File getLocationFolder() {
-		// TODO Auto-generated method stub
-		return null;
+		String folderName = PropertyReader.USER_PATH + File.separator
+				+ this.name;
+		File folder = new File(folderName);
+
+		return folder;
 	}
 
 	@Override
 	public File getSourceFolder() {
-		// TODO Auto-generated method stub
-		return null;
+		String folderName = PropertyReader.USER_PATH
+				+ File.separator
+				+ this.name
+				+ File.separator
+				+ "name_org_sha"; //TODO: FIGURE OUT HOW TO FIND THE SRC FOLDER */SRC <-- THIS EQUALS THE ROOT FOLDER
+		File folder = new File(folderName);
+
+		return folder;
+	}
+
+	public File getRetrieveZip() {
+		String zip = PropertyReader.USER_PATH + File.separator + this.name
+				+ File.separator
+				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
+		File zipFile = new File(zip);
+
+		return zipFile;
 	}
 
 	@Override
 	public File getDestroyZip() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		String zip = PropertyReader.USER_PATH + File.separator + this.name
+				+ File.separator
+				+ PropertyReader.getSystemProperty("sf.destruct.zip.file.name");
+		File zipFile = new File(zip);
 
+		return zipFile;
+	}
+	
 	@Override
 	public PackageBuilder retreive() {
 
-		String LINE_SEP = System.getProperty("file.separator");
-
-		String installPath = System.getProperty("user.home") + LINE_SEP
-				+ ".sf-deploy-and-destroy";
-		
-		String zipLoc = installPath
+		String zipLoc = PropertyReader.USER_PATH
 				+ File.separator + this.name + File.separator
 				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
 
@@ -102,12 +119,23 @@ public class GithubEnvironment implements MetadataEnvironment {
 		System.out.println("### Retrieving " + this.name + " (github) ###");
 
 		DefaultHttpClient httpclient = new DefaultHttpClient();
-		File f = new File(zipLoc);
+		File dir = new File(PropertyReader.USER_PATH
+				+ File.separator + this.name);
+		dir.mkdirs();
+		
+		File file = new File(zipLoc);
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		FileOutputStream os = null;
 
 		try {
 
-			os = new FileOutputStream(f);
+			os = new FileOutputStream(file);
 			HttpGet httpget = new HttpGet(url);
 			HttpResponse response = httpclient.execute(httpget);
 			HttpEntity entity = response.getEntity();

@@ -18,6 +18,7 @@ import sun.net.www.protocol.jar.JarURLConnection;
 import sun.tools.jar.resources.jar;
 import system.EnvironmentManager;
 import system.OrgEnvironment;
+import system.PropertyReader;
 import deploy.DeployBuilder;
 import destroy.DestructiveBuilder;
 
@@ -101,15 +102,9 @@ public class Main {
 
 		Boolean reset = true;
 
-		String LINE_SEP = System.getProperty("file.separator");
+		String envPath = PropertyReader.USER_PATH + File.separator + "environments";
 
-		// create install dir if it does not exist
-		String installPath = System.getProperty("user.home") + LINE_SEP
-				+ ".sf-deploy-and-destroy";
-
-		String envPath = installPath + LINE_SEP + "environments";
-
-		File installDir = new File(installPath);
+		File installDir = new File(PropertyReader.USER_PATH);
 		if (!installDir.exists()) {
 			installDir.mkdir();
 		}
@@ -128,9 +123,9 @@ public class Main {
 			String filePathAndName = null;
 
 			if (configFileName.endsWith(".env")) {
-				filePathAndName = envPath + LINE_SEP + configFileName;
+				filePathAndName = envPath + File.separator + configFileName;
 			} else {
-				filePathAndName = installPath + LINE_SEP + configFileName;
+				filePathAndName = PropertyReader.USER_PATH + File.separator + configFileName;
 			}
 
 			File propFile = new File(filePathAndName);
