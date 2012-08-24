@@ -100,6 +100,7 @@ public class DestructiveBuilder {
 			zipUtils.zip(orgFrom.getSourceFolder().getPath(), orgFrom
 					.getLocationFolder().getPath(), destroyOnly);
 
+			System.gc();
 			doDelete(orgTo.getLocationFolder());
 			doDelete(orgFrom.getSourceFolder());
 		} catch (Exception e) {
@@ -326,7 +327,7 @@ public class DestructiveBuilder {
 		}
 	}
 
-	private void doDelete(File path) throws IOException {
+	public static void doDelete(File path) throws IOException {
 		if (path.isDirectory()) {
 			for (File child : path.listFiles()) {
 				doDelete(child);

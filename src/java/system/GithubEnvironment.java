@@ -79,7 +79,8 @@ public class GithubEnvironment implements MetadataEnvironment {
 				+ File.separator
 				+ this.name
 				+ File.separator
-				+ "name_org_sha"; //TODO: FIGURE OUT HOW TO FIND THE SRC FOLDER */SRC <-- THIS EQUALS THE ROOT FOLDER
+				+ PropertyReader
+						.getSystemProperty("sf.environments.unzip.src.name");
 		File folder = new File(folderName);
 
 		return folder;
@@ -123,9 +124,9 @@ public class GithubEnvironment implements MetadataEnvironment {
 				+ File.separator + this.name);
 		dir.mkdirs();
 		
-		File file = new File(zipLoc);
+		File zipFile = new File(zipLoc);
 		try {
-			file.createNewFile();
+			zipFile.createNewFile();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -135,7 +136,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 
 		try {
 
-			os = new FileOutputStream(file);
+			os = new FileOutputStream(zipFile);
 			HttpGet httpget = new HttpGet(url);
 			HttpResponse response = httpclient.execute(httpget);
 			HttpEntity entity = response.getEntity();
@@ -147,6 +148,10 @@ public class GithubEnvironment implements MetadataEnvironment {
 			}
 
 			EntityUtils.consume(entity);
+			
+			ZipUtils utils = new ZipUtils();
+			utils.unzip(zipFile, this.getLocationFolder());
+			
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -162,6 +167,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 				if (os != null) {
 					os.flush();
 					os.close();
+					System.gc();
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -173,6 +179,32 @@ public class GithubEnvironment implements MetadataEnvironment {
 			// immediate deallocation of all system resources
 			httpclient.getConnectionManager().shutdown();
 		}
+		
+		Boolean del = zipFile.delete();
+		
+		File[] zipFiles = this.getLocationFolder().listFiles();
+		
+		String destRename = this.getLocationFolder() + File.separator + PropertyReader.getSystemProperty("sf.environments.unzip.src.name");
+		File renameFile = new File(destRename);
+		zipFiles[0].renameTo(renameFile);
+		
+		String envSFDir = PropertyReader.getEnviromentProperty(this.name, "github.sf.root");
+		File srcDir = new File(destRename + File.separator + envSFDir);
+		
+		// Rename to tmp
+		File tmpFile = new File(destRename + "_tmp");
+		srcDir.renameTo(tmpFile);
+		
+		// Remove orig
+		try {
+			destroy.DestructiveBuilder.doDelete(renameFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		File finalRenameFile = new File(destRename);
+		tmpFile.renameTo(finalRenameFile);
 
 		return null;
 	}
