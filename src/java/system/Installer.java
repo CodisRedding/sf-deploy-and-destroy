@@ -8,37 +8,43 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class Installer {
-	
-	public Installer() { }
-	
+
+	public static final String installPath = PropertyReader.USER_PATH + File.separator
+			+ "environments";
+
+	public Installer() {
+	}
+
 	public void install(Boolean verbose) {
 
-		Boolean reset = true;
+		System.out.println("Installing...");
+		System.out.println("\n");
 
-		String envPath = PropertyReader.USER_PATH + File.separator + "environments";
+		Boolean reset = true;
 
 		File installDir = new File(PropertyReader.USER_PATH);
 		if (!installDir.exists()) {
 			installDir.mkdir();
 		}
 
-		File installEnvDir = new File(envPath);
+		File installEnvDir = new File(installPath);
 		if (!installEnvDir.exists()) {
 			installEnvDir.mkdir();
 		}
 
 		String[] configFileNames = { "destroy.properties", "config.properties",
 				"package.properties", "environment.ignore",
-				"github-example-dev.env", "salesforce-example-dev.env" };
+				"github-example.env", "salesforce-example.env" };
 
 		for (String configFileName : configFileNames) {
 
 			String filePathAndName = null;
 
 			if (configFileName.endsWith(".env")) {
-				filePathAndName = envPath + File.separator + configFileName;
+				filePathAndName = installPath + File.separator + configFileName;
 			} else {
-				filePathAndName = PropertyReader.USER_PATH + File.separator + configFileName;
+				filePathAndName = PropertyReader.USER_PATH + File.separator
+						+ configFileName;
 			}
 
 			File propFile = new File(filePathAndName);
@@ -78,5 +84,10 @@ public class Installer {
 				}
 			}
 		}
+
+		System.out.println("Complete!");
+		System.out.println("***************************************************");
+		System.out.println("Go configure your environments here " + installPath);
+		System.out.println("***************************************************");
 	}
 }

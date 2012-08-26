@@ -36,9 +36,9 @@ public class OrgEnvironment implements MetadataEnvironment {
 		this.server = PropertyReader.getEnviromentProperty(name,
 				"sf.environment.server");
 		this.authEndpoint = PropertyReader.getEnvironmentEndpoint(
-				this.environment, "auth", this.server, this.apiVersion);
+				this.environment, "auth", this.server, apiVersion);
 		this.serviceEndpoint = PropertyReader.getEnvironmentEndpoint(
-				this.environment, "service", this.server, this.apiVersion);
+				this.environment, "service", this.server, apiVersion);
 
 		conMan = new ConnectionManager(this.login, password, token,
 				authEndpoint, serviceEndpoint);
@@ -207,7 +207,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 			query.setType(metaFolderName);
 
 			FileProperties[] lmr = conMan.getMetadataConnection().listMetadata(
-					new ListMetadataQuery[] { query }, this.apiVersion);
+					new ListMetadataQuery[] { query }, apiVersion);
 			if (lmr != null) {
 				for (FileProperties n : lmr) {
 					createFromApi(metadataType, n.getFullName());
@@ -225,7 +225,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 			query.setFolder(folder);
 
 			FileProperties[] lmr = conMan.getMetadataConnection().listMetadata(
-					new ListMetadataQuery[] { query }, this.apiVersion);
+					new ListMetadataQuery[] { query }, apiVersion);
 			if (lmr != null) {
 				for (FileProperties n : lmr) {
 					// commented out because this is not a good solution.

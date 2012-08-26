@@ -11,8 +11,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Properties;
 
-import javax.jws.soap.SOAPBinding.Use;
-
 /**
  * @author rocky
  * 
@@ -138,6 +136,8 @@ public class PropertyReader {
 					// ignore
 				}
 				break;
+			default:
+				break;
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -170,8 +170,8 @@ public class PropertyReader {
 
 		try {
 			Properties prop = new Properties();
-			prop.load(new FileInputStream(
-					USER_PATH + File.separator + "environments" + File.separator + env + ".env"));
+			prop.load(new FileInputStream(USER_PATH + File.separator
+					+ "environments" + File.separator + env + ".env"));
 			response = prop.getProperty(key);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

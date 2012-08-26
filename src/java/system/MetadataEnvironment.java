@@ -3,7 +3,7 @@ package system;
 import java.io.File;
 
 public interface MetadataEnvironment {
-	
+
 	public Double apiVersion = Double.valueOf(PropertyReader
 			.getSystemProperty("sf.api.version"));
 
@@ -22,9 +22,9 @@ public interface MetadataEnvironment {
 	public abstract File getSourceFolder();
 
 	public abstract File getDestroyZip();
-	
+
 	public abstract PackageBuilder retreive();
-	
+
 	public abstract void printRetreiveChanges();
 
 }

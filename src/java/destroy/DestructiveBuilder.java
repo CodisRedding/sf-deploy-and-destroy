@@ -20,9 +20,9 @@ public class DestructiveBuilder {
 	private PackageBuilder packager = new PackageBuilder();
 	private MetadataEnvironment orgTo = null;
 	private MetadataEnvironment orgFrom = null;
-	private Boolean destroyOnly = false;
 
-	public DestructiveBuilder(MetadataEnvironment orgFrom, MetadataEnvironment orgTo) {
+	public DestructiveBuilder(MetadataEnvironment orgFrom,
+			MetadataEnvironment orgTo) {
 		this.orgTo = orgTo;
 		this.orgFrom = orgFrom;
 	}
@@ -74,7 +74,6 @@ public class DestructiveBuilder {
 	 *         file generation completes successfully.
 	 */
 	public boolean buildDestructiveChanges(Boolean destroyOnly) {
-		this.destroyOnly = destroyOnly;
 		boolean successful = false;
 
 		try {
@@ -118,9 +117,9 @@ public class DestructiveBuilder {
 	 * 
 	 * @param dirToPlaceXmlFile
 	 * 
-	 *            Responsible for reading all properties in
-	 *            package.properties and parsing each delimited property before
-	 *            passing off for further parsing.
+	 *            Responsible for reading all properties in package.properties
+	 *            and parsing each delimited property before passing off for
+	 *            further parsing.
 	 */
 	private void buildXmlFile(String dirToPlaceXmlFile) {
 
@@ -334,7 +333,7 @@ public class DestructiveBuilder {
 				doDelete(child);
 			}
 		}
-		
+
 		System.gc();
 		if (!path.delete()) {
 			throw new IOException("Could not delete " + path);

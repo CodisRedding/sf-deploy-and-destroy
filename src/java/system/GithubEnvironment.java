@@ -14,12 +14,9 @@ import org.apache.http.util.EntityUtils;
 
 public class GithubEnvironment implements MetadataEnvironment {
 
-	private PackageBuilder packager = new PackageBuilder();
 	private String name = null;
-	private String environment = null;
 	private String login = null;
 	private String password = null;
-	private String server = null;
 	private String repo = null;
 	private String organization = null;
 
@@ -104,12 +101,12 @@ public class GithubEnvironment implements MetadataEnvironment {
 
 		return zipFile;
 	}
-	
+
 	@Override
 	public PackageBuilder retreive() {
 
-		String zipLoc = PropertyReader.USER_PATH
-				+ File.separator + this.name + File.separator
+		String zipLoc = PropertyReader.USER_PATH + File.separator + this.name
+				+ File.separator
 				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
 
 		String url = String.format(
@@ -120,10 +117,10 @@ public class GithubEnvironment implements MetadataEnvironment {
 		System.out.println("### Retrieving " + this.name + " (github) ###");
 
 		DefaultHttpClient httpclient = new DefaultHttpClient();
-		File dir = new File(PropertyReader.USER_PATH
-				+ File.separator + this.name);
+		File dir = new File(PropertyReader.USER_PATH + File.separator
+				+ this.name);
 		dir.mkdirs();
-		
+
 		File zipFile = new File(zipLoc);
 		try {
 			zipFile.createNewFile();
@@ -131,7 +128,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		FileOutputStream os = null;
 
 		try {
@@ -142,16 +139,11 @@ public class GithubEnvironment implements MetadataEnvironment {
 			HttpEntity entity = response.getEntity();
 			os.write(EntityUtils.toByteArray(entity));
 			System.out.println(response.getStatusLine());
-			if (entity != null) {
-				System.out.println("Response content length: "
-						+ entity.getContentLength());
-			}
-
 			EntityUtils.consume(entity);
-			
+
 			ZipUtils utils = new ZipUtils();
 			utils.unzip(zipFile, this.getLocationFolder());
-			
+
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -179,22 +171,26 @@ public class GithubEnvironment implements MetadataEnvironment {
 			// immediate deallocation of all system resources
 			httpclient.getConnectionManager().shutdown();
 		}
-		
-		Boolean del = zipFile.delete();
-		
+
+		zipFile.delete();
+
 		File[] zipFiles = this.getLocationFolder().listFiles();
-		
-		String destRename = this.getLocationFolder() + File.separator + PropertyReader.getSystemProperty("sf.environments.unzip.src.name");
+
+		String destRename = this.getLocationFolder()
+				+ File.separator
+				+ PropertyReader
+						.getSystemProperty("sf.environments.unzip.src.name");
 		File renameFile = new File(destRename);
 		zipFiles[0].renameTo(renameFile);
-		
-		String envSFDir = PropertyReader.getEnviromentProperty(this.name, "github.sf.root");
+
+		String envSFDir = PropertyReader.getEnviromentProperty(this.name,
+				"github.sf.root");
 		File srcDir = new File(destRename + File.separator + envSFDir);
-		
+
 		// Rename to tmp
 		File tmpFile = new File(destRename + "_tmp");
 		srcDir.renameTo(tmpFile);
-		
+
 		// Remove orig
 		try {
 			destroy.DestructiveBuilder.doDelete(renameFile);
@@ -202,7 +198,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		File finalRenameFile = new File(destRename);
 		tmpFile.renameTo(finalRenameFile);
 

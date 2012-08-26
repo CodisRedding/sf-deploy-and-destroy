@@ -68,14 +68,15 @@ public class PackageBuilder {
 
 		Hashtable<String, ArrayList<String>> destructNames = getNameContents();
 		Enumeration<String> keys1 = destructNames.keys();
-		
-		if(includeContent) {
+
+		if (includeContent) {
 			while (keys1.hasMoreElements()) {
 				Object key = keys1.nextElement();
-	
+
 				content.append("  <types>" + LINE_SEP);
 				for (String val : destructNames.get(key)) {
-					content.append("    <members>" + val + "</members>" + LINE_SEP);
+					content.append("    <members>" + val + "</members>"
+							+ LINE_SEP);
 				}
 				content.append("    <name>" + key + "</name>" + LINE_SEP);
 				content.append("  </types>" + LINE_SEP);
@@ -130,15 +131,15 @@ public class PackageBuilder {
 	public void printFile() {
 		Hashtable<String, ArrayList<String>> names = getNameContents();
 		Enumeration<String> keys1 = names.keys();
-		
-		if(names.size() == 0) {
+
+		if (names.size() == 0) {
 			System.out.println("No differences between metadata");
 		}
-		
+
 		while (keys1.hasMoreElements()) {
 			Object key = keys1.nextElement();
-			
-			if(names.get(key).size() > 0) {
+
+			if (names.get(key).size() > 0) {
 				System.out.println(key);
 			}
 
@@ -160,19 +161,18 @@ public class PackageBuilder {
 			// the
 			// whole field is set to be destroyed
 			if (getNameContents() != null) {
-				
-				
-				if(getNameContents().get("PicklistValue") != null) {
+
+				if (getNameContents().get("PicklistValue") != null) {
 					for (String picklistValue : getNameContents().get(
 							"PicklistValue")) {
 						Integer idx1 = picklistValue.indexOf(".");
 						String field = picklistValue.substring(0,
 								picklistValue.indexOf(".", idx1 + 1));
-						
-						if(!field.endsWith("__c")) {
+
+						if (!field.endsWith("__c")) {
 							picklistValues.add(picklistValue);
 						}
-	
+
 						// check if a custom field with same name exists
 						if (getNameContents().get("CustomField") != null) {
 							for (String customField : getNameContents().get(
@@ -182,7 +182,7 @@ public class PackageBuilder {
 								}
 							}
 						}
-						
+
 						// check if a record type with the same name exists
 						if (getNameContents().get("RecordType") != null) {
 							for (String recordType : getNameContents().get(

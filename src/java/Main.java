@@ -1,15 +1,8 @@
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-
-import com.sun.servicetag.Installer;
 
 import system.EnvironmentManager;
+import system.Installer;
 import system.OrgEnvironment;
-import system.PropertyReader;
 import deploy.DeployBuilder;
 import destroy.DestructiveBuilder;
 
@@ -18,6 +11,10 @@ import destroy.DestructiveBuilder;
  * 
  */
 public class Main {
+
+	private final static String optionInstallOnly = "--install-only";
+	private final static String optionPrintOnly = "--print-only";
+	private final static String optionDestroyOnly = "--destroy-only";
 
 	/**
 	 * @param args
@@ -45,51 +42,101 @@ public class Main {
 		boolean printOnly = false;
 		boolean destroyOnly = false;
 
-		if (args.length < 2 || args.length > 3) {
-
+		// Check for valid args
+		if (!checkForInvalidArgs(args)) {
 			System.out
-					.println("Useage: java -jar deployAndDestroy.jar [from env name 'example1'] [to env name 'example2'] [print only 'print-only'] [destroy only 'destroy-only']");
+					.println("Useage: java -jar deployAndDestroy.jar [[from env name 'example1'] [to env name 'example2'] [print only '--print-only'] [destroy only '--destroy-only']] [--install-only]");
 			System.exit(1);
 		}
 
 		// Install user preferences
-		system.Installer installer = new system.Installer();
-		installer.install(true);
+		if (args.length == 1 && args[0].toLowerCase().equals(optionInstallOnly)) {
 
+			// Install user preferences
+			system.Installer installer = new system.Installer();
+			installer.install(true);
+
+			return;
+		}
+
+		// Check for valid amount of args
+		if (args.length < 2 || args.length > 3) {
+
+			System.out
+					.println("Useage: java -jar deployAndDestroy.jar [[from env name 'example1'] [to env name 'example2'] [print only '--print-only'] [destroy only '--destroy-only']] [--install-only]");
+			System.exit(1);
+		}
+
+		// Grab environment names
 		String envNameFrom = args[0].toLowerCase();
 		String envNameTo = args[1].toLowerCase();
 
+		// Figure out what options were set
 		for (Integer i = 0; i < args.length; i++) {
 			if (i > 1) {
-				if (args[i].toLowerCase().equals("print-only")) {
+				if (args[i].toLowerCase().equals(optionPrintOnly)) {
 					printOnly = true;
-				} else if (args[i].toLowerCase().equals("destroy-only")) {
+				} else if (args[i].toLowerCase().equals(optionDestroyOnly)) {
 					destroyOnly = true;
 				}
 			}
 		}
 
+		// Tell the environment manager which environments to work with.
 		EnvironmentManager manager = new EnvironmentManager(
 				EnvironmentManager.createEnvironment(envNameFrom),
 				EnvironmentManager.createEnvironment(envNameTo));
 
+		// Retreive metadata from each environment
 		manager.getFromEnvironment().retreive();
 		manager.getToEnvironment().retreive();
 
+		// Build the destructive changes needed to sync both environments.
 		DestructiveBuilder destroybuilder = new DestructiveBuilder(
 				manager.getFromEnvironment(), manager.getToEnvironment());
 		destroybuilder.buildDestructiveChanges(destroyOnly);
 
+		// Tell the deploy builder which environments to work with.
 		DeployBuilder deployBuilder = new DeployBuilder(
 				manager.getFromEnvironment(),
 				(OrgEnvironment) manager.getToEnvironment());
-		
+
+		// Always print the destructive changes that are being made.
 		destroybuilder.printDestructiveChanges();
-		
+
+		// Actually deploy the destructive changes and metadata.
 		if (!printOnly) {
+			// Deploy environment and apply destructive changes.
 			deployBuilder.deploy();
-		} 
-		
+		}
+
 		deployBuilder.cleanUp();
+	}
+
+	private static Boolean checkForInvalidArgs(String[] args) {
+	
+		for (String arg : args) {
+			
+			if(!arg.startsWith("--")) {
+				// Check to make sure env file exists
+				String envFilePath = Installer.installPath + File.separator + arg + ".env";
+				File envFile = new File(envFilePath);
+				
+				if(!envFile.exists()) {
+					System.out.println("NOPE!");
+					System.out.println("No environment file " + envFilePath + " found.");
+					return false;
+				}
+			} else if (!arg.equals(optionInstallOnly)
+					&& !arg.equals(optionDestroyOnly)
+					&& !arg.equals(optionPrintOnly)) {
+				
+				System.out.println("NOPE!");
+				System.out.println(arg + " is not a valid option.");
+				return false;
+			}
+		}
+
+		return true;
 	}
 }

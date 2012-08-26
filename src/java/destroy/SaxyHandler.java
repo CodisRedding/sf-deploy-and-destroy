@@ -49,7 +49,7 @@ public class SaxyHandler extends DefaultHandler {
 
 			if (!data.contains(LINE_SEP)) {
 				lastParentNameFound = data;
-				
+
 				bfoundParentMetaType = false;
 				bfoundParentSearchTerm = false;
 			}
@@ -93,22 +93,23 @@ public class SaxyHandler extends DefaultHandler {
 		if (qName.equalsIgnoreCase(searchTerm)) {
 			bfoundSearchTerm = true;
 		}
-		
+
 		if (qName.equalsIgnoreCase(parentMetaType)) {
 			bfoundParentMetaType = true;
 		}
-		
+
 		if (qName.equalsIgnoreCase(parentSearchTerm)) {
 			bfoundParentSearchTerm = true;
 		}
 	}
-	
+
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
 
-		//if (lookForParentName && (qName.equalsIgnoreCase(parentMetaType) && bfoundParentMetaType)) {
-		//	bfoundParentMetaType = false;
-		//}
+		// if (lookForParentName && (qName.equalsIgnoreCase(parentMetaType) &&
+		// bfoundParentMetaType)) {
+		// bfoundParentMetaType = false;
+		// }
 	}
 }
