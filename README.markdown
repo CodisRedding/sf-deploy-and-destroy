@@ -1,18 +1,29 @@
 # Deploy & Destroy #
+
+Compare and sync your Salesforce orgs. 
 	
-This project is a module created to allow automatic destructive changes between your SFDC orgs. This module can be used within your deployment process to auto generate a destructiveChanges.xml file to include in your deployment package. If you use a source control system that allows branching you'll be able to branch without having to manually destroy components in the web UI that are not yet in a branch.  
+# How is this useful to me? #
 
-see issues/milestones for dev tasks
+As a Developer this means that you can branch your Salesforce tasks using a single dev org. This is possible since this app will compare your current branch to your dev org, creating a deployment package and including a destructive changes file that will sync your current branch in to you org.
 
-# Example #
+As a Deployer (responsible for releasing versions, or pushing between non-prod life-cycle orgs) this means that you don't have to spend hours picking through metadata, and crappy release notes to figure out exactly what has changed. You can run this app with the '--print-only' option and it will show you the differences between to orgs, or between a branch and an org without actually syncing. You can then run it with the '--destroy-only' (all explained below) once you know the changes that will be applied.
 
-This [destructiveChanges.xml](https://gist.github.com/2572054) file is an example generated using deployAndDestroy. (Notice the picklistValues, they also include recordtype picklist values ;) )
-
-# Try it Out #
-
-As changes are made I'll update the steps needed to test out the current version.
+As a Continuious Integration service you can setup your task to run this app to preform your CI directly from Github or another org. (Support for other VCS is in the works).
 
 setup
+
+Binary:
+1. Download the jar.
+2. Move it into any directory you want.
+3. Open a terminal and cd to the directory in step 2.
+4. Install the system configuration files by running the following command: 
+
+[for Windows] 'java -jar ./deployAndDestroy.jar --install-only'
+[non-Windows] './deployAndDestroy.jar --install-only'
+
+Open the directory shown in the terminal that contains your newly installed environment configuration files. There will be 2 examples installed, one for github branches and one for salesforce orgs.
+
+5. TODO:...
 
 1. You will need java 1.6 installed and you will need ant installed on your machine so run 'sudo yum install ant' then cd into the project root dir and run 'ant'.
 
