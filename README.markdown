@@ -1,5 +1,7 @@
 # I love when you test me. #
 
+What the hell is this?: Compare and sync Salesforce orgs. This readme only shows how to view the diffs, but not actually sync.
+
 prerequisite: Java 1.6+
 
 Windows|Mac|Linux|Gameboy
