@@ -1,38 +1,37 @@
-# Deploy & Destroy #
+# I love when you test me. #
 
-Compare and sync your Salesforce orgs. 
-	
-# How is this useful to me? #
+prerequisite: Java 1.6+
 
-As a Developer this means that you can branch your Salesforce tasks using a single dev org. This is possible since this app will compare your current branch to your dev org, creating a deployment package and including a destructive changes file that will sync your current branch in to you org.
+Windows|Mac|Linux|Gameboy
 
-As a Deployer (responsible for releasing versions, or pushing between non-prod life-cycle orgs) this means that you don't have to spend hours picking through metadata, and crappy release notes to figure out exactly what has changed. You can run this app with the '--print-only' option and it will show you the differences between to orgs, or between a branch and an org without actually syncing. You can then run it with the '--destroy-only' (all explained below) once you know the changes that will be applied.
+1. Download the application > 
 
-As a Continuious Integration service you can setup your task to run this app to preform your CI directly from Github or another org. (Support for other VCS is in the works).
+2. Open a terminal and CD to the app.
 
-setup
+3. run 'java -jar deployAndDestroy.jar --install-only'
 
-Binary:
-1. Download the jar.
-2. Move it into any directory you want.
-3. Open a terminal and cd to the directory in step 2.
-4. Install the system configuration files by running the following command: 
+4. Open the environment DIR shown
 
-[for Windows] 'java -jar ./deployAndDestroy.jar --install-only'
-[non-Windows] './deployAndDestroy.jar --install-only'
+5. Copy salesforce-example.env 2 times and rename to:
 
-Open the directory shown in the terminal that contains your newly installed environment configuration files. There will be 2 examples installed, one for github branches and one for salesforce orgs.
+salesforce-org-from.env
+salesforce-org-to.env
 
-5. TODO:...
+open each file and fill in the needed config info. If it's a production org put production instead of test for 'sf.environment'. Make sure the 'sf.login' is an admin or user that has a similar profile.
 
-1. You will need java 1.6 installed and you will need ant installed on your machine so run 'sudo yum install ant' then cd into the project root dir and run 'ant'.
+[example]
+type=salesforce
+sf.environment=test
+sf.environment.server=cs11
+sf.login=rocky@gmail.org.rocky
+sf.password=MyPassword
+sf.security.token=YourSecToken
+sf.include.packages=false 
 
-1. Create a .env file in the environments dir. The name should be the name of your org and letters and numbers only. (Example: devorg1.env)
+6. Run a test run. Open a terminal and CD to the app.
 
-2. Configure your orgs properties. The easiest why is to copy one of the example .env files and will in your info instead.
+7. run 'java -jar deployAndDestroy.jar salesforce-org-from salesforce-org-to --print-only'
 
-3. Repeat steps 1 and 2 for all orgs that you want to available to deploy between.
+The entire process should take less than 2 minutes, but really depends on the size of your orgs. 
 
-4. run the program by passing the name of the org you want to deploy from (the name of the .env file minus '.env') as the first arg, and the name of the org to be deployed to as the second arg.
-
-5. In a command prompt run 'java -jar deploy/project/deployAndDestroy.jar envFile1 envFile2 print-only' the first parameter is the org you're deploying from, and the second is the org you're deploying to. remeber for the parameter names,  just use the name of the file you created in the environemnts dir with the .env extension.
+You should see a list of differences in deployable metadata if there is any. The list shown is all of the components that would be destroyed in the salesforce-org-to.env org if you weren't running a test run. I will supply the jar option for actually syncing once I hear some feedback.
