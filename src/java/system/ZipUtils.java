@@ -65,7 +65,7 @@ public class ZipUtils {
 			zos.flush();
 			zos.closeEntry();
 			zos.close();
-			System.gc();
+			//System.gc();
 
 			System.out.println("Done");
 		} catch (IOException ex) {

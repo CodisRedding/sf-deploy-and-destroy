@@ -88,13 +88,19 @@ public class Main {
 				EnvironmentManager.createEnvironment(envNameTo));
 
 		// Retreive metadata from each environment
+		long startTime = System.nanoTime();
 		manager.getFromEnvironment().retreive();
 		manager.getToEnvironment().retreive();
-
+		long endTime = System.nanoTime();
+		System.out.println("### Retreiving Source Took " + (endTime - startTime) + " ns");
+		
 		// Build the destructive changes needed to sync both environments.
+		startTime = System.nanoTime();
 		DestructiveBuilder destroybuilder = new DestructiveBuilder(
 				manager.getFromEnvironment(), manager.getToEnvironment());
 		destroybuilder.buildDestructiveChanges(destroyOnly);
+		endTime = System.nanoTime();
+		System.out.println("### Building Destroyable Changes Took " + (endTime - startTime) + " ns");
 
 		// Tell the deploy builder which environments to work with.
 		DeployBuilder deployBuilder = new DeployBuilder(
@@ -107,10 +113,16 @@ public class Main {
 		// Actually deploy the destructive changes and metadata.
 		if (!printOnly) {
 			// Deploy environment and apply destructive changes.
+			startTime = System.nanoTime();
 			deployBuilder.deploy();
+			endTime = System.nanoTime();
+			System.out.println("### Deployment Took " + (endTime - startTime) + " ns");
 		}
 
+		startTime = System.nanoTime();
 		deployBuilder.cleanUp();
+		endTime = System.nanoTime();
+		System.out.println("### Cleanup Took " + (endTime - startTime) + " ns");
 	}
 
 	private static Boolean checkForInvalidArgs(String[] args) {

@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
+
 import system.MetadataEnvironment;
 import system.OrgEnvironment;
 import system.PropertyReader;
@@ -18,8 +20,6 @@ import com.sforce.soap.metadata.DeployOptions;
 import com.sforce.soap.metadata.DeployResult;
 import com.sforce.soap.metadata.RunTestFailure;
 import com.sforce.soap.metadata.RunTestsResult;
-
-import destroy.DestructiveBuilder;
 
 public class DeployBuilder {
 
@@ -144,8 +144,8 @@ public class DeployBuilder {
 
 	public void cleanUp() {
 		try {
-			System.gc();
-			DestructiveBuilder.doDelete(orgFrom.getLocationFolder());
+			//System.gc();
+			FileUtils.deleteDirectory(orgFrom.getLocationFolder());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

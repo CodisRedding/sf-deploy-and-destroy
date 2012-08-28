@@ -133,7 +133,7 @@ public class PackageBuilder {
 		Enumeration<String> keys1 = names.keys();
 
 		if (names.size() == 0) {
-			System.out.println("No differences between metadata");
+			System.out.println("No destructable changes.");
 		}
 
 		while (keys1.hasMoreElements()) {

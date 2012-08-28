@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -159,7 +160,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 				if (os != null) {
 					os.flush();
 					os.close();
-					System.gc();
+					//////System.gc();
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -188,19 +189,30 @@ public class GithubEnvironment implements MetadataEnvironment {
 		File srcDir = new File(destRename + File.separator + envSFDir);
 
 		// Rename to tmp
+		//////System.gc();
 		File tmpFile = new File(destRename + "_tmp");
-		srcDir.renameTo(tmpFile);
+		Boolean renameOk = srcDir.renameTo(tmpFile);
+		
+		if(!renameOk) {
+			System.out.println("Could not rename file: " + srcDir.getName());
+		}
 
 		// Remove orig
 		try {
-			destroy.DestructiveBuilder.doDelete(renameFile);
+			FileUtils.deleteDirectory(renameFile);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+		
+		//////System.gc();
 		File finalRenameFile = new File(destRename);
-		tmpFile.renameTo(finalRenameFile);
+		renameOk = tmpFile.renameTo(finalRenameFile);
+		
+		if(!renameOk) {
+			System.out.println("Could not rename file: " + tmpFile.getName());
+		}
 
 		return null;
 	}
