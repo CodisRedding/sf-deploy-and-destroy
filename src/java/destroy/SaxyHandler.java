@@ -47,7 +47,7 @@ public class SaxyHandler extends DefaultHandler {
 
 			String data = new String(ch, start, length);
 
-			if (!data.contains(LINE_SEP)) {
+			if (!data.contains(LINE_SEP) && !data.contains("\n")) {
 				lastParentNameFound = data;
 
 				bfoundParentMetaType = false;
@@ -59,7 +59,7 @@ public class SaxyHandler extends DefaultHandler {
 
 			String data = new String(ch, start, length);
 
-			if (!data.contains(LINE_SEP)) {
+			if (!data.contains(LINE_SEP) && !data.contains("\n")) {
 				if (lookForParentName) {
 					data = lastParentNameFound + "|" + data;
 				}
