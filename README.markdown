@@ -4,7 +4,7 @@ prerequisite: Java 1.6+
 
 Windows|Mac|Linux|Gameboy
 
-1. Download the application > 
+1. Download the application > https://github.com/Fourqio/sf-deploy-and-destroy/zipball/master 
 
 2. Open a terminal and CD to the app.
 
