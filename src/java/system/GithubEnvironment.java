@@ -104,7 +104,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 	}
 
 	@Override
-	public PackageBuilder retreive() {
+	public PackageBuilder retreive(String overrideSourceDest) {
 
 		String zipLoc = PropertyReader.USER_PATH + File.separator + this.name
 				+ File.separator
@@ -205,8 +205,13 @@ public class GithubEnvironment implements MetadataEnvironment {
 			e.printStackTrace();
 		}
 
+		// override dest dir if supplied
+		if(overrideSourceDest != null) {
+			if((new File(overrideSourceDest)).exists()) {
+				destRename = overrideSourceDest;
+			}
+		}
 		
-		//////System.gc();
 		File finalRenameFile = new File(destRename);
 		renameOk = tmpFile.renameTo(finalRenameFile);
 		

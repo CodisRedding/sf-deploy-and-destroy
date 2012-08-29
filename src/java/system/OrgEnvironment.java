@@ -128,7 +128,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 	}
 
 	@Override
-	public PackageBuilder retreive() {
+	public PackageBuilder retreive(String overrideSourceDest) {
 
 		ArrayList<String> properties = PropertyReader.getRetrieveProperties();
 
@@ -184,10 +184,20 @@ public class OrgEnvironment implements MetadataEnvironment {
 
 		try {
 			zipper.retrieveZip();
+			
+			// override dest dir if supplied
+			File copyToDir = this.getLocationFolder();
+			File destFileOverride = null;
+			if(overrideSourceDest != null) {
+				destFileOverride = new File(overrideSourceDest);
+				if(destFileOverride.exists()) {
+					copyToDir = destFileOverride;
+				}
+			}
 
 			// unzipping long enough to compare then delete
 			ZipUtils utils = new ZipUtils();
-			utils.unzip(this.getRetrieveZip(), this.getLocationFolder());
+			utils.unzip(this.getRetrieveZip(), copyToDir);
 
 			this.getRetrieveZip().delete();
 		} catch (RemoteException e) {

@@ -21,7 +21,8 @@ public class SaxyHandler extends DefaultHandler {
 	boolean bfoundSearchTerm = false;
 	String metaType = null;
 	String searchTerm = null;
-	String LINE_SEP = System.getProperty("line.separator");
+	String LINE_SEP_WIN = System.getProperty("line.separator");
+	String LINE_SEP_NIX = "\n";
 	String lastParentNameFound = "";
 	boolean lookForParentName = false;
 	boolean foundParent = false;
@@ -47,7 +48,7 @@ public class SaxyHandler extends DefaultHandler {
 
 			String data = new String(ch, start, length);
 
-			if (!data.contains(LINE_SEP) && !data.contains("\n")) {
+			if (!data.contains(LINE_SEP_WIN) && !data.contains(LINE_SEP_NIX)) {
 				lastParentNameFound = data;
 
 				bfoundParentMetaType = false;
@@ -59,7 +60,7 @@ public class SaxyHandler extends DefaultHandler {
 
 			String data = new String(ch, start, length);
 
-			if (!data.contains(LINE_SEP) && !data.contains("\n")) {
+			if (!data.contains(LINE_SEP_WIN) && !data.contains(LINE_SEP_NIX)) {
 				if (lookForParentName) {
 					data = lastParentNameFound + "|" + data;
 				}
@@ -106,10 +107,5 @@ public class SaxyHandler extends DefaultHandler {
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
-
-		// if (lookForParentName && (qName.equalsIgnoreCase(parentMetaType) &&
-		// bfoundParentMetaType)) {
-		// bfoundParentMetaType = false;
-		// }
 	}
 }

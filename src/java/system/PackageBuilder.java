@@ -132,8 +132,10 @@ public class PackageBuilder {
 		Hashtable<String, ArrayList<String>> names = getNameContents();
 		Enumeration<String> keys1 = names.keys();
 
+		Boolean printed = false;
 		if (names.size() == 0) {
 			System.out.println("No destructable changes.");
+			printed = true;
 		}
 
 		while (keys1.hasMoreElements()) {
@@ -141,12 +143,18 @@ public class PackageBuilder {
 
 			if (names.get(key).size() > 0) {
 				System.out.println(key);
+				printed = true;
 			}
 
 			for (String name : names.get(key)) {
 				System.out.println("\t" + name);
+				printed = true;
 			}
 			System.out.println("");
+		}
+		
+		if(!printed) {
+			System.out.println("No destructable changes.");
 		}
 	}
 

@@ -23,7 +23,7 @@ public interface MetadataEnvironment {
 
 	public abstract File getDestroyZip();
 
-	public abstract PackageBuilder retreive();
+	public abstract PackageBuilder retreive(String overrideSourceDest);
 
 	public abstract void printRetreiveChanges();
 

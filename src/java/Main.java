@@ -89,8 +89,8 @@ public class Main {
 
 		// Retreive metadata from each environment
 		long startTime = System.nanoTime();
-		manager.getFromEnvironment().retreive();
-		manager.getToEnvironment().retreive();
+		manager.getFromEnvironment().retreive(null);
+		manager.getToEnvironment().retreive(null);
 		long endTime = System.nanoTime();
 		System.out.println("### Retreiving Source Took " + (endTime - startTime) + " ns");
 		

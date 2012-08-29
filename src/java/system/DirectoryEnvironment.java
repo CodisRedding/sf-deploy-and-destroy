@@ -85,7 +85,7 @@ public class DirectoryEnvironment implements MetadataEnvironment {
 	}
 
 	@Override
-	public PackageBuilder retreive() {
+	public PackageBuilder retreive(String overrideSourceDest) {
 		
 		System.out.println("### Retrieving " + this.name + " (directory) ###");
 
@@ -110,6 +110,15 @@ public class DirectoryEnvironment implements MetadataEnvironment {
 				+ File.separator
 				+ PropertyReader
 						.getSystemProperty("sf.environments.unzip.src.name"));
+		
+		// override dest dir if supplied
+		File destFileOverride = null;
+		if(overrideSourceDest != null) {
+			destFileOverride = new File(overrideSourceDest);
+			if(destFileOverride.exists()) {
+				copyToDir = destFileOverride;
+			}
+		}
 		
 		try {
 			FileUtils.copyDirectory(sourceDir, copyToDir);
