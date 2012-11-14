@@ -10,3 +10,4 @@ tmp/
 !/environments/salesforce-example.env
 deploy
 .ivy
+*.swp
