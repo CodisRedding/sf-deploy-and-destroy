@@ -2,11 +2,12 @@
 *.classpath
 .settings/
 *.class
+*.jar
+!/lib/ivy-2.3.0-rc1.jar
 tmp/
 *.env
-!/environments/example1.env
-!/environments/example2.env
-!/environments/environment.ignore
-/environments/*
+!/environments/github-example.env
+!/environments/salesforce-example.env
 deploy
-.project
+.ivy
+*.swp

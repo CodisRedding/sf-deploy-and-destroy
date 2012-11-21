@@ -1,8 +1,9 @@
 package destroy;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
+
+import org.apache.commons.io.FileUtils;
 
 import system.MetadataEnvironment;
 import system.PackageBuilder;
@@ -20,9 +21,9 @@ public class DestructiveBuilder {
 	private PackageBuilder packager = new PackageBuilder();
 	private MetadataEnvironment orgTo = null;
 	private MetadataEnvironment orgFrom = null;
-	private Boolean destroyOnly = false;
 
-	public DestructiveBuilder(MetadataEnvironment orgFrom, MetadataEnvironment orgTo) {
+	public DestructiveBuilder(MetadataEnvironment orgFrom,
+			MetadataEnvironment orgTo) {
 		this.orgTo = orgTo;
 		this.orgFrom = orgFrom;
 	}
@@ -74,18 +75,17 @@ public class DestructiveBuilder {
 	 *         file generation completes successfully.
 	 */
 	public boolean buildDestructiveChanges(Boolean destroyOnly) {
-		this.destroyOnly = destroyOnly;
 		boolean successful = false;
 
 		try {
 			if (!orgTo.getSourceFolder().exists()) {
 				throw new Exception(
-						"Source directory that your deploying to does not exist.");
+						"Source directory that your deploying to does not exist: " + orgTo.getSourceFolder().getAbsolutePath());
 			}
 
 			if (!orgFrom.getSourceFolder().exists()) {
 				throw new Exception(
-						"Source directory that your deploying from does not exist.");
+						"Source directory that your deploying from does not exist." + orgFrom.getSourceFolder().getAbsolutePath());
 			}
 
 			File destXmlFile = new File(orgFrom.getSourceFolder().getPath());
@@ -99,9 +99,13 @@ public class DestructiveBuilder {
 			ZipUtils zipUtils = new ZipUtils();
 			zipUtils.zip(orgFrom.getSourceFolder().getPath(), orgFrom
 					.getLocationFolder().getPath(), destroyOnly);
-
-			doDelete(orgTo.getLocationFolder());
-			doDelete(orgFrom.getSourceFolder());
+			
+			//long startTime = System.nanoTime();
+			FileUtils.deleteDirectory(orgTo.getSourceFolder());
+			FileUtils.deleteDirectory(orgTo.getLocationFolder());
+			FileUtils.deleteDirectory(orgFrom.getSourceFolder());
+			//long endTime = System.nanoTime();
+			//System.out.println("### Temp Cleanup() Took " + (endTime - startTime) + " ns");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -116,9 +120,9 @@ public class DestructiveBuilder {
 	 * 
 	 * @param dirToPlaceXmlFile
 	 * 
-	 *            Responsible for reading all properties in
-	 *            package.properties and parsing each delimited property before
-	 *            passing off for further parsing.
+	 *            Responsible for reading all properties in package.properties
+	 *            and parsing each delimited property before passing off for
+	 *            further parsing.
 	 */
 	private void buildXmlFile(String dirToPlaceXmlFile) {
 
@@ -323,17 +327,6 @@ public class DestructiveBuilder {
 					addDestructiveComponents(metaType, component, "");
 				}
 			}
-		}
-	}
-
-	private void doDelete(File path) throws IOException {
-		if (path.isDirectory()) {
-			for (File child : path.listFiles()) {
-				doDelete(child);
-			}
-		}
-		if (!path.delete()) {
-			throw new IOException("Could not delete " + path);
 		}
 	}
 }

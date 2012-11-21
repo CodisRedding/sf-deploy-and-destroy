@@ -11,8 +11,6 @@ import api.ConnectionManager;
 
 public class OrgEnvironment implements MetadataEnvironment {
 
-	public Double apiVersion = Double.valueOf(PropertyReader
-			.getSystemProperty("sf.api.version"));
 	private ConnectionManager conMan = null;
 	private PackageBuilder packager = new PackageBuilder();
 	private String name = null;
@@ -41,7 +39,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 				this.environment, "auth", this.server, apiVersion);
 		this.serviceEndpoint = PropertyReader.getEnvironmentEndpoint(
 				this.environment, "service", this.server, apiVersion);
-		
+
 		conMan = new ConnectionManager(this.login, password, token,
 				authEndpoint, serviceEndpoint);
 
@@ -90,8 +88,8 @@ public class OrgEnvironment implements MetadataEnvironment {
 
 	@Override
 	public File getLocationFolder() {
-		String folderName = PropertyReader
-				.getSystemProperty("sf.environments.loc") + this.name;
+		String folderName = PropertyReader.USER_PATH + File.separator
+				+ this.name;
 		File folder = new File(folderName);
 
 		return folder;
@@ -99,8 +97,8 @@ public class OrgEnvironment implements MetadataEnvironment {
 
 	@Override
 	public File getSourceFolder() {
-		String folderName = PropertyReader
-				.getSystemProperty("sf.environments.loc")
+		String folderName = PropertyReader.USER_PATH
+				+ File.separator
 				+ this.name
 				+ File.separator
 				+ PropertyReader
@@ -111,8 +109,8 @@ public class OrgEnvironment implements MetadataEnvironment {
 	}
 
 	public File getRetrieveZip() {
-		String zip = PropertyReader.getSystemProperty("sf.environments.loc")
-				+ this.name + File.separator
+		String zip = PropertyReader.USER_PATH + File.separator + this.name
+				+ File.separator
 				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
 		File zipFile = new File(zip);
 
@@ -121,8 +119,8 @@ public class OrgEnvironment implements MetadataEnvironment {
 
 	@Override
 	public File getDestroyZip() {
-		String zip = PropertyReader.getSystemProperty("sf.environments.loc")
-				+ this.name + File.separator
+		String zip = PropertyReader.USER_PATH + File.separator + this.name
+				+ File.separator
 				+ PropertyReader.getSystemProperty("sf.destruct.zip.file.name");
 		File zipFile = new File(zip);
 
@@ -130,7 +128,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 	}
 
 	@Override
-	public PackageBuilder retreive() {
+	public PackageBuilder retreive(String overrideSourceDest) {
 
 		ArrayList<String> properties = PropertyReader.getRetrieveProperties();
 
@@ -139,7 +137,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 			System.exit(1);
 		}
 
-		System.out.println("### Retrieving " + this.name + " ###");
+		System.out.println("### Retrieving " + this.name + " (saleforce) ###");
 
 		for (String property : properties) {
 
@@ -177,8 +175,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 		// + File.separator + this.environment.getName(),
 		// PropertyReader.getSystemProperty("sf.package.file.name"));
 
-		String dir = PropertyReader.getSystemProperty("sf.environments.loc")
-				+ File.separator + this.name;
+		String dir = PropertyReader.USER_PATH + File.separator + this.name;
 
 		File dirPath = new File(dir);
 		dirPath.mkdir();
@@ -187,10 +184,20 @@ public class OrgEnvironment implements MetadataEnvironment {
 
 		try {
 			zipper.retrieveZip();
+			
+			// override dest dir if supplied
+			File copyToDir = this.getLocationFolder();
+			File destFileOverride = null;
+			if(overrideSourceDest != null) {
+				destFileOverride = new File(overrideSourceDest);
+				if(destFileOverride.exists()) {
+					copyToDir = destFileOverride;
+				}
+			}
 
 			// unzipping long enough to compare then delete
 			ZipUtils utils = new ZipUtils();
-			utils.unzip(this.getRetrieveZip(), this.getLocationFolder());
+			utils.unzip(this.getRetrieveZip(), copyToDir);
 
 			this.getRetrieveZip().delete();
 		} catch (RemoteException e) {
@@ -210,7 +217,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 			query.setType(metaFolderName);
 
 			FileProperties[] lmr = conMan.getMetadataConnection().listMetadata(
-					new ListMetadataQuery[] { query }, this.apiVersion);
+					new ListMetadataQuery[] { query }, apiVersion);
 			if (lmr != null) {
 				for (FileProperties n : lmr) {
 					createFromApi(metadataType, n.getFullName());
@@ -228,7 +235,7 @@ public class OrgEnvironment implements MetadataEnvironment {
 			query.setFolder(folder);
 
 			FileProperties[] lmr = conMan.getMetadataConnection().listMetadata(
-					new ListMetadataQuery[] { query }, this.apiVersion);
+					new ListMetadataQuery[] { query }, apiVersion);
 			if (lmr != null) {
 				for (FileProperties n : lmr) {
 					// commented out because this is not a good solution.

@@ -78,7 +78,11 @@ public class Zipper {
 			System.exit(1);
 		}
 
-		//retrieveRequest.setPackageNames(new String[] { "Conga Composer", "Report Engine", "ExactTarget for AppExchange - Fall 2007 (11/5/2007)", "Relationships", "Find Nearby", "Mass Update And Edit", "Mass Update Contacts 2.0" });
+		// retrieveRequest.setPackageNames(new String[] { "Conga Composer",
+		// "Report Engine",
+		// "ExactTarget for AppExchange - Fall 2007 (11/5/2007)",
+		// "Relationships", "Find Nearby", "Mass Update And Edit",
+		// "Mass Update Contacts 2.0" });
 		AsyncResult asyncResult = conMan.getMetadataConnection().retrieve(
 				retrieveRequest);
 
@@ -121,11 +125,12 @@ public class Zipper {
 		}
 
 		// Write the zip to the file system
-		//System.out.println("Writing results to zip file");
+		// System.out.println("Writing results to zip file");
 		ByteArrayInputStream bais = new ByteArrayInputStream(
 				result.getZipFile());
-		String zipLoc = PropertyReader.getSystemProperty("sf.environments.loc")
-				+ File.separator + this.environment.getName() + File.separator
+
+		String zipLoc = PropertyReader.USER_PATH + File.separator
+				+ this.environment.getName() + File.separator
 				+ PropertyReader.getSystemProperty("sf.retrieve.zip.file.name");
 
 		File resultsFile = new File(zipLoc);

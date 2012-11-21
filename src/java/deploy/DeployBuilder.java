@@ -3,6 +3,9 @@ package deploy;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 
 import system.MetadataEnvironment;
 import system.OrgEnvironment;
@@ -17,7 +20,7 @@ import com.sforce.soap.metadata.DeployOptions;
 import com.sforce.soap.metadata.DeployResult;
 import com.sforce.soap.metadata.RunTestFailure;
 import com.sforce.soap.metadata.RunTestsResult;
-	
+
 public class DeployBuilder {
 
 	private static final long ONE_SECOND = 1000;
@@ -52,13 +55,14 @@ public class DeployBuilder {
 
 		try {
 			byte zipBytes[] = readZipFile();
-			
+
 			DeployOptions deployOptions = new DeployOptions();
 			deployOptions.setPerformRetrieve(false);
 			deployOptions.setRollbackOnError(true);
 			deployOptions.setSinglePackage(true);
-			deployOptions.setPurgeOnDelete(orgTo.getEnvironment().toLowerCase().equals(PropertyReader.PRODUCTION_ENV) ? false : true);
-			
+			deployOptions.setPurgeOnDelete(orgTo.getEnvironment().toLowerCase()
+					.equals(PropertyReader.PRODUCTION_ENV) ? false : true);
+
 			AsyncResult asyncResult = conMan.getMetadataConnection().deploy(
 					zipBytes, deployOptions);
 			// Wait for the deploy to complete
@@ -136,6 +140,16 @@ public class DeployBuilder {
 			}
 		}
 		System.out.println(buf.toString());
+	}
+
+	public void cleanUp() {
+		try {
+			//System.gc();
+			FileUtils.deleteDirectory(orgFrom.getLocationFolder());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private byte[] readZipFile() throws Exception {

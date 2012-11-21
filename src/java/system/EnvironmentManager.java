@@ -25,7 +25,7 @@ public class EnvironmentManager {
 	public static MetadataEnvironment createEnvironment(String name) {
 
 		MetadataEnvironment env = null;
-		Constructor con = null;
+		Constructor<?> con = null;
 		String classTypeKey = PropertyReader
 				.getEnviromentProperty(name, "type");
 		String className = PropertyReader.getSourceProperty(classTypeKey);
@@ -33,29 +33,22 @@ public class EnvironmentManager {
 		try {
 			con = Class.forName(className).getConstructor(String.class);
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		try {
 			env = (MetadataEnvironment) con.newInstance(name);
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

@@ -22,13 +22,12 @@ public class ZipUtils {
 	public void unzip(File archive, File outputDir) {
 		try {
 			ZipFile zipfile = new ZipFile(archive);
-			for (Enumeration e = zipfile.entries(); e.hasMoreElements();) {
+			for (Enumeration<?> e = zipfile.entries(); e.hasMoreElements();) {
 				ZipEntry entry = (ZipEntry) e.nextElement();
 				unzipEntry(zipfile, entry, outputDir);
 			}
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -63,8 +62,10 @@ public class ZipUtils {
 				in.close();
 			}
 
+			zos.flush();
 			zos.closeEntry();
 			zos.close();
+			//System.gc();
 
 			System.out.println("Done");
 		} catch (IOException ex) {
