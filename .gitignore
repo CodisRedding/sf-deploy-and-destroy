@@ -2,7 +2,6 @@
 *.classpath
 .settings/
 *.class
-*.jar
 !/lib/ivy-2.3.0-rc1.jar
 tmp/
 *.env
