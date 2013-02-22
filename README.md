@@ -6,17 +6,17 @@ prerequisite: (oracle/open) Java 1.6+
 
 Windows|Mac|Linux|Gameboy 
 
-```
 1. Download the application > https://github.com/Fourqio/sf-deploy-and-destroy/zipball/master 
 
 2. Open a terminal and CD to the app.
 
-3. run 'java -jar deployAndDestroy.jar --install-only'
+3. run `java -jar deployAndDestroy.jar --install-only`
 
 4. Open the environment DIR shown
 
 5. Copy salesforce-example.env 2 times and rename to:
 
+```
 salesforce-org-from.env
 
 salesforce-org-to.env
