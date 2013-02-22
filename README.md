@@ -4,7 +4,7 @@ What the hell is this?: Compare and sync Salesforce orgs. This readme only shows
 
 prerequisite: (oracle/open) Java 1.6+
 
-Windows|Mac|Linux|Gameboy 
+Windows|Mac|Linux|Gameboy
 
 1. Download the application > https://github.com/Fourqio/sf-deploy-and-destroy/zipball/master 
 
