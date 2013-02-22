@@ -6,6 +6,7 @@ prerequisite: (oracle/open) Java 1.6+
 
 Windows|Mac|Linux|Gameboy 
 
+```
 1. Download the application > https://github.com/Fourqio/sf-deploy-and-destroy/zipball/master 
 
 2. Open a terminal and CD to the app.
@@ -19,11 +20,13 @@ Windows|Mac|Linux|Gameboy
 salesforce-org-from.env
 
 salesforce-org-to.env
+```
 
 open each file and fill in the needed config info. If it's a production org put production instead of test for 'sf.environment'. Make sure the 'sf.login' is an admin or user that has a similar profile. Relace the 'sf.environment.server' with your server obviously. 
 
 [example]
 
+```
 type=salesforce
 
 sf.environment=test
@@ -37,6 +40,7 @@ sf.password=MyPassword
 sf.security.token=YourSecToken
 
 sf.include.packages=false 
+```
 
 6. Run a test run. Open a terminal and CD to the app.
 
