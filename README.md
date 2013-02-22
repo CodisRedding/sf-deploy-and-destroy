@@ -45,3 +45,12 @@ sf.include.packages=false
 The entire process should take less than 2 minutes, but really depends on the size of your orgs. 
 
 You should see a list of differences in deployable metadata if there is any. The list shown is all of the components that would be destroyed in the salesforce-org-to.env org if you weren't running a test run. I will supply the jar option for actually syncing once I hear some feedback.
+
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
