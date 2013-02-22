@@ -1,4 +1,4 @@
 language: java
 jdk:
-  - oraclesdk6
+  - oraclejdk6
 script: "ant"
