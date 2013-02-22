@@ -1,5 +1,4 @@
-
-[![Build Status](https://travis-ci.org/fourq/ploggly.png?branch=master)](https://travis-ci.org/fourq/ploggly)
+# Deploy & Destroy [![Build Status](https://travis-ci.org/fourq/ploggly.png?branch=master)](https://travis-ci.org/fourq/ploggly)
 
 # I love when you test me. #
 
