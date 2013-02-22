@@ -45,10 +45,8 @@ sf.include.packages=false
 6. Run a test run. Open a terminal and CD to the app.
 
 7. run 
+8. `java -jar deployAndDestroy.jar -e salesforce-org-from salesforce-org-to --print-only`
 
-```
-'java -jar deployAndDestroy.jar -e salesforce-org-from salesforce-org-to --print-only'
-```
 
 The entire process should take less than 2 minutes, but really depends on the size of your orgs. 
 
