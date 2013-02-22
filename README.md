@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/fourq/ploggly.png?branch=master)](https://travis-ci.org/fourq/ploggly)
+
 # I love when you test me. #
 
 What the hell is this?: Compare and sync Salesforce orgs. This readme only shows how to view the diffs, but not actually sync. You can compare orgs a few different ways. 1> Github repo - Salesforce org. 2> FileSystem dir - Salesforce org. 3> Salesforce org - Salesforce org. This readme only explains #3.
