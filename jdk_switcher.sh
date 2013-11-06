@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Taken from https://github.com/michaelklishin/jdk_switcher
+# Removed double brackets (POSIX) to work on Ubuntu (uses dash)
+
 if uname -a | grep x86_64 >/dev/null ; then
     ARCH_SUFFIX=amd64
 else
