@@ -12,6 +12,7 @@ import system.OrgEnvironment;
 import system.PropertyReader;
 import api.ConnectionManager;
 
+/*
 import com.sforce.soap.metadata.AsyncRequestState;
 import com.sforce.soap.metadata.AsyncResult;
 import com.sforce.soap.metadata.CodeCoverageWarning;
@@ -20,6 +21,8 @@ import com.sforce.soap.metadata.DeployOptions;
 import com.sforce.soap.metadata.DeployResult;
 import com.sforce.soap.metadata.RunTestFailure;
 import com.sforce.soap.metadata.RunTestsResult;
+*/
+import com.sforce.soap.metadata.*;
 
 public class DeployBuilder {
 
@@ -87,9 +90,9 @@ public class DeployBuilder {
 						+ asyncResult.getMessage());
 			}
 			DeployResult result = conMan.getMetadataConnection()
-					.checkDeployStatus(asyncResult.getId());
+					.checkDeployStatus(asyncResult.getId(), true);
 			if (!result.isSuccess()) {
-				printErrors(result);
+				printErrors(result, "Final list of failures:\n");
 				throw new Exception("The files were not successfully deployed");
 			}
 			System.out.println("The file " + orgFrom.getDestroyZip().getPath()
@@ -100,6 +103,53 @@ public class DeployBuilder {
 		}
 	}
 
+	/*
+    * Print out any errors, if any, related to the deploy.
+    * @param result - DeployResult
+    */
+    private void printErrors(DeployResult result, String messageHeader) {
+        DeployDetails details = result.getDetails();
+        StringBuilder stringBuilder = new StringBuilder();
+        if (details != null) {
+            DeployMessage[] componentFailures = details.getComponentFailures();
+            for (DeployMessage failure : componentFailures) {
+                String loc = "(" + failure.getLineNumber() + ", " + failure.getColumnNumber();
+                if (loc.length() == 0 && !failure.getFileName().equals(failure.getFullName()))
+                {
+                    loc = "(" + failure.getFullName() + ")";
+                }
+                stringBuilder.append(failure.getFileName() + loc + ":" 
+                    + failure.getProblem()).append('\n');
+            }
+            RunTestsResult rtr = details.getRunTestResult();
+            if (rtr.getFailures() != null) {
+                for (RunTestFailure failure : rtr.getFailures()) {
+                    String n = (failure.getNamespace() == null ? "" :
+                        (failure.getNamespace() + ".")) + failure.getName();
+                    stringBuilder.append("Test failure, method: " + n + "." +
+                            failure.getMethodName() + " -- " + failure.getMessage() + 
+                            " stack " + failure.getStackTrace() + "\n\n");
+                }
+            }
+            if (rtr.getCodeCoverageWarnings() != null) {
+                for (CodeCoverageWarning ccw : rtr.getCodeCoverageWarnings()) {
+                    stringBuilder.append("Code coverage issue");
+                    if (ccw.getName() != null) {
+                        String n = (ccw.getNamespace() == null ? "" :
+                        (ccw.getNamespace() + ".")) + ccw.getName();
+                        stringBuilder.append(", class: " + n);
+                    }
+                    stringBuilder.append(" -- " + ccw.getMessage() + "\n");
+                }
+            }
+        }
+        if (stringBuilder.length() > 0) {
+            stringBuilder.insert(0, messageHeader);
+            System.out.println(stringBuilder.toString());
+        }
+    }
+
+/*
 	private void printErrors(DeployResult result) {
 		DeployMessage messages[] = result.getMessages();
 		StringBuilder buf = new StringBuilder("Failures:\n");
@@ -141,6 +191,7 @@ public class DeployBuilder {
 		}
 		System.out.println(buf.toString());
 	}
+*/
 
 	public void cleanUp() {
 		try {
