@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import system.ANSIControlCodes;
+
 public class Installer {
 
 	public static final String installPath = PropertyReader.USER_PATH + File.separator
@@ -17,7 +19,7 @@ public class Installer {
 
 	public void install(Boolean verbose) {
 
-		System.out.println("Installing...");
+		System.out.println(ANSIControlCodes.GREEN + "Installing...");
 		System.out.println("\n");
 
 		Boolean reset = true;
@@ -65,7 +67,7 @@ public class Installer {
 					}
 
 					if (verbose) {
-						System.out.println("Created configuration file: "
+						System.out.println(ANSIControlCodes.GREEN + "Created configuration file: "
 								+ filePathAndName);
 					}
 
@@ -85,7 +87,7 @@ public class Installer {
 			}
 		}
 
-		System.out.println("Complete!");
+		System.out.println(ANSIControlCodes.GREEN + "Complete!");
 		System.out.println("***************************************************");
 		System.out.println("Go configure your environments here " + installPath);
 		System.out.println("***************************************************");

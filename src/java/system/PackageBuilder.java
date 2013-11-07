@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
+import system.ANSIControlCodes;
+
 /**
  * @author rocky
  * 
@@ -134,7 +136,7 @@ public class PackageBuilder {
 
 		Boolean printed = false;
 		if (names.size() == 0) {
-			System.out.println("No destructable changes.");
+			System.out.println(ANSIControlCodes.BLUE + "No destructable changes.");
 			printed = true;
 		}
 
@@ -142,19 +144,19 @@ public class PackageBuilder {
 			Object key = keys1.nextElement();
 
 			if (names.get(key).size() > 0) {
-				System.out.println(key);
+				System.out.println(ANSIControlCodes.BLUE + key);
 				printed = true;
 			}
 
 			for (String name : names.get(key)) {
-				System.out.println("\t" + name);
+				System.out.println(ANSIControlCodes.BLUE + "\t" + name);
 				printed = true;
 			}
 			System.out.println("");
 		}
 		
 		if(!printed) {
-			System.out.println("No destructable changes.");
+			System.out.println(ANSIControlCodes.BLUE + "No destructable changes.");
 		}
 	}
 

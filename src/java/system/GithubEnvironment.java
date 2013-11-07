@@ -13,6 +13,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+import system.ANSIControlCodes;
+
 public class GithubEnvironment implements MetadataEnvironment {
 
 	private String name = null;
@@ -115,7 +117,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 				this.login, this.password, this.organization, this.repo);
 		url = url.replace("repos//", "repos/");
 
-		System.out.println("### Retrieving " + this.name + " (github) ###");
+		System.out.println(ANSIControlCodes.WHITE + "### Retrieving " + this.name + " (github) ###");
 
 		DefaultHttpClient httpclient = new DefaultHttpClient();
 		File dir = new File(PropertyReader.USER_PATH + File.separator
@@ -139,7 +141,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 			HttpResponse response = httpclient.execute(httpget);
 			HttpEntity entity = response.getEntity();
 			os.write(EntityUtils.toByteArray(entity));
-			System.out.println(response.getStatusLine());
+			System.out.println(ANSIControlCodes.BLUE + response.getStatusLine());
 			EntityUtils.consume(entity);
 
 			ZipUtils utils = new ZipUtils();
@@ -194,7 +196,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 		Boolean renameOk = srcDir.renameTo(tmpFile);
 		
 		if(!renameOk) {
-			System.out.println("Could not rename file: " + srcDir.getName());
+			System.out.println(ANSIControlCodes.RED + "Could not rename file: " + srcDir.getName());
 		}
 
 		// Remove orig
@@ -216,7 +218,7 @@ public class GithubEnvironment implements MetadataEnvironment {
 		renameOk = tmpFile.renameTo(finalRenameFile);
 		
 		if(!renameOk) {
-			System.out.println("Could not rename file: " + tmpFile.getName());
+			System.out.println(ANSIControlCodes.RED + "Could not rename file: " + tmpFile.getName());
 		}
 
 		return null;

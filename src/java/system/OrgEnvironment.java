@@ -8,6 +8,7 @@ import com.sforce.soap.metadata.ListMetadataQuery;
 import com.sforce.ws.ConnectionException;
 import retrieve.Zipper;
 import api.ConnectionManager;
+import system.ANSIControlCodes;
 
 public class OrgEnvironment implements MetadataEnvironment {
 
@@ -133,11 +134,11 @@ public class OrgEnvironment implements MetadataEnvironment {
 		ArrayList<String> properties = PropertyReader.getRetrieveProperties();
 
 		if (!conMan.Login()) {
-			System.out.println("Unable to connect.");
+			System.out.println(ANSIControlCodes.RED + "Unable to connect.");
 			System.exit(1);
 		}
 
-		System.out.println("### Retrieving " + this.name + " (saleforce) ###");
+		System.out.println(ANSIControlCodes.WHITE + "### Retrieving " + this.name + " (saleforce [api " + apiVersion + "]) ###");
 
 		for (String property : properties) {
 

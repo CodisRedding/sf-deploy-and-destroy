@@ -15,6 +15,8 @@ import java.util.zip.ZipOutputStream;
 
 import org.apache.commons.io.IOUtils;
 
+import system.ANSIControlCodes;
+
 public class ZipUtils {
 
 	List<String> fs = new ArrayList<String>();
@@ -67,7 +69,7 @@ public class ZipUtils {
 			zos.close();
 			//System.gc();
 
-			System.out.println("Done");
+			System.out.println(ANSIControlCodes.GREEN + "Done");
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}

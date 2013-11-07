@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
+import system.ANSIControlCodes;
+
 public class DirectoryEnvironment implements MetadataEnvironment {
 
 	private String name = null;
@@ -87,7 +89,7 @@ public class DirectoryEnvironment implements MetadataEnvironment {
 	@Override
 	public PackageBuilder retreive(String overrideSourceDest) {
 		
-		System.out.println("### Retrieving " + this.name + " (directory) ###");
+		System.out.println(ANSIControlCodes.WHITE + "### Retrieving " + this.name + " (directory) ###");
 
 		File dir = new File(PropertyReader.USER_PATH + File.separator
 				+ this.name);

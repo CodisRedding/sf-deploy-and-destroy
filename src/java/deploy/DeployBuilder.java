@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
+import system.ANSIControlCodes;
 import system.MetadataEnvironment;
 import system.OrgEnvironment;
 import system.PropertyReader;
@@ -52,7 +53,7 @@ public class DeployBuilder {
 	public void deploy() {
 
 		if (!conMan.Login()) {
-			System.out.println("Unable to connect.");
+			System.out.println(ANSIControlCodes.MAGENTA + "Unable to connect.");
 			System.exit(1);
 		}
 
@@ -83,7 +84,7 @@ public class DeployBuilder {
 				}
 				asyncResult = conMan.getMetadataConnection().checkStatus(
 						new String[] { asyncResult.getId() })[0];
-				System.out.println("Status is: " + asyncResult.getState());
+				System.out.println(ANSIControlCodes.GREEN + "Status is: " + asyncResult.getState());
 			}
 			if (asyncResult.getState() != AsyncRequestState.Completed) {
 				throw new Exception(asyncResult.getStatusCode() + " msg: "
@@ -95,7 +96,7 @@ public class DeployBuilder {
 				printErrors(result, "Final list of failures:\n");
 				throw new Exception("The files were not successfully deployed");
 			}
-			System.out.println("The file " + orgFrom.getDestroyZip().getPath()
+			System.out.println(ANSIControlCodes.GREEN + "The file " + orgFrom.getDestroyZip().getPath()
 					+ " was successfully deployed");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -145,7 +146,7 @@ public class DeployBuilder {
         }
         if (stringBuilder.length() > 0) {
             stringBuilder.insert(0, messageHeader);
-            System.out.println(stringBuilder.toString());
+            System.out.println(ANSIControlCodes.RED + stringBuilder.toString());
         }
     }
 

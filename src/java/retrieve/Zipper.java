@@ -17,6 +17,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
+import system.ANSIControlCodes;
 import system.OrgEnvironment;
 import system.PackageBuilder;
 import system.PropertyReader;
@@ -74,7 +75,7 @@ public class Zipper {
 
 		if (conMan.getMetadataConnection() == null) {
 
-			System.out.println("Connection is closed");
+			System.out.println(ANSIControlCodes.YELLOW + "Connection is closed");
 			System.exit(1);
 		}
 
@@ -102,7 +103,7 @@ public class Zipper {
 			}
 			asyncResult = conMan.getMetadataConnection().checkStatus(
 					new String[] { asyncResult.getId() })[0];
-			System.out.println("Status is: " + asyncResult.getState());
+			System.out.println(ANSIControlCodes.GREEN + "Status is: " + asyncResult.getState());
 		}
 
 		if (asyncResult.getState() != AsyncRequestState.Completed) {
@@ -121,7 +122,7 @@ public class Zipper {
 			}
 		}
 		if (buf.length() > 0) {
-			System.out.println("Retrieve warnings:\n" + buf);
+			System.out.println(ANSIControlCodes.YELLOW + "Retrieve warnings:\n" + buf);
 		}
 
 		// Write the zip to the file system

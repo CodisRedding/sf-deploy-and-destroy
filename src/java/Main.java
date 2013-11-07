@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import system.ANSIControlCodes;
 import system.EnvironmentManager;
 import system.Installer;
 import system.OrgEnvironment;
@@ -26,22 +27,34 @@ public class Main {
 	 * @param args
 	 *            [0]
 	 * 
+	 *            The environment type either -e for a salesforce environment, 
+	 *			   or -p for a dir path.
+	 *
+	 * @param args
+	 *            [1]
+	 * 
 	 *            The name of the environment file for the org that you want to
 	 *            deploy from. if the files name is example1.env then use
 	 *            example1 without the .env
 	 * 
 	 * @param args
-	 *            [1]
+	 *            [2]
 	 * 
 	 *            The name of the environment file for the org that you want to
 	 *            deploy to. if the files name is example1.env then use example1
 	 *            without the .env
 	 * 
 	 * @param args
-	 *            [2]
+	 *            [3]
 	 * 
-	 *            The arg 'po' will ensure that the destructive changes are not
-	 *            deployed, but instead only printed.
+	 *            The arg '--print-only' will ensure that the destructive changes are not
+	 *            deployed, but instead only printed. The arg --destroy-only will destroy 
+	 *			  all differences between the two orgs. So if a field is in the 'to'
+	 *			  org (arg: 2), but isn't in the the 'from' org (arg: 1) than it will be
+	 *			  removed. Ommitting these args will compare, destroy, and push and new
+	 *			  metadata in the 'from' org that isn't in the 'to' org...syncing them.
+	 *
+	 *			  (ex. java -jar deployAndDestroy.jar -e fourq production --print-only)
 	 */
 	public static void main(String[] args) {
 
@@ -51,7 +64,7 @@ public class Main {
 		// Check for valid args
 		if (!checkForInvalidArgs(args)) {
 			System.out
-					.println("Useage: java -jar deployAndDestroy.jar [[from env name 'example1'] [to env name 'example2'] [print only '--print-only'] [destroy only '--destroy-only']] [--install-only]");
+					.println(ANSIControlCodes.CYAN + "Usage: java -jar deployAndDestroy.jar [-e|-p] [[from env name 'example1'] [to env name 'example2'] [print only '--print-only'] [destroy only '--destroy-only']] [--install-only]");
 			System.exit(1);
 		}
 
@@ -69,7 +82,7 @@ public class Main {
 		if (args.length < 2 || args.length > 4) {
 
 			System.out
-					.println("Useage: java -jar deployAndDestroy.jar [[from env name 'example1'] [to env name 'example2'] [print only '--print-only'] [destroy only '--destroy-only']] [--install-only]");
+					.println(ANSIControlCodes.CYAN + "Usage: java -jar deployAndDestroy.jar [-e|-p] [[from env name 'example1'] [to env name 'example2'] [print only '--print-only'] [destroy only '--destroy-only']] [--install-only]");
 			System.exit(1);
 		}
 
@@ -120,7 +133,7 @@ public class Main {
 		manager.getFromEnvironment().retreive(null);
 		manager.getToEnvironment().retreive(null);
 		long endTime = System.nanoTime();
-		System.out.println("### Retreiving Source Took "
+		System.out.println(ANSIControlCodes.WHITE + "### Retreiving Source Took "
 				+ (endTime - startTime) + " ns");
 
 		// Build the destructive changes needed to sync both environments.
@@ -129,7 +142,7 @@ public class Main {
 				manager.getFromEnvironment(), manager.getToEnvironment());
 		destroybuilder.buildDestructiveChanges(destroyOnly);
 		endTime = System.nanoTime();
-		System.out.println("### Building Destroyable Changes Took "
+		System.out.println(ANSIControlCodes.WHITE + "### Building Destroyable Changes Took "
 				+ (endTime - startTime) + " ns");
 
 		// Tell the deploy builder which environments to work with.
@@ -146,14 +159,14 @@ public class Main {
 			startTime = System.nanoTime();
 			deployBuilder.deploy();
 			endTime = System.nanoTime();
-			System.out.println("### Deployment Took " + (endTime - startTime)
+			System.out.println(ANSIControlCodes.WHITE + "### Deployment Took " + (endTime - startTime)
 					+ " ns");
 		}
 
 		startTime = System.nanoTime();
 		deployBuilder.cleanUp();
 		endTime = System.nanoTime();
-		System.out.println("### Cleanup Took " + (endTime - startTime) + " ns");
+		System.out.println(ANSIControlCodes.WHITE + "### Cleanup Took " + (endTime - startTime) + " ns");
 	}
 
 	private static Boolean checkForInvalidArgs(String[] args) {
@@ -176,8 +189,8 @@ public class Main {
 				File envFile = new File(envFilePath);
 
 				if (!envFile.exists()) {
-					System.out.println("NOPE!");
-					System.out.println("No environment file " + envFilePath
+					System.out.println(ANSIControlCodes.MAGENTA + "NOPE!");
+					System.out.println(ANSIControlCodes.MAGENTA + "No environment file " + envFilePath
 							+ " found.");
 					return false;
 				}
@@ -187,8 +200,8 @@ public class Main {
 					&& !arg.equals(optionEnvironment)
 					&& !arg.equals(optionPath)) {
 
-				System.out.println("NOPE!");
-				System.out.println(arg + " is not a valid option.");
+				System.out.println(ANSIControlCodes.MAGENTA + "NOPE!");
+				System.out.println(ANSIControlCodes.RED + arg + " is not a valid option.");
 				return false;
 			}
 		}
