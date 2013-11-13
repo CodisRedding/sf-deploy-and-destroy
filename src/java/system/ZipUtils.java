@@ -94,12 +94,20 @@ public class ZipUtils {
 						PackageBuilder builder = new PackageBuilder();
 						builder.createFile(sourceFolder, node.getName(), false);
 					}
+					// Quick and dirty fix
+					// TODO: Remove hard-code and add to ignore file.
+					if(!node.getAbsoluteFile().toString().contains("Global-Global Layout.layout")) {
+						fs.add(generateZipEntry(node.getAbsoluteFile().toString(),
+								sourceFolder));
+					}
+				}
+			} else {
+				// Quick and dirty fix
+				// TODO: Remove hard-code and add to ignore file.
+				if(!node.getAbsoluteFile().toString().contains("Global-Global Layout.layout")) {
 					fs.add(generateZipEntry(node.getAbsoluteFile().toString(),
 							sourceFolder));
 				}
-			} else {
-				fs.add(generateZipEntry(node.getAbsoluteFile().toString(),
-						sourceFolder));
 			}
 		}
 

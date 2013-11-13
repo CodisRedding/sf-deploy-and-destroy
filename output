@@ -1,0 +1,819 @@
+[37m### Retrieving production (saleforce [api 29.0]) ###
+OK metadataName: AnalyticSnapshot metadataPath: *
+OK metadataName: ApexClass metadataPath: *
+OK metadataName: ApexComponent metadataPath: *
+OK metadataName: ApexPage metadataPath: *
+OK metadataName: ApexTrigger metadataPath: *
+OK metadataName: CustomApplication metadataPath: *
+OK metadataName: CustomField metadataPath: *
+OK metadataName: CustomLabels metadataPath: *
+OK metadataName: CustomObject metadataPath: Asset
+Ignored metadataName: CustomObject metadataPath: Idea
+OK metadataName: CustomObjectTranslation metadataPath: *
+OK metadataName: CustomPageWebLink metadataPath: *
+OK metadataName: CustomSite metadataPath: *
+OK metadataName: CustomTab metadataPath: *
+OK metadataName: Dashboard metadataPath: Statistical_Dashboards/Active_Chaplain_Demographic_Statistics
+OK metadataName: DataCategoryGroup metadataPath: *
+OK metadataName: Document metadataPath: SharedDocuments/GBHEM.gif
+Ignored metadataName: Document metadataPath: CRMfusionDBR101__DupeBlocker/CRMfusionDBR101__DupeBlockerLogo.gif
+Ignored metadataName: Document metadataPath: rh2__Public_Images/rh2__Rollup_Helper_Logo.gif
+OK metadataName: EmailTemplate metadataPath: unfiled$public/ContactFollowUpSAMPLE
+OK metadataName: EntitlementTemplate metadataPath: *
+OK metadataName: FieldSet metadataPath: *
+OK metadataName: Flow metadataPath: *
+OK metadataName: Group metadataPath: *
+OK metadataName: HomePageComponent metadataPath: *
+OK metadataName: HomePageLayout metadataPath: *
+OK metadataName: Layout metadataPath: *
+OK metadataName: PermissionSet metadataPath: *
+OK metadataName: Portal metadataPath: *
+OK metadataName: Profile metadataPath: Mssql Jobs
+Ignored metadataName: Profile metadataPath: Chatter Moderator User
+Ignored metadataName: Profile metadataPath: Force%2Ecom - Free User
+Ignored metadataName: Profile metadataPath: Chatter External User
+Ignored metadataName: Profile metadataPath: Authenticated Website
+Ignored metadataName: Profile metadataPath: Chatter Free User
+Ignored metadataName: Profile metadataPath: Guest License User
+OK metadataName: Queue metadataPath: *
+OK metadataName: RecordType metadataPath: *
+OK metadataName: RemoteSiteSetting metadataPath: *
+OK metadataName: Report metadataPath: Error_Reports/Address_Error_Report
+Ignored metadataName: Report metadataPath: Statistical_Reports/Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Evang_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Evang_Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Current_Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Current_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Prof_Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Prof_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: KELL_Reports/Mailing_List
+OK metadataName: ReportType metadataPath: *
+OK metadataName: Role metadataPath: *
+OK metadataName: Scontrol metadataPath: *
+OK metadataName: StaticResource metadataPath: *
+OK metadataName: Territory metadataPath: *
+OK metadataName: Translations metadataPath: *
+OK metadataName: Workflow metadataPath: Solution
+Ignored metadataName: Workflow metadataPath: Question
+Ignored metadataName: Workflow metadataPath: Reply
+Ignored metadataName: Workflow metadataPath: PersonAccount
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: Completed
+[33mRetrieve warnings:
+unpackaged/package.xml - Entity type 'Territory' is not available in this organizationunpackaged/package.xml - Entity type 'Portal' is not available in this organizationunpackaged/package.xml - Entity type 'EntitlementTemplate' is not available in this organizationunpackaged/package.xml - Entity type 'Translations' is not available in this organization
+[37m### Retrieving rocky (saleforce [api 29.0]) ###
+OK metadataName: AnalyticSnapshot metadataPath: *
+OK metadataName: ApexClass metadataPath: *
+OK metadataName: ApexComponent metadataPath: *
+OK metadataName: ApexPage metadataPath: *
+OK metadataName: ApexTrigger metadataPath: *
+OK metadataName: CustomApplication metadataPath: *
+OK metadataName: CustomField metadataPath: *
+OK metadataName: CustomLabels metadataPath: *
+OK metadataName: CustomObject metadataPath: Annual_Conference__c
+Ignored metadataName: CustomObject metadataPath: Idea
+OK metadataName: CustomObjectTranslation metadataPath: *
+OK metadataName: CustomPageWebLink metadataPath: *
+OK metadataName: CustomSite metadataPath: *
+OK metadataName: CustomTab metadataPath: *
+OK metadataName: Dashboard metadataPath: Statistical_Dashboards/COS_and_Adv_COS_Demographic_Statistics
+OK metadataName: DataCategoryGroup metadataPath: *
+OK metadataName: EmailTemplate metadataPath: Case_Emails/Case_Status_Change_Notification
+OK metadataName: EntitlementTemplate metadataPath: *
+OK metadataName: FieldSet metadataPath: *
+OK metadataName: Flow metadataPath: *
+OK metadataName: Group metadataPath: *
+OK metadataName: HomePageComponent metadataPath: *
+OK metadataName: HomePageLayout metadataPath: *
+OK metadataName: Layout metadataPath: *
+OK metadataName: PermissionSet metadataPath: *
+OK metadataName: Portal metadataPath: *
+OK metadataName: Profile metadataPath: Reportmissinginfo Profile1347659822908
+Ignored metadataName: Profile metadataPath: Chatter Moderator User
+Ignored metadataName: Profile metadataPath: Force%2Ecom - Free User
+Ignored metadataName: Profile metadataPath: Authenticated Website
+Ignored metadataName: Profile metadataPath: Guest License User
+Ignored metadataName: Profile metadataPath: Chatter External User
+Ignored metadataName: Profile metadataPath: Chatter Free User
+OK metadataName: Queue metadataPath: *
+OK metadataName: RecordType metadataPath: *
+OK metadataName: RemoteSiteSetting metadataPath: *
+OK metadataName: Report metadataPath: KELL_Reports/Active_Certs_by_age_and_ministry_area
+Ignored metadataName: Report metadataPath: KELL_Reports/Mailing_List
+Ignored metadataName: Report metadataPath: Statistical_Reports/Prof_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Current_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Prof_Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Evang_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Evang_Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Current_Certifications_Gender_Statistics
+OK metadataName: ReportType metadataPath: *
+OK metadataName: Role metadataPath: *
+OK metadataName: Scontrol metadataPath: *
+OK metadataName: StaticResource metadataPath: *
+OK metadataName: Territory metadataPath: *
+OK metadataName: Translations metadataPath: *
+OK metadataName: Workflow metadataPath: CRMfusionDBR101__Duplicate_Warning__c
+Ignored metadataName: Workflow metadataPath: Reply
+Ignored metadataName: Workflow metadataPath: Question
+Ignored metadataName: Workflow metadataPath: PersonAccount
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: Completed
+[33mRetrieve warnings:
+unpackaged/package.xml - Entity type 'Territory' is not available in this organizationunpackaged/package.xml - Entity type 'Portal' is not available in this organizationunpackaged/package.xml - Entity type 'EntitlementTemplate' is not available in this organizationunpackaged/package.xml - Entity type 'Translations' is not available in this organization
+[37m### Retreiving Source Took 140647279889 ns
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/UmeaDataSheet.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/UmeaDataSheet.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/Education_Info_Course_Records.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersRegistration.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/IamscuHome.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/Exception.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/SiteRegisterConfirm.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersForgotPasswordConfirm.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/Education_Info_Course_Records.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/UnderConstruction.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/BandwidthExceeded.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ForgotPasswordConfirm.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/IdeasHome.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersHelp.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersChangePassword.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/AnswersHome.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/SiteRegister.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/SiteLogin.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/Unauthorized.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersForgotPassword.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/SiteRegisterConfirm.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/BandwidthExceeded.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChangePassword.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/PastrolActs.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ForgotPassword.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/SiteTemplate.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/StdExceptionTemplate.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/SiteTemplate.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/IdeasHome.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ReportMissingInfo.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/MyProfilePage.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/InMaintenance.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/StdExceptionTemplate.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/IamscuSiteTemplate.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ForgotPassword.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersLogin.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersAgentView.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/IamscuSiteTemplate.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersHelp.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersForgotPassword.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/InMaintenance.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/PastrolActs.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ForgotPasswordConfirm.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/SiteLogin.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChangePassword.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/MyProfilePage.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersChangePassword.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/IamscuTemplate.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ReportMissingInfo.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/FileNotFound.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/UnderConstruction.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/IamscuTemplate.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersForgotPasswordConfirm.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/Unauthorized.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/Exception.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/EducationRelatedCourses.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/AnswersHome.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersLogin.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersRegistration.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/ChatterAnswersAgentView.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/SiteRegister.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/EducationRelatedCourses.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/FileNotFound.page-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/pages/IamscuHome.page
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/SitePoweredBy.component
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/IamscuSiteHeader.component-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/SiteLogin.component
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/IamscuHeader.component-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/IamscuFooter.component
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/SiteLogin.component-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/SiteFooter.component
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/IamscuSiteFooter.component
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/IamscuSiteFooter.component-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/SiteHeader.component-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/IamscuFooter.component-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/IamscuHeader.component
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/SiteHeader.component
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/IamscuSiteHeader.component
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/SitePoweredBy.component-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/components/SiteFooter.component-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/applications/GBHEM.app
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/applications/Force_com.app
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/applications/ExactTarget.app
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/labels/CustomLabels.labels
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Organization_with_School_Served.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/NASCUMCboardofdirectors.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contacts_with_Milestones_and_Positions.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contacts_with_the_option_of_pulling_Milestones.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Scholarship_111113.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Cases.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Organization_with_Position.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Nascambofdirectors.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contacts_with_Education_Certifications_with_Approving_Conference.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contacts_with_Course_Records_Education_Info.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Organizations_with_Colleg_Min_and_School_Served.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contact_for_Each_Ministry_category.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Positions_with_or_without_Contact_and_Org_Info.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contacts_with_Course_Records.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contacts_with_Education_Information_with_Education_Courses.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contact_with_Chaplain_Endorsed_Approval.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reportTypes/Contacts_with_Pastoral_Acts.reportType
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/flows/Pastrol_Act_form-1.flow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/destructiveChanges.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/package.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Position.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/overrideSave.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_CSVParser.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_AccountUtil.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Util.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/TriggerException.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/overrideSave.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UnitTest_Exception_Manager.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_ContactUtil.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Account_RestrictAccountDel.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ITrigger.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChatterAnswersRegistration.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/SiteLoginController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/CSVParser.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChatterAnswersEscalationTriggerTest.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/Util.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/EducationInfoCourseRecController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_CSVParser.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/MyProfilePageController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChatterAnswersEscalationTriggerTest.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_AccountUtil.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_EducationInfoCourseRecController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Address.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_ContactUtil.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChatterAnswersAuthProviderRegistration.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Course_Record.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/MyProfilePageController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_IAMSCUController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_CertificationUpdates.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/reportmissinginfoclass.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChatterAnswersAuthProviderRegistration.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_MilestoneContact.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UnitTest_Exception_Manager.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/IAMSCUController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Util_Logging.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Position.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Account_RestrictAccountDel.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Milestones.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/Util_Logging.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/SiteRegisterController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/EducationRelatedCoursesController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Education_Information_Licensing.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ContactGateway.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChangePasswordController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/EducationRelatedCoursesController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Milestones.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_IAMSCUController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ContactHandler.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Course_Record.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Util_Logging.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ForgotPasswordController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/EducationRelatedCoursesControllerTest.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/IDHelper.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/EducationRelatedCoursesControllerTest.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/reportmissinginfoclass.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChatterAnswersCreateAccountTest.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/EducationInfoCourseRecController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChatterAnswersRegistration.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_EducationInfoCourseRecController.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/CSVParser.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/TriggerFactory.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChatterAnswersCreateAccountTest.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/Util.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Util.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/TriggerFactory.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/SiteLoginController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_CertificationUpdates.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/IDHelper.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Education_Information_Licensing.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ITrigger.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Contact_AssocAccountOnInsert.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Contact_AssocAccountOnInsert.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/SiteRegisterController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/Util_Logging.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ForgotPasswordController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_Address.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ContactGateway.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ContactHandler.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/TriggerException.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/ChangePasswordController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/UT_MilestoneContact.cls
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/classes/IAMSCUController.cls-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Meetings__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Education_Information__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/npe4__Relationship__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Pastoral_Acts__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__AutoMerge_Mapping__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/System_Exceptions__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/School_Served__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Milestones__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/xtma_Email_Result__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/npe4__Relationship_Lookup__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/rh2__Job__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Annual_Conference__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Chaplain_Endorsement_Approval__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Address__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__Setting__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Membership__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Course_Record__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Nascum_Dues__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/npe4__Relationship_Auto_Create__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__Scenario_Link__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__AutoMerge_Setting__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__AutoConvert_Setting__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/rh2__Date_Sync__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/LogglySettings__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__Scenario_Filter__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/npe4__Relationship_Error__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__Scenario__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__Potential_Duplicate__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/rh2__PS_Describe__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__Duplicate_Warning__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/xtma_Individual_Email_Result__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Student_Numbers__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/rh2__PS_Rollup_Conditions__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/xtma_Link_Detail__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/rh2__PS_Settings__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__Scenario_Rule__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/rh2__PS_Queue__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/npe4__Relationship_Settings__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__AutoConvert_Mapping__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/CRMfusionDBR101__Scenario_Key__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Education_Course__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Position__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Audit__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Global_App_Settings__c-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objectTranslations/Account-en_US.objectTranslation
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/rh2__PS_Settings__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Contact.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/rh2__PS_Queue__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__Scenario_Key__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/OpportunityLineItem.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/npe4__Relationship_Auto_Create__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/WorkBadgeDefinition.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Position__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CaseContactRole.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/System_Exceptions__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Activity.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Question.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__Scenario__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__AutoConvert_Setting__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Meetings__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/OpportunityContactRole.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Site.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Contract.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/AccountContactRole.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/User.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__Scenario_Rule__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Opportunity.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/npe4__Relationship_Settings__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/xtma_Individual_Email_Result__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Case.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/rh2__Date_Sync__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Membership__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Education_Information__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Course_Record__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Pastoral_Acts__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__AutoMerge_Setting__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CampaignMember.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Pricebook2.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Annual_Conference__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Solution.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/PartnerRole.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Campaign.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/School_Served__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/npe4__Relationship_Error__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Global_App_Settings__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Nascum_Dues__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__Setting__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/xtma_Email_Result__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__Duplicate_Warning__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/rh2__Job__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/npe4__Relationship__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__Potential_Duplicate__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Milestones__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Product2.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/WorkThanks.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__Scenario_Link__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/PersonAccount.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/rh2__PS_Describe__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/npe4__Relationship_Lookup__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/OpportunityCompetitor.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Asset.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Task.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/LogglySettings__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/ContractContactRole.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/rh2__PS_Rollup_Conditions__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Address__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Account.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Reply.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Education_Course__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__AutoConvert_Mapping__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/xtma_Link_Detail__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__Scenario_Filter__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Event.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/CRMfusionDBR101__AutoMerge_Mapping__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/ContentVersion.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Lead.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Chaplain_Endorsement_Approval__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Audit__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/objects/Student_Numbers__c.object
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Membership__c-Memberships and Associations Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Chaplain_Endorsement_Approval__c-ApplicationApproval Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Case-Case Layout StandardUser.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Milestones__c-Milestone Interview Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Address__c-Address_Military_Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Course_Record__c-Course Record Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Education_Information__c-Education Information Layout %28Certification%29.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Solution-Solution Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/PersonAccount-Person Account Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-Annual Conference Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Contact-Contact Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Annual_Conference__c-EA AnnualConference Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Education_Course__c-Education Course Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Contract-Contract Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-School Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-UMEA Position Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-Africa University Board of Director.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Campaign-Campaign Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Course_Record__c-Adv%2E Course of Study.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Pricebook2-Price Book Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Address__c-Address_Organization_Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Milestones__c-Military Milestone Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Nascum_Dues__c-Nascum Dues Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Address__c-Address Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-University Senate Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-Position Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/WorkBadgeDefinition-Badge Definition Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/School_Served__c-Schools Served Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/WorkBadge-Badge Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/WorkAccess-Access Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/OpportunityLineItem-Opportunity Product Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-District Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-Local Church Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-Position Contact Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/xtma_Link_Detail__c-Link Detail Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Education_Information__c-Education Information Layout %28Certification Update%29.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Opportunity-Opportunity Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/ContentVersion-General.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Education_Information__c-Education Information Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-Account Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Meetings__c-Meetings Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/CampaignMember-Campaign Member Page Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Case-Case Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/User-User Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-General Conference layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Meetings__c-Chaplain Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-Jurisdiction Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-Position Layout_EA_UMAC.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Idea-Idea Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-Collegiate Ministry.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Course_Record__c-UM Studies.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Course_Record__c-Course of Study Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Student_Numbers__c-Students Number Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-Position Layout_AC_CM_District_SC_LC.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Course_Record__c-Cert in Specialized Ministry.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Reply-Reply Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Lead-Lead Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Product2-Product Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Task-Task Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/xtma_Individual_Email_Result__c-Individual Email Result Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Milestones__c-Milestone Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Milestones__c-Ministry Category Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/WorkThanks-Thanks Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Course_Record__c-Foundation.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Contact-GBHEM Staff.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/System_Exceptions__c-System Execptions Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-Position Layout_EA_GBA.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Question-Question Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Pastoral_Acts__c-Pastoral Acts Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-GBHEM Board of Directors layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Position__c-ABLC%2FExt Ministry Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Audit__c-Audit Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Asset-Asset Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-General Boards %26 Agencies.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Course_Record__c-BGTS.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Milestones__c-Clergy Candidacy layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/CaseClose-Close Case Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Event-Event Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/Account-Episcopal Area.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/layouts/xtma_Email_Result__c-Email Result Layout.layout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/queues/Case_Queue.queue
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/roles/SForceSSO.role
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/homePageComponents/Welcome to Force%2Ecom Free Edition.homePageComponent
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/dashboards/Statistical_Dashboards/Active_Deacon_Demographic_Statistics.dashboard
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/dashboards/Statistical_Dashboards/Active_Chaplain_Demographic_Statistics.dashboard
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/dashboards/Statistical_Dashboards/COS_and_Adv_COS_Demographic_Statistics.dashboard
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/dashboards/Statistical_Dashboards/Education_Certifications_Demographics_Dashboard.dashboard
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/dashboards/CRMfusionDBR101__DupeBlocker_Dashboards/CRMfusionDBR101__DupeBlockerDashboard.dashboard
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/UpdateColleagueStatus.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Milestones_INSERT_UPDATE_AFTER.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Account_INSERT_UPDATE_BEFORE.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Course_Record_INSERT_UPDATE_BEFORE.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Education_Information_INSERT_UPDATE_BEFORE.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Education_Information_INSERT_AFTER.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/chatter_answers_question_escalation_to_case_trigger.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Account_DELETE_BEFORE.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Education_Information_INSERT_AFTER.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Contact_INSERT_UPDATE_BEFORE.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/ContactTrigger.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Milestones_INSERT_UPDATE_AFTER.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Position_INSERT_UPDATE_BEFORE.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Account_DELETE_BEFORE.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/ContactTrigger.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Course_Record_INSERT_UPDATE_BEFORE.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Position_INSERT_UPDATE_BEFORE.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Contact_INSERT_UPDATE_BEFORE.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Account_INSERT_UPDATE_BEFORE.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/Education_Information_INSERT_UPDATE_BEFORE.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/UpdateColleagueStatus.trigger
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/triggers/chatter_answers_question_escalation_to_case_trigger.trigger-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/homePageLayouts/Dashboard Home Page Default.homePageLayout
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/Milestones__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/Membership__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/Course_Record__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/xtma_Email_Result__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/ExactTarget.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/Chaplain_Endorsement_Approval__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/npe4__Relationship__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/Address__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/System_Exceptions__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/Education_Information__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/AboutExactTargetforAppExchange.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/tabs/Position__c.tab
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/Reportmissinginfo Profile.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/MarketingProfile.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/GBHEM Advanced.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/GBHEM Standard.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/IAMSCU Profile1347659817136.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/Reportmissinginfo Profile1347659822908.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/Standard.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/Admin.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/IAMSCU Profile.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/ReadOnly.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/GBHEM Profile1347659813634.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/Data Administrator.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/FindYourPlace Profile1347659808523.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/Registrationform Profile1347659819961.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/Mssql Jobs.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/Registrationform Profile.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/ContractManager.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/GBHEM Profile.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/SolutionManager.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/GBHEM Control.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/profiles/FindYourPlace Profile.profile
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/Case_Emails/Case_Escalation_Notification.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/Case_Emails/Case_Escalation_Notification.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/Case_Emails/Case_Status_Change_Notification.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/Case_Emails/New_Case_Owner_Notification.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/Case_Emails/Case_Status_Change_Notification.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/Case_Emails/Case_Creation_Email.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/Case_Emails/New_Case_Owner_Notification.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/Case_Emails/Case_Creation_Email.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/Pastrol_email.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/ContactFollowUpSAMPLE.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/Pastrol_email.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/ContactFollowUpSAMPLE.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE.email
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/email/unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE.email-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/sites/FindYourPlace.site
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/sites/IAMSCUIAMSCU.site
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/sites/GBHEM.site
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/sites/Reportmissinginfo.site
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/sites/Registrationform.site
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IamscuSearchIcon.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/FindYourPlaceSite.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/info.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/GBHEM_logo.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/GBHEM_logo.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IamscuSiteLogo.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/Iamscu.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/loading.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/SiteSamples.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/loading.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/FindYourPlace.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IamscuSiteCSS.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IamscuSiteCSS.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IamscuSiteLogo.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IamscuSearchIcon.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/FindYourPlace.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/FindYourPlaceSite.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IamscuDottedArrowIcon.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/info.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IAMSCUIcons.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IAMSCUIcons.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/SiteSamples.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/jQuery.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/IamscuDottedArrowIcon.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/Iamscu.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/BlueDot.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/BlueDot.resource
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/staticresources/jQuery.resource-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/documents/PublicFolder/ExactTargetforAppExchangeLogo.gif
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/documents/PublicFolder/ExactTargetforAppExchangeLogo.gif-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/documents/SharedDocuments/GBHEM.gif-meta.xml
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/documents/SharedDocuments/GBHEM.gif
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Membership__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Organization.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Account.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Course_Record__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Contact.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/npe4__Relationship__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/System_Exceptions__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/xtma_Email_Result__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Address__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Asset.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Idea.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/xtma_Link_Detail__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/OpportunityLineItem.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/npe4__Relationship_Settings__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__AutoConvert_Setting__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__AutoConvert_Mapping__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Campaign.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__Setting__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Chaplain_Endorsement_Approval__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/npe4__Relationship_Error__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Nascum_Dues__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Lead.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__Scenario_Key__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/LogglySettings__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/rh2__Date_Sync__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__AutoMerge_Setting__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/UserLicense.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Pastoral_Acts__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/npe4__Relationship_Lookup__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Education_Information__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Product2.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/xtma_Individual_Email_Result__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__Scenario_Rule__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Position__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Audit__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Contract.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__AutoMerge_Mapping__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__Potential_Duplicate__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Annual_Conference__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Event.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__Scenario_Filter__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/npe4__Relationship_Auto_Create__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/School_Served__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__Scenario_Link__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/rh2__PS_Queue__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Opportunity.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Solution.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Task.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Education_Course__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/User.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__Scenario__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Global_App_Settings__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Meetings__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/rh2__PS_Settings__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Case.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CRMfusionDBR101__Duplicate_Warning__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/rh2__PS_Rollup_Conditions__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/rh2__Job__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Student_Numbers__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/rh2__PS_Describe__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/CampaignMember.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Milestones__c.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/workflows/Site.workflow
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Expired_Pastoral_Acts_Current_Year_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Chaplains_by_Annual_Conference_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Chaplains_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Endorsed_Approved_Chaplains_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Endorsed_Approved_by_Setting_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Application_for_Endorse_Approve_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Deployed_Chaplains_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Applying_Chaplains_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/UMEA_Reports/Pastoral_Acts_by_Type_Current_Year_UMEA.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Directories/Collegiate_Ministries_Unit_Directory.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Directories/Collegiate_Ministers_Directory.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Directories/Schools_Colleges_and_Universities.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Directories/Current_GBHEM_Board.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Directories/Chaplains.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Transcripts/Course_Transcripts_UM_Studies.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Transcripts/Course_Transcripts_Adv_Crs_of_Study.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Transcripts/Course_Transcripts_Course_of_Study.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Current_COS_and_Adv_COS_Gend_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/COS_and_Adv_COS_Race_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Campus_Ministry_Units_by_Annual_Conf.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Current_COS_and_Adv_COS_Age_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Gender_Statistics_Template_Report.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Position_Count_by_Annual_Conference.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Age_Category_Template_Report.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Ethnicity_Statistics_Template_Report.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Deacon_Count_by_Annual_Conference.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Current_COS_and_Adv_COS_Race_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Ministry_Category_Count_by_Annual_Conf.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/COS_and_Adv_COS_Gender_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Ministry_Category_by_Jurisdiction.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Active_Deacon_Age_Statitics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Active_Chaplain_Race_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Active_Chaplain_Gender_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Active_Chaplain_Age_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Active_Campus_Ministers_and_Chaplains.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Active_Deacon_Gender_Statitics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/COS_and_Adv_COS_Age_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Statistical_Reports/Active_Deacon_Race_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Error_Reports/Address_Error_Report.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/DHE_Reports/Chaplains_Church_Relations_SCU.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/DHE_Reports/PR_Contacts_SCU.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/DHE_Reports/CEO_Contacts_SCU.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Mailing/LEX_Collegii_with_Positions.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/Mailing/Colleague_List_with_Positions.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recently_AutoMerged_Leads.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recent_AutoMerged_Accounts.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recently_AutoConverted.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recently_AutoMerged_Contacts.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recently_AutoMerged_Totals.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DupeBlockerWarningsbyUserScenario.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DupeBlockerWarningSetSize.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DupeBlockerScenarioStats.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_by_Marital_Status.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_certified_this_year.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Applying_Chaplains.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certification_in_Spec_Ministry_by_AC.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certified_Deacons.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/All_Certifications_by_Track.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_ordained_this_year.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacon_Elders_Race_1112013.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Chaplains_by_Gender.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Expired_Pastoral_Acts.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certs_This_Year_by_age_and_ministry_area.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_by_Gender.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deployed_Chaplains.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_provisioned_this_year.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Ministry_Category_Contact_Stats.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacon_Candidates_this_year.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacon_by_Age_Category.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Total_New_Deacon_this_year.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Active_Certs_by_Gender_and_Ministry_Area.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Application_for_Endorsement_or_Approval.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_by_Annual_Conference.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Provisional_Deacons.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certifications_Current_CY_by_Sex.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certifications_Current_CY_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Annual_Conferences_Positions_List2.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Endorsed_Approved_Chaplains.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certification_Renewals_Past_Due.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Chaplains_by_Ministry_Category.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certs_This_Year_by_Race_and_Min_Area.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/All_Certifications_this_year.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Pastoral_Acts_by_Type_Current_CY.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_by_State.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Chaplains_by_Age_Category.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Discontinued_Deacon_Candidates.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Endorsed_and_Approved_by_Setting.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_Retired_from_Annual_Conference.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Chaplains_by_State.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deacons_by_Race.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Chaplains_by_Race.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Chaplains_by_Marital_Status.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Deployed_Chaplains_by_Country.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Active_Certs_by_age_and_ministry_area.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certifications_Current_CY_by_Age_Cat.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/All_certs_this_year_vs_previous.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Active_Certification_Statistics.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Cert_in_Specialized_Ministry_Directory.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Chaplains_by_Annual_Conference.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Birthday_Letter.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certs_This_Year_by_Gender_and_Min_Area.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/All_Certifications.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Active_Certs_by_Race_and_Ministry_Area.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certification_Renewals_Due.report
+Adding File: /home/rocky/.sf-deploy-and-destroy/production/unpackaged/reports/KELL_Reports/Certification_Coursework.report
+[32mDone
+[37m### Building Destroyable Changes Took 1631860330 ns
+[34mNo destructable changes.
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: InProgress
+[32mStatus is: Completed
+[32mThe file /home/rocky/.sf-deploy-and-destroy/production/destroy.zip was successfully deployed
+[37m### Deployment Took 130384753384 ns
+[37m### Cleanup Took 385080 ns
