@@ -1,17 +1,306 @@
 [37m### Retrieving dynamic-env (directory) ###
-[37m### Retrieving rocky (saleforce [api 29.0]) ###
-[32mStatus is: InProgress
+[37m### Retrieving andrew (saleforce [api 29.0]) ###
+OK metadataName: AnalyticSnapshot metadataPath: *
+OK metadataName: ApexClass metadataPath: *
+OK metadataName: ApexComponent metadataPath: *
+OK metadataName: ApexPage metadataPath: *
+OK metadataName: ApexTrigger metadataPath: *
+OK metadataName: ApprovalProcess metadataPath: *
+OK metadataName: AssignmentRules metadataPath: *
+OK metadataName: AutoResponseRules metadataPath: *
+OK metadataName: CallCenter metadataPath: *
+OK metadataName: CompactLayout metadataPath: *
+OK metadataName: ConnectedApp metadataPath: *
+OK metadataName: CustomApplication metadataPath: *
+OK metadataName: CustomApplicationComponent metadataPath: *
+OK metadataName: CustomField metadataPath: *
+OK metadataName: CustomLabels metadataPath: *
+OK metadataName: CustomObject metadataPath: *
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__AutoConvert_Setting__c
+Ignored metadataName: CustomObject metadataPath: rh2__PS_Queue__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__AutoMerge_Setting__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__Scenario_Filter__c
+Ignored metadataName: CustomObject metadataPath: rh2__PS_Settings__c
+Ignored metadataName: CustomObject metadataPath: npe4__Relationship__c
+Ignored metadataName: CustomObject metadataPath: rh2__Date_Sync__c
+Ignored metadataName: CustomObject metadataPath: npe4__Relationship_Error__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__Scenario_Rule__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__Setting__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__Scenario_Key__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__AutoConvert_Mapping__c
+Ignored metadataName: CustomObject metadataPath: npe4__Relationship_Settings__c
+Ignored metadataName: CustomObject metadataPath: Question
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__Scenario__c
+Ignored metadataName: CustomObject metadataPath: Idea
+Ignored metadataName: CustomObject metadataPath: rh2__PS_Rollup_Conditions__c
+Ignored metadataName: CustomObject metadataPath: rh2__Job__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__Potential_Duplicate__c
+Ignored metadataName: CustomObject metadataPath: npe4__Relationship_Auto_Create__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__Scenario_Link__c
+Ignored metadataName: CustomObject metadataPath: rh2__PS_Describe__c
+Ignored metadataName: CustomObject metadataPath: npe4__Relationship_Lookup__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__AutoMerge_Mapping__c
+Ignored metadataName: CustomObject metadataPath: CRMfusionDBR101__Duplicate_Warning__c
+Ignored metadataName: CustomObject metadataPath: Reply
+OK metadataName: CustomObjectTranslation metadataPath: *
+OK metadataName: CustomPageWebLink metadataPath: *
+OK metadataName: CustomSite metadataPath: *
+OK metadataName: CustomTab metadataPath: *
+OK metadataName: Dashboard metadataPath: Statistical_Dashboards/Active_Chaplain_Demographic_Statistics
+Ignored metadataName: Dashboard metadataPath: CRMfusionDBR101__DupeBlocker_Dashboards/CRMfusionDBR101__DupeBlockerDashboard
+OK metadataName: DataCategoryGroup metadataPath: *
+OK metadataName: EmailTemplate metadataPath: Case_Emails/New_Case_Owner_Notification
+OK metadataName: EntitlementProcess metadataPath: *
+OK metadataName: EntitlementTemplate metadataPath: *
+OK metadataName: EscalationRules metadataPath: *
+OK metadataName: ExternalDataSource metadataPath: *
+OK metadataName: FieldSet metadataPath: *
+OK metadataName: FlexiPage metadataPath: *
+OK metadataName: Flow metadataPath: *
+OK metadataName: Group metadataPath: *
+OK metadataName: HomePageComponent metadataPath: *
+OK metadataName: HomePageLayout metadataPath: *
+OK metadataName: Layout metadataPath: *
+OK metadataName: Letterhead metadataPath: test
+OK metadataName: ListView metadataPath: Position__c.All_Active_Positions
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__LeadScenarios
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Duplicate_Warning__c.CRMfusionDBR101__LeadtoAccountDuplicateWarnings
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__ContactScenarios
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__LeadtoAccountScenarios
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__AccountScenarios
+Ignored metadataName: ListView metadataPath: rh2__PS_Rollup_Conditions__c.rh2__All
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Duplicate_Warning__c.CRMfusionDBR101__LeadtoContactDuplicateWarnings
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__All
+Ignored metadataName: ListView metadataPath: rh2__PS_Describe__c.rh2__All_Objects
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__LeadtoContactScenarios
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Duplicate_Warning__c.CRMfusionDBR101__All
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Duplicate_Warning__c.CRMfusionDBR101__AccountDuplicateWarnings
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Duplicate_Warning__c.CRMfusionDBR101__LeadDuplicateWarnings
+Ignored metadataName: ListView metadataPath: Idea.Ideas_Last_7_Days
+Ignored metadataName: ListView metadataPath: rh2__Job__c.rh2__All
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Duplicate_Warning__c.CRMfusionDBR101__ContactDuplicateWarnings
+Ignored metadataName: ListView metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__ScenariosNeedingaRebuild
+OK metadataName: LiveChatAgentConfig metadataPath: *
+OK metadataName: LiveChatButton metadataPath: *
+OK metadataName: LiveChatDeployment metadataPath: *
+OK metadataName: MilestoneType metadataPath: *
+OK metadataName: NamedFilter metadataPath: Account.nf_01IK0000000CkpRMAS_00NK0000000Sg9SMAS
+OK metadataName: Network metadataPath: *
+OK metadataName: PermissionSet metadataPath: *
+OK metadataName: Portal metadataPath: *
+OK metadataName: PostTemplate metadataPath: *
+OK metadataName: Profile metadataPath: ReadOnly
+Ignored metadataName: Profile metadataPath: Guest License User
+Ignored metadataName: Profile metadataPath: Chatter Free User
+Ignored metadataName: Profile metadataPath: Authenticated Website
+Ignored metadataName: Profile metadataPath: Chatter Moderator User
+Ignored metadataName: Profile metadataPath: Chatter External User
+Ignored metadataName: Profile metadataPath: Force%2Ecom - Free User
+OK metadataName: Queue metadataPath: *
+OK metadataName: QuickAction metadataPath: *
+OK metadataName: RecordType metadataPath: *
+OK metadataName: RemoteSiteSetting metadataPath: *
+OK metadataName: Report metadataPath: Directories/Chaplains
+Ignored metadataName: Report metadataPath: KELL_Reports/Mailing_List
+Ignored metadataName: Report metadataPath: CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DupeBlockerWarningSetSize
+Ignored metadataName: Report metadataPath: CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recently_AutoMerged_Contacts
+Ignored metadataName: Report metadataPath: CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recent_AutoMerged_Accounts
+Ignored metadataName: Report metadataPath: CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recently_AutoConverted
+Ignored metadataName: Report metadataPath: CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recently_AutoMerged_Totals
+Ignored metadataName: Report metadataPath: CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DupeBlockerScenarioStats
+Ignored metadataName: Report metadataPath: CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DB_Recently_AutoMerged_Leads
+Ignored metadataName: Report metadataPath: CRMfusionDBR101__DupeBlocker_Reports/CRMfusionDBR101__DupeBlockerWarningsbyUserScenario
+Ignored metadataName: Report metadataPath: Statistical_Reports/Current_Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Current_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Prof_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Evang_Certifications_Race_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Evang_Certifications_Gender_Statistics
+Ignored metadataName: Report metadataPath: Statistical_Reports/Prof_Certifications_Gender_Statistics
+OK metadataName: ReportType metadataPath: *
+OK metadataName: Role metadataPath: *
+OK metadataName: SamlSsoConfig metadataPath: *
+OK metadataName: Scontrol metadataPath: *
+OK metadataName: Skill metadataPath: *
+OK metadataName: StaticResource metadataPath: *
+OK metadataName: Territory metadataPath: *
+OK metadataName: Translations metadataPath: *
+OK metadataName: ValidationRule metadataPath: Contact.EmergencyContactNumeber_Validation
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoConvert_Setting__c.CRMfusionDBR101__Contact_Owner_Null_Check
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__Scenario_Rule__c.CRMfusionDBR101__First_XX_Letters
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoMerge_Setting__c.CRMfusionDBR101__Merge_Target_Not_Null
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoConvert_Setting__c.CRMfusionDBR101__Opportunity_Stage_Null_Check
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoConvert_Setting__c.CRMfusionDBR101__Opportunity_Name_Null_Check
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoConvert_Setting__c.CRMfusionDBR101__Opportunity_Close_Date_Null_Check
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoConvert_Setting__c.CRMfusionDBR101__Task_Due_Date_Null_Check
+Ignored metadataName: ValidationRule metadataPath: rh2__Job__c.rh2__Positive_Increment
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__Hash_Key_Bit_Size
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoMerge_Setting__c.CRMfusionDBR101__Task_Owner_Null_Check
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoConvert_Setting__c.CRMfusionDBR101__Task_Owner_Null_Check
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoMerge_Setting__c.CRMfusionDBR101__Task_Due_Date_Null_Check
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoMerge_Setting__c.CRMfusionDBR101__Default_Mergeable_Action_Not_Null
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__Person_Account_Flag_Check
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__Do_Not_Update_Error_Message_Required
+Ignored metadataName: ValidationRule metadataPath: npe4__Relationship__c.npe4__Related_Contact_Do_Not_Change
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoMerge_Setting__c.CRMfusionDBR101__Default_NonMergeable_Action_Not_Null
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoConvert_Setting__c.CRMfusionDBR101__Conversion_Target_Not_Null
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoMerge_Mapping__c.CRMfusionDBR101__Merge_Action_Not_Null
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoConvert_Setting__c.CRMfusionDBR101__Task_Subject_Check_Null
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__Scenario__c.CRMfusionDBR101__Do_Not_Insert_Error_Message_Required
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__AutoMerge_Setting__c.CRMfusionDBR101__Task_Subject_Check_Null
+Ignored metadataName: ValidationRule metadataPath: CRMfusionDBR101__Scenario_Rule__c.CRMfusionDBR101__Validate_Scenario_Type
+OK metadataName: Workflow metadataPath: Pastoral_Acts__c
+Ignored metadataName: Workflow metadataPath: PersonAccount
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__AutoMerge_Setting__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__Scenario_Filter__c
+Ignored metadataName: Workflow metadataPath: npe4__Relationship_Error__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__Scenario_Link__c
+Ignored metadataName: Workflow metadataPath: npe4__Relationship_Settings__c
+Ignored metadataName: Workflow metadataPath: npe4__Relationship_Lookup__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__Setting__c
+Ignored metadataName: Workflow metadataPath: Question
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__AutoConvert_Setting__c
+Ignored metadataName: Workflow metadataPath: rh2__PS_Describe__c
+Ignored metadataName: Workflow metadataPath: Reply
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__AutoConvert_Mapping__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__Scenario_Rule__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__Scenario__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__Potential_Duplicate__c
+Ignored metadataName: Workflow metadataPath: rh2__PS_Settings__c
+Ignored metadataName: Workflow metadataPath: npe4__Relationship_Auto_Create__c
+Ignored metadataName: Workflow metadataPath: rh2__Date_Sync__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__AutoMerge_Mapping__c
+Ignored metadataName: Workflow metadataPath: rh2__Job__c
+Ignored metadataName: Workflow metadataPath: npe4__Relationship__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__Duplicate_Warning__c
+Ignored metadataName: Workflow metadataPath: rh2__PS_Rollup_Conditions__c
+Ignored metadataName: Workflow metadataPath: CRMfusionDBR101__Scenario_Key__c
+Ignored metadataName: Workflow metadataPath: rh2__PS_Queue__c
 [32mStatus is: InProgress
 [32mStatus is: InProgress
 [32mStatus is: InProgress
 [32mStatus is: InProgress
 [32mStatus is: Completed
 [33mRetrieve warnings:
-unpackaged/package.xml - Entity type 'MilestoneType' is not available in this organizationunpackaged/package.xml - Entity type 'LiveChatAgentConfig' is not available in this organizationunpackaged/package.xml - Entity type 'LiveChatDeployment' is not available in this organizationunpackaged/package.xml - Entity type 'Network' is not available in this organizationunpackaged/package.xml - Entity type 'SamlSsoConfig' is not available in this organizationunpackaged/package.xml - Entity type 'Territory' is not available in this organizationunpackaged/package.xml - Entity type 'ExternalDataSource' is not available in this organizationunpackaged/package.xml - Entity type 'Portal' is not available in this organizationunpackaged/package.xml - Entity type 'EntitlementTemplate' is not available in this organizationunpackaged/package.xml - Entity type 'CustomApplicationComponent' is not available in this organizationunpackaged/package.xml - Entity type 'Skill' is not available in this organizationunpackaged/package.xml - Entity type 'LiveChatButton' is not available in this organizationunpackaged/package.xml - Entity of type 'ListView' named 'Idea.Ideas_Last_7_Days' cannot be foundunpackaged/package.xml - Entity type 'EntitlementProcess' is not available in this organizationunpackaged/package.xml - Entity type 'Translations' is not available in this organization
-[37m### Retreiving Source Took 75160048289 ns
+unpackaged/package.xml - Entity type 'MilestoneType' is not available in this organizationunpackaged/package.xml - Entity type 'LiveChatAgentConfig' is not available in this organizationunpackaged/package.xml - Entity type 'LiveChatDeployment' is not available in this organizationunpackaged/package.xml - Entity type 'Network' is not available in this organizationunpackaged/package.xml - Entity type 'SamlSsoConfig' is not available in this organizationunpackaged/package.xml - Entity type 'Territory' is not available in this organizationunpackaged/package.xml - Entity type 'ExternalDataSource' is not available in this organizationunpackaged/package.xml - Entity type 'Portal' is not available in this organizationunpackaged/package.xml - Entity type 'EntitlementTemplate' is not available in this organizationunpackaged/package.xml - Entity type 'CustomApplicationComponent' is not available in this organizationunpackaged/package.xml - Entity type 'Skill' is not available in this organizationunpackaged/package.xml - Entity type 'LiveChatButton' is not available in this organizationunpackaged/package.xml - Entity type 'EntitlementProcess' is not available in this organizationunpackaged/package.xml - Entity type 'Translations' is not available in this organization
+[37m### Retreiving Source Took 48959481511 ns
+metaType: ApexClass component: MyController
+OK metadataName: ApexClass metadataPath: MyController
+metaType: CustomField component: Chaplain_Endorsement_Approval__c.Application_Accepted_Date__c
+OK metadataName: CustomField metadataPath: Chaplain_Endorsement_Approval__c.Application_Accepted_Date__c
+metaType: CustomField component: Chaplain_Endorsement_Approval__c.Application_Denied_Date__c
+metaType: CustomField component: Chaplain_Endorsement_Approval__c.Application_Withdrawn_Date__c
+metaType: CustomField component: Chaplain_Endorsement_Approval__c.Committee_Decision__c
+metaType: CustomField component: Chaplain_Endorsement_Approval__c.Employment_Status__c
+metaType: CustomField component: Chaplain_Endorsement_Approval__c.Provisional_Date__c
+metaType: CustomField component: Contact.Marital_Status__c
+metaType: CustomField component: Contact.Number_of_Endorsements_Approvals__c
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Committee_Decision__c.Missing
+OK metadataName: PicklistValue metadataPath: Chaplain_Endorsement_Approval__c.Committee_Decision__c.Missing
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Committee_Decision__c.Endorse
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Committee_Decision__c.Approve
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Committee_Decision__c.Deny
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Committee_Decision__c.Delay
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Committee_Decision__c.N/A
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Active
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Applicant
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Full time
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Guard
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Interim
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.LLP
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Organization
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Part time
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Pending
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Reserve
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Employment_Status__c.Volunteer
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Professional Association Membership
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Clergy Membership
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Return from Leave
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Employment
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Education
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Annual Conference Approval
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Setting__c.Campus Ministry
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Setting__c.Clinical Pastoral Education
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Setting__c.Marriage and Family Therapy
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Setting__c.Pastoral Counseling
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Withdrawn_Reason__c.Change in Employment
+metaType: PicklistValue component: Chaplain_Endorsement_Approval__c.Withdrawn_Reason__c.No Setting, Certification Only
+metaType: PicklistValue component: Contact.Marital_Status__c.Single
+metaType: PicklistValue component: Contact.Marital_Status__c.Married
+metaType: PicklistValue component: Contact.Marital_Status__c.Divorced
+metaType: PicklistValue component: Contact.Marital_Status__c.Domestic Partnership
+metaType: PicklistValue component: Contact.Marital_Status__c.Widowed
+metaType: PicklistValue component: Contact.Marital_Status__c.Separated
+metaType: PicklistValue component: Contact.Marital_Status__c.N/A
+metaType: PicklistValue component: Contact.Marital_Status__c.Missing
+metaType: PicklistValue component: Contact.rh2__Integer_Test__c.Marital_Status__c
+Ignored metadataName: PicklistValue metadataPath: Contact.rh2__Integer_Test__c.Marital_Status__c
+metaType: PicklistValue component: Contact.rh2__Integer_Test__c.Marital_Status__c
+Ignored metadataName: PicklistValue metadataPath: Contact.rh2__Integer_Test__c.Marital_Status__c
+metaType: PicklistValue component: Membership__c.Association__c.African Methodist Episcopal Zion (AMEZ),
+metaType: PicklistValue component: Membership__c.Association__c.African Union Methodist Protestant (AUMP),
+metaType: PicklistValue component: Membership__c.Association__c.Christian Methodist Episcopal (CME),
+metaType: PicklistValue component: Membership__c.Association__c.Intentional Growth Center (IGC)
+metaType: PicklistValue component: Membership__c.Association__c.Texas Annual Conference (TAC)
+metaType: ValidationRule component: Contact.Preferred_Email_Type_not_Blank
+OK metadataName: ValidationRule metadataPath: Contact.Preferred_Email_Type_not_Blank
+metaType: ValidationRule component: Contact.Preferred_Phone_Type_not_Blank
+metaType: ApexPage component: HelloWorld
+OK metadataName: ApexPage metadataPath: HelloWorld
+metaType: ApexPage component: Find_Your_Place
+metaType: Report component: KELL_Reports/Course_Transcripts_UM_Studies
+OK metadataName: Report metadataPath: KELL_Reports/Course_Transcripts_UM_Studies
+metaType: Report component: KELL_Reports/Course_Transcripts_Course_of_Study
+metaType: Report component: KELL_Reports/Course_Transcripts_Adv_Crs_of_Study
 [32mDone
-[37m### Building Destroyable Changes Took 16533392247 ns
-[34mNo destructable changes.
+[37m### Building Destroyable Changes Took 2272803197 ns
+[34mReport
+[34m	KELL_Reports/Course_Transcripts_UM_Studies
+[34m	KELL_Reports/Course_Transcripts_Course_of_Study
+[34m	KELL_Reports/Course_Transcripts_Adv_Crs_of_Study
+
+[34mPicklistValue
+[34m	Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Professional Association Membership
+[34m	Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Clergy Membership
+[34m	Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Return from Leave
+[34m	Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Employment
+[34m	Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Education
+[34m	Chaplain_Endorsement_Approval__c.Provisional_Endorsement_Approval__c.Annual Conference Approval
+[34m	Chaplain_Endorsement_Approval__c.Setting__c.Campus Ministry
+[34m	Chaplain_Endorsement_Approval__c.Setting__c.Clinical Pastoral Education
+[34m	Chaplain_Endorsement_Approval__c.Setting__c.Marriage and Family Therapy
+[34m	Chaplain_Endorsement_Approval__c.Setting__c.Pastoral Counseling
+[34m	Chaplain_Endorsement_Approval__c.Withdrawn_Reason__c.Change in Employment
+[34m	Chaplain_Endorsement_Approval__c.Withdrawn_Reason__c.No Setting, Certification Only
+[34m	Membership__c.Association__c.African Methodist Episcopal Zion (AMEZ),
+[34m	Membership__c.Association__c.African Union Methodist Protestant (AUMP),
+[34m	Membership__c.Association__c.Christian Methodist Episcopal (CME),
+[34m	Membership__c.Association__c.Intentional Growth Center (IGC)
+[34m	Membership__c.Association__c.Texas Annual Conference (TAC)
+
+[34mApexPage
+[34m	HelloWorld
+[34m	Find_Your_Place
+
+[34mApexClass
+[34m	MyController
+
+[34mValidationRule
+[34m	Contact.Preferred_Email_Type_not_Blank
+[34m	Contact.Preferred_Phone_Type_not_Blank
+
+[34mCustomField
+[34m	Chaplain_Endorsement_Approval__c.Application_Accepted_Date__c
+[34m	Chaplain_Endorsement_Approval__c.Application_Denied_Date__c
+[34m	Chaplain_Endorsement_Approval__c.Application_Withdrawn_Date__c
+[34m	Chaplain_Endorsement_Approval__c.Committee_Decision__c
+[34m	Chaplain_Endorsement_Approval__c.Employment_Status__c
+[34m	Chaplain_Endorsement_Approval__c.Provisional_Date__c
+[34m	Contact.Marital_Status__c
+[34m	Contact.Number_of_Endorsements_Approvals__c
+
+[32mStatus is: InProgress
 [32mStatus is: InProgress
 [32mStatus is: InProgress
 [32mStatus is: InProgress
@@ -20,10 +309,16 @@ unpackaged/package.xml - Entity type 'MilestoneType' is not available in this or
 [32mStatus is: InProgress
 [32mStatus is: Completed
 [31mFinal list of failures:
-objects/Idea.object(35, 16:Could not resolve list view column: IDEA.IDEA_THEME
-workflows/PersonAccount.workflow(0, 0:Cannot create workflow directly; must create the CustomObject first
-workflows/SocialPersona.workflow(0, 0:Cannot create workflow directly; must create the CustomObject first
-workflows/SocialPost.workflow(0, 0:Cannot create workflow directly; must create the CustomObject first
+objects/Chaplain_Endorsement_Approval__c.object(0, 0:Cannot delete the final PicklistValue
+reports/DHE_Reports/CEO_Contacts_SCU.report(0, 0:Cannot find folder:DHE_Reports
+reports/DHE_Reports/Chaplains_Church_Relations_SCU.report(0, 0:Cannot find folder:DHE_Reports
+reports/DHE_Reports/PR_Contacts_SCU.report(0, 0:Cannot find folder:DHE_Reports
+reports/Transcripts/Certification_Courses.report(0, 0:Cannot find folder:Transcripts
+reports/Transcripts/Course_Transcripts_Adv_Crs_of_Study.report(0, 0:Cannot find folder:Transcripts
+reports/Transcripts/Course_Transcripts_Course_of_Study.report(0, 0:Cannot find folder:Transcripts
+reports/Transcripts/Course_Transcripts_UM_Studies.report(0, 0:Cannot find folder:Transcripts
+reports/Transcripts/X11132013.report(0, 0:Cannot find folder:Transcripts
+layouts/Account-Account Layout.layout(0, 0:Invalid field:Annual_Conference__c in related list:Contact.Annual_Conference__c
 
-[37m### Deployment Took 130663065306 ns
-[37m### Cleanup Took 592981 ns
+[37m### Deployment Took 261428241545 ns
+[37m### Cleanup Took 647848 ns

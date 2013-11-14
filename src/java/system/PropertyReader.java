@@ -418,8 +418,10 @@ public class PropertyReader {
 			String meta = prop.substring(0, prop.indexOf(":"));
 			String path = prop.substring(prop.indexOf(":") + 1);
 
-			if (meta.toLowerCase().equals(metadata.toLowerCase())
-					&& path.toLowerCase().equals(metadataPath.toLowerCase())) {
+			if ((meta.toLowerCase().equals(metadata.toLowerCase())
+					&& path.toLowerCase().equals(metadataPath.toLowerCase()))
+					|| (meta.toLowerCase().equals("namespaceprefix")
+						&& metadataPath.toLowerCase().contains(path.toLowerCase()))) {
 				return true;
 			}
 		}

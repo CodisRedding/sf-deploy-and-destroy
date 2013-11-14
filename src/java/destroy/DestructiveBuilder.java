@@ -56,6 +56,7 @@ public class DestructiveBuilder {
 					+ component;
 		}
 
+		System.out.println("metaType: " + metaType + " component: " + component);
 		packager.addNameContent(metaType, component);
 	}
 
