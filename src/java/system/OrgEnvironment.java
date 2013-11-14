@@ -242,13 +242,20 @@ public class OrgEnvironment implements MetadataEnvironment {
 			query.setType(metadataType);
 			query.setFolder(folder);
 
+			//System.out.println("metadataType: " + metadataType);
+			//System.out.println("folder: " + folder);
 			FileProperties[] lmr = conMan.getMetadataConnection().listMetadata(
 					new ListMetadataQuery[] { query }, apiVersion);
 			if (lmr != null) {
+				if(folder != null && !folder.equals("unfiled$public")) {
+					packager.addNameContent(metadataType, folder);
+				}
+				
 				for (FileProperties n : lmr) {
 					// commented out because this is not a good solution.
 					// if(metadataType.equals("CustomObject") &&
 					// !n.getFullName().endsWith("__c")) {
+					//System.out.println("metadataType: " + n.getFullName());
 					packager.addNameContent(metadataType, n.getFullName());
 					// }
 				}

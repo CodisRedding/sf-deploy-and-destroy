@@ -34,12 +34,12 @@ public class PackageBuilder {
 	public void addNameContent(String metadataName, String metadataPath) {
 
 		if (PropertyReader.shouldIgnoreMetadata(metadataName, metadataPath)) {
-			System.out.println("Ignored metadataName: " + metadataName + " metadataPath: " + metadataPath);
+			//System.out.println("Ignored metadataName: " + metadataName + " metadataPath: " + metadataPath);
 			return;
 		}
 
 		if (!nameContents.containsKey(metadataName)) {
-			System.out.println("OK metadataName: " + metadataName + " metadataPath: " + metadataPath);
+			//System.out.println("OK metadataName: " + metadataName + " metadataPath: " + metadataPath);
 			nameContents.put(metadataName, new ArrayList<String>());
 		}
 
