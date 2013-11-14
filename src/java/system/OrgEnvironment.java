@@ -3,12 +3,14 @@ package system;
 import java.io.File;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.io.IOException;
 import com.sforce.soap.metadata.FileProperties;
 import com.sforce.soap.metadata.ListMetadataQuery;
 import com.sforce.ws.ConnectionException;
 import retrieve.Zipper;
 import api.ConnectionManager;
 import system.ANSIControlCodes;
+import org.apache.commons.io.FileUtils;
 
 public class OrgEnvironment implements MetadataEnvironment {
 
@@ -188,17 +190,22 @@ public class OrgEnvironment implements MetadataEnvironment {
 			
 			// override dest dir if supplied
 			File copyToDir = this.getLocationFolder();
-			File destFileOverride = null;
-			if(overrideSourceDest != null) {
-				destFileOverride = new File(overrideSourceDest);
-				if(destFileOverride.exists()) {
-					copyToDir = destFileOverride;
-				}
-			}
 
 			// unzipping long enough to compare then delete
 			ZipUtils utils = new ZipUtils();
 			utils.unzip(this.getRetrieveZip(), copyToDir);
+
+			File destFileOverride = null;
+			if(overrideSourceDest != null) {
+				destFileOverride = new File(overrideSourceDest);
+				try {
+					FileUtils.copyDirectory(this.getSourceFolder(), destFileOverride);
+					FileUtils.deleteDirectory(this.getLocationFolder());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 
 			this.getRetrieveZip().delete();
 		} catch (RemoteException e) {

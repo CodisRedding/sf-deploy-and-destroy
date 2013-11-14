@@ -22,6 +22,8 @@ public class Main {
 	private final static String optionDestroyOnly = "--destroy-only";
 	private final static String optionEnvironment = "-e";
 	private final static String optionPath = "-p";
+	private final static String optionRetrieve = "-r";
+	private final static String optionOutput = "-o";
 
 	/**
 	 * @param args
@@ -89,17 +91,21 @@ public class Main {
 		// Grab environment names
 		Boolean isEnvPath = (args[0].toLowerCase().equals("-e"));
 		Boolean isArgPath = (args[0].toLowerCase().equals("-p"));
+		Boolean isRetrieveToPath = (args[0].toLowerCase().equals("-r"));
+		String outputPath = null;
 
 		String envNameFrom = args[1].toLowerCase();
 		String envNameTo = args[2].toLowerCase();
 
 		// Figure out what options were set
 		for (Integer i = 0; i < args.length; i++) {
-			if (i > 2) {
+			if (i > 1) {
 				if (args[i].toLowerCase().equals(optionPrintOnly)) {
 					printOnly = true;
 				} else if (args[i].toLowerCase().equals(optionDestroyOnly)) {
 					destroyOnly = true;
+				} else if (args[i].toLowerCase().equals(optionOutput)) {
+					outputPath = args[3];
 				}
 			}
 		}
@@ -123,16 +129,30 @@ public class Main {
 			}
 		}
 
+		long startTime;
+		long endTime;
+		if(isRetrieveToPath) {
+			startTime = System.nanoTime();
+			System.out.println(ANSIControlCodes.WHITE + "### Starting Retrieve from " + envNameFrom + " to " + outputPath);
+			EnvironmentManager manager = new EnvironmentManager(
+				EnvironmentManager.createEnvironment(envNameFrom), null);
+			manager.getFromEnvironment().retreive(outputPath);
+			endTime = System.nanoTime();
+			System.out.println(ANSIControlCodes.WHITE + "### Finished Retrieve Took "
+				+ (endTime - startTime) + " ns");
+			return;
+		}
+
 		// Tell the environment manager which environments to work with.
 		EnvironmentManager manager = new EnvironmentManager(
 				EnvironmentManager.createEnvironment(envNameFrom),
 				EnvironmentManager.createEnvironment(envNameTo));
 
 		// Retreive metadata from each environment
-		long startTime = System.nanoTime();
+		startTime = System.nanoTime();
 		manager.getFromEnvironment().retreive(null);
 		manager.getToEnvironment().retreive(null);
-		long endTime = System.nanoTime();
+		endTime = System.nanoTime();
 		System.out.println(ANSIControlCodes.WHITE + "### Retreiving Source Took "
 				+ (endTime - startTime) + " ns");
 
@@ -179,9 +199,13 @@ public class Main {
 				// Check to make sure env file exists
 				String envFilePath = null;
 
-				if (args[0].equals(optionEnvironment) || count == 2) {
-					envFilePath = Installer.installPath + File.separator + arg
-							+ ".env";
+				if ((args[0].equals(optionEnvironment) || args[0].equals(optionRetrieve)) || count == 2) {
+					if (args[0].equals(optionRetrieve) && count == 3) {
+						return true;
+					} else {
+						envFilePath = Installer.installPath + File.separator + arg
+								+ ".env";
+					}
 				} else if (args[0].equals(optionPath)) {
 					envFilePath = arg;
 				}
@@ -198,7 +222,9 @@ public class Main {
 					&& !arg.equals(optionDestroyOnly)
 					&& !arg.equals(optionPrintOnly)
 					&& !arg.equals(optionEnvironment)
-					&& !arg.equals(optionPath)) {
+					&& !arg.equals(optionPath)
+					&& !arg.equals(optionRetrieve)
+					&& !arg.equals(optionOutput)) {
 
 				System.out.println(ANSIControlCodes.MAGENTA + "NOPE!");
 				System.out.println(ANSIControlCodes.RED + arg + " is not a valid option.");
