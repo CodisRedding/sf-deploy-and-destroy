@@ -10,3 +10,4 @@ tmp/
 deploy
 .ivy
 *.swp
+output
