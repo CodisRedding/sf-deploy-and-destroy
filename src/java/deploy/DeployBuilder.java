@@ -50,7 +50,7 @@ public class DeployBuilder {
 				serviceEndpoint);
 	}
 
-	public void deploy() {
+	public void deploy(Boolean runAllTests) {
 
 		if (!conMan.Login()) {
 			System.out.println(ANSIControlCodes.MAGENTA + "Unable to connect.");
@@ -61,6 +61,7 @@ public class DeployBuilder {
 			byte zipBytes[] = readZipFile();
 
 			DeployOptions deployOptions = new DeployOptions();
+			deployOptions.setRunAllTests(runAllTests);
 			deployOptions.setPerformRetrieve(false);
 			deployOptions.setRollbackOnError(true);
 			deployOptions.setSinglePackage(true);

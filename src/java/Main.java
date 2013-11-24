@@ -20,6 +20,7 @@ public class Main {
 	private final static String optionInstallOnly = "--install-only";
 	private final static String optionPrintOnly = "--print-only";
 	private final static String optionDestroyOnly = "--destroy-only";
+	private final static String optionRunAllTests = "--run-all-tests";
 	private final static String optionEnvironment = "-e";
 	private final static String optionPath = "-p";
 	private final static String optionRetrieve = "-r";
@@ -62,6 +63,7 @@ public class Main {
 
 		boolean printOnly = false;
 		boolean destroyOnly = false;
+		boolean runAllTests = false;
 
 		// Check for valid args
 		if (!checkForInvalidArgs(args)) {
@@ -104,6 +106,8 @@ public class Main {
 					printOnly = true;
 				} else if (args[i].toLowerCase().equals(optionDestroyOnly)) {
 					destroyOnly = true;
+				} else if (args[i].toLowerCase().equals(optionRunAllTests)) {
+					runAllTests = true;
 				} else if (args[i].toLowerCase().equals(optionOutput)) {
 					outputPath = args[3];
 				}
@@ -177,7 +181,7 @@ public class Main {
 		if (!printOnly) {
 			// Deploy environment and apply destructive changes.
 			startTime = System.nanoTime();
-			deployBuilder.deploy();
+			deployBuilder.deploy(runAllTests);
 			endTime = System.nanoTime();
 			System.out.println(ANSIControlCodes.WHITE + "### Deployment Took " + (endTime - startTime)
 					+ " ns");
@@ -224,7 +228,8 @@ public class Main {
 					&& !arg.equals(optionEnvironment)
 					&& !arg.equals(optionPath)
 					&& !arg.equals(optionRetrieve)
-					&& !arg.equals(optionOutput)) {
+					&& !arg.equals(optionOutput)
+					&& !arg.equals(optionRunAllTests)) {
 
 				System.out.println(ANSIControlCodes.MAGENTA + "NOPE!");
 				System.out.println(ANSIControlCodes.RED + arg + " is not a valid option.");
