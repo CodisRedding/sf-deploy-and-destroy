@@ -13,9 +13,9 @@ import system.ANSIControlCodes;
 
 /**
  * @author rocky
- * 
+ *
  *         Builds the actual destructiveChanges.xml file.
- * 
+ *
  */
 public class PackageBuilder {
 
@@ -23,12 +23,12 @@ public class PackageBuilder {
 
 	/**
 	 * Adds supplied params to the buffer of metadata to build.
-	 * 
+	 *
 	 * @param metadataName
-	 * 
+	 *
 	 *            The metadata name of the component being built.
 	 * @param metadataPath
-	 * 
+	 *
 	 *            The path and component name to be built.
 	 */
 	public void addNameContent(String metadataName, String metadataPath) {
@@ -50,9 +50,9 @@ public class PackageBuilder {
 	/**
 	 * Generates the *.xml. If no changes are found, a file is still created and
 	 * is still safe to deploy within your deployment package.
-	 * 
+	 *
 	 * @param dir
-	 * 
+	 *
 	 *            The dir path where the generated *.xml should be created.
 	 */
 	public void createFile(String dir, String fileName, Boolean includeContent) {
@@ -120,9 +120,9 @@ public class PackageBuilder {
 
 	/**
 	 * Gets the buffer of package components to be built.
-	 * 
+	 *
 	 * @return
-	 * 
+	 *
 	 *         The package components to be built.
 	 */
 	public Hashtable<String, ArrayList<String>> getNameContents() {
@@ -156,7 +156,7 @@ public class PackageBuilder {
 			}
 			System.out.println("");
 		}
-		
+
 		if(!printed) {
 			System.out.println(ANSIControlCodes.BLUE + "No destructable changes.");
 		}
@@ -169,9 +169,9 @@ public class PackageBuilder {
 		ArrayList<String> picklistValues = new ArrayList<String>();
 
 		try {
+
 			// check to make sure picklist values are not set to be destroyed if
-			// the
-			// whole field is set to be destroyed
+			// the whole field is set to be destroyed
 			if (getNameContents() != null) {
 
 				if (getNameContents().get("PicklistValue") != null) {
@@ -181,10 +181,11 @@ public class PackageBuilder {
 						String field = picklistValue.substring(0,
 								picklistValue.indexOf(".", idx1 + 1));
 
-						if (!field.endsWith("__c")) {
+						//if (!field.endsWith("__c")) {
 							picklistValues.add(picklistValue);
-						}
+						//}
 
+						/*
 						// check if a custom field with same name exists
 						if (getNameContents().get("CustomField") != null) {
 							for (String customField : getNameContents().get(
@@ -203,7 +204,7 @@ public class PackageBuilder {
 									picklistValues.add(picklistValue);
 								}
 							}
-						}
+						}*/
 					}
 				}
 
@@ -216,6 +217,6 @@ public class PackageBuilder {
 			// nothing...
 			// this was rushed .. redo when you're not
 			System.out.println(e.getMessage());
-		}
+        }
 	}
 }
