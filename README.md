@@ -22,7 +22,7 @@ salesforce-org-from.env
 salesforce-org-to.env
 ```
 
-open each file and fill in the needed config info. If it's a production org put production instead of test for 'sf.environment'. Make sure the 'sf.login' is an admin or user that has a similar profile. Relace the 'sf.environment.server' with your server obviously. 
+open each file and fill in the needed config info. If it's a production org put production instead of test for 'sf.environment'. Make sure the 'sf.login' is an admin or user that has a similar profile. Replace the 'sf.environment.server' with your server, obviously. 
 
 [example]
 
